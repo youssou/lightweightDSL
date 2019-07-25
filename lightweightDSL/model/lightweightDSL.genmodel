@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/lightweightDSL/src-gen" creationIcons="false"
+    editDirectory="/lightweightDSL.edit/src-gen" editorDirectory="/lightweightDSL.editor/src-gen"
+    modelPluginID="lightweightDSL" modelName="LightweightDSL" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>lightweightDSL.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="LightweightDSL" disposableProviderFactory="true" ecorePackage="lightweightDSL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lightweightDSL.ecore#//LEVEL">
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//LEVEL/LOW"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//LEVEL/MEDIUM"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//LEVEL/HIGH"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lightweightDSL.ecore#//CredTYPE">
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//CredTYPE/DIGITAL"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//CredTYPE/PHYSICAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lightweightDSL.ecore#//Protocol">
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//Protocol/EBIA"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//Protocol/SMS_BASED"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//Protocol/LOCAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lightweightDSL.ecore#//ValidationType">
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//ValidationType/LOCAL"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//ValidationType/REMOTE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lightweightDSL.ecore#//BVALUE">
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//BVALUE/FINGERPRINT"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//BVALUE/IRIS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lightweightDSL.ecore#//PROVIDER">
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//PROVIDER/IdP"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//PROVIDER/SELF"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//PROVIDER/INSTITUTIONAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lightweightDSL.ecore#//KVALUE">
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//KVALUE/PASSPHRASE"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//KVALUE/STBP"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//KVALUE/LTBP"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//KVALUE/PIN"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//KVALUE/PREFERENCES"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lightweightDSL.ecore#//PVALUE">
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//PVALUE/DEVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//PVALUE/TOKEN"/>
+    </genEnums>
+    <genClasses ecoreClass="lightweightDSL.ecore#//AuthMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//AuthMethod/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//AuthMethod/authenticators"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//AuthMethod/level"/>
+      <genOperations ecoreOperation="lightweightDSL.ecore#//AuthMethod/computeLevel"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//Registration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//Registration/credentials"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//Recovery">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Recovery/protocol"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//Recovery/authenticator"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//Login">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Login/session"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//Reset">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//Reset/authenticator"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//App">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//App/phases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//App/authenticators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//App/authMethods"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//Credential">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Credential/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Credential/provider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Credential/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//Credential/verifmethod"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//Phase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Phase/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Phase/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//Phase/authMethods"/>
+      <genOperations ecoreOperation="lightweightDSL.ecore#//Phase/computeLevel"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//Authenticator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Authenticator/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Authenticator/level"/>
+      <genOperations ecoreOperation="lightweightDSL.ecore#//Authenticator/computeLevel"/>
+      <genOperations ecoreOperation="lightweightDSL.ecore#//Authenticator/newOperation2"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//VerifMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//VerifMethod/validity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//VerifMethod/uniqueness"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//VerifMethod/bindings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//VerifMethod/level"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//MFA">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//MFA/validation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//MFA/correlation"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//SFA"/>
+    <genClasses ecoreClass="lightweightDSL.ecore#//Knowledge">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Knowledge/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Knowledge/limitedAttempts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Knowledge/autofilled"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//Possession">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Possession/value"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//Biometrics">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Biometrics/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -18,6 +18,7 @@ import lightweightDSL.Protocol;
 import lightweightDSL.Recovery;
 import lightweightDSL.Registration;
 import lightweightDSL.Reset;
+import lightweightDSL.Risk;
 import lightweightDSL.ValidationType;
 import lightweightDSL.VerifMethod;
 import org.eclipse.emf.ecore.EAttribute;
@@ -140,6 +141,13 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * @generated
 	 */
 	private EClass biometricsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass riskEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,8 +301,17 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuthMethod_Level() {
+	public EAttribute getAuthMethod_Type() {
 		return (EAttribute) authMethodEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAuthMethod_Risk() {
+		return (EReference) authMethodEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -428,6 +445,24 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getApp_Risks() {
+		return (EReference) appEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getApp_Registration() {
+		return (EReference) appEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCredential() {
 		return credentialEClass;
 	}
@@ -473,6 +508,15 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCredential_Risk() {
+		return (EReference) credentialEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPhase() {
 		return phaseEClass;
 	}
@@ -482,7 +526,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPhase_Level() {
+	public EAttribute getPhase_Name() {
 		return (EAttribute) phaseEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -491,8 +535,8 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPhase_Name() {
-		return (EAttribute) phaseEClass.getEStructuralFeatures().get(1);
+	public EReference getPhase_AuthMethods() {
+		return (EReference) phaseEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -500,8 +544,17 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPhase_AuthMethods() {
-		return (EReference) phaseEClass.getEStructuralFeatures().get(2);
+	public EAttribute getPhase_Type() {
+		return (EAttribute) phaseEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPhase_Risk() {
+		return (EReference) phaseEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -536,8 +589,17 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAuthenticator_Level() {
+	public EAttribute getAuthenticator_Type() {
 		return (EAttribute) authenticatorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAuthenticator_Risk() {
+		return (EReference) authenticatorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -547,15 +609,6 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 */
 	public EOperation getAuthenticator__ComputeLevel() {
 		return authenticatorEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAuthenticator__NewOperation2() {
-		return authenticatorEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -716,6 +769,51 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRisk() {
+		return riskEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRisk_Instance() {
+		return (EAttribute) riskEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRisk_Value() {
+		return (EAttribute) riskEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRisk_Message() {
+		return (EAttribute) riskEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRisk_Information() {
+		return (EAttribute) riskEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getLEVEL() {
 		return levelEEnum;
 	}
@@ -815,7 +913,8 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 		authMethodEClass = createEClass(AUTH_METHOD);
 		createEAttribute(authMethodEClass, AUTH_METHOD__NAME);
 		createEReference(authMethodEClass, AUTH_METHOD__AUTHENTICATORS);
-		createEAttribute(authMethodEClass, AUTH_METHOD__LEVEL);
+		createEAttribute(authMethodEClass, AUTH_METHOD__TYPE);
+		createEReference(authMethodEClass, AUTH_METHOD__RISK);
 		createEOperation(authMethodEClass, AUTH_METHOD___COMPUTE_LEVEL);
 
 		registrationEClass = createEClass(REGISTRATION);
@@ -835,24 +934,28 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 		createEReference(appEClass, APP__PHASES);
 		createEReference(appEClass, APP__AUTHENTICATORS);
 		createEReference(appEClass, APP__AUTH_METHODS);
+		createEReference(appEClass, APP__RISKS);
+		createEReference(appEClass, APP__REGISTRATION);
 
 		credentialEClass = createEClass(CREDENTIAL);
 		createEAttribute(credentialEClass, CREDENTIAL__NAME);
 		createEAttribute(credentialEClass, CREDENTIAL__PROVIDER);
 		createEAttribute(credentialEClass, CREDENTIAL__TYPE);
 		createEReference(credentialEClass, CREDENTIAL__VERIFMETHOD);
+		createEReference(credentialEClass, CREDENTIAL__RISK);
 
 		phaseEClass = createEClass(PHASE);
-		createEAttribute(phaseEClass, PHASE__LEVEL);
 		createEAttribute(phaseEClass, PHASE__NAME);
 		createEReference(phaseEClass, PHASE__AUTH_METHODS);
+		createEAttribute(phaseEClass, PHASE__TYPE);
+		createEReference(phaseEClass, PHASE__RISK);
 		createEOperation(phaseEClass, PHASE___COMPUTE_LEVEL);
 
 		authenticatorEClass = createEClass(AUTHENTICATOR);
 		createEAttribute(authenticatorEClass, AUTHENTICATOR__NAME);
-		createEAttribute(authenticatorEClass, AUTHENTICATOR__LEVEL);
+		createEAttribute(authenticatorEClass, AUTHENTICATOR__TYPE);
+		createEReference(authenticatorEClass, AUTHENTICATOR__RISK);
 		createEOperation(authenticatorEClass, AUTHENTICATOR___COMPUTE_LEVEL);
-		createEOperation(authenticatorEClass, AUTHENTICATOR___NEW_OPERATION2);
 
 		verifMethodEClass = createEClass(VERIF_METHOD);
 		createEAttribute(verifMethodEClass, VERIF_METHOD__VALIDITY);
@@ -876,6 +979,12 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 
 		biometricsEClass = createEClass(BIOMETRICS);
 		createEAttribute(biometricsEClass, BIOMETRICS__VALUE);
+
+		riskEClass = createEClass(RISK);
+		createEAttribute(riskEClass, RISK__INSTANCE);
+		createEAttribute(riskEClass, RISK__VALUE);
+		createEAttribute(riskEClass, RISK__MESSAGE);
+		createEAttribute(riskEClass, RISK__INFORMATION);
 
 		// Create enums
 		levelEEnum = createEEnum(LEVEL);
@@ -935,8 +1044,11 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 		initEReference(getAuthMethod_Authenticators(), this.getAuthenticator(), null, "authenticators", null, 1, 2,
 				AuthMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAuthMethod_Level(), this.getLEVEL(), "level", null, 0, 1, AuthMethod.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAuthMethod_Type(), ecorePackage.getEString(), "type", null, 0, 1, AuthMethod.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAuthMethod_Risk(), this.getRisk(), null, "risk", null, 0, 1, AuthMethod.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEOperation(getAuthMethod__ComputeLevel(), this.getLEVEL(), "computeLevel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -973,6 +1085,12 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 		initEReference(getApp_AuthMethods(), this.getAuthMethod(), null, "authMethods", null, 1, -1, App.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApp_Risks(), this.getRisk(), null, "risks", null, 0, -1, App.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getApp_Registration(), this.getRegistration(), null, "registration", null, 0, 1, App.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(credentialEClass, Credential.class, "Credential", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -985,15 +1103,21 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 		initEReference(getCredential_Verifmethod(), this.getVerifMethod(), null, "verifmethod", null, 0, 1,
 				Credential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCredential_Risk(), this.getRisk(), null, "risk", null, 0, 1, Credential.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(phaseEClass, Phase.class, "Phase", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPhase_Level(), this.getLEVEL(), "level", null, 0, 1, Phase.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPhase_Name(), ecorePackage.getEString(), "name", null, 0, 1, Phase.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPhase_AuthMethods(), this.getAuthMethod(), null, "authMethods", null, 0, -1, Phase.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPhase_Type(), ecorePackage.getEString(), "type", null, 0, 1, Phase.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPhase_Risk(), this.getRisk(), null, "risk", null, 0, 1, Phase.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEOperation(getPhase__ComputeLevel(), this.getLEVEL(), "computeLevel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1001,12 +1125,13 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthenticator_Name(), ecorePackage.getEString(), "name", null, 0, 1, Authenticator.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAuthenticator_Level(), this.getLEVEL(), "level", null, 0, 1, Authenticator.class,
+		initEAttribute(getAuthenticator_Type(), ecorePackage.getEString(), "type", null, 0, 1, Authenticator.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAuthenticator_Risk(), this.getRisk(), null, "risk", null, 0, 1, Authenticator.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getAuthenticator__ComputeLevel(), this.getLEVEL(), "computeLevel", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getAuthenticator__NewOperation2(), null, "newOperation2", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(verifMethodEClass, VerifMethod.class, "VerifMethod", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1051,6 +1176,16 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBiometrics_Value(), this.getBVALUE(), "value", null, 0, 1, Biometrics.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(riskEClass, Risk.class, "Risk", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRisk_Instance(), ecorePackage.getEString(), "instance", null, 0, 1, Risk.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRisk_Value(), this.getLEVEL(), "value", null, 0, 1, Risk.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRisk_Message(), ecorePackage.getEString(), "message", null, 0, 1, Risk.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRisk_Information(), ecorePackage.getEString(), "information", null, 0, 1, Risk.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(levelEEnum, lightweightDSL.LEVEL.class, "LEVEL");

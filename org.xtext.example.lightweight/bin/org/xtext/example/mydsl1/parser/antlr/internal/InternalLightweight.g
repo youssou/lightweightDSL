@@ -336,10 +336,20 @@ ruleMFA returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='2FA'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getMFAAccess().getFAKeyword_0());
-		}
+		(
+			(
+				lv_type_0_0='2FA'
+				{
+					newLeafNode(lv_type_0_0, grammarAccess.getMFAAccess().getType2FAKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMFARule());
+					}
+					setWithLastConsumed($current, "type", lv_type_0_0, "2FA");
+				}
+			)
+		)
 		otherlv_1=':'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getMFAAccess().getColonKeyword_1());
@@ -504,10 +514,20 @@ ruleSFA returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='SFA'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getSFAAccess().getSFAKeyword_0());
-		}
+		(
+			(
+				lv_type_0_0='SFA'
+				{
+					newLeafNode(lv_type_0_0, grammarAccess.getSFAAccess().getTypeSFAKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSFARule());
+					}
+					setWithLastConsumed($current, "type", lv_type_0_0, "SFA");
+				}
+			)
+		)
 		otherlv_1=':'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getSFAAccess().getColonKeyword_1());
@@ -568,13 +588,9 @@ ruleSFA returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_10=','
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getSFAAccess().getCommaKeyword_10());
-		}
-		otherlv_11='}'
-		{
-			newLeafNode(otherlv_11, grammarAccess.getSFAAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_10, grammarAccess.getSFAAccess().getRightCurlyBracketKeyword_10());
 		}
 	)
 ;
@@ -640,10 +656,20 @@ rulePossession returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='possession'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getPossessionAccess().getPossessionKeyword_0());
-		}
+		(
+			(
+				lv_type_0_0='Possession'
+				{
+					newLeafNode(lv_type_0_0, grammarAccess.getPossessionAccess().getTypePossessionKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPossessionRule());
+					}
+					setWithLastConsumed($current, "type", lv_type_0_0, "Possession");
+				}
+			)
+		)
 		otherlv_1=':'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getPossessionAccess().getColonKeyword_1());
@@ -733,10 +759,20 @@ ruleKnowledge returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='knowledge'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getKnowledgeAccess().getKnowledgeKeyword_0());
-		}
+		(
+			(
+				lv_type_0_0='Knowledge'
+				{
+					newLeafNode(lv_type_0_0, grammarAccess.getKnowledgeAccess().getTypeKnowledgeKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getKnowledgeRule());
+					}
+					setWithLastConsumed($current, "type", lv_type_0_0, "Knowledge");
+				}
+			)
+		)
 		otherlv_1=':'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getKnowledgeAccess().getColonKeyword_1());
@@ -888,10 +924,20 @@ ruleBiometrics returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='biometrics'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getBiometricsAccess().getBiometricsKeyword_0());
-		}
+		(
+			(
+				lv_type_0_0='Biometrics'
+				{
+					newLeafNode(lv_type_0_0, grammarAccess.getBiometricsAccess().getTypeBiometricsKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBiometricsRule());
+					}
+					setWithLastConsumed($current, "type", lv_type_0_0, "Biometrics");
+				}
+			)
+		)
 		otherlv_1=':'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getBiometricsAccess().getColonKeyword_1());
@@ -1069,10 +1115,20 @@ ruleRegistration returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Registration'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getRegistrationAccess().getRegistrationKeyword_0());
-		}
+		(
+			(
+				lv_type_0_0='Registration'
+				{
+					newLeafNode(lv_type_0_0, grammarAccess.getRegistrationAccess().getTypeRegistrationKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRegistrationRule());
+					}
+					setWithLastConsumed($current, "type", lv_type_0_0, "Registration");
+				}
+			)
+		)
 		otherlv_1=':'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getRegistrationAccess().getColonKeyword_1());
@@ -1481,10 +1537,20 @@ ruleRecovery returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='Recovery'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getRecoveryAccess().getRecoveryKeyword_1());
-		}
+		(
+			(
+				lv_type_1_0='Recovery'
+				{
+					newLeafNode(lv_type_1_0, grammarAccess.getRecoveryAccess().getTypeRecoveryKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRecoveryRule());
+					}
+					setWithLastConsumed($current, "type", lv_type_1_0, "Recovery");
+				}
+			)
+		)
 		otherlv_2=':'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getRecoveryAccess().getColonKeyword_2());
@@ -1610,10 +1676,20 @@ ruleLogin returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='Login'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getLoginAccess().getLoginKeyword_1());
-		}
+		(
+			(
+				lv_type_1_0='Login'
+				{
+					newLeafNode(lv_type_1_0, grammarAccess.getLoginAccess().getTypeLoginKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLoginRule());
+					}
+					setWithLastConsumed($current, "type", lv_type_1_0, "Login");
+				}
+			)
+		)
 		otherlv_2=':'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getLoginAccess().getColonKeyword_2());
@@ -1692,10 +1768,6 @@ ruleLogin returns [EObject current=null]
 		{
 			newLeafNode(otherlv_13, grammarAccess.getLoginAccess().getColonKeyword_13());
 		}
-		otherlv_14='['
-		{
-			newLeafNode(otherlv_14, grammarAccess.getLoginAccess().getLeftSquareBracketKeyword_14());
-		}
 		(
 			(
 				{
@@ -1703,16 +1775,16 @@ ruleLogin returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getLoginRule());
 					}
 				}
-				otherlv_15=RULE_ID
+				otherlv_14=RULE_ID
 				{
-					newLeafNode(otherlv_15, grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_15_0());
+					newLeafNode(otherlv_14, grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_14_0());
 				}
 			)
 		)
 		(
-			otherlv_16=','
+			otherlv_15='||'
 			{
-				newLeafNode(otherlv_16, grammarAccess.getLoginAccess().getCommaKeyword_16_0());
+				newLeafNode(otherlv_15, grammarAccess.getLoginAccess().getVerticalLineVerticalLineKeyword_15_0());
 			}
 			(
 				(
@@ -1721,20 +1793,16 @@ ruleLogin returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getLoginRule());
 						}
 					}
-					otherlv_17=RULE_ID
+					otherlv_16=RULE_ID
 					{
-						newLeafNode(otherlv_17, grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_16_1_0());
+						newLeafNode(otherlv_16, grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_15_1_0());
 					}
 				)
 			)
 		)*
-		otherlv_18=']'
+		otherlv_17='}'
 		{
-			newLeafNode(otherlv_18, grammarAccess.getLoginAccess().getRightSquareBracketKeyword_17());
-		}
-		otherlv_19='}'
-		{
-			newLeafNode(otherlv_19, grammarAccess.getLoginAccess().getRightCurlyBracketKeyword_18());
+			newLeafNode(otherlv_17, grammarAccess.getLoginAccess().getRightCurlyBracketKeyword_16());
 		}
 	)
 ;
@@ -1762,10 +1830,20 @@ ruleReset returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='Reset'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getResetAccess().getResetKeyword_1());
-		}
+		(
+			(
+				lv_type_1_0='Reset'
+				{
+					newLeafNode(lv_type_1_0, grammarAccess.getResetAccess().getTypeResetKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getResetRule());
+					}
+					setWithLastConsumed($current, "type", lv_type_1_0, "Reset");
+				}
+			)
+		)
 		otherlv_2=':'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getResetAccess().getColonKeyword_2());
@@ -1840,10 +1918,6 @@ ruleReset returns [EObject current=null]
 		{
 			newLeafNode(otherlv_13, grammarAccess.getResetAccess().getColonKeyword_10());
 		}
-		otherlv_14='['
-		{
-			newLeafNode(otherlv_14, grammarAccess.getResetAccess().getLeftSquareBracketKeyword_11());
-		}
 		(
 			(
 				{
@@ -1851,16 +1925,16 @@ ruleReset returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getResetRule());
 					}
 				}
-				otherlv_15=RULE_ID
+				otherlv_14=RULE_ID
 				{
-					newLeafNode(otherlv_15, grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_12_0());
+					newLeafNode(otherlv_14, grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_11_0());
 				}
 			)
 		)
 		(
-			otherlv_16=','
+			otherlv_15='||'
 			{
-				newLeafNode(otherlv_16, grammarAccess.getResetAccess().getCommaKeyword_13_0());
+				newLeafNode(otherlv_15, grammarAccess.getResetAccess().getVerticalLineVerticalLineKeyword_12_0());
 			}
 			(
 				(
@@ -1869,20 +1943,16 @@ ruleReset returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getResetRule());
 						}
 					}
-					otherlv_17=RULE_ID
+					otherlv_16=RULE_ID
 					{
-						newLeafNode(otherlv_17, grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_13_1_0());
+						newLeafNode(otherlv_16, grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_12_1_0());
 					}
 				)
 			)
 		)*
-		otherlv_18=']'
+		otherlv_17='}'
 		{
-			newLeafNode(otherlv_18, grammarAccess.getResetAccess().getRightSquareBracketKeyword_14());
-		}
-		otherlv_19='}'
-		{
-			newLeafNode(otherlv_19, grammarAccess.getResetAccess().getRightCurlyBracketKeyword_15());
+			newLeafNode(otherlv_17, grammarAccess.getResetAccess().getRightCurlyBracketKeyword_13());
 		}
 	)
 ;

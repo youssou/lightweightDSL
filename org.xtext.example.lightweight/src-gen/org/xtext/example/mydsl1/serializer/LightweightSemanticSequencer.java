@@ -109,16 +109,19 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Biometrics returns Biometrics
 	 *
 	 * Constraint:
-	 *     (name=EString value=BVALUE)
+	 *     (type='Biometrics' name=EString value=BVALUE)
 	 */
 	protected void sequence_Biometrics(ISerializationContext context, Biometrics semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__TYPE));
 			if (transientValues.isValueTransient(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__NAME));
 			if (transientValues.isValueTransient(semanticObject, LightweightDSLPackage.Literals.BIOMETRICS__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LightweightDSLPackage.Literals.BIOMETRICS__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBiometricsAccess().getTypeBiometricsKeyword_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getBiometricsAccess().getNameEStringParserRuleCall_5_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getBiometricsAccess().getValueBVALUEEnumRuleCall_9_0(), semanticObject.getValue());
 		feeder.finish();
@@ -143,10 +146,12 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Knowledge returns Knowledge
 	 *
 	 * Constraint:
-	 *     (name=EString value=KVALUE limitedAttempts?=EBoolean autofilled?=EBoolean)
+	 *     (type='Knowledge' name=EString value=KVALUE limitedAttempts?=EBoolean autofilled?=EBoolean)
 	 */
 	protected void sequence_Knowledge(ISerializationContext context, Knowledge semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__TYPE));
 			if (transientValues.isValueTransient(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__NAME));
 			if (transientValues.isValueTransient(semanticObject, LightweightDSLPackage.Literals.KNOWLEDGE__VALUE) == ValueTransient.YES)
@@ -157,6 +162,7 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LightweightDSLPackage.Literals.KNOWLEDGE__AUTOFILLED));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getKnowledgeAccess().getTypeKnowledgeKeyword_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getKnowledgeAccess().getNameEStringParserRuleCall_5_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getKnowledgeAccess().getValueKVALUEEnumRuleCall_9_0(), semanticObject.getValue());
 		feeder.accept(grammarAccess.getKnowledgeAccess().getLimitedAttemptsEBooleanParserRuleCall_13_0(), semanticObject.isLimitedAttempts());
@@ -171,7 +177,7 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Login returns Login
 	 *
 	 * Constraint:
-	 *     (name=EString session=EBoolean authMethods+=[AuthMethod|ID] authMethods+=[AuthMethod|ID]*)
+	 *     (type='Login' name=EString session=EBoolean authMethods+=[AuthMethod|ID] authMethods+=[AuthMethod|ID]*)
 	 */
 	protected void sequence_Login(ISerializationContext context, Login semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -184,7 +190,14 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     MFA returns MFA
 	 *
 	 * Constraint:
-	 *     (name=EString authenticators+=[Authenticator|ID] authenticators+=[Authenticator|ID]+ correlation?=EBoolean validation=ValidationType)
+	 *     (
+	 *         type='2FA' 
+	 *         name=EString 
+	 *         authenticators+=[Authenticator|ID] 
+	 *         authenticators+=[Authenticator|ID]+ 
+	 *         correlation?=EBoolean 
+	 *         validation=ValidationType
+	 *     )
 	 */
 	protected void sequence_MFA(ISerializationContext context, MFA semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -197,16 +210,19 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Possession returns Possession
 	 *
 	 * Constraint:
-	 *     (name=EString value=PVALUE)
+	 *     (type='Possession' name=EString value=PVALUE)
 	 */
 	protected void sequence_Possession(ISerializationContext context, Possession semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__TYPE));
 			if (transientValues.isValueTransient(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LightweightDSLPackage.Literals.AUTHENTICATOR__NAME));
 			if (transientValues.isValueTransient(semanticObject, LightweightDSLPackage.Literals.POSSESSION__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LightweightDSLPackage.Literals.POSSESSION__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPossessionAccess().getTypePossessionKeyword_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getPossessionAccess().getNameEStringParserRuleCall_5_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getPossessionAccess().getValuePVALUEEnumRuleCall_9_0(), semanticObject.getValue());
 		feeder.finish();
@@ -219,7 +235,7 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Recovery returns Recovery
 	 *
 	 * Constraint:
-	 *     (name=EString authenticator=[Authenticator|ID]? protocol=Protocol?)
+	 *     (type='Recovery' name=EString authenticator=[Authenticator|ID]? protocol=Protocol?)
 	 */
 	protected void sequence_Recovery(ISerializationContext context, Recovery semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -232,7 +248,7 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Registration returns Registration
 	 *
 	 * Constraint:
-	 *     (name=EString credentials+=Credential credentials+=Credential*)
+	 *     (type='Registration' name=EString credentials+=Credential credentials+=Credential*)
 	 */
 	protected void sequence_Registration(ISerializationContext context, Registration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -245,7 +261,7 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Reset returns Reset
 	 *
 	 * Constraint:
-	 *     (name=EString authenticator=[Authenticator|ID]? authMethods+=[AuthMethod|ID] authMethods+=[AuthMethod|ID]*)
+	 *     (type='Reset' name=EString authenticator=[Authenticator|ID]? authMethods+=[AuthMethod|ID] authMethods+=[AuthMethod|ID]*)
 	 */
 	protected void sequence_Reset(ISerializationContext context, Reset semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -258,7 +274,7 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     SFA returns SFA
 	 *
 	 * Constraint:
-	 *     (name=EString authenticators+=[Authenticator|ID])
+	 *     (type='SFA' name=EString authenticators+=[Authenticator|ID])
 	 */
 	protected void sequence_SFA(ISerializationContext context, SFA semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

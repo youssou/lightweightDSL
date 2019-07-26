@@ -50,7 +50,8 @@
     <genClasses ecoreClass="lightweightDSL.ecore#//AuthMethod">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//AuthMethod/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//AuthMethod/authenticators"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//AuthMethod/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//AuthMethod/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//AuthMethod/risk"/>
       <genOperations ecoreOperation="lightweightDSL.ecore#//AuthMethod/computeLevel"/>
     </genClasses>
     <genClasses ecoreClass="lightweightDSL.ecore#//Registration">
@@ -70,24 +71,28 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//App/phases"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//App/authenticators"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//App/authMethods"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//App/risks"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//App/registration"/>
     </genClasses>
     <genClasses ecoreClass="lightweightDSL.ecore#//Credential">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Credential/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Credential/provider"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Credential/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//Credential/verifmethod"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//Credential/risk"/>
     </genClasses>
     <genClasses ecoreClass="lightweightDSL.ecore#//Phase">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Phase/level"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Phase/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//Phase/authMethods"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Phase/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//Phase/risk"/>
       <genOperations ecoreOperation="lightweightDSL.ecore#//Phase/computeLevel"/>
     </genClasses>
     <genClasses ecoreClass="lightweightDSL.ecore#//Authenticator">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Authenticator/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Authenticator/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Authenticator/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//Authenticator/risk"/>
       <genOperations ecoreOperation="lightweightDSL.ecore#//Authenticator/computeLevel"/>
-      <genOperations ecoreOperation="lightweightDSL.ecore#//Authenticator/newOperation2"/>
     </genClasses>
     <genClasses ecoreClass="lightweightDSL.ecore#//VerifMethod">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//VerifMethod/validity"/>
@@ -110,6 +115,12 @@
     </genClasses>
     <genClasses ecoreClass="lightweightDSL.ecore#//Biometrics">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Biometrics/value"/>
+    </genClasses>
+    <genClasses ecoreClass="lightweightDSL.ecore#//Risk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Risk/instance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Risk/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Risk/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//Risk/information"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

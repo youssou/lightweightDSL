@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link lightweightDSL.Credential#getProvider <em>Provider</em>}</li>
  *   <li>{@link lightweightDSL.Credential#getType <em>Type</em>}</li>
  *   <li>{@link lightweightDSL.Credential#getVerifmethod <em>Verifmethod</em>}</li>
+ *   <li>{@link lightweightDSL.Credential#getRisk <em>Risk</em>}</li>
  * </ul>
  *
  * @see lightweightDSL.LightweightDSLPackage#getCredential()
@@ -133,5 +134,31 @@ public interface Credential extends EObject {
 	 * @generated
 	 */
 	void setVerifmethod(VerifMethod value);
+
+	/**
+	 * Returns the value of the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Risk</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Risk</em>' reference.
+	 * @see #setRisk(Risk)
+	 * @see lightweightDSL.LightweightDSLPackage#getCredential_Risk()
+	 * @model
+	 * @generated
+	 */
+	Risk getRisk();
+
+	/**
+	 * Sets the value of the '{@link lightweightDSL.Credential#getRisk <em>Risk</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Risk</em>' reference.
+	 * @see #getRisk()
+	 * @generated
+	 */
+	void setRisk(Risk value);
 
 } // Credential

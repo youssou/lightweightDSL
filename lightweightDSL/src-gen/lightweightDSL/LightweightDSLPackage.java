@@ -87,13 +87,22 @@ public interface LightweightDSLPackage extends EPackage {
 	int AUTH_METHOD__AUTHENTICATORS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTH_METHOD__LEVEL = 2;
+	int AUTH_METHOD__TYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTH_METHOD__RISK = 3;
 
 	/**
 	 * The number of structural features of the '<em>Auth Method</em>' class.
@@ -102,7 +111,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTH_METHOD_FEATURE_COUNT = 3;
+	int AUTH_METHOD_FEATURE_COUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Compute Level</em>' operation.
@@ -133,22 +142,13 @@ public interface LightweightDSLPackage extends EPackage {
 	int PHASE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHASE__LEVEL = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PHASE__NAME = 1;
+	int PHASE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Auth Methods</b></em>' reference list.
@@ -157,7 +157,25 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PHASE__AUTH_METHODS = 2;
+	int PHASE__AUTH_METHODS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHASE__TYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHASE__RISK = 3;
 
 	/**
 	 * The number of structural features of the '<em>Phase</em>' class.
@@ -166,7 +184,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PHASE_FEATURE_COUNT = 3;
+	int PHASE_FEATURE_COUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Compute Level</em>' operation.
@@ -197,15 +215,6 @@ public interface LightweightDSLPackage extends EPackage {
 	int REGISTRATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION__LEVEL = PHASE__LEVEL;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,6 +231,24 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @ordered
 	 */
 	int REGISTRATION__AUTH_METHODS = PHASE__AUTH_METHODS;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION__TYPE = PHASE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION__RISK = PHASE__RISK;
 
 	/**
 	 * The feature id for the '<em><b>Credentials</b></em>' containment reference list.
@@ -270,15 +297,6 @@ public interface LightweightDSLPackage extends EPackage {
 	int RECOVERY = 2;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECOVERY__LEVEL = PHASE__LEVEL;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -295,6 +313,24 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECOVERY__AUTH_METHODS = PHASE__AUTH_METHODS;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECOVERY__TYPE = PHASE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECOVERY__RISK = PHASE__RISK;
 
 	/**
 	 * The feature id for the '<em><b>Protocol</b></em>' attribute.
@@ -352,15 +388,6 @@ public interface LightweightDSLPackage extends EPackage {
 	int LOGIN = 3;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN__LEVEL = PHASE__LEVEL;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -377,6 +404,24 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN__AUTH_METHODS = PHASE__AUTH_METHODS;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN__TYPE = PHASE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN__RISK = PHASE__RISK;
 
 	/**
 	 * The feature id for the '<em><b>Session</b></em>' attribute.
@@ -425,15 +470,6 @@ public interface LightweightDSLPackage extends EPackage {
 	int RESET = 4;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESET__LEVEL = PHASE__LEVEL;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -450,6 +486,24 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESET__AUTH_METHODS = PHASE__AUTH_METHODS;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESET__TYPE = PHASE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESET__RISK = PHASE__RISK;
 
 	/**
 	 * The feature id for the '<em><b>Authenticator</b></em>' reference.
@@ -525,13 +579,31 @@ public interface LightweightDSLPackage extends EPackage {
 	int APP__AUTH_METHODS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__RISKS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Registration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP__REGISTRATION = 4;
+
+	/**
 	 * The number of structural features of the '<em>App</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_FEATURE_COUNT = 3;
+	int APP_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>App</em>' class.
@@ -589,13 +661,22 @@ public interface LightweightDSLPackage extends EPackage {
 	int CREDENTIAL__VERIFMETHOD = 3;
 
 	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDENTIAL__RISK = 4;
+
+	/**
 	 * The number of structural features of the '<em>Credential</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDENTIAL_FEATURE_COUNT = 4;
+	int CREDENTIAL_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Credential</em>' class.
@@ -626,13 +707,22 @@ public interface LightweightDSLPackage extends EPackage {
 	int AUTHENTICATOR__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR__LEVEL = 1;
+	int AUTHENTICATOR__TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATOR__RISK = 2;
 
 	/**
 	 * The number of structural features of the '<em>Authenticator</em>' class.
@@ -641,7 +731,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR_FEATURE_COUNT = 2;
+	int AUTHENTICATOR_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Compute Level</em>' operation.
@@ -653,22 +743,13 @@ public interface LightweightDSLPackage extends EPackage {
 	int AUTHENTICATOR___COMPUTE_LEVEL = 0;
 
 	/**
-	 * The operation id for the '<em>New Operation2</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHENTICATOR___NEW_OPERATION2 = 1;
-
-	/**
 	 * The number of operations of the '<em>Authenticator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATOR_OPERATION_COUNT = 2;
+	int AUTHENTICATOR_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link lightweightDSL.impl.VerifMethodImpl <em>Verif Method</em>}' class.
@@ -763,13 +844,22 @@ public interface LightweightDSLPackage extends EPackage {
 	int MFA__AUTHENTICATORS = AUTH_METHOD__AUTHENTICATORS;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MFA__LEVEL = AUTH_METHOD__LEVEL;
+	int MFA__TYPE = AUTH_METHOD__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MFA__RISK = AUTH_METHOD__RISK;
 
 	/**
 	 * The feature id for the '<em><b>Validation</b></em>' attribute.
@@ -845,13 +935,22 @@ public interface LightweightDSLPackage extends EPackage {
 	int SFA__AUTHENTICATORS = AUTH_METHOD__AUTHENTICATORS;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SFA__LEVEL = AUTH_METHOD__LEVEL;
+	int SFA__TYPE = AUTH_METHOD__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SFA__RISK = AUTH_METHOD__RISK;
 
 	/**
 	 * The number of structural features of the '<em>SFA</em>' class.
@@ -900,13 +999,22 @@ public interface LightweightDSLPackage extends EPackage {
 	int KNOWLEDGE__NAME = AUTHENTICATOR__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KNOWLEDGE__LEVEL = AUTHENTICATOR__LEVEL;
+	int KNOWLEDGE__TYPE = AUTHENTICATOR__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KNOWLEDGE__RISK = AUTHENTICATOR__RISK;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -954,15 +1062,6 @@ public interface LightweightDSLPackage extends EPackage {
 	int KNOWLEDGE___COMPUTE_LEVEL = AUTHENTICATOR___COMPUTE_LEVEL;
 
 	/**
-	 * The operation id for the '<em>New Operation2</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KNOWLEDGE___NEW_OPERATION2 = AUTHENTICATOR___NEW_OPERATION2;
-
-	/**
 	 * The number of operations of the '<em>Knowledge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -991,13 +1090,22 @@ public interface LightweightDSLPackage extends EPackage {
 	int POSSESSION__NAME = AUTHENTICATOR__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POSSESSION__LEVEL = AUTHENTICATOR__LEVEL;
+	int POSSESSION__TYPE = AUTHENTICATOR__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSSESSION__RISK = AUTHENTICATOR__RISK;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1025,15 +1133,6 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @ordered
 	 */
 	int POSSESSION___COMPUTE_LEVEL = AUTHENTICATOR___COMPUTE_LEVEL;
-
-	/**
-	 * The operation id for the '<em>New Operation2</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POSSESSION___NEW_OPERATION2 = AUTHENTICATOR___NEW_OPERATION2;
 
 	/**
 	 * The number of operations of the '<em>Possession</em>' class.
@@ -1064,13 +1163,22 @@ public interface LightweightDSLPackage extends EPackage {
 	int BIOMETRICS__NAME = AUTHENTICATOR__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BIOMETRICS__LEVEL = AUTHENTICATOR__LEVEL;
+	int BIOMETRICS__TYPE = AUTHENTICATOR__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIOMETRICS__RISK = AUTHENTICATOR__RISK;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1100,15 +1208,6 @@ public interface LightweightDSLPackage extends EPackage {
 	int BIOMETRICS___COMPUTE_LEVEL = AUTHENTICATOR___COMPUTE_LEVEL;
 
 	/**
-	 * The operation id for the '<em>New Operation2</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIOMETRICS___NEW_OPERATION2 = AUTHENTICATOR___NEW_OPERATION2;
-
-	/**
 	 * The number of operations of the '<em>Biometrics</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1118,6 +1217,70 @@ public interface LightweightDSLPackage extends EPackage {
 	int BIOMETRICS_OPERATION_COUNT = AUTHENTICATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link lightweightDSL.impl.RiskImpl <em>Risk</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see lightweightDSL.impl.RiskImpl
+	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getRisk()
+	 * @generated
+	 */
+	int RISK = 15;
+
+	/**
+	 * The feature id for the '<em><b>Instance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RISK__INSTANCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RISK__VALUE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RISK__MESSAGE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Information</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RISK__INFORMATION = 3;
+
+	/**
+	 * The number of structural features of the '<em>Risk</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RISK_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Risk</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RISK_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link lightweightDSL.LEVEL <em>LEVEL</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1125,7 +1288,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getLEVEL()
 	 * @generated
 	 */
-	int LEVEL = 15;
+	int LEVEL = 16;
 
 	/**
 	 * The meta object id for the '{@link lightweightDSL.CredTYPE <em>Cred TYPE</em>}' enum.
@@ -1135,7 +1298,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getCredTYPE()
 	 * @generated
 	 */
-	int CRED_TYPE = 16;
+	int CRED_TYPE = 17;
 
 	/**
 	 * The meta object id for the '{@link lightweightDSL.Protocol <em>Protocol</em>}' enum.
@@ -1145,7 +1308,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getProtocol()
 	 * @generated
 	 */
-	int PROTOCOL = 17;
+	int PROTOCOL = 18;
 
 	/**
 	 * The meta object id for the '{@link lightweightDSL.ValidationType <em>Validation Type</em>}' enum.
@@ -1155,7 +1318,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getValidationType()
 	 * @generated
 	 */
-	int VALIDATION_TYPE = 18;
+	int VALIDATION_TYPE = 19;
 
 	/**
 	 * The meta object id for the '{@link lightweightDSL.BVALUE <em>BVALUE</em>}' enum.
@@ -1165,7 +1328,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getBVALUE()
 	 * @generated
 	 */
-	int BVALUE = 19;
+	int BVALUE = 20;
 
 	/**
 	 * The meta object id for the '{@link lightweightDSL.PROVIDER <em>PROVIDER</em>}' enum.
@@ -1175,7 +1338,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getPROVIDER()
 	 * @generated
 	 */
-	int PROVIDER = 20;
+	int PROVIDER = 21;
 
 	/**
 	 * The meta object id for the '{@link lightweightDSL.KVALUE <em>KVALUE</em>}' enum.
@@ -1185,7 +1348,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getKVALUE()
 	 * @generated
 	 */
-	int KVALUE = 21;
+	int KVALUE = 22;
 
 	/**
 	 * The meta object id for the '{@link lightweightDSL.PVALUE <em>PVALUE</em>}' enum.
@@ -1195,7 +1358,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getPVALUE()
 	 * @generated
 	 */
-	int PVALUE = 22;
+	int PVALUE = 23;
 
 	/**
 	 * Returns the meta object for class '{@link lightweightDSL.AuthMethod <em>Auth Method</em>}'.
@@ -1230,15 +1393,26 @@ public interface LightweightDSLPackage extends EPackage {
 	EReference getAuthMethod_Authenticators();
 
 	/**
-	 * Returns the meta object for the attribute '{@link lightweightDSL.AuthMethod#getLevel <em>Level</em>}'.
+	 * Returns the meta object for the attribute '{@link lightweightDSL.AuthMethod#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Level</em>'.
-	 * @see lightweightDSL.AuthMethod#getLevel()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see lightweightDSL.AuthMethod#getType()
 	 * @see #getAuthMethod()
 	 * @generated
 	 */
-	EAttribute getAuthMethod_Level();
+	EAttribute getAuthMethod_Type();
+
+	/**
+	 * Returns the meta object for the reference '{@link lightweightDSL.AuthMethod#getRisk <em>Risk</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Risk</em>'.
+	 * @see lightweightDSL.AuthMethod#getRisk()
+	 * @see #getAuthMethod()
+	 * @generated
+	 */
+	EReference getAuthMethod_Risk();
 
 	/**
 	 * Returns the meta object for the '{@link lightweightDSL.AuthMethod#computeLevel() <em>Compute Level</em>}' operation.
@@ -1389,6 +1563,28 @@ public interface LightweightDSLPackage extends EPackage {
 	EReference getApp_AuthMethods();
 
 	/**
+	 * Returns the meta object for the reference list '{@link lightweightDSL.App#getRisks <em>Risks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Risks</em>'.
+	 * @see lightweightDSL.App#getRisks()
+	 * @see #getApp()
+	 * @generated
+	 */
+	EReference getApp_Risks();
+
+	/**
+	 * Returns the meta object for the reference '{@link lightweightDSL.App#getRegistration <em>Registration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Registration</em>'.
+	 * @see lightweightDSL.App#getRegistration()
+	 * @see #getApp()
+	 * @generated
+	 */
+	EReference getApp_Registration();
+
+	/**
 	 * Returns the meta object for class '{@link lightweightDSL.Credential <em>Credential</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1443,6 +1639,17 @@ public interface LightweightDSLPackage extends EPackage {
 	EReference getCredential_Verifmethod();
 
 	/**
+	 * Returns the meta object for the reference '{@link lightweightDSL.Credential#getRisk <em>Risk</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Risk</em>'.
+	 * @see lightweightDSL.Credential#getRisk()
+	 * @see #getCredential()
+	 * @generated
+	 */
+	EReference getCredential_Risk();
+
+	/**
 	 * Returns the meta object for class '{@link lightweightDSL.Phase <em>Phase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1451,17 +1658,6 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPhase();
-
-	/**
-	 * Returns the meta object for the attribute '{@link lightweightDSL.Phase#getLevel <em>Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Level</em>'.
-	 * @see lightweightDSL.Phase#getLevel()
-	 * @see #getPhase()
-	 * @generated
-	 */
-	EAttribute getPhase_Level();
 
 	/**
 	 * Returns the meta object for the attribute '{@link lightweightDSL.Phase#getName <em>Name</em>}'.
@@ -1484,6 +1680,28 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPhase_AuthMethods();
+
+	/**
+	 * Returns the meta object for the attribute '{@link lightweightDSL.Phase#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see lightweightDSL.Phase#getType()
+	 * @see #getPhase()
+	 * @generated
+	 */
+	EAttribute getPhase_Type();
+
+	/**
+	 * Returns the meta object for the reference '{@link lightweightDSL.Phase#getRisk <em>Risk</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Risk</em>'.
+	 * @see lightweightDSL.Phase#getRisk()
+	 * @see #getPhase()
+	 * @generated
+	 */
+	EReference getPhase_Risk();
 
 	/**
 	 * Returns the meta object for the '{@link lightweightDSL.Phase#computeLevel() <em>Compute Level</em>}' operation.
@@ -1517,15 +1735,26 @@ public interface LightweightDSLPackage extends EPackage {
 	EAttribute getAuthenticator_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link lightweightDSL.Authenticator#getLevel <em>Level</em>}'.
+	 * Returns the meta object for the attribute '{@link lightweightDSL.Authenticator#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Level</em>'.
-	 * @see lightweightDSL.Authenticator#getLevel()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see lightweightDSL.Authenticator#getType()
 	 * @see #getAuthenticator()
 	 * @generated
 	 */
-	EAttribute getAuthenticator_Level();
+	EAttribute getAuthenticator_Type();
+
+	/**
+	 * Returns the meta object for the reference '{@link lightweightDSL.Authenticator#getRisk <em>Risk</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Risk</em>'.
+	 * @see lightweightDSL.Authenticator#getRisk()
+	 * @see #getAuthenticator()
+	 * @generated
+	 */
+	EReference getAuthenticator_Risk();
 
 	/**
 	 * Returns the meta object for the '{@link lightweightDSL.Authenticator#computeLevel() <em>Compute Level</em>}' operation.
@@ -1536,16 +1765,6 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAuthenticator__ComputeLevel();
-
-	/**
-	 * Returns the meta object for the '{@link lightweightDSL.Authenticator#newOperation2() <em>New Operation2</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>New Operation2</em>' operation.
-	 * @see lightweightDSL.Authenticator#newOperation2()
-	 * @generated
-	 */
-	EOperation getAuthenticator__NewOperation2();
 
 	/**
 	 * Returns the meta object for class '{@link lightweightDSL.VerifMethod <em>Verif Method</em>}'.
@@ -1729,6 +1948,60 @@ public interface LightweightDSLPackage extends EPackage {
 	EAttribute getBiometrics_Value();
 
 	/**
+	 * Returns the meta object for class '{@link lightweightDSL.Risk <em>Risk</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Risk</em>'.
+	 * @see lightweightDSL.Risk
+	 * @generated
+	 */
+	EClass getRisk();
+
+	/**
+	 * Returns the meta object for the attribute '{@link lightweightDSL.Risk#getInstance <em>Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Instance</em>'.
+	 * @see lightweightDSL.Risk#getInstance()
+	 * @see #getRisk()
+	 * @generated
+	 */
+	EAttribute getRisk_Instance();
+
+	/**
+	 * Returns the meta object for the attribute '{@link lightweightDSL.Risk#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see lightweightDSL.Risk#getValue()
+	 * @see #getRisk()
+	 * @generated
+	 */
+	EAttribute getRisk_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link lightweightDSL.Risk#getMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Message</em>'.
+	 * @see lightweightDSL.Risk#getMessage()
+	 * @see #getRisk()
+	 * @generated
+	 */
+	EAttribute getRisk_Message();
+
+	/**
+	 * Returns the meta object for the attribute '{@link lightweightDSL.Risk#getInformation <em>Information</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Information</em>'.
+	 * @see lightweightDSL.Risk#getInformation()
+	 * @see #getRisk()
+	 * @generated
+	 */
+	EAttribute getRisk_Information();
+
+	/**
 	 * Returns the meta object for enum '{@link lightweightDSL.LEVEL <em>LEVEL</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1858,12 +2131,20 @@ public interface LightweightDSLPackage extends EPackage {
 		EReference AUTH_METHOD__AUTHENTICATORS = eINSTANCE.getAuthMethod_Authenticators();
 
 		/**
-		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute AUTH_METHOD__LEVEL = eINSTANCE.getAuthMethod_Level();
+		EAttribute AUTH_METHOD__TYPE = eINSTANCE.getAuthMethod_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Risk</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTH_METHOD__RISK = eINSTANCE.getAuthMethod_Risk();
 
 		/**
 		 * The meta object literal for the '<em><b>Compute Level</b></em>' operation.
@@ -1988,6 +2269,22 @@ public interface LightweightDSLPackage extends EPackage {
 		EReference APP__AUTH_METHODS = eINSTANCE.getApp_AuthMethods();
 
 		/**
+		 * The meta object literal for the '<em><b>Risks</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APP__RISKS = eINSTANCE.getApp_Risks();
+
+		/**
+		 * The meta object literal for the '<em><b>Registration</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APP__REGISTRATION = eINSTANCE.getApp_Registration();
+
+		/**
 		 * The meta object literal for the '{@link lightweightDSL.impl.CredentialImpl <em>Credential</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2030,6 +2327,14 @@ public interface LightweightDSLPackage extends EPackage {
 		EReference CREDENTIAL__VERIFMETHOD = eINSTANCE.getCredential_Verifmethod();
 
 		/**
+		 * The meta object literal for the '<em><b>Risk</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREDENTIAL__RISK = eINSTANCE.getCredential_Risk();
+
+		/**
 		 * The meta object literal for the '{@link lightweightDSL.impl.PhaseImpl <em>Phase</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2038,14 +2343,6 @@ public interface LightweightDSLPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PHASE = eINSTANCE.getPhase();
-
-		/**
-		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PHASE__LEVEL = eINSTANCE.getPhase_Level();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2062,6 +2359,22 @@ public interface LightweightDSLPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PHASE__AUTH_METHODS = eINSTANCE.getPhase_AuthMethods();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PHASE__TYPE = eINSTANCE.getPhase_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Risk</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PHASE__RISK = eINSTANCE.getPhase_Risk();
 
 		/**
 		 * The meta object literal for the '<em><b>Compute Level</b></em>' operation.
@@ -2090,12 +2403,20 @@ public interface LightweightDSLPackage extends EPackage {
 		EAttribute AUTHENTICATOR__NAME = eINSTANCE.getAuthenticator_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute AUTHENTICATOR__LEVEL = eINSTANCE.getAuthenticator_Level();
+		EAttribute AUTHENTICATOR__TYPE = eINSTANCE.getAuthenticator_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Risk</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATOR__RISK = eINSTANCE.getAuthenticator_Risk();
 
 		/**
 		 * The meta object literal for the '<em><b>Compute Level</b></em>' operation.
@@ -2104,14 +2425,6 @@ public interface LightweightDSLPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation AUTHENTICATOR___COMPUTE_LEVEL = eINSTANCE.getAuthenticator__ComputeLevel();
-
-		/**
-		 * The meta object literal for the '<em><b>New Operation2</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation AUTHENTICATOR___NEW_OPERATION2 = eINSTANCE.getAuthenticator__NewOperation2();
 
 		/**
 		 * The meta object literal for the '{@link lightweightDSL.impl.VerifMethodImpl <em>Verif Method</em>}' class.
@@ -2260,6 +2573,48 @@ public interface LightweightDSLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BIOMETRICS__VALUE = eINSTANCE.getBiometrics_Value();
+
+		/**
+		 * The meta object literal for the '{@link lightweightDSL.impl.RiskImpl <em>Risk</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see lightweightDSL.impl.RiskImpl
+		 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getRisk()
+		 * @generated
+		 */
+		EClass RISK = eINSTANCE.getRisk();
+
+		/**
+		 * The meta object literal for the '<em><b>Instance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RISK__INSTANCE = eINSTANCE.getRisk_Instance();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RISK__VALUE = eINSTANCE.getRisk_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RISK__MESSAGE = eINSTANCE.getRisk_Message();
+
+		/**
+		 * The meta object literal for the '<em><b>Information</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RISK__INFORMATION = eINSTANCE.getRisk_Information();
 
 		/**
 		 * The meta object literal for the '{@link lightweightDSL.LEVEL <em>LEVEL</em>}' enum.

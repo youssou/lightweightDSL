@@ -7,11 +7,13 @@ import lightweightDSL.Authenticator;
 import lightweightDSL.LEVEL;
 import lightweightDSL.LightweightDSLPackage;
 
+import lightweightDSL.Risk;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -24,7 +26,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link lightweightDSL.impl.AuthenticatorImpl#getName <em>Name</em>}</li>
- *   <li>{@link lightweightDSL.impl.AuthenticatorImpl#getLevel <em>Level</em>}</li>
+ *   <li>{@link lightweightDSL.impl.AuthenticatorImpl#getType <em>Type</em>}</li>
+ *   <li>{@link lightweightDSL.impl.AuthenticatorImpl#getRisk <em>Risk</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,24 +54,34 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLevel()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final LEVEL LEVEL_EDEFAULT = LEVEL.LOW;
+	protected static final String TYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLevel()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected LEVEL level = LEVEL_EDEFAULT;
+	protected String type = TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRisk() <em>Risk</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRisk()
+	 * @generated
+	 * @ordered
+	 */
+	protected Risk risk;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,8 +129,8 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LEVEL getLevel() {
-		return level;
+	public String getType() {
+		return type;
 	}
 
 	/**
@@ -125,12 +138,52 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLevel(LEVEL newLevel) {
-		LEVEL oldLevel = level;
-		level = newLevel == null ? LEVEL_EDEFAULT : newLevel;
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.AUTHENTICATOR__LEVEL, oldLevel,
-					level));
+			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.AUTHENTICATOR__TYPE, oldType,
+					type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Risk getRisk() {
+		if (risk != null && risk.eIsProxy()) {
+			InternalEObject oldRisk = (InternalEObject) risk;
+			risk = (Risk) eResolveProxy(oldRisk);
+			if (risk != oldRisk) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LightweightDSLPackage.AUTHENTICATOR__RISK,
+							oldRisk, risk));
+			}
+		}
+		return risk;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Risk basicGetRisk() {
+		return risk;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRisk(Risk newRisk) {
+		Risk oldRisk = risk;
+		risk = newRisk;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.AUTHENTICATOR__RISK, oldRisk,
+					risk));
 	}
 
 	/**
@@ -149,24 +202,17 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void newOperation2() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case LightweightDSLPackage.AUTHENTICATOR__NAME:
 			return getName();
-		case LightweightDSLPackage.AUTHENTICATOR__LEVEL:
-			return getLevel();
+		case LightweightDSLPackage.AUTHENTICATOR__TYPE:
+			return getType();
+		case LightweightDSLPackage.AUTHENTICATOR__RISK:
+			if (resolve)
+				return getRisk();
+			return basicGetRisk();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,8 +228,11 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 		case LightweightDSLPackage.AUTHENTICATOR__NAME:
 			setName((String) newValue);
 			return;
-		case LightweightDSLPackage.AUTHENTICATOR__LEVEL:
-			setLevel((LEVEL) newValue);
+		case LightweightDSLPackage.AUTHENTICATOR__TYPE:
+			setType((String) newValue);
+			return;
+		case LightweightDSLPackage.AUTHENTICATOR__RISK:
+			setRisk((Risk) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -200,8 +249,11 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 		case LightweightDSLPackage.AUTHENTICATOR__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case LightweightDSLPackage.AUTHENTICATOR__LEVEL:
-			setLevel(LEVEL_EDEFAULT);
+		case LightweightDSLPackage.AUTHENTICATOR__TYPE:
+			setType(TYPE_EDEFAULT);
+			return;
+		case LightweightDSLPackage.AUTHENTICATOR__RISK:
+			setRisk((Risk) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -217,8 +269,10 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 		switch (featureID) {
 		case LightweightDSLPackage.AUTHENTICATOR__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case LightweightDSLPackage.AUTHENTICATOR__LEVEL:
-			return level != LEVEL_EDEFAULT;
+		case LightweightDSLPackage.AUTHENTICATOR__TYPE:
+			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		case LightweightDSLPackage.AUTHENTICATOR__RISK:
+			return risk != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -233,9 +287,6 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 		switch (operationID) {
 		case LightweightDSLPackage.AUTHENTICATOR___COMPUTE_LEVEL:
 			return computeLevel();
-		case LightweightDSLPackage.AUTHENTICATOR___NEW_OPERATION2:
-			newOperation2();
-			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -253,8 +304,8 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", level: ");
-		result.append(level);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

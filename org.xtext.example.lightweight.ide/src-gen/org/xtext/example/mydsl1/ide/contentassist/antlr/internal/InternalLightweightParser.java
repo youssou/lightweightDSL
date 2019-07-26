@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLightweightParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'Identity provider'", "'Self provided'", "'Institutional'", "'Digital'", "'Physical'", "'Email-Based'", "'MS-based'", "'Local'", "'High Entropy Text-Based Password'", "'Pass phrase'", "'Knowledge-based Preferences'", "'Low Entropy Text-Based Password'", "'Pin Code'", "'Fingerprint Recognition'", "'Facial Recognition'", "'Hard Drive Token'", "'Physical device'", "'local validation'", "'Remote validation'", "'App'", "':'", "'{'", "'Authenticators'", "'['", "']'", "','", "'Authentications'", "'Procedures'", "'}'", "'2FA'", "'name'", "'authenticators'", "'&'", "'correlation'", "'validation'", "'SFA'", "'authenticator'", "'possession'", "'value'", "'knowledge'", "'limitedAttempts'", "'autofillable'", "'biometrics'", "'Registration'", "'credentials'", "'provider'", "'type'", "'verification'", "'validity'", "'uniqueness'", "'bindings'", "'Recovery'", "'protocol'", "'Login'", "'persistedSession'", "'authentication'", "'Reset'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'Identity provider'", "'Self provided'", "'Institutional'", "'Digital'", "'Physical'", "'Email-Based'", "'MS-based'", "'Local'", "'High Entropy Text-Based Password'", "'Pass phrase'", "'Knowledge-based Preferences'", "'Low Entropy Text-Based Password'", "'Pin Code'", "'Fingerprint Recognition'", "'Facial Recognition'", "'Hard Drive Token'", "'Physical device'", "'local validation'", "'Remote validation'", "'App'", "':'", "'{'", "'Authenticators'", "'['", "']'", "','", "'Authentications'", "'Procedures'", "'}'", "'name'", "'authenticators'", "'&'", "'correlation'", "'validation'", "'authenticator'", "'value'", "'limitedAttempts'", "'autofillable'", "'credentials'", "'provider'", "'type'", "'verification'", "'validity'", "'uniqueness'", "'bindings'", "'protocol'", "'persistedSession'", "'authentication'", "'||'", "'2FA'", "'SFA'", "'Possession'", "'Knowledge'", "'Biometrics'", "'Registration'", "'Recovery'", "'Login'", "'Reset'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -66,6 +66,7 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     public static final int T__64=64;
     public static final int T__21=21;
     public static final int T__65=65;
+    public static final int T__70=70;
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__37=37;
@@ -1776,10 +1777,10 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==42) ) {
+            if ( (LA1_0==62) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==48) ) {
+            else if ( (LA1_0==63) ) {
                 alt1=2;
             }
             else {
@@ -1854,17 +1855,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
             // InternalLightweight.g:614:1: ( ( rulePossession ) | ( ruleBiometrics ) | ( ruleKnowledge ) )
             int alt2=3;
             switch ( input.LA(1) ) {
-            case 50:
+            case 64:
                 {
                 alt2=1;
                 }
                 break;
-            case 55:
+            case 66:
                 {
                 alt2=2;
                 }
                 break;
-            case 52:
+            case 65:
                 {
                 alt2=3;
                 }
@@ -1961,22 +1962,22 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
             // InternalLightweight.g:641:1: ( ( ruleRegistration ) | ( ruleRecovery ) | ( ruleLogin ) | ( ruleReset ) )
             int alt3=4;
             switch ( input.LA(1) ) {
-            case 56:
+            case 67:
                 {
                 alt3=1;
                 }
                 break;
-            case 64:
+            case 68:
                 {
                 alt3=2;
                 }
                 break;
-            case 66:
+            case 69:
                 {
                 alt3=3;
                 }
                 break;
-            case 69:
+            case 70:
                 {
                 alt3=4;
                 }
@@ -5360,21 +5361,31 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MFA__Group__0__Impl"
-    // InternalLightweight.g:1711:1: rule__MFA__Group__0__Impl : ( '2FA' ) ;
+    // InternalLightweight.g:1711:1: rule__MFA__Group__0__Impl : ( ( rule__MFA__TypeAssignment_0 ) ) ;
     public final void rule__MFA__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:1715:1: ( ( '2FA' ) )
-            // InternalLightweight.g:1716:1: ( '2FA' )
+            // InternalLightweight.g:1715:1: ( ( ( rule__MFA__TypeAssignment_0 ) ) )
+            // InternalLightweight.g:1716:1: ( ( rule__MFA__TypeAssignment_0 ) )
             {
-            // InternalLightweight.g:1716:1: ( '2FA' )
-            // InternalLightweight.g:1717:2: '2FA'
+            // InternalLightweight.g:1716:1: ( ( rule__MFA__TypeAssignment_0 ) )
+            // InternalLightweight.g:1717:2: ( rule__MFA__TypeAssignment_0 )
             {
-             before(grammarAccess.getMFAAccess().getFAKeyword_0()); 
-            match(input,42,FOLLOW_2); 
-             after(grammarAccess.getMFAAccess().getFAKeyword_0()); 
+             before(grammarAccess.getMFAAccess().getTypeAssignment_0()); 
+            // InternalLightweight.g:1718:2: ( rule__MFA__TypeAssignment_0 )
+            // InternalLightweight.g:1718:3: rule__MFA__TypeAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__MFA__TypeAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMFAAccess().getTypeAssignment_0()); 
 
             }
 
@@ -5598,7 +5609,7 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
             // InternalLightweight.g:1798:2: 'name'
             {
              before(grammarAccess.getMFAAccess().getNameKeyword_3()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getMFAAccess().getNameKeyword_3()); 
 
             }
@@ -5908,7 +5919,7 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
             // InternalLightweight.g:1906:2: 'authenticators'
             {
              before(grammarAccess.getMFAAccess().getAuthenticatorsKeyword_7()); 
-            match(input,44,FOLLOW_2); 
+            match(input,43,FOLLOW_2); 
              after(grammarAccess.getMFAAccess().getAuthenticatorsKeyword_7()); 
 
             }
@@ -6143,7 +6154,7 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
             // InternalLightweight.g:1987:2: '&'
             {
              before(grammarAccess.getMFAAccess().getAmpersandKeyword_10()); 
-            match(input,45,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getMFAAccess().getAmpersandKeyword_10()); 
 
             }
@@ -6438,7 +6449,7 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
             // InternalLightweight.g:2075:2: 'correlation'
             {
              before(grammarAccess.getMFAAccess().getCorrelationKeyword_13()); 
-            match(input,46,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getMFAAccess().getCorrelationKeyword_13()); 
 
             }
@@ -6748,7 +6759,7 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
             // InternalLightweight.g:2183:2: 'validation'
             {
              before(grammarAccess.getMFAAccess().getValidationKeyword_17()); 
-            match(input,47,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getMFAAccess().getValidationKeyword_17()); 
 
             }
@@ -7040,21 +7051,31 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SFA__Group__0__Impl"
-    // InternalLightweight.g:2285:1: rule__SFA__Group__0__Impl : ( 'SFA' ) ;
+    // InternalLightweight.g:2285:1: rule__SFA__Group__0__Impl : ( ( rule__SFA__TypeAssignment_0 ) ) ;
     public final void rule__SFA__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2289:1: ( ( 'SFA' ) )
-            // InternalLightweight.g:2290:1: ( 'SFA' )
+            // InternalLightweight.g:2289:1: ( ( ( rule__SFA__TypeAssignment_0 ) ) )
+            // InternalLightweight.g:2290:1: ( ( rule__SFA__TypeAssignment_0 ) )
             {
-            // InternalLightweight.g:2290:1: ( 'SFA' )
-            // InternalLightweight.g:2291:2: 'SFA'
+            // InternalLightweight.g:2290:1: ( ( rule__SFA__TypeAssignment_0 ) )
+            // InternalLightweight.g:2291:2: ( rule__SFA__TypeAssignment_0 )
             {
-             before(grammarAccess.getSFAAccess().getSFAKeyword_0()); 
-            match(input,48,FOLLOW_2); 
-             after(grammarAccess.getSFAAccess().getSFAKeyword_0()); 
+             before(grammarAccess.getSFAAccess().getTypeAssignment_0()); 
+            // InternalLightweight.g:2292:2: ( rule__SFA__TypeAssignment_0 )
+            // InternalLightweight.g:2292:3: rule__SFA__TypeAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__SFA__TypeAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSFAAccess().getTypeAssignment_0()); 
 
             }
 
@@ -7278,7 +7299,7 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
             // InternalLightweight.g:2372:2: 'name'
             {
              before(grammarAccess.getSFAAccess().getNameKeyword_3()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getSFAAccess().getNameKeyword_3()); 
 
             }
@@ -7588,7 +7609,7 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
             // InternalLightweight.g:2480:2: 'authenticator'
             {
              before(grammarAccess.getSFAAccess().getAuthenticatorKeyword_7()); 
-            match(input,49,FOLLOW_2); 
+            match(input,47,FOLLOW_2); 
              after(grammarAccess.getSFAAccess().getAuthenticatorKeyword_7()); 
 
             }
@@ -7696,7 +7717,7 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
             // InternalLightweight.g:2520:1: ( rule__SFA__Group__9__Impl rule__SFA__Group__10 )
             // InternalLightweight.g:2521:2: rule__SFA__Group__9__Impl rule__SFA__Group__10
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_15);
             rule__SFA__Group__9__Impl();
 
             state._fsp--;
@@ -7772,22 +7793,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SFA__Group__10"
-    // InternalLightweight.g:2543:1: rule__SFA__Group__10 : rule__SFA__Group__10__Impl rule__SFA__Group__11 ;
+    // InternalLightweight.g:2543:1: rule__SFA__Group__10 : rule__SFA__Group__10__Impl ;
     public final void rule__SFA__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2547:1: ( rule__SFA__Group__10__Impl rule__SFA__Group__11 )
-            // InternalLightweight.g:2548:2: rule__SFA__Group__10__Impl rule__SFA__Group__11
+            // InternalLightweight.g:2547:1: ( rule__SFA__Group__10__Impl )
+            // InternalLightweight.g:2548:2: rule__SFA__Group__10__Impl
             {
-            pushFollow(FOLLOW_15);
-            rule__SFA__Group__10__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__SFA__Group__11();
+            rule__SFA__Group__10__Impl();
 
             state._fsp--;
 
@@ -7810,21 +7826,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SFA__Group__10__Impl"
-    // InternalLightweight.g:2555:1: rule__SFA__Group__10__Impl : ( ',' ) ;
+    // InternalLightweight.g:2554:1: rule__SFA__Group__10__Impl : ( '}' ) ;
     public final void rule__SFA__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2559:1: ( ( ',' ) )
-            // InternalLightweight.g:2560:1: ( ',' )
+            // InternalLightweight.g:2558:1: ( ( '}' ) )
+            // InternalLightweight.g:2559:1: ( '}' )
             {
-            // InternalLightweight.g:2560:1: ( ',' )
-            // InternalLightweight.g:2561:2: ','
+            // InternalLightweight.g:2559:1: ( '}' )
+            // InternalLightweight.g:2560:2: '}'
             {
-             before(grammarAccess.getSFAAccess().getCommaKeyword_10()); 
-            match(input,38,FOLLOW_2); 
-             after(grammarAccess.getSFAAccess().getCommaKeyword_10()); 
+             before(grammarAccess.getSFAAccess().getRightCurlyBracketKeyword_10()); 
+            match(input,41,FOLLOW_2); 
+             after(grammarAccess.getSFAAccess().getRightCurlyBracketKeyword_10()); 
 
             }
 
@@ -7846,85 +7862,15 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__SFA__Group__10__Impl"
 
 
-    // $ANTLR start "rule__SFA__Group__11"
-    // InternalLightweight.g:2570:1: rule__SFA__Group__11 : rule__SFA__Group__11__Impl ;
-    public final void rule__SFA__Group__11() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLightweight.g:2574:1: ( rule__SFA__Group__11__Impl )
-            // InternalLightweight.g:2575:2: rule__SFA__Group__11__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__SFA__Group__11__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SFA__Group__11"
-
-
-    // $ANTLR start "rule__SFA__Group__11__Impl"
-    // InternalLightweight.g:2581:1: rule__SFA__Group__11__Impl : ( '}' ) ;
-    public final void rule__SFA__Group__11__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLightweight.g:2585:1: ( ( '}' ) )
-            // InternalLightweight.g:2586:1: ( '}' )
-            {
-            // InternalLightweight.g:2586:1: ( '}' )
-            // InternalLightweight.g:2587:2: '}'
-            {
-             before(grammarAccess.getSFAAccess().getRightCurlyBracketKeyword_11()); 
-            match(input,41,FOLLOW_2); 
-             after(grammarAccess.getSFAAccess().getRightCurlyBracketKeyword_11()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SFA__Group__11__Impl"
-
-
     // $ANTLR start "rule__Possession__Group__0"
-    // InternalLightweight.g:2597:1: rule__Possession__Group__0 : rule__Possession__Group__0__Impl rule__Possession__Group__1 ;
+    // InternalLightweight.g:2570:1: rule__Possession__Group__0 : rule__Possession__Group__0__Impl rule__Possession__Group__1 ;
     public final void rule__Possession__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2601:1: ( rule__Possession__Group__0__Impl rule__Possession__Group__1 )
-            // InternalLightweight.g:2602:2: rule__Possession__Group__0__Impl rule__Possession__Group__1
+            // InternalLightweight.g:2574:1: ( rule__Possession__Group__0__Impl rule__Possession__Group__1 )
+            // InternalLightweight.g:2575:2: rule__Possession__Group__0__Impl rule__Possession__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Possession__Group__0__Impl();
@@ -7955,21 +7901,31 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__0__Impl"
-    // InternalLightweight.g:2609:1: rule__Possession__Group__0__Impl : ( 'possession' ) ;
+    // InternalLightweight.g:2582:1: rule__Possession__Group__0__Impl : ( ( rule__Possession__TypeAssignment_0 ) ) ;
     public final void rule__Possession__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2613:1: ( ( 'possession' ) )
-            // InternalLightweight.g:2614:1: ( 'possession' )
+            // InternalLightweight.g:2586:1: ( ( ( rule__Possession__TypeAssignment_0 ) ) )
+            // InternalLightweight.g:2587:1: ( ( rule__Possession__TypeAssignment_0 ) )
             {
-            // InternalLightweight.g:2614:1: ( 'possession' )
-            // InternalLightweight.g:2615:2: 'possession'
+            // InternalLightweight.g:2587:1: ( ( rule__Possession__TypeAssignment_0 ) )
+            // InternalLightweight.g:2588:2: ( rule__Possession__TypeAssignment_0 )
             {
-             before(grammarAccess.getPossessionAccess().getPossessionKeyword_0()); 
-            match(input,50,FOLLOW_2); 
-             after(grammarAccess.getPossessionAccess().getPossessionKeyword_0()); 
+             before(grammarAccess.getPossessionAccess().getTypeAssignment_0()); 
+            // InternalLightweight.g:2589:2: ( rule__Possession__TypeAssignment_0 )
+            // InternalLightweight.g:2589:3: rule__Possession__TypeAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Possession__TypeAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPossessionAccess().getTypeAssignment_0()); 
 
             }
 
@@ -7992,14 +7948,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__1"
-    // InternalLightweight.g:2624:1: rule__Possession__Group__1 : rule__Possession__Group__1__Impl rule__Possession__Group__2 ;
+    // InternalLightweight.g:2597:1: rule__Possession__Group__1 : rule__Possession__Group__1__Impl rule__Possession__Group__2 ;
     public final void rule__Possession__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2628:1: ( rule__Possession__Group__1__Impl rule__Possession__Group__2 )
-            // InternalLightweight.g:2629:2: rule__Possession__Group__1__Impl rule__Possession__Group__2
+            // InternalLightweight.g:2601:1: ( rule__Possession__Group__1__Impl rule__Possession__Group__2 )
+            // InternalLightweight.g:2602:2: rule__Possession__Group__1__Impl rule__Possession__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Possession__Group__1__Impl();
@@ -8030,17 +7986,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__1__Impl"
-    // InternalLightweight.g:2636:1: rule__Possession__Group__1__Impl : ( ':' ) ;
+    // InternalLightweight.g:2609:1: rule__Possession__Group__1__Impl : ( ':' ) ;
     public final void rule__Possession__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2640:1: ( ( ':' ) )
-            // InternalLightweight.g:2641:1: ( ':' )
+            // InternalLightweight.g:2613:1: ( ( ':' ) )
+            // InternalLightweight.g:2614:1: ( ':' )
             {
-            // InternalLightweight.g:2641:1: ( ':' )
-            // InternalLightweight.g:2642:2: ':'
+            // InternalLightweight.g:2614:1: ( ':' )
+            // InternalLightweight.g:2615:2: ':'
             {
              before(grammarAccess.getPossessionAccess().getColonKeyword_1()); 
             match(input,33,FOLLOW_2); 
@@ -8067,14 +8023,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__2"
-    // InternalLightweight.g:2651:1: rule__Possession__Group__2 : rule__Possession__Group__2__Impl rule__Possession__Group__3 ;
+    // InternalLightweight.g:2624:1: rule__Possession__Group__2 : rule__Possession__Group__2__Impl rule__Possession__Group__3 ;
     public final void rule__Possession__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2655:1: ( rule__Possession__Group__2__Impl rule__Possession__Group__3 )
-            // InternalLightweight.g:2656:2: rule__Possession__Group__2__Impl rule__Possession__Group__3
+            // InternalLightweight.g:2628:1: ( rule__Possession__Group__2__Impl rule__Possession__Group__3 )
+            // InternalLightweight.g:2629:2: rule__Possession__Group__2__Impl rule__Possession__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__Possession__Group__2__Impl();
@@ -8105,17 +8061,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__2__Impl"
-    // InternalLightweight.g:2663:1: rule__Possession__Group__2__Impl : ( '{' ) ;
+    // InternalLightweight.g:2636:1: rule__Possession__Group__2__Impl : ( '{' ) ;
     public final void rule__Possession__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2667:1: ( ( '{' ) )
-            // InternalLightweight.g:2668:1: ( '{' )
+            // InternalLightweight.g:2640:1: ( ( '{' ) )
+            // InternalLightweight.g:2641:1: ( '{' )
             {
-            // InternalLightweight.g:2668:1: ( '{' )
-            // InternalLightweight.g:2669:2: '{'
+            // InternalLightweight.g:2641:1: ( '{' )
+            // InternalLightweight.g:2642:2: '{'
             {
              before(grammarAccess.getPossessionAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,34,FOLLOW_2); 
@@ -8142,14 +8098,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__3"
-    // InternalLightweight.g:2678:1: rule__Possession__Group__3 : rule__Possession__Group__3__Impl rule__Possession__Group__4 ;
+    // InternalLightweight.g:2651:1: rule__Possession__Group__3 : rule__Possession__Group__3__Impl rule__Possession__Group__4 ;
     public final void rule__Possession__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2682:1: ( rule__Possession__Group__3__Impl rule__Possession__Group__4 )
-            // InternalLightweight.g:2683:2: rule__Possession__Group__3__Impl rule__Possession__Group__4
+            // InternalLightweight.g:2655:1: ( rule__Possession__Group__3__Impl rule__Possession__Group__4 )
+            // InternalLightweight.g:2656:2: rule__Possession__Group__3__Impl rule__Possession__Group__4
             {
             pushFollow(FOLLOW_3);
             rule__Possession__Group__3__Impl();
@@ -8180,20 +8136,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__3__Impl"
-    // InternalLightweight.g:2690:1: rule__Possession__Group__3__Impl : ( 'name' ) ;
+    // InternalLightweight.g:2663:1: rule__Possession__Group__3__Impl : ( 'name' ) ;
     public final void rule__Possession__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2694:1: ( ( 'name' ) )
-            // InternalLightweight.g:2695:1: ( 'name' )
+            // InternalLightweight.g:2667:1: ( ( 'name' ) )
+            // InternalLightweight.g:2668:1: ( 'name' )
             {
-            // InternalLightweight.g:2695:1: ( 'name' )
-            // InternalLightweight.g:2696:2: 'name'
+            // InternalLightweight.g:2668:1: ( 'name' )
+            // InternalLightweight.g:2669:2: 'name'
             {
              before(grammarAccess.getPossessionAccess().getNameKeyword_3()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getPossessionAccess().getNameKeyword_3()); 
 
             }
@@ -8217,14 +8173,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__4"
-    // InternalLightweight.g:2705:1: rule__Possession__Group__4 : rule__Possession__Group__4__Impl rule__Possession__Group__5 ;
+    // InternalLightweight.g:2678:1: rule__Possession__Group__4 : rule__Possession__Group__4__Impl rule__Possession__Group__5 ;
     public final void rule__Possession__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2709:1: ( rule__Possession__Group__4__Impl rule__Possession__Group__5 )
-            // InternalLightweight.g:2710:2: rule__Possession__Group__4__Impl rule__Possession__Group__5
+            // InternalLightweight.g:2682:1: ( rule__Possession__Group__4__Impl rule__Possession__Group__5 )
+            // InternalLightweight.g:2683:2: rule__Possession__Group__4__Impl rule__Possession__Group__5
             {
             pushFollow(FOLLOW_17);
             rule__Possession__Group__4__Impl();
@@ -8255,17 +8211,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__4__Impl"
-    // InternalLightweight.g:2717:1: rule__Possession__Group__4__Impl : ( ':' ) ;
+    // InternalLightweight.g:2690:1: rule__Possession__Group__4__Impl : ( ':' ) ;
     public final void rule__Possession__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2721:1: ( ( ':' ) )
-            // InternalLightweight.g:2722:1: ( ':' )
+            // InternalLightweight.g:2694:1: ( ( ':' ) )
+            // InternalLightweight.g:2695:1: ( ':' )
             {
-            // InternalLightweight.g:2722:1: ( ':' )
-            // InternalLightweight.g:2723:2: ':'
+            // InternalLightweight.g:2695:1: ( ':' )
+            // InternalLightweight.g:2696:2: ':'
             {
              before(grammarAccess.getPossessionAccess().getColonKeyword_4()); 
             match(input,33,FOLLOW_2); 
@@ -8292,14 +8248,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__5"
-    // InternalLightweight.g:2732:1: rule__Possession__Group__5 : rule__Possession__Group__5__Impl rule__Possession__Group__6 ;
+    // InternalLightweight.g:2705:1: rule__Possession__Group__5 : rule__Possession__Group__5__Impl rule__Possession__Group__6 ;
     public final void rule__Possession__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2736:1: ( rule__Possession__Group__5__Impl rule__Possession__Group__6 )
-            // InternalLightweight.g:2737:2: rule__Possession__Group__5__Impl rule__Possession__Group__6
+            // InternalLightweight.g:2709:1: ( rule__Possession__Group__5__Impl rule__Possession__Group__6 )
+            // InternalLightweight.g:2710:2: rule__Possession__Group__5__Impl rule__Possession__Group__6
             {
             pushFollow(FOLLOW_10);
             rule__Possession__Group__5__Impl();
@@ -8330,21 +8286,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__5__Impl"
-    // InternalLightweight.g:2744:1: rule__Possession__Group__5__Impl : ( ( rule__Possession__NameAssignment_5 ) ) ;
+    // InternalLightweight.g:2717:1: rule__Possession__Group__5__Impl : ( ( rule__Possession__NameAssignment_5 ) ) ;
     public final void rule__Possession__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2748:1: ( ( ( rule__Possession__NameAssignment_5 ) ) )
-            // InternalLightweight.g:2749:1: ( ( rule__Possession__NameAssignment_5 ) )
+            // InternalLightweight.g:2721:1: ( ( ( rule__Possession__NameAssignment_5 ) ) )
+            // InternalLightweight.g:2722:1: ( ( rule__Possession__NameAssignment_5 ) )
             {
-            // InternalLightweight.g:2749:1: ( ( rule__Possession__NameAssignment_5 ) )
-            // InternalLightweight.g:2750:2: ( rule__Possession__NameAssignment_5 )
+            // InternalLightweight.g:2722:1: ( ( rule__Possession__NameAssignment_5 ) )
+            // InternalLightweight.g:2723:2: ( rule__Possession__NameAssignment_5 )
             {
              before(grammarAccess.getPossessionAccess().getNameAssignment_5()); 
-            // InternalLightweight.g:2751:2: ( rule__Possession__NameAssignment_5 )
-            // InternalLightweight.g:2751:3: rule__Possession__NameAssignment_5
+            // InternalLightweight.g:2724:2: ( rule__Possession__NameAssignment_5 )
+            // InternalLightweight.g:2724:3: rule__Possession__NameAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__Possession__NameAssignment_5();
@@ -8377,14 +8333,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__6"
-    // InternalLightweight.g:2759:1: rule__Possession__Group__6 : rule__Possession__Group__6__Impl rule__Possession__Group__7 ;
+    // InternalLightweight.g:2732:1: rule__Possession__Group__6 : rule__Possession__Group__6__Impl rule__Possession__Group__7 ;
     public final void rule__Possession__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2763:1: ( rule__Possession__Group__6__Impl rule__Possession__Group__7 )
-            // InternalLightweight.g:2764:2: rule__Possession__Group__6__Impl rule__Possession__Group__7
+            // InternalLightweight.g:2736:1: ( rule__Possession__Group__6__Impl rule__Possession__Group__7 )
+            // InternalLightweight.g:2737:2: rule__Possession__Group__6__Impl rule__Possession__Group__7
             {
             pushFollow(FOLLOW_27);
             rule__Possession__Group__6__Impl();
@@ -8415,17 +8371,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__6__Impl"
-    // InternalLightweight.g:2771:1: rule__Possession__Group__6__Impl : ( ',' ) ;
+    // InternalLightweight.g:2744:1: rule__Possession__Group__6__Impl : ( ',' ) ;
     public final void rule__Possession__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2775:1: ( ( ',' ) )
-            // InternalLightweight.g:2776:1: ( ',' )
+            // InternalLightweight.g:2748:1: ( ( ',' ) )
+            // InternalLightweight.g:2749:1: ( ',' )
             {
-            // InternalLightweight.g:2776:1: ( ',' )
-            // InternalLightweight.g:2777:2: ','
+            // InternalLightweight.g:2749:1: ( ',' )
+            // InternalLightweight.g:2750:2: ','
             {
              before(grammarAccess.getPossessionAccess().getCommaKeyword_6()); 
             match(input,38,FOLLOW_2); 
@@ -8452,14 +8408,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__7"
-    // InternalLightweight.g:2786:1: rule__Possession__Group__7 : rule__Possession__Group__7__Impl rule__Possession__Group__8 ;
+    // InternalLightweight.g:2759:1: rule__Possession__Group__7 : rule__Possession__Group__7__Impl rule__Possession__Group__8 ;
     public final void rule__Possession__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2790:1: ( rule__Possession__Group__7__Impl rule__Possession__Group__8 )
-            // InternalLightweight.g:2791:2: rule__Possession__Group__7__Impl rule__Possession__Group__8
+            // InternalLightweight.g:2763:1: ( rule__Possession__Group__7__Impl rule__Possession__Group__8 )
+            // InternalLightweight.g:2764:2: rule__Possession__Group__7__Impl rule__Possession__Group__8
             {
             pushFollow(FOLLOW_3);
             rule__Possession__Group__7__Impl();
@@ -8490,20 +8446,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__7__Impl"
-    // InternalLightweight.g:2798:1: rule__Possession__Group__7__Impl : ( 'value' ) ;
+    // InternalLightweight.g:2771:1: rule__Possession__Group__7__Impl : ( 'value' ) ;
     public final void rule__Possession__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2802:1: ( ( 'value' ) )
-            // InternalLightweight.g:2803:1: ( 'value' )
+            // InternalLightweight.g:2775:1: ( ( 'value' ) )
+            // InternalLightweight.g:2776:1: ( 'value' )
             {
-            // InternalLightweight.g:2803:1: ( 'value' )
-            // InternalLightweight.g:2804:2: 'value'
+            // InternalLightweight.g:2776:1: ( 'value' )
+            // InternalLightweight.g:2777:2: 'value'
             {
              before(grammarAccess.getPossessionAccess().getValueKeyword_7()); 
-            match(input,51,FOLLOW_2); 
+            match(input,48,FOLLOW_2); 
              after(grammarAccess.getPossessionAccess().getValueKeyword_7()); 
 
             }
@@ -8527,14 +8483,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__8"
-    // InternalLightweight.g:2813:1: rule__Possession__Group__8 : rule__Possession__Group__8__Impl rule__Possession__Group__9 ;
+    // InternalLightweight.g:2786:1: rule__Possession__Group__8 : rule__Possession__Group__8__Impl rule__Possession__Group__9 ;
     public final void rule__Possession__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2817:1: ( rule__Possession__Group__8__Impl rule__Possession__Group__9 )
-            // InternalLightweight.g:2818:2: rule__Possession__Group__8__Impl rule__Possession__Group__9
+            // InternalLightweight.g:2790:1: ( rule__Possession__Group__8__Impl rule__Possession__Group__9 )
+            // InternalLightweight.g:2791:2: rule__Possession__Group__8__Impl rule__Possession__Group__9
             {
             pushFollow(FOLLOW_28);
             rule__Possession__Group__8__Impl();
@@ -8565,17 +8521,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__8__Impl"
-    // InternalLightweight.g:2825:1: rule__Possession__Group__8__Impl : ( ':' ) ;
+    // InternalLightweight.g:2798:1: rule__Possession__Group__8__Impl : ( ':' ) ;
     public final void rule__Possession__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2829:1: ( ( ':' ) )
-            // InternalLightweight.g:2830:1: ( ':' )
+            // InternalLightweight.g:2802:1: ( ( ':' ) )
+            // InternalLightweight.g:2803:1: ( ':' )
             {
-            // InternalLightweight.g:2830:1: ( ':' )
-            // InternalLightweight.g:2831:2: ':'
+            // InternalLightweight.g:2803:1: ( ':' )
+            // InternalLightweight.g:2804:2: ':'
             {
              before(grammarAccess.getPossessionAccess().getColonKeyword_8()); 
             match(input,33,FOLLOW_2); 
@@ -8602,14 +8558,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__9"
-    // InternalLightweight.g:2840:1: rule__Possession__Group__9 : rule__Possession__Group__9__Impl rule__Possession__Group__10 ;
+    // InternalLightweight.g:2813:1: rule__Possession__Group__9 : rule__Possession__Group__9__Impl rule__Possession__Group__10 ;
     public final void rule__Possession__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2844:1: ( rule__Possession__Group__9__Impl rule__Possession__Group__10 )
-            // InternalLightweight.g:2845:2: rule__Possession__Group__9__Impl rule__Possession__Group__10
+            // InternalLightweight.g:2817:1: ( rule__Possession__Group__9__Impl rule__Possession__Group__10 )
+            // InternalLightweight.g:2818:2: rule__Possession__Group__9__Impl rule__Possession__Group__10
             {
             pushFollow(FOLLOW_15);
             rule__Possession__Group__9__Impl();
@@ -8640,21 +8596,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__9__Impl"
-    // InternalLightweight.g:2852:1: rule__Possession__Group__9__Impl : ( ( rule__Possession__ValueAssignment_9 ) ) ;
+    // InternalLightweight.g:2825:1: rule__Possession__Group__9__Impl : ( ( rule__Possession__ValueAssignment_9 ) ) ;
     public final void rule__Possession__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2856:1: ( ( ( rule__Possession__ValueAssignment_9 ) ) )
-            // InternalLightweight.g:2857:1: ( ( rule__Possession__ValueAssignment_9 ) )
+            // InternalLightweight.g:2829:1: ( ( ( rule__Possession__ValueAssignment_9 ) ) )
+            // InternalLightweight.g:2830:1: ( ( rule__Possession__ValueAssignment_9 ) )
             {
-            // InternalLightweight.g:2857:1: ( ( rule__Possession__ValueAssignment_9 ) )
-            // InternalLightweight.g:2858:2: ( rule__Possession__ValueAssignment_9 )
+            // InternalLightweight.g:2830:1: ( ( rule__Possession__ValueAssignment_9 ) )
+            // InternalLightweight.g:2831:2: ( rule__Possession__ValueAssignment_9 )
             {
              before(grammarAccess.getPossessionAccess().getValueAssignment_9()); 
-            // InternalLightweight.g:2859:2: ( rule__Possession__ValueAssignment_9 )
-            // InternalLightweight.g:2859:3: rule__Possession__ValueAssignment_9
+            // InternalLightweight.g:2832:2: ( rule__Possession__ValueAssignment_9 )
+            // InternalLightweight.g:2832:3: rule__Possession__ValueAssignment_9
             {
             pushFollow(FOLLOW_2);
             rule__Possession__ValueAssignment_9();
@@ -8687,14 +8643,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__10"
-    // InternalLightweight.g:2867:1: rule__Possession__Group__10 : rule__Possession__Group__10__Impl ;
+    // InternalLightweight.g:2840:1: rule__Possession__Group__10 : rule__Possession__Group__10__Impl ;
     public final void rule__Possession__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2871:1: ( rule__Possession__Group__10__Impl )
-            // InternalLightweight.g:2872:2: rule__Possession__Group__10__Impl
+            // InternalLightweight.g:2844:1: ( rule__Possession__Group__10__Impl )
+            // InternalLightweight.g:2845:2: rule__Possession__Group__10__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Possession__Group__10__Impl();
@@ -8720,17 +8676,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__Group__10__Impl"
-    // InternalLightweight.g:2878:1: rule__Possession__Group__10__Impl : ( '}' ) ;
+    // InternalLightweight.g:2851:1: rule__Possession__Group__10__Impl : ( '}' ) ;
     public final void rule__Possession__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2882:1: ( ( '}' ) )
-            // InternalLightweight.g:2883:1: ( '}' )
+            // InternalLightweight.g:2855:1: ( ( '}' ) )
+            // InternalLightweight.g:2856:1: ( '}' )
             {
-            // InternalLightweight.g:2883:1: ( '}' )
-            // InternalLightweight.g:2884:2: '}'
+            // InternalLightweight.g:2856:1: ( '}' )
+            // InternalLightweight.g:2857:2: '}'
             {
              before(grammarAccess.getPossessionAccess().getRightCurlyBracketKeyword_10()); 
             match(input,41,FOLLOW_2); 
@@ -8757,14 +8713,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__0"
-    // InternalLightweight.g:2894:1: rule__Knowledge__Group__0 : rule__Knowledge__Group__0__Impl rule__Knowledge__Group__1 ;
+    // InternalLightweight.g:2867:1: rule__Knowledge__Group__0 : rule__Knowledge__Group__0__Impl rule__Knowledge__Group__1 ;
     public final void rule__Knowledge__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2898:1: ( rule__Knowledge__Group__0__Impl rule__Knowledge__Group__1 )
-            // InternalLightweight.g:2899:2: rule__Knowledge__Group__0__Impl rule__Knowledge__Group__1
+            // InternalLightweight.g:2871:1: ( rule__Knowledge__Group__0__Impl rule__Knowledge__Group__1 )
+            // InternalLightweight.g:2872:2: rule__Knowledge__Group__0__Impl rule__Knowledge__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Knowledge__Group__0__Impl();
@@ -8795,21 +8751,31 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__0__Impl"
-    // InternalLightweight.g:2906:1: rule__Knowledge__Group__0__Impl : ( 'knowledge' ) ;
+    // InternalLightweight.g:2879:1: rule__Knowledge__Group__0__Impl : ( ( rule__Knowledge__TypeAssignment_0 ) ) ;
     public final void rule__Knowledge__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2910:1: ( ( 'knowledge' ) )
-            // InternalLightweight.g:2911:1: ( 'knowledge' )
+            // InternalLightweight.g:2883:1: ( ( ( rule__Knowledge__TypeAssignment_0 ) ) )
+            // InternalLightweight.g:2884:1: ( ( rule__Knowledge__TypeAssignment_0 ) )
             {
-            // InternalLightweight.g:2911:1: ( 'knowledge' )
-            // InternalLightweight.g:2912:2: 'knowledge'
+            // InternalLightweight.g:2884:1: ( ( rule__Knowledge__TypeAssignment_0 ) )
+            // InternalLightweight.g:2885:2: ( rule__Knowledge__TypeAssignment_0 )
             {
-             before(grammarAccess.getKnowledgeAccess().getKnowledgeKeyword_0()); 
-            match(input,52,FOLLOW_2); 
-             after(grammarAccess.getKnowledgeAccess().getKnowledgeKeyword_0()); 
+             before(grammarAccess.getKnowledgeAccess().getTypeAssignment_0()); 
+            // InternalLightweight.g:2886:2: ( rule__Knowledge__TypeAssignment_0 )
+            // InternalLightweight.g:2886:3: rule__Knowledge__TypeAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Knowledge__TypeAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getKnowledgeAccess().getTypeAssignment_0()); 
 
             }
 
@@ -8832,14 +8798,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__1"
-    // InternalLightweight.g:2921:1: rule__Knowledge__Group__1 : rule__Knowledge__Group__1__Impl rule__Knowledge__Group__2 ;
+    // InternalLightweight.g:2894:1: rule__Knowledge__Group__1 : rule__Knowledge__Group__1__Impl rule__Knowledge__Group__2 ;
     public final void rule__Knowledge__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2925:1: ( rule__Knowledge__Group__1__Impl rule__Knowledge__Group__2 )
-            // InternalLightweight.g:2926:2: rule__Knowledge__Group__1__Impl rule__Knowledge__Group__2
+            // InternalLightweight.g:2898:1: ( rule__Knowledge__Group__1__Impl rule__Knowledge__Group__2 )
+            // InternalLightweight.g:2899:2: rule__Knowledge__Group__1__Impl rule__Knowledge__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Knowledge__Group__1__Impl();
@@ -8870,17 +8836,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__1__Impl"
-    // InternalLightweight.g:2933:1: rule__Knowledge__Group__1__Impl : ( ':' ) ;
+    // InternalLightweight.g:2906:1: rule__Knowledge__Group__1__Impl : ( ':' ) ;
     public final void rule__Knowledge__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2937:1: ( ( ':' ) )
-            // InternalLightweight.g:2938:1: ( ':' )
+            // InternalLightweight.g:2910:1: ( ( ':' ) )
+            // InternalLightweight.g:2911:1: ( ':' )
             {
-            // InternalLightweight.g:2938:1: ( ':' )
-            // InternalLightweight.g:2939:2: ':'
+            // InternalLightweight.g:2911:1: ( ':' )
+            // InternalLightweight.g:2912:2: ':'
             {
              before(grammarAccess.getKnowledgeAccess().getColonKeyword_1()); 
             match(input,33,FOLLOW_2); 
@@ -8907,14 +8873,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__2"
-    // InternalLightweight.g:2948:1: rule__Knowledge__Group__2 : rule__Knowledge__Group__2__Impl rule__Knowledge__Group__3 ;
+    // InternalLightweight.g:2921:1: rule__Knowledge__Group__2 : rule__Knowledge__Group__2__Impl rule__Knowledge__Group__3 ;
     public final void rule__Knowledge__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2952:1: ( rule__Knowledge__Group__2__Impl rule__Knowledge__Group__3 )
-            // InternalLightweight.g:2953:2: rule__Knowledge__Group__2__Impl rule__Knowledge__Group__3
+            // InternalLightweight.g:2925:1: ( rule__Knowledge__Group__2__Impl rule__Knowledge__Group__3 )
+            // InternalLightweight.g:2926:2: rule__Knowledge__Group__2__Impl rule__Knowledge__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__Knowledge__Group__2__Impl();
@@ -8945,17 +8911,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__2__Impl"
-    // InternalLightweight.g:2960:1: rule__Knowledge__Group__2__Impl : ( '{' ) ;
+    // InternalLightweight.g:2933:1: rule__Knowledge__Group__2__Impl : ( '{' ) ;
     public final void rule__Knowledge__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2964:1: ( ( '{' ) )
-            // InternalLightweight.g:2965:1: ( '{' )
+            // InternalLightweight.g:2937:1: ( ( '{' ) )
+            // InternalLightweight.g:2938:1: ( '{' )
             {
-            // InternalLightweight.g:2965:1: ( '{' )
-            // InternalLightweight.g:2966:2: '{'
+            // InternalLightweight.g:2938:1: ( '{' )
+            // InternalLightweight.g:2939:2: '{'
             {
              before(grammarAccess.getKnowledgeAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,34,FOLLOW_2); 
@@ -8982,14 +8948,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__3"
-    // InternalLightweight.g:2975:1: rule__Knowledge__Group__3 : rule__Knowledge__Group__3__Impl rule__Knowledge__Group__4 ;
+    // InternalLightweight.g:2948:1: rule__Knowledge__Group__3 : rule__Knowledge__Group__3__Impl rule__Knowledge__Group__4 ;
     public final void rule__Knowledge__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2979:1: ( rule__Knowledge__Group__3__Impl rule__Knowledge__Group__4 )
-            // InternalLightweight.g:2980:2: rule__Knowledge__Group__3__Impl rule__Knowledge__Group__4
+            // InternalLightweight.g:2952:1: ( rule__Knowledge__Group__3__Impl rule__Knowledge__Group__4 )
+            // InternalLightweight.g:2953:2: rule__Knowledge__Group__3__Impl rule__Knowledge__Group__4
             {
             pushFollow(FOLLOW_3);
             rule__Knowledge__Group__3__Impl();
@@ -9020,20 +8986,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__3__Impl"
-    // InternalLightweight.g:2987:1: rule__Knowledge__Group__3__Impl : ( 'name' ) ;
+    // InternalLightweight.g:2960:1: rule__Knowledge__Group__3__Impl : ( 'name' ) ;
     public final void rule__Knowledge__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:2991:1: ( ( 'name' ) )
-            // InternalLightweight.g:2992:1: ( 'name' )
+            // InternalLightweight.g:2964:1: ( ( 'name' ) )
+            // InternalLightweight.g:2965:1: ( 'name' )
             {
-            // InternalLightweight.g:2992:1: ( 'name' )
-            // InternalLightweight.g:2993:2: 'name'
+            // InternalLightweight.g:2965:1: ( 'name' )
+            // InternalLightweight.g:2966:2: 'name'
             {
              before(grammarAccess.getKnowledgeAccess().getNameKeyword_3()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getKnowledgeAccess().getNameKeyword_3()); 
 
             }
@@ -9057,14 +9023,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__4"
-    // InternalLightweight.g:3002:1: rule__Knowledge__Group__4 : rule__Knowledge__Group__4__Impl rule__Knowledge__Group__5 ;
+    // InternalLightweight.g:2975:1: rule__Knowledge__Group__4 : rule__Knowledge__Group__4__Impl rule__Knowledge__Group__5 ;
     public final void rule__Knowledge__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3006:1: ( rule__Knowledge__Group__4__Impl rule__Knowledge__Group__5 )
-            // InternalLightweight.g:3007:2: rule__Knowledge__Group__4__Impl rule__Knowledge__Group__5
+            // InternalLightweight.g:2979:1: ( rule__Knowledge__Group__4__Impl rule__Knowledge__Group__5 )
+            // InternalLightweight.g:2980:2: rule__Knowledge__Group__4__Impl rule__Knowledge__Group__5
             {
             pushFollow(FOLLOW_17);
             rule__Knowledge__Group__4__Impl();
@@ -9095,17 +9061,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__4__Impl"
-    // InternalLightweight.g:3014:1: rule__Knowledge__Group__4__Impl : ( ':' ) ;
+    // InternalLightweight.g:2987:1: rule__Knowledge__Group__4__Impl : ( ':' ) ;
     public final void rule__Knowledge__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3018:1: ( ( ':' ) )
-            // InternalLightweight.g:3019:1: ( ':' )
+            // InternalLightweight.g:2991:1: ( ( ':' ) )
+            // InternalLightweight.g:2992:1: ( ':' )
             {
-            // InternalLightweight.g:3019:1: ( ':' )
-            // InternalLightweight.g:3020:2: ':'
+            // InternalLightweight.g:2992:1: ( ':' )
+            // InternalLightweight.g:2993:2: ':'
             {
              before(grammarAccess.getKnowledgeAccess().getColonKeyword_4()); 
             match(input,33,FOLLOW_2); 
@@ -9132,14 +9098,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__5"
-    // InternalLightweight.g:3029:1: rule__Knowledge__Group__5 : rule__Knowledge__Group__5__Impl rule__Knowledge__Group__6 ;
+    // InternalLightweight.g:3002:1: rule__Knowledge__Group__5 : rule__Knowledge__Group__5__Impl rule__Knowledge__Group__6 ;
     public final void rule__Knowledge__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3033:1: ( rule__Knowledge__Group__5__Impl rule__Knowledge__Group__6 )
-            // InternalLightweight.g:3034:2: rule__Knowledge__Group__5__Impl rule__Knowledge__Group__6
+            // InternalLightweight.g:3006:1: ( rule__Knowledge__Group__5__Impl rule__Knowledge__Group__6 )
+            // InternalLightweight.g:3007:2: rule__Knowledge__Group__5__Impl rule__Knowledge__Group__6
             {
             pushFollow(FOLLOW_10);
             rule__Knowledge__Group__5__Impl();
@@ -9170,21 +9136,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__5__Impl"
-    // InternalLightweight.g:3041:1: rule__Knowledge__Group__5__Impl : ( ( rule__Knowledge__NameAssignment_5 ) ) ;
+    // InternalLightweight.g:3014:1: rule__Knowledge__Group__5__Impl : ( ( rule__Knowledge__NameAssignment_5 ) ) ;
     public final void rule__Knowledge__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3045:1: ( ( ( rule__Knowledge__NameAssignment_5 ) ) )
-            // InternalLightweight.g:3046:1: ( ( rule__Knowledge__NameAssignment_5 ) )
+            // InternalLightweight.g:3018:1: ( ( ( rule__Knowledge__NameAssignment_5 ) ) )
+            // InternalLightweight.g:3019:1: ( ( rule__Knowledge__NameAssignment_5 ) )
             {
-            // InternalLightweight.g:3046:1: ( ( rule__Knowledge__NameAssignment_5 ) )
-            // InternalLightweight.g:3047:2: ( rule__Knowledge__NameAssignment_5 )
+            // InternalLightweight.g:3019:1: ( ( rule__Knowledge__NameAssignment_5 ) )
+            // InternalLightweight.g:3020:2: ( rule__Knowledge__NameAssignment_5 )
             {
              before(grammarAccess.getKnowledgeAccess().getNameAssignment_5()); 
-            // InternalLightweight.g:3048:2: ( rule__Knowledge__NameAssignment_5 )
-            // InternalLightweight.g:3048:3: rule__Knowledge__NameAssignment_5
+            // InternalLightweight.g:3021:2: ( rule__Knowledge__NameAssignment_5 )
+            // InternalLightweight.g:3021:3: rule__Knowledge__NameAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__Knowledge__NameAssignment_5();
@@ -9217,14 +9183,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__6"
-    // InternalLightweight.g:3056:1: rule__Knowledge__Group__6 : rule__Knowledge__Group__6__Impl rule__Knowledge__Group__7 ;
+    // InternalLightweight.g:3029:1: rule__Knowledge__Group__6 : rule__Knowledge__Group__6__Impl rule__Knowledge__Group__7 ;
     public final void rule__Knowledge__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3060:1: ( rule__Knowledge__Group__6__Impl rule__Knowledge__Group__7 )
-            // InternalLightweight.g:3061:2: rule__Knowledge__Group__6__Impl rule__Knowledge__Group__7
+            // InternalLightweight.g:3033:1: ( rule__Knowledge__Group__6__Impl rule__Knowledge__Group__7 )
+            // InternalLightweight.g:3034:2: rule__Knowledge__Group__6__Impl rule__Knowledge__Group__7
             {
             pushFollow(FOLLOW_27);
             rule__Knowledge__Group__6__Impl();
@@ -9255,17 +9221,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__6__Impl"
-    // InternalLightweight.g:3068:1: rule__Knowledge__Group__6__Impl : ( ',' ) ;
+    // InternalLightweight.g:3041:1: rule__Knowledge__Group__6__Impl : ( ',' ) ;
     public final void rule__Knowledge__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3072:1: ( ( ',' ) )
-            // InternalLightweight.g:3073:1: ( ',' )
+            // InternalLightweight.g:3045:1: ( ( ',' ) )
+            // InternalLightweight.g:3046:1: ( ',' )
             {
-            // InternalLightweight.g:3073:1: ( ',' )
-            // InternalLightweight.g:3074:2: ','
+            // InternalLightweight.g:3046:1: ( ',' )
+            // InternalLightweight.g:3047:2: ','
             {
              before(grammarAccess.getKnowledgeAccess().getCommaKeyword_6()); 
             match(input,38,FOLLOW_2); 
@@ -9292,14 +9258,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__7"
-    // InternalLightweight.g:3083:1: rule__Knowledge__Group__7 : rule__Knowledge__Group__7__Impl rule__Knowledge__Group__8 ;
+    // InternalLightweight.g:3056:1: rule__Knowledge__Group__7 : rule__Knowledge__Group__7__Impl rule__Knowledge__Group__8 ;
     public final void rule__Knowledge__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3087:1: ( rule__Knowledge__Group__7__Impl rule__Knowledge__Group__8 )
-            // InternalLightweight.g:3088:2: rule__Knowledge__Group__7__Impl rule__Knowledge__Group__8
+            // InternalLightweight.g:3060:1: ( rule__Knowledge__Group__7__Impl rule__Knowledge__Group__8 )
+            // InternalLightweight.g:3061:2: rule__Knowledge__Group__7__Impl rule__Knowledge__Group__8
             {
             pushFollow(FOLLOW_3);
             rule__Knowledge__Group__7__Impl();
@@ -9330,20 +9296,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__7__Impl"
-    // InternalLightweight.g:3095:1: rule__Knowledge__Group__7__Impl : ( 'value' ) ;
+    // InternalLightweight.g:3068:1: rule__Knowledge__Group__7__Impl : ( 'value' ) ;
     public final void rule__Knowledge__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3099:1: ( ( 'value' ) )
-            // InternalLightweight.g:3100:1: ( 'value' )
+            // InternalLightweight.g:3072:1: ( ( 'value' ) )
+            // InternalLightweight.g:3073:1: ( 'value' )
             {
-            // InternalLightweight.g:3100:1: ( 'value' )
-            // InternalLightweight.g:3101:2: 'value'
+            // InternalLightweight.g:3073:1: ( 'value' )
+            // InternalLightweight.g:3074:2: 'value'
             {
              before(grammarAccess.getKnowledgeAccess().getValueKeyword_7()); 
-            match(input,51,FOLLOW_2); 
+            match(input,48,FOLLOW_2); 
              after(grammarAccess.getKnowledgeAccess().getValueKeyword_7()); 
 
             }
@@ -9367,14 +9333,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__8"
-    // InternalLightweight.g:3110:1: rule__Knowledge__Group__8 : rule__Knowledge__Group__8__Impl rule__Knowledge__Group__9 ;
+    // InternalLightweight.g:3083:1: rule__Knowledge__Group__8 : rule__Knowledge__Group__8__Impl rule__Knowledge__Group__9 ;
     public final void rule__Knowledge__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3114:1: ( rule__Knowledge__Group__8__Impl rule__Knowledge__Group__9 )
-            // InternalLightweight.g:3115:2: rule__Knowledge__Group__8__Impl rule__Knowledge__Group__9
+            // InternalLightweight.g:3087:1: ( rule__Knowledge__Group__8__Impl rule__Knowledge__Group__9 )
+            // InternalLightweight.g:3088:2: rule__Knowledge__Group__8__Impl rule__Knowledge__Group__9
             {
             pushFollow(FOLLOW_29);
             rule__Knowledge__Group__8__Impl();
@@ -9405,17 +9371,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__8__Impl"
-    // InternalLightweight.g:3122:1: rule__Knowledge__Group__8__Impl : ( ':' ) ;
+    // InternalLightweight.g:3095:1: rule__Knowledge__Group__8__Impl : ( ':' ) ;
     public final void rule__Knowledge__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3126:1: ( ( ':' ) )
-            // InternalLightweight.g:3127:1: ( ':' )
+            // InternalLightweight.g:3099:1: ( ( ':' ) )
+            // InternalLightweight.g:3100:1: ( ':' )
             {
-            // InternalLightweight.g:3127:1: ( ':' )
-            // InternalLightweight.g:3128:2: ':'
+            // InternalLightweight.g:3100:1: ( ':' )
+            // InternalLightweight.g:3101:2: ':'
             {
              before(grammarAccess.getKnowledgeAccess().getColonKeyword_8()); 
             match(input,33,FOLLOW_2); 
@@ -9442,14 +9408,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__9"
-    // InternalLightweight.g:3137:1: rule__Knowledge__Group__9 : rule__Knowledge__Group__9__Impl rule__Knowledge__Group__10 ;
+    // InternalLightweight.g:3110:1: rule__Knowledge__Group__9 : rule__Knowledge__Group__9__Impl rule__Knowledge__Group__10 ;
     public final void rule__Knowledge__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3141:1: ( rule__Knowledge__Group__9__Impl rule__Knowledge__Group__10 )
-            // InternalLightweight.g:3142:2: rule__Knowledge__Group__9__Impl rule__Knowledge__Group__10
+            // InternalLightweight.g:3114:1: ( rule__Knowledge__Group__9__Impl rule__Knowledge__Group__10 )
+            // InternalLightweight.g:3115:2: rule__Knowledge__Group__9__Impl rule__Knowledge__Group__10
             {
             pushFollow(FOLLOW_10);
             rule__Knowledge__Group__9__Impl();
@@ -9480,21 +9446,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__9__Impl"
-    // InternalLightweight.g:3149:1: rule__Knowledge__Group__9__Impl : ( ( rule__Knowledge__ValueAssignment_9 ) ) ;
+    // InternalLightweight.g:3122:1: rule__Knowledge__Group__9__Impl : ( ( rule__Knowledge__ValueAssignment_9 ) ) ;
     public final void rule__Knowledge__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3153:1: ( ( ( rule__Knowledge__ValueAssignment_9 ) ) )
-            // InternalLightweight.g:3154:1: ( ( rule__Knowledge__ValueAssignment_9 ) )
+            // InternalLightweight.g:3126:1: ( ( ( rule__Knowledge__ValueAssignment_9 ) ) )
+            // InternalLightweight.g:3127:1: ( ( rule__Knowledge__ValueAssignment_9 ) )
             {
-            // InternalLightweight.g:3154:1: ( ( rule__Knowledge__ValueAssignment_9 ) )
-            // InternalLightweight.g:3155:2: ( rule__Knowledge__ValueAssignment_9 )
+            // InternalLightweight.g:3127:1: ( ( rule__Knowledge__ValueAssignment_9 ) )
+            // InternalLightweight.g:3128:2: ( rule__Knowledge__ValueAssignment_9 )
             {
              before(grammarAccess.getKnowledgeAccess().getValueAssignment_9()); 
-            // InternalLightweight.g:3156:2: ( rule__Knowledge__ValueAssignment_9 )
-            // InternalLightweight.g:3156:3: rule__Knowledge__ValueAssignment_9
+            // InternalLightweight.g:3129:2: ( rule__Knowledge__ValueAssignment_9 )
+            // InternalLightweight.g:3129:3: rule__Knowledge__ValueAssignment_9
             {
             pushFollow(FOLLOW_2);
             rule__Knowledge__ValueAssignment_9();
@@ -9527,14 +9493,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__10"
-    // InternalLightweight.g:3164:1: rule__Knowledge__Group__10 : rule__Knowledge__Group__10__Impl rule__Knowledge__Group__11 ;
+    // InternalLightweight.g:3137:1: rule__Knowledge__Group__10 : rule__Knowledge__Group__10__Impl rule__Knowledge__Group__11 ;
     public final void rule__Knowledge__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3168:1: ( rule__Knowledge__Group__10__Impl rule__Knowledge__Group__11 )
-            // InternalLightweight.g:3169:2: rule__Knowledge__Group__10__Impl rule__Knowledge__Group__11
+            // InternalLightweight.g:3141:1: ( rule__Knowledge__Group__10__Impl rule__Knowledge__Group__11 )
+            // InternalLightweight.g:3142:2: rule__Knowledge__Group__10__Impl rule__Knowledge__Group__11
             {
             pushFollow(FOLLOW_30);
             rule__Knowledge__Group__10__Impl();
@@ -9565,17 +9531,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__10__Impl"
-    // InternalLightweight.g:3176:1: rule__Knowledge__Group__10__Impl : ( ',' ) ;
+    // InternalLightweight.g:3149:1: rule__Knowledge__Group__10__Impl : ( ',' ) ;
     public final void rule__Knowledge__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3180:1: ( ( ',' ) )
-            // InternalLightweight.g:3181:1: ( ',' )
+            // InternalLightweight.g:3153:1: ( ( ',' ) )
+            // InternalLightweight.g:3154:1: ( ',' )
             {
-            // InternalLightweight.g:3181:1: ( ',' )
-            // InternalLightweight.g:3182:2: ','
+            // InternalLightweight.g:3154:1: ( ',' )
+            // InternalLightweight.g:3155:2: ','
             {
              before(grammarAccess.getKnowledgeAccess().getCommaKeyword_10()); 
             match(input,38,FOLLOW_2); 
@@ -9602,14 +9568,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__11"
-    // InternalLightweight.g:3191:1: rule__Knowledge__Group__11 : rule__Knowledge__Group__11__Impl rule__Knowledge__Group__12 ;
+    // InternalLightweight.g:3164:1: rule__Knowledge__Group__11 : rule__Knowledge__Group__11__Impl rule__Knowledge__Group__12 ;
     public final void rule__Knowledge__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3195:1: ( rule__Knowledge__Group__11__Impl rule__Knowledge__Group__12 )
-            // InternalLightweight.g:3196:2: rule__Knowledge__Group__11__Impl rule__Knowledge__Group__12
+            // InternalLightweight.g:3168:1: ( rule__Knowledge__Group__11__Impl rule__Knowledge__Group__12 )
+            // InternalLightweight.g:3169:2: rule__Knowledge__Group__11__Impl rule__Knowledge__Group__12
             {
             pushFollow(FOLLOW_3);
             rule__Knowledge__Group__11__Impl();
@@ -9640,20 +9606,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__11__Impl"
-    // InternalLightweight.g:3203:1: rule__Knowledge__Group__11__Impl : ( 'limitedAttempts' ) ;
+    // InternalLightweight.g:3176:1: rule__Knowledge__Group__11__Impl : ( 'limitedAttempts' ) ;
     public final void rule__Knowledge__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3207:1: ( ( 'limitedAttempts' ) )
-            // InternalLightweight.g:3208:1: ( 'limitedAttempts' )
+            // InternalLightweight.g:3180:1: ( ( 'limitedAttempts' ) )
+            // InternalLightweight.g:3181:1: ( 'limitedAttempts' )
             {
-            // InternalLightweight.g:3208:1: ( 'limitedAttempts' )
-            // InternalLightweight.g:3209:2: 'limitedAttempts'
+            // InternalLightweight.g:3181:1: ( 'limitedAttempts' )
+            // InternalLightweight.g:3182:2: 'limitedAttempts'
             {
              before(grammarAccess.getKnowledgeAccess().getLimitedAttemptsKeyword_11()); 
-            match(input,53,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getKnowledgeAccess().getLimitedAttemptsKeyword_11()); 
 
             }
@@ -9677,14 +9643,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__12"
-    // InternalLightweight.g:3218:1: rule__Knowledge__Group__12 : rule__Knowledge__Group__12__Impl rule__Knowledge__Group__13 ;
+    // InternalLightweight.g:3191:1: rule__Knowledge__Group__12 : rule__Knowledge__Group__12__Impl rule__Knowledge__Group__13 ;
     public final void rule__Knowledge__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3222:1: ( rule__Knowledge__Group__12__Impl rule__Knowledge__Group__13 )
-            // InternalLightweight.g:3223:2: rule__Knowledge__Group__12__Impl rule__Knowledge__Group__13
+            // InternalLightweight.g:3195:1: ( rule__Knowledge__Group__12__Impl rule__Knowledge__Group__13 )
+            // InternalLightweight.g:3196:2: rule__Knowledge__Group__12__Impl rule__Knowledge__Group__13
             {
             pushFollow(FOLLOW_23);
             rule__Knowledge__Group__12__Impl();
@@ -9715,17 +9681,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__12__Impl"
-    // InternalLightweight.g:3230:1: rule__Knowledge__Group__12__Impl : ( ':' ) ;
+    // InternalLightweight.g:3203:1: rule__Knowledge__Group__12__Impl : ( ':' ) ;
     public final void rule__Knowledge__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3234:1: ( ( ':' ) )
-            // InternalLightweight.g:3235:1: ( ':' )
+            // InternalLightweight.g:3207:1: ( ( ':' ) )
+            // InternalLightweight.g:3208:1: ( ':' )
             {
-            // InternalLightweight.g:3235:1: ( ':' )
-            // InternalLightweight.g:3236:2: ':'
+            // InternalLightweight.g:3208:1: ( ':' )
+            // InternalLightweight.g:3209:2: ':'
             {
              before(grammarAccess.getKnowledgeAccess().getColonKeyword_12()); 
             match(input,33,FOLLOW_2); 
@@ -9752,14 +9718,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__13"
-    // InternalLightweight.g:3245:1: rule__Knowledge__Group__13 : rule__Knowledge__Group__13__Impl rule__Knowledge__Group__14 ;
+    // InternalLightweight.g:3218:1: rule__Knowledge__Group__13 : rule__Knowledge__Group__13__Impl rule__Knowledge__Group__14 ;
     public final void rule__Knowledge__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3249:1: ( rule__Knowledge__Group__13__Impl rule__Knowledge__Group__14 )
-            // InternalLightweight.g:3250:2: rule__Knowledge__Group__13__Impl rule__Knowledge__Group__14
+            // InternalLightweight.g:3222:1: ( rule__Knowledge__Group__13__Impl rule__Knowledge__Group__14 )
+            // InternalLightweight.g:3223:2: rule__Knowledge__Group__13__Impl rule__Knowledge__Group__14
             {
             pushFollow(FOLLOW_10);
             rule__Knowledge__Group__13__Impl();
@@ -9790,21 +9756,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__13__Impl"
-    // InternalLightweight.g:3257:1: rule__Knowledge__Group__13__Impl : ( ( rule__Knowledge__LimitedAttemptsAssignment_13 ) ) ;
+    // InternalLightweight.g:3230:1: rule__Knowledge__Group__13__Impl : ( ( rule__Knowledge__LimitedAttemptsAssignment_13 ) ) ;
     public final void rule__Knowledge__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3261:1: ( ( ( rule__Knowledge__LimitedAttemptsAssignment_13 ) ) )
-            // InternalLightweight.g:3262:1: ( ( rule__Knowledge__LimitedAttemptsAssignment_13 ) )
+            // InternalLightweight.g:3234:1: ( ( ( rule__Knowledge__LimitedAttemptsAssignment_13 ) ) )
+            // InternalLightweight.g:3235:1: ( ( rule__Knowledge__LimitedAttemptsAssignment_13 ) )
             {
-            // InternalLightweight.g:3262:1: ( ( rule__Knowledge__LimitedAttemptsAssignment_13 ) )
-            // InternalLightweight.g:3263:2: ( rule__Knowledge__LimitedAttemptsAssignment_13 )
+            // InternalLightweight.g:3235:1: ( ( rule__Knowledge__LimitedAttemptsAssignment_13 ) )
+            // InternalLightweight.g:3236:2: ( rule__Knowledge__LimitedAttemptsAssignment_13 )
             {
              before(grammarAccess.getKnowledgeAccess().getLimitedAttemptsAssignment_13()); 
-            // InternalLightweight.g:3264:2: ( rule__Knowledge__LimitedAttemptsAssignment_13 )
-            // InternalLightweight.g:3264:3: rule__Knowledge__LimitedAttemptsAssignment_13
+            // InternalLightweight.g:3237:2: ( rule__Knowledge__LimitedAttemptsAssignment_13 )
+            // InternalLightweight.g:3237:3: rule__Knowledge__LimitedAttemptsAssignment_13
             {
             pushFollow(FOLLOW_2);
             rule__Knowledge__LimitedAttemptsAssignment_13();
@@ -9837,14 +9803,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__14"
-    // InternalLightweight.g:3272:1: rule__Knowledge__Group__14 : rule__Knowledge__Group__14__Impl rule__Knowledge__Group__15 ;
+    // InternalLightweight.g:3245:1: rule__Knowledge__Group__14 : rule__Knowledge__Group__14__Impl rule__Knowledge__Group__15 ;
     public final void rule__Knowledge__Group__14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3276:1: ( rule__Knowledge__Group__14__Impl rule__Knowledge__Group__15 )
-            // InternalLightweight.g:3277:2: rule__Knowledge__Group__14__Impl rule__Knowledge__Group__15
+            // InternalLightweight.g:3249:1: ( rule__Knowledge__Group__14__Impl rule__Knowledge__Group__15 )
+            // InternalLightweight.g:3250:2: rule__Knowledge__Group__14__Impl rule__Knowledge__Group__15
             {
             pushFollow(FOLLOW_31);
             rule__Knowledge__Group__14__Impl();
@@ -9875,17 +9841,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__14__Impl"
-    // InternalLightweight.g:3284:1: rule__Knowledge__Group__14__Impl : ( ',' ) ;
+    // InternalLightweight.g:3257:1: rule__Knowledge__Group__14__Impl : ( ',' ) ;
     public final void rule__Knowledge__Group__14__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3288:1: ( ( ',' ) )
-            // InternalLightweight.g:3289:1: ( ',' )
+            // InternalLightweight.g:3261:1: ( ( ',' ) )
+            // InternalLightweight.g:3262:1: ( ',' )
             {
-            // InternalLightweight.g:3289:1: ( ',' )
-            // InternalLightweight.g:3290:2: ','
+            // InternalLightweight.g:3262:1: ( ',' )
+            // InternalLightweight.g:3263:2: ','
             {
              before(grammarAccess.getKnowledgeAccess().getCommaKeyword_14()); 
             match(input,38,FOLLOW_2); 
@@ -9912,14 +9878,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__15"
-    // InternalLightweight.g:3299:1: rule__Knowledge__Group__15 : rule__Knowledge__Group__15__Impl rule__Knowledge__Group__16 ;
+    // InternalLightweight.g:3272:1: rule__Knowledge__Group__15 : rule__Knowledge__Group__15__Impl rule__Knowledge__Group__16 ;
     public final void rule__Knowledge__Group__15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3303:1: ( rule__Knowledge__Group__15__Impl rule__Knowledge__Group__16 )
-            // InternalLightweight.g:3304:2: rule__Knowledge__Group__15__Impl rule__Knowledge__Group__16
+            // InternalLightweight.g:3276:1: ( rule__Knowledge__Group__15__Impl rule__Knowledge__Group__16 )
+            // InternalLightweight.g:3277:2: rule__Knowledge__Group__15__Impl rule__Knowledge__Group__16
             {
             pushFollow(FOLLOW_3);
             rule__Knowledge__Group__15__Impl();
@@ -9950,20 +9916,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__15__Impl"
-    // InternalLightweight.g:3311:1: rule__Knowledge__Group__15__Impl : ( 'autofillable' ) ;
+    // InternalLightweight.g:3284:1: rule__Knowledge__Group__15__Impl : ( 'autofillable' ) ;
     public final void rule__Knowledge__Group__15__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3315:1: ( ( 'autofillable' ) )
-            // InternalLightweight.g:3316:1: ( 'autofillable' )
+            // InternalLightweight.g:3288:1: ( ( 'autofillable' ) )
+            // InternalLightweight.g:3289:1: ( 'autofillable' )
             {
-            // InternalLightweight.g:3316:1: ( 'autofillable' )
-            // InternalLightweight.g:3317:2: 'autofillable'
+            // InternalLightweight.g:3289:1: ( 'autofillable' )
+            // InternalLightweight.g:3290:2: 'autofillable'
             {
              before(grammarAccess.getKnowledgeAccess().getAutofillableKeyword_15()); 
-            match(input,54,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getKnowledgeAccess().getAutofillableKeyword_15()); 
 
             }
@@ -9987,14 +9953,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__16"
-    // InternalLightweight.g:3326:1: rule__Knowledge__Group__16 : rule__Knowledge__Group__16__Impl rule__Knowledge__Group__17 ;
+    // InternalLightweight.g:3299:1: rule__Knowledge__Group__16 : rule__Knowledge__Group__16__Impl rule__Knowledge__Group__17 ;
     public final void rule__Knowledge__Group__16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3330:1: ( rule__Knowledge__Group__16__Impl rule__Knowledge__Group__17 )
-            // InternalLightweight.g:3331:2: rule__Knowledge__Group__16__Impl rule__Knowledge__Group__17
+            // InternalLightweight.g:3303:1: ( rule__Knowledge__Group__16__Impl rule__Knowledge__Group__17 )
+            // InternalLightweight.g:3304:2: rule__Knowledge__Group__16__Impl rule__Knowledge__Group__17
             {
             pushFollow(FOLLOW_23);
             rule__Knowledge__Group__16__Impl();
@@ -10025,17 +9991,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__16__Impl"
-    // InternalLightweight.g:3338:1: rule__Knowledge__Group__16__Impl : ( ':' ) ;
+    // InternalLightweight.g:3311:1: rule__Knowledge__Group__16__Impl : ( ':' ) ;
     public final void rule__Knowledge__Group__16__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3342:1: ( ( ':' ) )
-            // InternalLightweight.g:3343:1: ( ':' )
+            // InternalLightweight.g:3315:1: ( ( ':' ) )
+            // InternalLightweight.g:3316:1: ( ':' )
             {
-            // InternalLightweight.g:3343:1: ( ':' )
-            // InternalLightweight.g:3344:2: ':'
+            // InternalLightweight.g:3316:1: ( ':' )
+            // InternalLightweight.g:3317:2: ':'
             {
              before(grammarAccess.getKnowledgeAccess().getColonKeyword_16()); 
             match(input,33,FOLLOW_2); 
@@ -10062,14 +10028,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__17"
-    // InternalLightweight.g:3353:1: rule__Knowledge__Group__17 : rule__Knowledge__Group__17__Impl rule__Knowledge__Group__18 ;
+    // InternalLightweight.g:3326:1: rule__Knowledge__Group__17 : rule__Knowledge__Group__17__Impl rule__Knowledge__Group__18 ;
     public final void rule__Knowledge__Group__17() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3357:1: ( rule__Knowledge__Group__17__Impl rule__Knowledge__Group__18 )
-            // InternalLightweight.g:3358:2: rule__Knowledge__Group__17__Impl rule__Knowledge__Group__18
+            // InternalLightweight.g:3330:1: ( rule__Knowledge__Group__17__Impl rule__Knowledge__Group__18 )
+            // InternalLightweight.g:3331:2: rule__Knowledge__Group__17__Impl rule__Knowledge__Group__18
             {
             pushFollow(FOLLOW_15);
             rule__Knowledge__Group__17__Impl();
@@ -10100,21 +10066,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__17__Impl"
-    // InternalLightweight.g:3365:1: rule__Knowledge__Group__17__Impl : ( ( rule__Knowledge__AutofilledAssignment_17 ) ) ;
+    // InternalLightweight.g:3338:1: rule__Knowledge__Group__17__Impl : ( ( rule__Knowledge__AutofilledAssignment_17 ) ) ;
     public final void rule__Knowledge__Group__17__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3369:1: ( ( ( rule__Knowledge__AutofilledAssignment_17 ) ) )
-            // InternalLightweight.g:3370:1: ( ( rule__Knowledge__AutofilledAssignment_17 ) )
+            // InternalLightweight.g:3342:1: ( ( ( rule__Knowledge__AutofilledAssignment_17 ) ) )
+            // InternalLightweight.g:3343:1: ( ( rule__Knowledge__AutofilledAssignment_17 ) )
             {
-            // InternalLightweight.g:3370:1: ( ( rule__Knowledge__AutofilledAssignment_17 ) )
-            // InternalLightweight.g:3371:2: ( rule__Knowledge__AutofilledAssignment_17 )
+            // InternalLightweight.g:3343:1: ( ( rule__Knowledge__AutofilledAssignment_17 ) )
+            // InternalLightweight.g:3344:2: ( rule__Knowledge__AutofilledAssignment_17 )
             {
              before(grammarAccess.getKnowledgeAccess().getAutofilledAssignment_17()); 
-            // InternalLightweight.g:3372:2: ( rule__Knowledge__AutofilledAssignment_17 )
-            // InternalLightweight.g:3372:3: rule__Knowledge__AutofilledAssignment_17
+            // InternalLightweight.g:3345:2: ( rule__Knowledge__AutofilledAssignment_17 )
+            // InternalLightweight.g:3345:3: rule__Knowledge__AutofilledAssignment_17
             {
             pushFollow(FOLLOW_2);
             rule__Knowledge__AutofilledAssignment_17();
@@ -10147,14 +10113,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__18"
-    // InternalLightweight.g:3380:1: rule__Knowledge__Group__18 : rule__Knowledge__Group__18__Impl ;
+    // InternalLightweight.g:3353:1: rule__Knowledge__Group__18 : rule__Knowledge__Group__18__Impl ;
     public final void rule__Knowledge__Group__18() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3384:1: ( rule__Knowledge__Group__18__Impl )
-            // InternalLightweight.g:3385:2: rule__Knowledge__Group__18__Impl
+            // InternalLightweight.g:3357:1: ( rule__Knowledge__Group__18__Impl )
+            // InternalLightweight.g:3358:2: rule__Knowledge__Group__18__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Knowledge__Group__18__Impl();
@@ -10180,17 +10146,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__Group__18__Impl"
-    // InternalLightweight.g:3391:1: rule__Knowledge__Group__18__Impl : ( '}' ) ;
+    // InternalLightweight.g:3364:1: rule__Knowledge__Group__18__Impl : ( '}' ) ;
     public final void rule__Knowledge__Group__18__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3395:1: ( ( '}' ) )
-            // InternalLightweight.g:3396:1: ( '}' )
+            // InternalLightweight.g:3368:1: ( ( '}' ) )
+            // InternalLightweight.g:3369:1: ( '}' )
             {
-            // InternalLightweight.g:3396:1: ( '}' )
-            // InternalLightweight.g:3397:2: '}'
+            // InternalLightweight.g:3369:1: ( '}' )
+            // InternalLightweight.g:3370:2: '}'
             {
              before(grammarAccess.getKnowledgeAccess().getRightCurlyBracketKeyword_18()); 
             match(input,41,FOLLOW_2); 
@@ -10217,14 +10183,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__0"
-    // InternalLightweight.g:3407:1: rule__Biometrics__Group__0 : rule__Biometrics__Group__0__Impl rule__Biometrics__Group__1 ;
+    // InternalLightweight.g:3380:1: rule__Biometrics__Group__0 : rule__Biometrics__Group__0__Impl rule__Biometrics__Group__1 ;
     public final void rule__Biometrics__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3411:1: ( rule__Biometrics__Group__0__Impl rule__Biometrics__Group__1 )
-            // InternalLightweight.g:3412:2: rule__Biometrics__Group__0__Impl rule__Biometrics__Group__1
+            // InternalLightweight.g:3384:1: ( rule__Biometrics__Group__0__Impl rule__Biometrics__Group__1 )
+            // InternalLightweight.g:3385:2: rule__Biometrics__Group__0__Impl rule__Biometrics__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Biometrics__Group__0__Impl();
@@ -10255,21 +10221,31 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__0__Impl"
-    // InternalLightweight.g:3419:1: rule__Biometrics__Group__0__Impl : ( 'biometrics' ) ;
+    // InternalLightweight.g:3392:1: rule__Biometrics__Group__0__Impl : ( ( rule__Biometrics__TypeAssignment_0 ) ) ;
     public final void rule__Biometrics__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3423:1: ( ( 'biometrics' ) )
-            // InternalLightweight.g:3424:1: ( 'biometrics' )
+            // InternalLightweight.g:3396:1: ( ( ( rule__Biometrics__TypeAssignment_0 ) ) )
+            // InternalLightweight.g:3397:1: ( ( rule__Biometrics__TypeAssignment_0 ) )
             {
-            // InternalLightweight.g:3424:1: ( 'biometrics' )
-            // InternalLightweight.g:3425:2: 'biometrics'
+            // InternalLightweight.g:3397:1: ( ( rule__Biometrics__TypeAssignment_0 ) )
+            // InternalLightweight.g:3398:2: ( rule__Biometrics__TypeAssignment_0 )
             {
-             before(grammarAccess.getBiometricsAccess().getBiometricsKeyword_0()); 
-            match(input,55,FOLLOW_2); 
-             after(grammarAccess.getBiometricsAccess().getBiometricsKeyword_0()); 
+             before(grammarAccess.getBiometricsAccess().getTypeAssignment_0()); 
+            // InternalLightweight.g:3399:2: ( rule__Biometrics__TypeAssignment_0 )
+            // InternalLightweight.g:3399:3: rule__Biometrics__TypeAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Biometrics__TypeAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBiometricsAccess().getTypeAssignment_0()); 
 
             }
 
@@ -10292,14 +10268,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__1"
-    // InternalLightweight.g:3434:1: rule__Biometrics__Group__1 : rule__Biometrics__Group__1__Impl rule__Biometrics__Group__2 ;
+    // InternalLightweight.g:3407:1: rule__Biometrics__Group__1 : rule__Biometrics__Group__1__Impl rule__Biometrics__Group__2 ;
     public final void rule__Biometrics__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3438:1: ( rule__Biometrics__Group__1__Impl rule__Biometrics__Group__2 )
-            // InternalLightweight.g:3439:2: rule__Biometrics__Group__1__Impl rule__Biometrics__Group__2
+            // InternalLightweight.g:3411:1: ( rule__Biometrics__Group__1__Impl rule__Biometrics__Group__2 )
+            // InternalLightweight.g:3412:2: rule__Biometrics__Group__1__Impl rule__Biometrics__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Biometrics__Group__1__Impl();
@@ -10330,17 +10306,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__1__Impl"
-    // InternalLightweight.g:3446:1: rule__Biometrics__Group__1__Impl : ( ':' ) ;
+    // InternalLightweight.g:3419:1: rule__Biometrics__Group__1__Impl : ( ':' ) ;
     public final void rule__Biometrics__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3450:1: ( ( ':' ) )
-            // InternalLightweight.g:3451:1: ( ':' )
+            // InternalLightweight.g:3423:1: ( ( ':' ) )
+            // InternalLightweight.g:3424:1: ( ':' )
             {
-            // InternalLightweight.g:3451:1: ( ':' )
-            // InternalLightweight.g:3452:2: ':'
+            // InternalLightweight.g:3424:1: ( ':' )
+            // InternalLightweight.g:3425:2: ':'
             {
              before(grammarAccess.getBiometricsAccess().getColonKeyword_1()); 
             match(input,33,FOLLOW_2); 
@@ -10367,14 +10343,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__2"
-    // InternalLightweight.g:3461:1: rule__Biometrics__Group__2 : rule__Biometrics__Group__2__Impl rule__Biometrics__Group__3 ;
+    // InternalLightweight.g:3434:1: rule__Biometrics__Group__2 : rule__Biometrics__Group__2__Impl rule__Biometrics__Group__3 ;
     public final void rule__Biometrics__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3465:1: ( rule__Biometrics__Group__2__Impl rule__Biometrics__Group__3 )
-            // InternalLightweight.g:3466:2: rule__Biometrics__Group__2__Impl rule__Biometrics__Group__3
+            // InternalLightweight.g:3438:1: ( rule__Biometrics__Group__2__Impl rule__Biometrics__Group__3 )
+            // InternalLightweight.g:3439:2: rule__Biometrics__Group__2__Impl rule__Biometrics__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__Biometrics__Group__2__Impl();
@@ -10405,17 +10381,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__2__Impl"
-    // InternalLightweight.g:3473:1: rule__Biometrics__Group__2__Impl : ( '{' ) ;
+    // InternalLightweight.g:3446:1: rule__Biometrics__Group__2__Impl : ( '{' ) ;
     public final void rule__Biometrics__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3477:1: ( ( '{' ) )
-            // InternalLightweight.g:3478:1: ( '{' )
+            // InternalLightweight.g:3450:1: ( ( '{' ) )
+            // InternalLightweight.g:3451:1: ( '{' )
             {
-            // InternalLightweight.g:3478:1: ( '{' )
-            // InternalLightweight.g:3479:2: '{'
+            // InternalLightweight.g:3451:1: ( '{' )
+            // InternalLightweight.g:3452:2: '{'
             {
              before(grammarAccess.getBiometricsAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,34,FOLLOW_2); 
@@ -10442,14 +10418,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__3"
-    // InternalLightweight.g:3488:1: rule__Biometrics__Group__3 : rule__Biometrics__Group__3__Impl rule__Biometrics__Group__4 ;
+    // InternalLightweight.g:3461:1: rule__Biometrics__Group__3 : rule__Biometrics__Group__3__Impl rule__Biometrics__Group__4 ;
     public final void rule__Biometrics__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3492:1: ( rule__Biometrics__Group__3__Impl rule__Biometrics__Group__4 )
-            // InternalLightweight.g:3493:2: rule__Biometrics__Group__3__Impl rule__Biometrics__Group__4
+            // InternalLightweight.g:3465:1: ( rule__Biometrics__Group__3__Impl rule__Biometrics__Group__4 )
+            // InternalLightweight.g:3466:2: rule__Biometrics__Group__3__Impl rule__Biometrics__Group__4
             {
             pushFollow(FOLLOW_3);
             rule__Biometrics__Group__3__Impl();
@@ -10480,20 +10456,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__3__Impl"
-    // InternalLightweight.g:3500:1: rule__Biometrics__Group__3__Impl : ( 'name' ) ;
+    // InternalLightweight.g:3473:1: rule__Biometrics__Group__3__Impl : ( 'name' ) ;
     public final void rule__Biometrics__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3504:1: ( ( 'name' ) )
-            // InternalLightweight.g:3505:1: ( 'name' )
+            // InternalLightweight.g:3477:1: ( ( 'name' ) )
+            // InternalLightweight.g:3478:1: ( 'name' )
             {
-            // InternalLightweight.g:3505:1: ( 'name' )
-            // InternalLightweight.g:3506:2: 'name'
+            // InternalLightweight.g:3478:1: ( 'name' )
+            // InternalLightweight.g:3479:2: 'name'
             {
              before(grammarAccess.getBiometricsAccess().getNameKeyword_3()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getBiometricsAccess().getNameKeyword_3()); 
 
             }
@@ -10517,14 +10493,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__4"
-    // InternalLightweight.g:3515:1: rule__Biometrics__Group__4 : rule__Biometrics__Group__4__Impl rule__Biometrics__Group__5 ;
+    // InternalLightweight.g:3488:1: rule__Biometrics__Group__4 : rule__Biometrics__Group__4__Impl rule__Biometrics__Group__5 ;
     public final void rule__Biometrics__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3519:1: ( rule__Biometrics__Group__4__Impl rule__Biometrics__Group__5 )
-            // InternalLightweight.g:3520:2: rule__Biometrics__Group__4__Impl rule__Biometrics__Group__5
+            // InternalLightweight.g:3492:1: ( rule__Biometrics__Group__4__Impl rule__Biometrics__Group__5 )
+            // InternalLightweight.g:3493:2: rule__Biometrics__Group__4__Impl rule__Biometrics__Group__5
             {
             pushFollow(FOLLOW_17);
             rule__Biometrics__Group__4__Impl();
@@ -10555,17 +10531,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__4__Impl"
-    // InternalLightweight.g:3527:1: rule__Biometrics__Group__4__Impl : ( ':' ) ;
+    // InternalLightweight.g:3500:1: rule__Biometrics__Group__4__Impl : ( ':' ) ;
     public final void rule__Biometrics__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3531:1: ( ( ':' ) )
-            // InternalLightweight.g:3532:1: ( ':' )
+            // InternalLightweight.g:3504:1: ( ( ':' ) )
+            // InternalLightweight.g:3505:1: ( ':' )
             {
-            // InternalLightweight.g:3532:1: ( ':' )
-            // InternalLightweight.g:3533:2: ':'
+            // InternalLightweight.g:3505:1: ( ':' )
+            // InternalLightweight.g:3506:2: ':'
             {
              before(grammarAccess.getBiometricsAccess().getColonKeyword_4()); 
             match(input,33,FOLLOW_2); 
@@ -10592,14 +10568,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__5"
-    // InternalLightweight.g:3542:1: rule__Biometrics__Group__5 : rule__Biometrics__Group__5__Impl rule__Biometrics__Group__6 ;
+    // InternalLightweight.g:3515:1: rule__Biometrics__Group__5 : rule__Biometrics__Group__5__Impl rule__Biometrics__Group__6 ;
     public final void rule__Biometrics__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3546:1: ( rule__Biometrics__Group__5__Impl rule__Biometrics__Group__6 )
-            // InternalLightweight.g:3547:2: rule__Biometrics__Group__5__Impl rule__Biometrics__Group__6
+            // InternalLightweight.g:3519:1: ( rule__Biometrics__Group__5__Impl rule__Biometrics__Group__6 )
+            // InternalLightweight.g:3520:2: rule__Biometrics__Group__5__Impl rule__Biometrics__Group__6
             {
             pushFollow(FOLLOW_10);
             rule__Biometrics__Group__5__Impl();
@@ -10630,21 +10606,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__5__Impl"
-    // InternalLightweight.g:3554:1: rule__Biometrics__Group__5__Impl : ( ( rule__Biometrics__NameAssignment_5 ) ) ;
+    // InternalLightweight.g:3527:1: rule__Biometrics__Group__5__Impl : ( ( rule__Biometrics__NameAssignment_5 ) ) ;
     public final void rule__Biometrics__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3558:1: ( ( ( rule__Biometrics__NameAssignment_5 ) ) )
-            // InternalLightweight.g:3559:1: ( ( rule__Biometrics__NameAssignment_5 ) )
+            // InternalLightweight.g:3531:1: ( ( ( rule__Biometrics__NameAssignment_5 ) ) )
+            // InternalLightweight.g:3532:1: ( ( rule__Biometrics__NameAssignment_5 ) )
             {
-            // InternalLightweight.g:3559:1: ( ( rule__Biometrics__NameAssignment_5 ) )
-            // InternalLightweight.g:3560:2: ( rule__Biometrics__NameAssignment_5 )
+            // InternalLightweight.g:3532:1: ( ( rule__Biometrics__NameAssignment_5 ) )
+            // InternalLightweight.g:3533:2: ( rule__Biometrics__NameAssignment_5 )
             {
              before(grammarAccess.getBiometricsAccess().getNameAssignment_5()); 
-            // InternalLightweight.g:3561:2: ( rule__Biometrics__NameAssignment_5 )
-            // InternalLightweight.g:3561:3: rule__Biometrics__NameAssignment_5
+            // InternalLightweight.g:3534:2: ( rule__Biometrics__NameAssignment_5 )
+            // InternalLightweight.g:3534:3: rule__Biometrics__NameAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__Biometrics__NameAssignment_5();
@@ -10677,14 +10653,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__6"
-    // InternalLightweight.g:3569:1: rule__Biometrics__Group__6 : rule__Biometrics__Group__6__Impl rule__Biometrics__Group__7 ;
+    // InternalLightweight.g:3542:1: rule__Biometrics__Group__6 : rule__Biometrics__Group__6__Impl rule__Biometrics__Group__7 ;
     public final void rule__Biometrics__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3573:1: ( rule__Biometrics__Group__6__Impl rule__Biometrics__Group__7 )
-            // InternalLightweight.g:3574:2: rule__Biometrics__Group__6__Impl rule__Biometrics__Group__7
+            // InternalLightweight.g:3546:1: ( rule__Biometrics__Group__6__Impl rule__Biometrics__Group__7 )
+            // InternalLightweight.g:3547:2: rule__Biometrics__Group__6__Impl rule__Biometrics__Group__7
             {
             pushFollow(FOLLOW_27);
             rule__Biometrics__Group__6__Impl();
@@ -10715,17 +10691,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__6__Impl"
-    // InternalLightweight.g:3581:1: rule__Biometrics__Group__6__Impl : ( ',' ) ;
+    // InternalLightweight.g:3554:1: rule__Biometrics__Group__6__Impl : ( ',' ) ;
     public final void rule__Biometrics__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3585:1: ( ( ',' ) )
-            // InternalLightweight.g:3586:1: ( ',' )
+            // InternalLightweight.g:3558:1: ( ( ',' ) )
+            // InternalLightweight.g:3559:1: ( ',' )
             {
-            // InternalLightweight.g:3586:1: ( ',' )
-            // InternalLightweight.g:3587:2: ','
+            // InternalLightweight.g:3559:1: ( ',' )
+            // InternalLightweight.g:3560:2: ','
             {
              before(grammarAccess.getBiometricsAccess().getCommaKeyword_6()); 
             match(input,38,FOLLOW_2); 
@@ -10752,14 +10728,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__7"
-    // InternalLightweight.g:3596:1: rule__Biometrics__Group__7 : rule__Biometrics__Group__7__Impl rule__Biometrics__Group__8 ;
+    // InternalLightweight.g:3569:1: rule__Biometrics__Group__7 : rule__Biometrics__Group__7__Impl rule__Biometrics__Group__8 ;
     public final void rule__Biometrics__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3600:1: ( rule__Biometrics__Group__7__Impl rule__Biometrics__Group__8 )
-            // InternalLightweight.g:3601:2: rule__Biometrics__Group__7__Impl rule__Biometrics__Group__8
+            // InternalLightweight.g:3573:1: ( rule__Biometrics__Group__7__Impl rule__Biometrics__Group__8 )
+            // InternalLightweight.g:3574:2: rule__Biometrics__Group__7__Impl rule__Biometrics__Group__8
             {
             pushFollow(FOLLOW_3);
             rule__Biometrics__Group__7__Impl();
@@ -10790,20 +10766,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__7__Impl"
-    // InternalLightweight.g:3608:1: rule__Biometrics__Group__7__Impl : ( 'value' ) ;
+    // InternalLightweight.g:3581:1: rule__Biometrics__Group__7__Impl : ( 'value' ) ;
     public final void rule__Biometrics__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3612:1: ( ( 'value' ) )
-            // InternalLightweight.g:3613:1: ( 'value' )
+            // InternalLightweight.g:3585:1: ( ( 'value' ) )
+            // InternalLightweight.g:3586:1: ( 'value' )
             {
-            // InternalLightweight.g:3613:1: ( 'value' )
-            // InternalLightweight.g:3614:2: 'value'
+            // InternalLightweight.g:3586:1: ( 'value' )
+            // InternalLightweight.g:3587:2: 'value'
             {
              before(grammarAccess.getBiometricsAccess().getValueKeyword_7()); 
-            match(input,51,FOLLOW_2); 
+            match(input,48,FOLLOW_2); 
              after(grammarAccess.getBiometricsAccess().getValueKeyword_7()); 
 
             }
@@ -10827,14 +10803,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__8"
-    // InternalLightweight.g:3623:1: rule__Biometrics__Group__8 : rule__Biometrics__Group__8__Impl rule__Biometrics__Group__9 ;
+    // InternalLightweight.g:3596:1: rule__Biometrics__Group__8 : rule__Biometrics__Group__8__Impl rule__Biometrics__Group__9 ;
     public final void rule__Biometrics__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3627:1: ( rule__Biometrics__Group__8__Impl rule__Biometrics__Group__9 )
-            // InternalLightweight.g:3628:2: rule__Biometrics__Group__8__Impl rule__Biometrics__Group__9
+            // InternalLightweight.g:3600:1: ( rule__Biometrics__Group__8__Impl rule__Biometrics__Group__9 )
+            // InternalLightweight.g:3601:2: rule__Biometrics__Group__8__Impl rule__Biometrics__Group__9
             {
             pushFollow(FOLLOW_32);
             rule__Biometrics__Group__8__Impl();
@@ -10865,17 +10841,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__8__Impl"
-    // InternalLightweight.g:3635:1: rule__Biometrics__Group__8__Impl : ( ':' ) ;
+    // InternalLightweight.g:3608:1: rule__Biometrics__Group__8__Impl : ( ':' ) ;
     public final void rule__Biometrics__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3639:1: ( ( ':' ) )
-            // InternalLightweight.g:3640:1: ( ':' )
+            // InternalLightweight.g:3612:1: ( ( ':' ) )
+            // InternalLightweight.g:3613:1: ( ':' )
             {
-            // InternalLightweight.g:3640:1: ( ':' )
-            // InternalLightweight.g:3641:2: ':'
+            // InternalLightweight.g:3613:1: ( ':' )
+            // InternalLightweight.g:3614:2: ':'
             {
              before(grammarAccess.getBiometricsAccess().getColonKeyword_8()); 
             match(input,33,FOLLOW_2); 
@@ -10902,14 +10878,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__9"
-    // InternalLightweight.g:3650:1: rule__Biometrics__Group__9 : rule__Biometrics__Group__9__Impl rule__Biometrics__Group__10 ;
+    // InternalLightweight.g:3623:1: rule__Biometrics__Group__9 : rule__Biometrics__Group__9__Impl rule__Biometrics__Group__10 ;
     public final void rule__Biometrics__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3654:1: ( rule__Biometrics__Group__9__Impl rule__Biometrics__Group__10 )
-            // InternalLightweight.g:3655:2: rule__Biometrics__Group__9__Impl rule__Biometrics__Group__10
+            // InternalLightweight.g:3627:1: ( rule__Biometrics__Group__9__Impl rule__Biometrics__Group__10 )
+            // InternalLightweight.g:3628:2: rule__Biometrics__Group__9__Impl rule__Biometrics__Group__10
             {
             pushFollow(FOLLOW_15);
             rule__Biometrics__Group__9__Impl();
@@ -10940,21 +10916,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__9__Impl"
-    // InternalLightweight.g:3662:1: rule__Biometrics__Group__9__Impl : ( ( rule__Biometrics__ValueAssignment_9 ) ) ;
+    // InternalLightweight.g:3635:1: rule__Biometrics__Group__9__Impl : ( ( rule__Biometrics__ValueAssignment_9 ) ) ;
     public final void rule__Biometrics__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3666:1: ( ( ( rule__Biometrics__ValueAssignment_9 ) ) )
-            // InternalLightweight.g:3667:1: ( ( rule__Biometrics__ValueAssignment_9 ) )
+            // InternalLightweight.g:3639:1: ( ( ( rule__Biometrics__ValueAssignment_9 ) ) )
+            // InternalLightweight.g:3640:1: ( ( rule__Biometrics__ValueAssignment_9 ) )
             {
-            // InternalLightweight.g:3667:1: ( ( rule__Biometrics__ValueAssignment_9 ) )
-            // InternalLightweight.g:3668:2: ( rule__Biometrics__ValueAssignment_9 )
+            // InternalLightweight.g:3640:1: ( ( rule__Biometrics__ValueAssignment_9 ) )
+            // InternalLightweight.g:3641:2: ( rule__Biometrics__ValueAssignment_9 )
             {
              before(grammarAccess.getBiometricsAccess().getValueAssignment_9()); 
-            // InternalLightweight.g:3669:2: ( rule__Biometrics__ValueAssignment_9 )
-            // InternalLightweight.g:3669:3: rule__Biometrics__ValueAssignment_9
+            // InternalLightweight.g:3642:2: ( rule__Biometrics__ValueAssignment_9 )
+            // InternalLightweight.g:3642:3: rule__Biometrics__ValueAssignment_9
             {
             pushFollow(FOLLOW_2);
             rule__Biometrics__ValueAssignment_9();
@@ -10987,14 +10963,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__10"
-    // InternalLightweight.g:3677:1: rule__Biometrics__Group__10 : rule__Biometrics__Group__10__Impl ;
+    // InternalLightweight.g:3650:1: rule__Biometrics__Group__10 : rule__Biometrics__Group__10__Impl ;
     public final void rule__Biometrics__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3681:1: ( rule__Biometrics__Group__10__Impl )
-            // InternalLightweight.g:3682:2: rule__Biometrics__Group__10__Impl
+            // InternalLightweight.g:3654:1: ( rule__Biometrics__Group__10__Impl )
+            // InternalLightweight.g:3655:2: rule__Biometrics__Group__10__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Biometrics__Group__10__Impl();
@@ -11020,17 +10996,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__Group__10__Impl"
-    // InternalLightweight.g:3688:1: rule__Biometrics__Group__10__Impl : ( '}' ) ;
+    // InternalLightweight.g:3661:1: rule__Biometrics__Group__10__Impl : ( '}' ) ;
     public final void rule__Biometrics__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3692:1: ( ( '}' ) )
-            // InternalLightweight.g:3693:1: ( '}' )
+            // InternalLightweight.g:3665:1: ( ( '}' ) )
+            // InternalLightweight.g:3666:1: ( '}' )
             {
-            // InternalLightweight.g:3693:1: ( '}' )
-            // InternalLightweight.g:3694:2: '}'
+            // InternalLightweight.g:3666:1: ( '}' )
+            // InternalLightweight.g:3667:2: '}'
             {
              before(grammarAccess.getBiometricsAccess().getRightCurlyBracketKeyword_10()); 
             match(input,41,FOLLOW_2); 
@@ -11057,14 +11033,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__0"
-    // InternalLightweight.g:3704:1: rule__Registration__Group__0 : rule__Registration__Group__0__Impl rule__Registration__Group__1 ;
+    // InternalLightweight.g:3677:1: rule__Registration__Group__0 : rule__Registration__Group__0__Impl rule__Registration__Group__1 ;
     public final void rule__Registration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3708:1: ( rule__Registration__Group__0__Impl rule__Registration__Group__1 )
-            // InternalLightweight.g:3709:2: rule__Registration__Group__0__Impl rule__Registration__Group__1
+            // InternalLightweight.g:3681:1: ( rule__Registration__Group__0__Impl rule__Registration__Group__1 )
+            // InternalLightweight.g:3682:2: rule__Registration__Group__0__Impl rule__Registration__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Registration__Group__0__Impl();
@@ -11095,21 +11071,31 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__0__Impl"
-    // InternalLightweight.g:3716:1: rule__Registration__Group__0__Impl : ( 'Registration' ) ;
+    // InternalLightweight.g:3689:1: rule__Registration__Group__0__Impl : ( ( rule__Registration__TypeAssignment_0 ) ) ;
     public final void rule__Registration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3720:1: ( ( 'Registration' ) )
-            // InternalLightweight.g:3721:1: ( 'Registration' )
+            // InternalLightweight.g:3693:1: ( ( ( rule__Registration__TypeAssignment_0 ) ) )
+            // InternalLightweight.g:3694:1: ( ( rule__Registration__TypeAssignment_0 ) )
             {
-            // InternalLightweight.g:3721:1: ( 'Registration' )
-            // InternalLightweight.g:3722:2: 'Registration'
+            // InternalLightweight.g:3694:1: ( ( rule__Registration__TypeAssignment_0 ) )
+            // InternalLightweight.g:3695:2: ( rule__Registration__TypeAssignment_0 )
             {
-             before(grammarAccess.getRegistrationAccess().getRegistrationKeyword_0()); 
-            match(input,56,FOLLOW_2); 
-             after(grammarAccess.getRegistrationAccess().getRegistrationKeyword_0()); 
+             before(grammarAccess.getRegistrationAccess().getTypeAssignment_0()); 
+            // InternalLightweight.g:3696:2: ( rule__Registration__TypeAssignment_0 )
+            // InternalLightweight.g:3696:3: rule__Registration__TypeAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Registration__TypeAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRegistrationAccess().getTypeAssignment_0()); 
 
             }
 
@@ -11132,14 +11118,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__1"
-    // InternalLightweight.g:3731:1: rule__Registration__Group__1 : rule__Registration__Group__1__Impl rule__Registration__Group__2 ;
+    // InternalLightweight.g:3704:1: rule__Registration__Group__1 : rule__Registration__Group__1__Impl rule__Registration__Group__2 ;
     public final void rule__Registration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3735:1: ( rule__Registration__Group__1__Impl rule__Registration__Group__2 )
-            // InternalLightweight.g:3736:2: rule__Registration__Group__1__Impl rule__Registration__Group__2
+            // InternalLightweight.g:3708:1: ( rule__Registration__Group__1__Impl rule__Registration__Group__2 )
+            // InternalLightweight.g:3709:2: rule__Registration__Group__1__Impl rule__Registration__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Registration__Group__1__Impl();
@@ -11170,17 +11156,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__1__Impl"
-    // InternalLightweight.g:3743:1: rule__Registration__Group__1__Impl : ( ':' ) ;
+    // InternalLightweight.g:3716:1: rule__Registration__Group__1__Impl : ( ':' ) ;
     public final void rule__Registration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3747:1: ( ( ':' ) )
-            // InternalLightweight.g:3748:1: ( ':' )
+            // InternalLightweight.g:3720:1: ( ( ':' ) )
+            // InternalLightweight.g:3721:1: ( ':' )
             {
-            // InternalLightweight.g:3748:1: ( ':' )
-            // InternalLightweight.g:3749:2: ':'
+            // InternalLightweight.g:3721:1: ( ':' )
+            // InternalLightweight.g:3722:2: ':'
             {
              before(grammarAccess.getRegistrationAccess().getColonKeyword_1()); 
             match(input,33,FOLLOW_2); 
@@ -11207,14 +11193,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__2"
-    // InternalLightweight.g:3758:1: rule__Registration__Group__2 : rule__Registration__Group__2__Impl rule__Registration__Group__3 ;
+    // InternalLightweight.g:3731:1: rule__Registration__Group__2 : rule__Registration__Group__2__Impl rule__Registration__Group__3 ;
     public final void rule__Registration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3762:1: ( rule__Registration__Group__2__Impl rule__Registration__Group__3 )
-            // InternalLightweight.g:3763:2: rule__Registration__Group__2__Impl rule__Registration__Group__3
+            // InternalLightweight.g:3735:1: ( rule__Registration__Group__2__Impl rule__Registration__Group__3 )
+            // InternalLightweight.g:3736:2: rule__Registration__Group__2__Impl rule__Registration__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__Registration__Group__2__Impl();
@@ -11245,17 +11231,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__2__Impl"
-    // InternalLightweight.g:3770:1: rule__Registration__Group__2__Impl : ( '{' ) ;
+    // InternalLightweight.g:3743:1: rule__Registration__Group__2__Impl : ( '{' ) ;
     public final void rule__Registration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3774:1: ( ( '{' ) )
-            // InternalLightweight.g:3775:1: ( '{' )
+            // InternalLightweight.g:3747:1: ( ( '{' ) )
+            // InternalLightweight.g:3748:1: ( '{' )
             {
-            // InternalLightweight.g:3775:1: ( '{' )
-            // InternalLightweight.g:3776:2: '{'
+            // InternalLightweight.g:3748:1: ( '{' )
+            // InternalLightweight.g:3749:2: '{'
             {
              before(grammarAccess.getRegistrationAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,34,FOLLOW_2); 
@@ -11282,14 +11268,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__3"
-    // InternalLightweight.g:3785:1: rule__Registration__Group__3 : rule__Registration__Group__3__Impl rule__Registration__Group__4 ;
+    // InternalLightweight.g:3758:1: rule__Registration__Group__3 : rule__Registration__Group__3__Impl rule__Registration__Group__4 ;
     public final void rule__Registration__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3789:1: ( rule__Registration__Group__3__Impl rule__Registration__Group__4 )
-            // InternalLightweight.g:3790:2: rule__Registration__Group__3__Impl rule__Registration__Group__4
+            // InternalLightweight.g:3762:1: ( rule__Registration__Group__3__Impl rule__Registration__Group__4 )
+            // InternalLightweight.g:3763:2: rule__Registration__Group__3__Impl rule__Registration__Group__4
             {
             pushFollow(FOLLOW_3);
             rule__Registration__Group__3__Impl();
@@ -11320,20 +11306,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__3__Impl"
-    // InternalLightweight.g:3797:1: rule__Registration__Group__3__Impl : ( 'name' ) ;
+    // InternalLightweight.g:3770:1: rule__Registration__Group__3__Impl : ( 'name' ) ;
     public final void rule__Registration__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3801:1: ( ( 'name' ) )
-            // InternalLightweight.g:3802:1: ( 'name' )
+            // InternalLightweight.g:3774:1: ( ( 'name' ) )
+            // InternalLightweight.g:3775:1: ( 'name' )
             {
-            // InternalLightweight.g:3802:1: ( 'name' )
-            // InternalLightweight.g:3803:2: 'name'
+            // InternalLightweight.g:3775:1: ( 'name' )
+            // InternalLightweight.g:3776:2: 'name'
             {
              before(grammarAccess.getRegistrationAccess().getNameKeyword_3()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getRegistrationAccess().getNameKeyword_3()); 
 
             }
@@ -11357,14 +11343,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__4"
-    // InternalLightweight.g:3812:1: rule__Registration__Group__4 : rule__Registration__Group__4__Impl rule__Registration__Group__5 ;
+    // InternalLightweight.g:3785:1: rule__Registration__Group__4 : rule__Registration__Group__4__Impl rule__Registration__Group__5 ;
     public final void rule__Registration__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3816:1: ( rule__Registration__Group__4__Impl rule__Registration__Group__5 )
-            // InternalLightweight.g:3817:2: rule__Registration__Group__4__Impl rule__Registration__Group__5
+            // InternalLightweight.g:3789:1: ( rule__Registration__Group__4__Impl rule__Registration__Group__5 )
+            // InternalLightweight.g:3790:2: rule__Registration__Group__4__Impl rule__Registration__Group__5
             {
             pushFollow(FOLLOW_17);
             rule__Registration__Group__4__Impl();
@@ -11395,17 +11381,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__4__Impl"
-    // InternalLightweight.g:3824:1: rule__Registration__Group__4__Impl : ( ':' ) ;
+    // InternalLightweight.g:3797:1: rule__Registration__Group__4__Impl : ( ':' ) ;
     public final void rule__Registration__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3828:1: ( ( ':' ) )
-            // InternalLightweight.g:3829:1: ( ':' )
+            // InternalLightweight.g:3801:1: ( ( ':' ) )
+            // InternalLightweight.g:3802:1: ( ':' )
             {
-            // InternalLightweight.g:3829:1: ( ':' )
-            // InternalLightweight.g:3830:2: ':'
+            // InternalLightweight.g:3802:1: ( ':' )
+            // InternalLightweight.g:3803:2: ':'
             {
              before(grammarAccess.getRegistrationAccess().getColonKeyword_4()); 
             match(input,33,FOLLOW_2); 
@@ -11432,14 +11418,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__5"
-    // InternalLightweight.g:3839:1: rule__Registration__Group__5 : rule__Registration__Group__5__Impl rule__Registration__Group__6 ;
+    // InternalLightweight.g:3812:1: rule__Registration__Group__5 : rule__Registration__Group__5__Impl rule__Registration__Group__6 ;
     public final void rule__Registration__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3843:1: ( rule__Registration__Group__5__Impl rule__Registration__Group__6 )
-            // InternalLightweight.g:3844:2: rule__Registration__Group__5__Impl rule__Registration__Group__6
+            // InternalLightweight.g:3816:1: ( rule__Registration__Group__5__Impl rule__Registration__Group__6 )
+            // InternalLightweight.g:3817:2: rule__Registration__Group__5__Impl rule__Registration__Group__6
             {
             pushFollow(FOLLOW_10);
             rule__Registration__Group__5__Impl();
@@ -11470,21 +11456,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__5__Impl"
-    // InternalLightweight.g:3851:1: rule__Registration__Group__5__Impl : ( ( rule__Registration__NameAssignment_5 ) ) ;
+    // InternalLightweight.g:3824:1: rule__Registration__Group__5__Impl : ( ( rule__Registration__NameAssignment_5 ) ) ;
     public final void rule__Registration__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3855:1: ( ( ( rule__Registration__NameAssignment_5 ) ) )
-            // InternalLightweight.g:3856:1: ( ( rule__Registration__NameAssignment_5 ) )
+            // InternalLightweight.g:3828:1: ( ( ( rule__Registration__NameAssignment_5 ) ) )
+            // InternalLightweight.g:3829:1: ( ( rule__Registration__NameAssignment_5 ) )
             {
-            // InternalLightweight.g:3856:1: ( ( rule__Registration__NameAssignment_5 ) )
-            // InternalLightweight.g:3857:2: ( rule__Registration__NameAssignment_5 )
+            // InternalLightweight.g:3829:1: ( ( rule__Registration__NameAssignment_5 ) )
+            // InternalLightweight.g:3830:2: ( rule__Registration__NameAssignment_5 )
             {
              before(grammarAccess.getRegistrationAccess().getNameAssignment_5()); 
-            // InternalLightweight.g:3858:2: ( rule__Registration__NameAssignment_5 )
-            // InternalLightweight.g:3858:3: rule__Registration__NameAssignment_5
+            // InternalLightweight.g:3831:2: ( rule__Registration__NameAssignment_5 )
+            // InternalLightweight.g:3831:3: rule__Registration__NameAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__Registration__NameAssignment_5();
@@ -11517,14 +11503,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__6"
-    // InternalLightweight.g:3866:1: rule__Registration__Group__6 : rule__Registration__Group__6__Impl rule__Registration__Group__7 ;
+    // InternalLightweight.g:3839:1: rule__Registration__Group__6 : rule__Registration__Group__6__Impl rule__Registration__Group__7 ;
     public final void rule__Registration__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3870:1: ( rule__Registration__Group__6__Impl rule__Registration__Group__7 )
-            // InternalLightweight.g:3871:2: rule__Registration__Group__6__Impl rule__Registration__Group__7
+            // InternalLightweight.g:3843:1: ( rule__Registration__Group__6__Impl rule__Registration__Group__7 )
+            // InternalLightweight.g:3844:2: rule__Registration__Group__6__Impl rule__Registration__Group__7
             {
             pushFollow(FOLLOW_33);
             rule__Registration__Group__6__Impl();
@@ -11555,17 +11541,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__6__Impl"
-    // InternalLightweight.g:3878:1: rule__Registration__Group__6__Impl : ( ',' ) ;
+    // InternalLightweight.g:3851:1: rule__Registration__Group__6__Impl : ( ',' ) ;
     public final void rule__Registration__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3882:1: ( ( ',' ) )
-            // InternalLightweight.g:3883:1: ( ',' )
+            // InternalLightweight.g:3855:1: ( ( ',' ) )
+            // InternalLightweight.g:3856:1: ( ',' )
             {
-            // InternalLightweight.g:3883:1: ( ',' )
-            // InternalLightweight.g:3884:2: ','
+            // InternalLightweight.g:3856:1: ( ',' )
+            // InternalLightweight.g:3857:2: ','
             {
              before(grammarAccess.getRegistrationAccess().getCommaKeyword_6()); 
             match(input,38,FOLLOW_2); 
@@ -11592,14 +11578,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__7"
-    // InternalLightweight.g:3893:1: rule__Registration__Group__7 : rule__Registration__Group__7__Impl rule__Registration__Group__8 ;
+    // InternalLightweight.g:3866:1: rule__Registration__Group__7 : rule__Registration__Group__7__Impl rule__Registration__Group__8 ;
     public final void rule__Registration__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3897:1: ( rule__Registration__Group__7__Impl rule__Registration__Group__8 )
-            // InternalLightweight.g:3898:2: rule__Registration__Group__7__Impl rule__Registration__Group__8
+            // InternalLightweight.g:3870:1: ( rule__Registration__Group__7__Impl rule__Registration__Group__8 )
+            // InternalLightweight.g:3871:2: rule__Registration__Group__7__Impl rule__Registration__Group__8
             {
             pushFollow(FOLLOW_3);
             rule__Registration__Group__7__Impl();
@@ -11630,20 +11616,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__7__Impl"
-    // InternalLightweight.g:3905:1: rule__Registration__Group__7__Impl : ( 'credentials' ) ;
+    // InternalLightweight.g:3878:1: rule__Registration__Group__7__Impl : ( 'credentials' ) ;
     public final void rule__Registration__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3909:1: ( ( 'credentials' ) )
-            // InternalLightweight.g:3910:1: ( 'credentials' )
+            // InternalLightweight.g:3882:1: ( ( 'credentials' ) )
+            // InternalLightweight.g:3883:1: ( 'credentials' )
             {
-            // InternalLightweight.g:3910:1: ( 'credentials' )
-            // InternalLightweight.g:3911:2: 'credentials'
+            // InternalLightweight.g:3883:1: ( 'credentials' )
+            // InternalLightweight.g:3884:2: 'credentials'
             {
              before(grammarAccess.getRegistrationAccess().getCredentialsKeyword_7()); 
-            match(input,57,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getRegistrationAccess().getCredentialsKeyword_7()); 
 
             }
@@ -11667,14 +11653,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__8"
-    // InternalLightweight.g:3920:1: rule__Registration__Group__8 : rule__Registration__Group__8__Impl rule__Registration__Group__9 ;
+    // InternalLightweight.g:3893:1: rule__Registration__Group__8 : rule__Registration__Group__8__Impl rule__Registration__Group__9 ;
     public final void rule__Registration__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3924:1: ( rule__Registration__Group__8__Impl rule__Registration__Group__9 )
-            // InternalLightweight.g:3925:2: rule__Registration__Group__8__Impl rule__Registration__Group__9
+            // InternalLightweight.g:3897:1: ( rule__Registration__Group__8__Impl rule__Registration__Group__9 )
+            // InternalLightweight.g:3898:2: rule__Registration__Group__8__Impl rule__Registration__Group__9
             {
             pushFollow(FOLLOW_6);
             rule__Registration__Group__8__Impl();
@@ -11705,17 +11691,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__8__Impl"
-    // InternalLightweight.g:3932:1: rule__Registration__Group__8__Impl : ( ':' ) ;
+    // InternalLightweight.g:3905:1: rule__Registration__Group__8__Impl : ( ':' ) ;
     public final void rule__Registration__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3936:1: ( ( ':' ) )
-            // InternalLightweight.g:3937:1: ( ':' )
+            // InternalLightweight.g:3909:1: ( ( ':' ) )
+            // InternalLightweight.g:3910:1: ( ':' )
             {
-            // InternalLightweight.g:3937:1: ( ':' )
-            // InternalLightweight.g:3938:2: ':'
+            // InternalLightweight.g:3910:1: ( ':' )
+            // InternalLightweight.g:3911:2: ':'
             {
              before(grammarAccess.getRegistrationAccess().getColonKeyword_8()); 
             match(input,33,FOLLOW_2); 
@@ -11742,14 +11728,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__9"
-    // InternalLightweight.g:3947:1: rule__Registration__Group__9 : rule__Registration__Group__9__Impl rule__Registration__Group__10 ;
+    // InternalLightweight.g:3920:1: rule__Registration__Group__9 : rule__Registration__Group__9__Impl rule__Registration__Group__10 ;
     public final void rule__Registration__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3951:1: ( rule__Registration__Group__9__Impl rule__Registration__Group__10 )
-            // InternalLightweight.g:3952:2: rule__Registration__Group__9__Impl rule__Registration__Group__10
+            // InternalLightweight.g:3924:1: ( rule__Registration__Group__9__Impl rule__Registration__Group__10 )
+            // InternalLightweight.g:3925:2: rule__Registration__Group__9__Impl rule__Registration__Group__10
             {
             pushFollow(FOLLOW_4);
             rule__Registration__Group__9__Impl();
@@ -11780,17 +11766,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__9__Impl"
-    // InternalLightweight.g:3959:1: rule__Registration__Group__9__Impl : ( '[' ) ;
+    // InternalLightweight.g:3932:1: rule__Registration__Group__9__Impl : ( '[' ) ;
     public final void rule__Registration__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3963:1: ( ( '[' ) )
-            // InternalLightweight.g:3964:1: ( '[' )
+            // InternalLightweight.g:3936:1: ( ( '[' ) )
+            // InternalLightweight.g:3937:1: ( '[' )
             {
-            // InternalLightweight.g:3964:1: ( '[' )
-            // InternalLightweight.g:3965:2: '['
+            // InternalLightweight.g:3937:1: ( '[' )
+            // InternalLightweight.g:3938:2: '['
             {
              before(grammarAccess.getRegistrationAccess().getLeftSquareBracketKeyword_9()); 
             match(input,36,FOLLOW_2); 
@@ -11817,14 +11803,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__10"
-    // InternalLightweight.g:3974:1: rule__Registration__Group__10 : rule__Registration__Group__10__Impl rule__Registration__Group__11 ;
+    // InternalLightweight.g:3947:1: rule__Registration__Group__10 : rule__Registration__Group__10__Impl rule__Registration__Group__11 ;
     public final void rule__Registration__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3978:1: ( rule__Registration__Group__10__Impl rule__Registration__Group__11 )
-            // InternalLightweight.g:3979:2: rule__Registration__Group__10__Impl rule__Registration__Group__11
+            // InternalLightweight.g:3951:1: ( rule__Registration__Group__10__Impl rule__Registration__Group__11 )
+            // InternalLightweight.g:3952:2: rule__Registration__Group__10__Impl rule__Registration__Group__11
             {
             pushFollow(FOLLOW_8);
             rule__Registration__Group__10__Impl();
@@ -11855,21 +11841,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__10__Impl"
-    // InternalLightweight.g:3986:1: rule__Registration__Group__10__Impl : ( ( rule__Registration__CredentialsAssignment_10 ) ) ;
+    // InternalLightweight.g:3959:1: rule__Registration__Group__10__Impl : ( ( rule__Registration__CredentialsAssignment_10 ) ) ;
     public final void rule__Registration__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:3990:1: ( ( ( rule__Registration__CredentialsAssignment_10 ) ) )
-            // InternalLightweight.g:3991:1: ( ( rule__Registration__CredentialsAssignment_10 ) )
+            // InternalLightweight.g:3963:1: ( ( ( rule__Registration__CredentialsAssignment_10 ) ) )
+            // InternalLightweight.g:3964:1: ( ( rule__Registration__CredentialsAssignment_10 ) )
             {
-            // InternalLightweight.g:3991:1: ( ( rule__Registration__CredentialsAssignment_10 ) )
-            // InternalLightweight.g:3992:2: ( rule__Registration__CredentialsAssignment_10 )
+            // InternalLightweight.g:3964:1: ( ( rule__Registration__CredentialsAssignment_10 ) )
+            // InternalLightweight.g:3965:2: ( rule__Registration__CredentialsAssignment_10 )
             {
              before(grammarAccess.getRegistrationAccess().getCredentialsAssignment_10()); 
-            // InternalLightweight.g:3993:2: ( rule__Registration__CredentialsAssignment_10 )
-            // InternalLightweight.g:3993:3: rule__Registration__CredentialsAssignment_10
+            // InternalLightweight.g:3966:2: ( rule__Registration__CredentialsAssignment_10 )
+            // InternalLightweight.g:3966:3: rule__Registration__CredentialsAssignment_10
             {
             pushFollow(FOLLOW_2);
             rule__Registration__CredentialsAssignment_10();
@@ -11902,14 +11888,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__11"
-    // InternalLightweight.g:4001:1: rule__Registration__Group__11 : rule__Registration__Group__11__Impl rule__Registration__Group__12 ;
+    // InternalLightweight.g:3974:1: rule__Registration__Group__11 : rule__Registration__Group__11__Impl rule__Registration__Group__12 ;
     public final void rule__Registration__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4005:1: ( rule__Registration__Group__11__Impl rule__Registration__Group__12 )
-            // InternalLightweight.g:4006:2: rule__Registration__Group__11__Impl rule__Registration__Group__12
+            // InternalLightweight.g:3978:1: ( rule__Registration__Group__11__Impl rule__Registration__Group__12 )
+            // InternalLightweight.g:3979:2: rule__Registration__Group__11__Impl rule__Registration__Group__12
             {
             pushFollow(FOLLOW_8);
             rule__Registration__Group__11__Impl();
@@ -11940,20 +11926,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__11__Impl"
-    // InternalLightweight.g:4013:1: rule__Registration__Group__11__Impl : ( ( rule__Registration__Group_11__0 )* ) ;
+    // InternalLightweight.g:3986:1: rule__Registration__Group__11__Impl : ( ( rule__Registration__Group_11__0 )* ) ;
     public final void rule__Registration__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4017:1: ( ( ( rule__Registration__Group_11__0 )* ) )
-            // InternalLightweight.g:4018:1: ( ( rule__Registration__Group_11__0 )* )
+            // InternalLightweight.g:3990:1: ( ( ( rule__Registration__Group_11__0 )* ) )
+            // InternalLightweight.g:3991:1: ( ( rule__Registration__Group_11__0 )* )
             {
-            // InternalLightweight.g:4018:1: ( ( rule__Registration__Group_11__0 )* )
-            // InternalLightweight.g:4019:2: ( rule__Registration__Group_11__0 )*
+            // InternalLightweight.g:3991:1: ( ( rule__Registration__Group_11__0 )* )
+            // InternalLightweight.g:3992:2: ( rule__Registration__Group_11__0 )*
             {
              before(grammarAccess.getRegistrationAccess().getGroup_11()); 
-            // InternalLightweight.g:4020:2: ( rule__Registration__Group_11__0 )*
+            // InternalLightweight.g:3993:2: ( rule__Registration__Group_11__0 )*
             loop18:
             do {
                 int alt18=2;
@@ -11966,7 +11952,7 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
                 switch (alt18) {
             	case 1 :
-            	    // InternalLightweight.g:4020:3: rule__Registration__Group_11__0
+            	    // InternalLightweight.g:3993:3: rule__Registration__Group_11__0
             	    {
             	    pushFollow(FOLLOW_9);
             	    rule__Registration__Group_11__0();
@@ -12005,14 +11991,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__12"
-    // InternalLightweight.g:4028:1: rule__Registration__Group__12 : rule__Registration__Group__12__Impl rule__Registration__Group__13 ;
+    // InternalLightweight.g:4001:1: rule__Registration__Group__12 : rule__Registration__Group__12__Impl rule__Registration__Group__13 ;
     public final void rule__Registration__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4032:1: ( rule__Registration__Group__12__Impl rule__Registration__Group__13 )
-            // InternalLightweight.g:4033:2: rule__Registration__Group__12__Impl rule__Registration__Group__13
+            // InternalLightweight.g:4005:1: ( rule__Registration__Group__12__Impl rule__Registration__Group__13 )
+            // InternalLightweight.g:4006:2: rule__Registration__Group__12__Impl rule__Registration__Group__13
             {
             pushFollow(FOLLOW_15);
             rule__Registration__Group__12__Impl();
@@ -12043,17 +12029,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__12__Impl"
-    // InternalLightweight.g:4040:1: rule__Registration__Group__12__Impl : ( ']' ) ;
+    // InternalLightweight.g:4013:1: rule__Registration__Group__12__Impl : ( ']' ) ;
     public final void rule__Registration__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4044:1: ( ( ']' ) )
-            // InternalLightweight.g:4045:1: ( ']' )
+            // InternalLightweight.g:4017:1: ( ( ']' ) )
+            // InternalLightweight.g:4018:1: ( ']' )
             {
-            // InternalLightweight.g:4045:1: ( ']' )
-            // InternalLightweight.g:4046:2: ']'
+            // InternalLightweight.g:4018:1: ( ']' )
+            // InternalLightweight.g:4019:2: ']'
             {
              before(grammarAccess.getRegistrationAccess().getRightSquareBracketKeyword_12()); 
             match(input,37,FOLLOW_2); 
@@ -12080,14 +12066,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__13"
-    // InternalLightweight.g:4055:1: rule__Registration__Group__13 : rule__Registration__Group__13__Impl ;
+    // InternalLightweight.g:4028:1: rule__Registration__Group__13 : rule__Registration__Group__13__Impl ;
     public final void rule__Registration__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4059:1: ( rule__Registration__Group__13__Impl )
-            // InternalLightweight.g:4060:2: rule__Registration__Group__13__Impl
+            // InternalLightweight.g:4032:1: ( rule__Registration__Group__13__Impl )
+            // InternalLightweight.g:4033:2: rule__Registration__Group__13__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Registration__Group__13__Impl();
@@ -12113,17 +12099,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group__13__Impl"
-    // InternalLightweight.g:4066:1: rule__Registration__Group__13__Impl : ( '}' ) ;
+    // InternalLightweight.g:4039:1: rule__Registration__Group__13__Impl : ( '}' ) ;
     public final void rule__Registration__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4070:1: ( ( '}' ) )
-            // InternalLightweight.g:4071:1: ( '}' )
+            // InternalLightweight.g:4043:1: ( ( '}' ) )
+            // InternalLightweight.g:4044:1: ( '}' )
             {
-            // InternalLightweight.g:4071:1: ( '}' )
-            // InternalLightweight.g:4072:2: '}'
+            // InternalLightweight.g:4044:1: ( '}' )
+            // InternalLightweight.g:4045:2: '}'
             {
              before(grammarAccess.getRegistrationAccess().getRightCurlyBracketKeyword_13()); 
             match(input,41,FOLLOW_2); 
@@ -12150,14 +12136,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group_11__0"
-    // InternalLightweight.g:4082:1: rule__Registration__Group_11__0 : rule__Registration__Group_11__0__Impl rule__Registration__Group_11__1 ;
+    // InternalLightweight.g:4055:1: rule__Registration__Group_11__0 : rule__Registration__Group_11__0__Impl rule__Registration__Group_11__1 ;
     public final void rule__Registration__Group_11__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4086:1: ( rule__Registration__Group_11__0__Impl rule__Registration__Group_11__1 )
-            // InternalLightweight.g:4087:2: rule__Registration__Group_11__0__Impl rule__Registration__Group_11__1
+            // InternalLightweight.g:4059:1: ( rule__Registration__Group_11__0__Impl rule__Registration__Group_11__1 )
+            // InternalLightweight.g:4060:2: rule__Registration__Group_11__0__Impl rule__Registration__Group_11__1
             {
             pushFollow(FOLLOW_4);
             rule__Registration__Group_11__0__Impl();
@@ -12188,17 +12174,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group_11__0__Impl"
-    // InternalLightweight.g:4094:1: rule__Registration__Group_11__0__Impl : ( ',' ) ;
+    // InternalLightweight.g:4067:1: rule__Registration__Group_11__0__Impl : ( ',' ) ;
     public final void rule__Registration__Group_11__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4098:1: ( ( ',' ) )
-            // InternalLightweight.g:4099:1: ( ',' )
+            // InternalLightweight.g:4071:1: ( ( ',' ) )
+            // InternalLightweight.g:4072:1: ( ',' )
             {
-            // InternalLightweight.g:4099:1: ( ',' )
-            // InternalLightweight.g:4100:2: ','
+            // InternalLightweight.g:4072:1: ( ',' )
+            // InternalLightweight.g:4073:2: ','
             {
              before(grammarAccess.getRegistrationAccess().getCommaKeyword_11_0()); 
             match(input,38,FOLLOW_2); 
@@ -12225,14 +12211,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group_11__1"
-    // InternalLightweight.g:4109:1: rule__Registration__Group_11__1 : rule__Registration__Group_11__1__Impl ;
+    // InternalLightweight.g:4082:1: rule__Registration__Group_11__1 : rule__Registration__Group_11__1__Impl ;
     public final void rule__Registration__Group_11__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4113:1: ( rule__Registration__Group_11__1__Impl )
-            // InternalLightweight.g:4114:2: rule__Registration__Group_11__1__Impl
+            // InternalLightweight.g:4086:1: ( rule__Registration__Group_11__1__Impl )
+            // InternalLightweight.g:4087:2: rule__Registration__Group_11__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Registration__Group_11__1__Impl();
@@ -12258,21 +12244,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__Group_11__1__Impl"
-    // InternalLightweight.g:4120:1: rule__Registration__Group_11__1__Impl : ( ( rule__Registration__CredentialsAssignment_11_1 ) ) ;
+    // InternalLightweight.g:4093:1: rule__Registration__Group_11__1__Impl : ( ( rule__Registration__CredentialsAssignment_11_1 ) ) ;
     public final void rule__Registration__Group_11__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4124:1: ( ( ( rule__Registration__CredentialsAssignment_11_1 ) ) )
-            // InternalLightweight.g:4125:1: ( ( rule__Registration__CredentialsAssignment_11_1 ) )
+            // InternalLightweight.g:4097:1: ( ( ( rule__Registration__CredentialsAssignment_11_1 ) ) )
+            // InternalLightweight.g:4098:1: ( ( rule__Registration__CredentialsAssignment_11_1 ) )
             {
-            // InternalLightweight.g:4125:1: ( ( rule__Registration__CredentialsAssignment_11_1 ) )
-            // InternalLightweight.g:4126:2: ( rule__Registration__CredentialsAssignment_11_1 )
+            // InternalLightweight.g:4098:1: ( ( rule__Registration__CredentialsAssignment_11_1 ) )
+            // InternalLightweight.g:4099:2: ( rule__Registration__CredentialsAssignment_11_1 )
             {
              before(grammarAccess.getRegistrationAccess().getCredentialsAssignment_11_1()); 
-            // InternalLightweight.g:4127:2: ( rule__Registration__CredentialsAssignment_11_1 )
-            // InternalLightweight.g:4127:3: rule__Registration__CredentialsAssignment_11_1
+            // InternalLightweight.g:4100:2: ( rule__Registration__CredentialsAssignment_11_1 )
+            // InternalLightweight.g:4100:3: rule__Registration__CredentialsAssignment_11_1
             {
             pushFollow(FOLLOW_2);
             rule__Registration__CredentialsAssignment_11_1();
@@ -12305,14 +12291,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__0"
-    // InternalLightweight.g:4136:1: rule__Credential__Group__0 : rule__Credential__Group__0__Impl rule__Credential__Group__1 ;
+    // InternalLightweight.g:4109:1: rule__Credential__Group__0 : rule__Credential__Group__0__Impl rule__Credential__Group__1 ;
     public final void rule__Credential__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4140:1: ( rule__Credential__Group__0__Impl rule__Credential__Group__1 )
-            // InternalLightweight.g:4141:2: rule__Credential__Group__0__Impl rule__Credential__Group__1
+            // InternalLightweight.g:4113:1: ( rule__Credential__Group__0__Impl rule__Credential__Group__1 )
+            // InternalLightweight.g:4114:2: rule__Credential__Group__0__Impl rule__Credential__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Credential__Group__0__Impl();
@@ -12343,21 +12329,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__0__Impl"
-    // InternalLightweight.g:4148:1: rule__Credential__Group__0__Impl : ( () ) ;
+    // InternalLightweight.g:4121:1: rule__Credential__Group__0__Impl : ( () ) ;
     public final void rule__Credential__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4152:1: ( ( () ) )
-            // InternalLightweight.g:4153:1: ( () )
+            // InternalLightweight.g:4125:1: ( ( () ) )
+            // InternalLightweight.g:4126:1: ( () )
             {
-            // InternalLightweight.g:4153:1: ( () )
-            // InternalLightweight.g:4154:2: ()
+            // InternalLightweight.g:4126:1: ( () )
+            // InternalLightweight.g:4127:2: ()
             {
              before(grammarAccess.getCredentialAccess().getCredentialAction_0()); 
-            // InternalLightweight.g:4155:2: ()
-            // InternalLightweight.g:4155:3: 
+            // InternalLightweight.g:4128:2: ()
+            // InternalLightweight.g:4128:3: 
             {
             }
 
@@ -12380,14 +12366,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__1"
-    // InternalLightweight.g:4163:1: rule__Credential__Group__1 : rule__Credential__Group__1__Impl rule__Credential__Group__2 ;
+    // InternalLightweight.g:4136:1: rule__Credential__Group__1 : rule__Credential__Group__1__Impl rule__Credential__Group__2 ;
     public final void rule__Credential__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4167:1: ( rule__Credential__Group__1__Impl rule__Credential__Group__2 )
-            // InternalLightweight.g:4168:2: rule__Credential__Group__1__Impl rule__Credential__Group__2
+            // InternalLightweight.g:4140:1: ( rule__Credential__Group__1__Impl rule__Credential__Group__2 )
+            // InternalLightweight.g:4141:2: rule__Credential__Group__1__Impl rule__Credential__Group__2
             {
             pushFollow(FOLLOW_16);
             rule__Credential__Group__1__Impl();
@@ -12418,17 +12404,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__1__Impl"
-    // InternalLightweight.g:4175:1: rule__Credential__Group__1__Impl : ( '{' ) ;
+    // InternalLightweight.g:4148:1: rule__Credential__Group__1__Impl : ( '{' ) ;
     public final void rule__Credential__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4179:1: ( ( '{' ) )
-            // InternalLightweight.g:4180:1: ( '{' )
+            // InternalLightweight.g:4152:1: ( ( '{' ) )
+            // InternalLightweight.g:4153:1: ( '{' )
             {
-            // InternalLightweight.g:4180:1: ( '{' )
-            // InternalLightweight.g:4181:2: '{'
+            // InternalLightweight.g:4153:1: ( '{' )
+            // InternalLightweight.g:4154:2: '{'
             {
              before(grammarAccess.getCredentialAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,34,FOLLOW_2); 
@@ -12455,14 +12441,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__2"
-    // InternalLightweight.g:4190:1: rule__Credential__Group__2 : rule__Credential__Group__2__Impl rule__Credential__Group__3 ;
+    // InternalLightweight.g:4163:1: rule__Credential__Group__2 : rule__Credential__Group__2__Impl rule__Credential__Group__3 ;
     public final void rule__Credential__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4194:1: ( rule__Credential__Group__2__Impl rule__Credential__Group__3 )
-            // InternalLightweight.g:4195:2: rule__Credential__Group__2__Impl rule__Credential__Group__3
+            // InternalLightweight.g:4167:1: ( rule__Credential__Group__2__Impl rule__Credential__Group__3 )
+            // InternalLightweight.g:4168:2: rule__Credential__Group__2__Impl rule__Credential__Group__3
             {
             pushFollow(FOLLOW_3);
             rule__Credential__Group__2__Impl();
@@ -12493,20 +12479,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__2__Impl"
-    // InternalLightweight.g:4202:1: rule__Credential__Group__2__Impl : ( 'name' ) ;
+    // InternalLightweight.g:4175:1: rule__Credential__Group__2__Impl : ( 'name' ) ;
     public final void rule__Credential__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4206:1: ( ( 'name' ) )
-            // InternalLightweight.g:4207:1: ( 'name' )
+            // InternalLightweight.g:4179:1: ( ( 'name' ) )
+            // InternalLightweight.g:4180:1: ( 'name' )
             {
-            // InternalLightweight.g:4207:1: ( 'name' )
-            // InternalLightweight.g:4208:2: 'name'
+            // InternalLightweight.g:4180:1: ( 'name' )
+            // InternalLightweight.g:4181:2: 'name'
             {
              before(grammarAccess.getCredentialAccess().getNameKeyword_2()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getCredentialAccess().getNameKeyword_2()); 
 
             }
@@ -12530,14 +12516,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__3"
-    // InternalLightweight.g:4217:1: rule__Credential__Group__3 : rule__Credential__Group__3__Impl rule__Credential__Group__4 ;
+    // InternalLightweight.g:4190:1: rule__Credential__Group__3 : rule__Credential__Group__3__Impl rule__Credential__Group__4 ;
     public final void rule__Credential__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4221:1: ( rule__Credential__Group__3__Impl rule__Credential__Group__4 )
-            // InternalLightweight.g:4222:2: rule__Credential__Group__3__Impl rule__Credential__Group__4
+            // InternalLightweight.g:4194:1: ( rule__Credential__Group__3__Impl rule__Credential__Group__4 )
+            // InternalLightweight.g:4195:2: rule__Credential__Group__3__Impl rule__Credential__Group__4
             {
             pushFollow(FOLLOW_17);
             rule__Credential__Group__3__Impl();
@@ -12568,17 +12554,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__3__Impl"
-    // InternalLightweight.g:4229:1: rule__Credential__Group__3__Impl : ( ':' ) ;
+    // InternalLightweight.g:4202:1: rule__Credential__Group__3__Impl : ( ':' ) ;
     public final void rule__Credential__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4233:1: ( ( ':' ) )
-            // InternalLightweight.g:4234:1: ( ':' )
+            // InternalLightweight.g:4206:1: ( ( ':' ) )
+            // InternalLightweight.g:4207:1: ( ':' )
             {
-            // InternalLightweight.g:4234:1: ( ':' )
-            // InternalLightweight.g:4235:2: ':'
+            // InternalLightweight.g:4207:1: ( ':' )
+            // InternalLightweight.g:4208:2: ':'
             {
              before(grammarAccess.getCredentialAccess().getColonKeyword_3()); 
             match(input,33,FOLLOW_2); 
@@ -12605,14 +12591,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__4"
-    // InternalLightweight.g:4244:1: rule__Credential__Group__4 : rule__Credential__Group__4__Impl rule__Credential__Group__5 ;
+    // InternalLightweight.g:4217:1: rule__Credential__Group__4 : rule__Credential__Group__4__Impl rule__Credential__Group__5 ;
     public final void rule__Credential__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4248:1: ( rule__Credential__Group__4__Impl rule__Credential__Group__5 )
-            // InternalLightweight.g:4249:2: rule__Credential__Group__4__Impl rule__Credential__Group__5
+            // InternalLightweight.g:4221:1: ( rule__Credential__Group__4__Impl rule__Credential__Group__5 )
+            // InternalLightweight.g:4222:2: rule__Credential__Group__4__Impl rule__Credential__Group__5
             {
             pushFollow(FOLLOW_10);
             rule__Credential__Group__4__Impl();
@@ -12643,21 +12629,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__4__Impl"
-    // InternalLightweight.g:4256:1: rule__Credential__Group__4__Impl : ( ( rule__Credential__NameAssignment_4 ) ) ;
+    // InternalLightweight.g:4229:1: rule__Credential__Group__4__Impl : ( ( rule__Credential__NameAssignment_4 ) ) ;
     public final void rule__Credential__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4260:1: ( ( ( rule__Credential__NameAssignment_4 ) ) )
-            // InternalLightweight.g:4261:1: ( ( rule__Credential__NameAssignment_4 ) )
+            // InternalLightweight.g:4233:1: ( ( ( rule__Credential__NameAssignment_4 ) ) )
+            // InternalLightweight.g:4234:1: ( ( rule__Credential__NameAssignment_4 ) )
             {
-            // InternalLightweight.g:4261:1: ( ( rule__Credential__NameAssignment_4 ) )
-            // InternalLightweight.g:4262:2: ( rule__Credential__NameAssignment_4 )
+            // InternalLightweight.g:4234:1: ( ( rule__Credential__NameAssignment_4 ) )
+            // InternalLightweight.g:4235:2: ( rule__Credential__NameAssignment_4 )
             {
              before(grammarAccess.getCredentialAccess().getNameAssignment_4()); 
-            // InternalLightweight.g:4263:2: ( rule__Credential__NameAssignment_4 )
-            // InternalLightweight.g:4263:3: rule__Credential__NameAssignment_4
+            // InternalLightweight.g:4236:2: ( rule__Credential__NameAssignment_4 )
+            // InternalLightweight.g:4236:3: rule__Credential__NameAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Credential__NameAssignment_4();
@@ -12690,14 +12676,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__5"
-    // InternalLightweight.g:4271:1: rule__Credential__Group__5 : rule__Credential__Group__5__Impl rule__Credential__Group__6 ;
+    // InternalLightweight.g:4244:1: rule__Credential__Group__5 : rule__Credential__Group__5__Impl rule__Credential__Group__6 ;
     public final void rule__Credential__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4275:1: ( rule__Credential__Group__5__Impl rule__Credential__Group__6 )
-            // InternalLightweight.g:4276:2: rule__Credential__Group__5__Impl rule__Credential__Group__6
+            // InternalLightweight.g:4248:1: ( rule__Credential__Group__5__Impl rule__Credential__Group__6 )
+            // InternalLightweight.g:4249:2: rule__Credential__Group__5__Impl rule__Credential__Group__6
             {
             pushFollow(FOLLOW_34);
             rule__Credential__Group__5__Impl();
@@ -12728,17 +12714,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__5__Impl"
-    // InternalLightweight.g:4283:1: rule__Credential__Group__5__Impl : ( ',' ) ;
+    // InternalLightweight.g:4256:1: rule__Credential__Group__5__Impl : ( ',' ) ;
     public final void rule__Credential__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4287:1: ( ( ',' ) )
-            // InternalLightweight.g:4288:1: ( ',' )
+            // InternalLightweight.g:4260:1: ( ( ',' ) )
+            // InternalLightweight.g:4261:1: ( ',' )
             {
-            // InternalLightweight.g:4288:1: ( ',' )
-            // InternalLightweight.g:4289:2: ','
+            // InternalLightweight.g:4261:1: ( ',' )
+            // InternalLightweight.g:4262:2: ','
             {
              before(grammarAccess.getCredentialAccess().getCommaKeyword_5()); 
             match(input,38,FOLLOW_2); 
@@ -12765,14 +12751,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__6"
-    // InternalLightweight.g:4298:1: rule__Credential__Group__6 : rule__Credential__Group__6__Impl rule__Credential__Group__7 ;
+    // InternalLightweight.g:4271:1: rule__Credential__Group__6 : rule__Credential__Group__6__Impl rule__Credential__Group__7 ;
     public final void rule__Credential__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4302:1: ( rule__Credential__Group__6__Impl rule__Credential__Group__7 )
-            // InternalLightweight.g:4303:2: rule__Credential__Group__6__Impl rule__Credential__Group__7
+            // InternalLightweight.g:4275:1: ( rule__Credential__Group__6__Impl rule__Credential__Group__7 )
+            // InternalLightweight.g:4276:2: rule__Credential__Group__6__Impl rule__Credential__Group__7
             {
             pushFollow(FOLLOW_3);
             rule__Credential__Group__6__Impl();
@@ -12803,20 +12789,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__6__Impl"
-    // InternalLightweight.g:4310:1: rule__Credential__Group__6__Impl : ( 'provider' ) ;
+    // InternalLightweight.g:4283:1: rule__Credential__Group__6__Impl : ( 'provider' ) ;
     public final void rule__Credential__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4314:1: ( ( 'provider' ) )
-            // InternalLightweight.g:4315:1: ( 'provider' )
+            // InternalLightweight.g:4287:1: ( ( 'provider' ) )
+            // InternalLightweight.g:4288:1: ( 'provider' )
             {
-            // InternalLightweight.g:4315:1: ( 'provider' )
-            // InternalLightweight.g:4316:2: 'provider'
+            // InternalLightweight.g:4288:1: ( 'provider' )
+            // InternalLightweight.g:4289:2: 'provider'
             {
              before(grammarAccess.getCredentialAccess().getProviderKeyword_6()); 
-            match(input,58,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getCredentialAccess().getProviderKeyword_6()); 
 
             }
@@ -12840,14 +12826,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__7"
-    // InternalLightweight.g:4325:1: rule__Credential__Group__7 : rule__Credential__Group__7__Impl rule__Credential__Group__8 ;
+    // InternalLightweight.g:4298:1: rule__Credential__Group__7 : rule__Credential__Group__7__Impl rule__Credential__Group__8 ;
     public final void rule__Credential__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4329:1: ( rule__Credential__Group__7__Impl rule__Credential__Group__8 )
-            // InternalLightweight.g:4330:2: rule__Credential__Group__7__Impl rule__Credential__Group__8
+            // InternalLightweight.g:4302:1: ( rule__Credential__Group__7__Impl rule__Credential__Group__8 )
+            // InternalLightweight.g:4303:2: rule__Credential__Group__7__Impl rule__Credential__Group__8
             {
             pushFollow(FOLLOW_35);
             rule__Credential__Group__7__Impl();
@@ -12878,17 +12864,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__7__Impl"
-    // InternalLightweight.g:4337:1: rule__Credential__Group__7__Impl : ( ':' ) ;
+    // InternalLightweight.g:4310:1: rule__Credential__Group__7__Impl : ( ':' ) ;
     public final void rule__Credential__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4341:1: ( ( ':' ) )
-            // InternalLightweight.g:4342:1: ( ':' )
+            // InternalLightweight.g:4314:1: ( ( ':' ) )
+            // InternalLightweight.g:4315:1: ( ':' )
             {
-            // InternalLightweight.g:4342:1: ( ':' )
-            // InternalLightweight.g:4343:2: ':'
+            // InternalLightweight.g:4315:1: ( ':' )
+            // InternalLightweight.g:4316:2: ':'
             {
              before(grammarAccess.getCredentialAccess().getColonKeyword_7()); 
             match(input,33,FOLLOW_2); 
@@ -12915,14 +12901,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__8"
-    // InternalLightweight.g:4352:1: rule__Credential__Group__8 : rule__Credential__Group__8__Impl rule__Credential__Group__9 ;
+    // InternalLightweight.g:4325:1: rule__Credential__Group__8 : rule__Credential__Group__8__Impl rule__Credential__Group__9 ;
     public final void rule__Credential__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4356:1: ( rule__Credential__Group__8__Impl rule__Credential__Group__9 )
-            // InternalLightweight.g:4357:2: rule__Credential__Group__8__Impl rule__Credential__Group__9
+            // InternalLightweight.g:4329:1: ( rule__Credential__Group__8__Impl rule__Credential__Group__9 )
+            // InternalLightweight.g:4330:2: rule__Credential__Group__8__Impl rule__Credential__Group__9
             {
             pushFollow(FOLLOW_10);
             rule__Credential__Group__8__Impl();
@@ -12953,21 +12939,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__8__Impl"
-    // InternalLightweight.g:4364:1: rule__Credential__Group__8__Impl : ( ( rule__Credential__ProviderAssignment_8 ) ) ;
+    // InternalLightweight.g:4337:1: rule__Credential__Group__8__Impl : ( ( rule__Credential__ProviderAssignment_8 ) ) ;
     public final void rule__Credential__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4368:1: ( ( ( rule__Credential__ProviderAssignment_8 ) ) )
-            // InternalLightweight.g:4369:1: ( ( rule__Credential__ProviderAssignment_8 ) )
+            // InternalLightweight.g:4341:1: ( ( ( rule__Credential__ProviderAssignment_8 ) ) )
+            // InternalLightweight.g:4342:1: ( ( rule__Credential__ProviderAssignment_8 ) )
             {
-            // InternalLightweight.g:4369:1: ( ( rule__Credential__ProviderAssignment_8 ) )
-            // InternalLightweight.g:4370:2: ( rule__Credential__ProviderAssignment_8 )
+            // InternalLightweight.g:4342:1: ( ( rule__Credential__ProviderAssignment_8 ) )
+            // InternalLightweight.g:4343:2: ( rule__Credential__ProviderAssignment_8 )
             {
              before(grammarAccess.getCredentialAccess().getProviderAssignment_8()); 
-            // InternalLightweight.g:4371:2: ( rule__Credential__ProviderAssignment_8 )
-            // InternalLightweight.g:4371:3: rule__Credential__ProviderAssignment_8
+            // InternalLightweight.g:4344:2: ( rule__Credential__ProviderAssignment_8 )
+            // InternalLightweight.g:4344:3: rule__Credential__ProviderAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__Credential__ProviderAssignment_8();
@@ -13000,14 +12986,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__9"
-    // InternalLightweight.g:4379:1: rule__Credential__Group__9 : rule__Credential__Group__9__Impl rule__Credential__Group__10 ;
+    // InternalLightweight.g:4352:1: rule__Credential__Group__9 : rule__Credential__Group__9__Impl rule__Credential__Group__10 ;
     public final void rule__Credential__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4383:1: ( rule__Credential__Group__9__Impl rule__Credential__Group__10 )
-            // InternalLightweight.g:4384:2: rule__Credential__Group__9__Impl rule__Credential__Group__10
+            // InternalLightweight.g:4356:1: ( rule__Credential__Group__9__Impl rule__Credential__Group__10 )
+            // InternalLightweight.g:4357:2: rule__Credential__Group__9__Impl rule__Credential__Group__10
             {
             pushFollow(FOLLOW_36);
             rule__Credential__Group__9__Impl();
@@ -13038,17 +13024,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__9__Impl"
-    // InternalLightweight.g:4391:1: rule__Credential__Group__9__Impl : ( ',' ) ;
+    // InternalLightweight.g:4364:1: rule__Credential__Group__9__Impl : ( ',' ) ;
     public final void rule__Credential__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4395:1: ( ( ',' ) )
-            // InternalLightweight.g:4396:1: ( ',' )
+            // InternalLightweight.g:4368:1: ( ( ',' ) )
+            // InternalLightweight.g:4369:1: ( ',' )
             {
-            // InternalLightweight.g:4396:1: ( ',' )
-            // InternalLightweight.g:4397:2: ','
+            // InternalLightweight.g:4369:1: ( ',' )
+            // InternalLightweight.g:4370:2: ','
             {
              before(grammarAccess.getCredentialAccess().getCommaKeyword_9()); 
             match(input,38,FOLLOW_2); 
@@ -13075,14 +13061,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__10"
-    // InternalLightweight.g:4406:1: rule__Credential__Group__10 : rule__Credential__Group__10__Impl rule__Credential__Group__11 ;
+    // InternalLightweight.g:4379:1: rule__Credential__Group__10 : rule__Credential__Group__10__Impl rule__Credential__Group__11 ;
     public final void rule__Credential__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4410:1: ( rule__Credential__Group__10__Impl rule__Credential__Group__11 )
-            // InternalLightweight.g:4411:2: rule__Credential__Group__10__Impl rule__Credential__Group__11
+            // InternalLightweight.g:4383:1: ( rule__Credential__Group__10__Impl rule__Credential__Group__11 )
+            // InternalLightweight.g:4384:2: rule__Credential__Group__10__Impl rule__Credential__Group__11
             {
             pushFollow(FOLLOW_3);
             rule__Credential__Group__10__Impl();
@@ -13113,20 +13099,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__10__Impl"
-    // InternalLightweight.g:4418:1: rule__Credential__Group__10__Impl : ( 'type' ) ;
+    // InternalLightweight.g:4391:1: rule__Credential__Group__10__Impl : ( 'type' ) ;
     public final void rule__Credential__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4422:1: ( ( 'type' ) )
-            // InternalLightweight.g:4423:1: ( 'type' )
+            // InternalLightweight.g:4395:1: ( ( 'type' ) )
+            // InternalLightweight.g:4396:1: ( 'type' )
             {
-            // InternalLightweight.g:4423:1: ( 'type' )
-            // InternalLightweight.g:4424:2: 'type'
+            // InternalLightweight.g:4396:1: ( 'type' )
+            // InternalLightweight.g:4397:2: 'type'
             {
              before(grammarAccess.getCredentialAccess().getTypeKeyword_10()); 
-            match(input,59,FOLLOW_2); 
+            match(input,53,FOLLOW_2); 
              after(grammarAccess.getCredentialAccess().getTypeKeyword_10()); 
 
             }
@@ -13150,14 +13136,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__11"
-    // InternalLightweight.g:4433:1: rule__Credential__Group__11 : rule__Credential__Group__11__Impl rule__Credential__Group__12 ;
+    // InternalLightweight.g:4406:1: rule__Credential__Group__11 : rule__Credential__Group__11__Impl rule__Credential__Group__12 ;
     public final void rule__Credential__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4437:1: ( rule__Credential__Group__11__Impl rule__Credential__Group__12 )
-            // InternalLightweight.g:4438:2: rule__Credential__Group__11__Impl rule__Credential__Group__12
+            // InternalLightweight.g:4410:1: ( rule__Credential__Group__11__Impl rule__Credential__Group__12 )
+            // InternalLightweight.g:4411:2: rule__Credential__Group__11__Impl rule__Credential__Group__12
             {
             pushFollow(FOLLOW_37);
             rule__Credential__Group__11__Impl();
@@ -13188,17 +13174,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__11__Impl"
-    // InternalLightweight.g:4445:1: rule__Credential__Group__11__Impl : ( ':' ) ;
+    // InternalLightweight.g:4418:1: rule__Credential__Group__11__Impl : ( ':' ) ;
     public final void rule__Credential__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4449:1: ( ( ':' ) )
-            // InternalLightweight.g:4450:1: ( ':' )
+            // InternalLightweight.g:4422:1: ( ( ':' ) )
+            // InternalLightweight.g:4423:1: ( ':' )
             {
-            // InternalLightweight.g:4450:1: ( ':' )
-            // InternalLightweight.g:4451:2: ':'
+            // InternalLightweight.g:4423:1: ( ':' )
+            // InternalLightweight.g:4424:2: ':'
             {
              before(grammarAccess.getCredentialAccess().getColonKeyword_11()); 
             match(input,33,FOLLOW_2); 
@@ -13225,14 +13211,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__12"
-    // InternalLightweight.g:4460:1: rule__Credential__Group__12 : rule__Credential__Group__12__Impl rule__Credential__Group__13 ;
+    // InternalLightweight.g:4433:1: rule__Credential__Group__12 : rule__Credential__Group__12__Impl rule__Credential__Group__13 ;
     public final void rule__Credential__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4464:1: ( rule__Credential__Group__12__Impl rule__Credential__Group__13 )
-            // InternalLightweight.g:4465:2: rule__Credential__Group__12__Impl rule__Credential__Group__13
+            // InternalLightweight.g:4437:1: ( rule__Credential__Group__12__Impl rule__Credential__Group__13 )
+            // InternalLightweight.g:4438:2: rule__Credential__Group__12__Impl rule__Credential__Group__13
             {
             pushFollow(FOLLOW_10);
             rule__Credential__Group__12__Impl();
@@ -13263,21 +13249,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__12__Impl"
-    // InternalLightweight.g:4472:1: rule__Credential__Group__12__Impl : ( ( rule__Credential__TypeAssignment_12 ) ) ;
+    // InternalLightweight.g:4445:1: rule__Credential__Group__12__Impl : ( ( rule__Credential__TypeAssignment_12 ) ) ;
     public final void rule__Credential__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4476:1: ( ( ( rule__Credential__TypeAssignment_12 ) ) )
-            // InternalLightweight.g:4477:1: ( ( rule__Credential__TypeAssignment_12 ) )
+            // InternalLightweight.g:4449:1: ( ( ( rule__Credential__TypeAssignment_12 ) ) )
+            // InternalLightweight.g:4450:1: ( ( rule__Credential__TypeAssignment_12 ) )
             {
-            // InternalLightweight.g:4477:1: ( ( rule__Credential__TypeAssignment_12 ) )
-            // InternalLightweight.g:4478:2: ( rule__Credential__TypeAssignment_12 )
+            // InternalLightweight.g:4450:1: ( ( rule__Credential__TypeAssignment_12 ) )
+            // InternalLightweight.g:4451:2: ( rule__Credential__TypeAssignment_12 )
             {
              before(grammarAccess.getCredentialAccess().getTypeAssignment_12()); 
-            // InternalLightweight.g:4479:2: ( rule__Credential__TypeAssignment_12 )
-            // InternalLightweight.g:4479:3: rule__Credential__TypeAssignment_12
+            // InternalLightweight.g:4452:2: ( rule__Credential__TypeAssignment_12 )
+            // InternalLightweight.g:4452:3: rule__Credential__TypeAssignment_12
             {
             pushFollow(FOLLOW_2);
             rule__Credential__TypeAssignment_12();
@@ -13310,14 +13296,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__13"
-    // InternalLightweight.g:4487:1: rule__Credential__Group__13 : rule__Credential__Group__13__Impl rule__Credential__Group__14 ;
+    // InternalLightweight.g:4460:1: rule__Credential__Group__13 : rule__Credential__Group__13__Impl rule__Credential__Group__14 ;
     public final void rule__Credential__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4491:1: ( rule__Credential__Group__13__Impl rule__Credential__Group__14 )
-            // InternalLightweight.g:4492:2: rule__Credential__Group__13__Impl rule__Credential__Group__14
+            // InternalLightweight.g:4464:1: ( rule__Credential__Group__13__Impl rule__Credential__Group__14 )
+            // InternalLightweight.g:4465:2: rule__Credential__Group__13__Impl rule__Credential__Group__14
             {
             pushFollow(FOLLOW_38);
             rule__Credential__Group__13__Impl();
@@ -13348,17 +13334,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__13__Impl"
-    // InternalLightweight.g:4499:1: rule__Credential__Group__13__Impl : ( ',' ) ;
+    // InternalLightweight.g:4472:1: rule__Credential__Group__13__Impl : ( ',' ) ;
     public final void rule__Credential__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4503:1: ( ( ',' ) )
-            // InternalLightweight.g:4504:1: ( ',' )
+            // InternalLightweight.g:4476:1: ( ( ',' ) )
+            // InternalLightweight.g:4477:1: ( ',' )
             {
-            // InternalLightweight.g:4504:1: ( ',' )
-            // InternalLightweight.g:4505:2: ','
+            // InternalLightweight.g:4477:1: ( ',' )
+            // InternalLightweight.g:4478:2: ','
             {
              before(grammarAccess.getCredentialAccess().getCommaKeyword_13()); 
             match(input,38,FOLLOW_2); 
@@ -13385,14 +13371,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__14"
-    // InternalLightweight.g:4514:1: rule__Credential__Group__14 : rule__Credential__Group__14__Impl rule__Credential__Group__15 ;
+    // InternalLightweight.g:4487:1: rule__Credential__Group__14 : rule__Credential__Group__14__Impl rule__Credential__Group__15 ;
     public final void rule__Credential__Group__14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4518:1: ( rule__Credential__Group__14__Impl rule__Credential__Group__15 )
-            // InternalLightweight.g:4519:2: rule__Credential__Group__14__Impl rule__Credential__Group__15
+            // InternalLightweight.g:4491:1: ( rule__Credential__Group__14__Impl rule__Credential__Group__15 )
+            // InternalLightweight.g:4492:2: rule__Credential__Group__14__Impl rule__Credential__Group__15
             {
             pushFollow(FOLLOW_38);
             rule__Credential__Group__14__Impl();
@@ -13423,29 +13409,29 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__14__Impl"
-    // InternalLightweight.g:4526:1: rule__Credential__Group__14__Impl : ( ( rule__Credential__Group_14__0 )? ) ;
+    // InternalLightweight.g:4499:1: rule__Credential__Group__14__Impl : ( ( rule__Credential__Group_14__0 )? ) ;
     public final void rule__Credential__Group__14__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4530:1: ( ( ( rule__Credential__Group_14__0 )? ) )
-            // InternalLightweight.g:4531:1: ( ( rule__Credential__Group_14__0 )? )
+            // InternalLightweight.g:4503:1: ( ( ( rule__Credential__Group_14__0 )? ) )
+            // InternalLightweight.g:4504:1: ( ( rule__Credential__Group_14__0 )? )
             {
-            // InternalLightweight.g:4531:1: ( ( rule__Credential__Group_14__0 )? )
-            // InternalLightweight.g:4532:2: ( rule__Credential__Group_14__0 )?
+            // InternalLightweight.g:4504:1: ( ( rule__Credential__Group_14__0 )? )
+            // InternalLightweight.g:4505:2: ( rule__Credential__Group_14__0 )?
             {
              before(grammarAccess.getCredentialAccess().getGroup_14()); 
-            // InternalLightweight.g:4533:2: ( rule__Credential__Group_14__0 )?
+            // InternalLightweight.g:4506:2: ( rule__Credential__Group_14__0 )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==60) ) {
+            if ( (LA19_0==54) ) {
                 alt19=1;
             }
             switch (alt19) {
                 case 1 :
-                    // InternalLightweight.g:4533:3: rule__Credential__Group_14__0
+                    // InternalLightweight.g:4506:3: rule__Credential__Group_14__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Credential__Group_14__0();
@@ -13481,14 +13467,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__15"
-    // InternalLightweight.g:4541:1: rule__Credential__Group__15 : rule__Credential__Group__15__Impl ;
+    // InternalLightweight.g:4514:1: rule__Credential__Group__15 : rule__Credential__Group__15__Impl ;
     public final void rule__Credential__Group__15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4545:1: ( rule__Credential__Group__15__Impl )
-            // InternalLightweight.g:4546:2: rule__Credential__Group__15__Impl
+            // InternalLightweight.g:4518:1: ( rule__Credential__Group__15__Impl )
+            // InternalLightweight.g:4519:2: rule__Credential__Group__15__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Credential__Group__15__Impl();
@@ -13514,17 +13500,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group__15__Impl"
-    // InternalLightweight.g:4552:1: rule__Credential__Group__15__Impl : ( '}' ) ;
+    // InternalLightweight.g:4525:1: rule__Credential__Group__15__Impl : ( '}' ) ;
     public final void rule__Credential__Group__15__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4556:1: ( ( '}' ) )
-            // InternalLightweight.g:4557:1: ( '}' )
+            // InternalLightweight.g:4529:1: ( ( '}' ) )
+            // InternalLightweight.g:4530:1: ( '}' )
             {
-            // InternalLightweight.g:4557:1: ( '}' )
-            // InternalLightweight.g:4558:2: '}'
+            // InternalLightweight.g:4530:1: ( '}' )
+            // InternalLightweight.g:4531:2: '}'
             {
              before(grammarAccess.getCredentialAccess().getRightCurlyBracketKeyword_15()); 
             match(input,41,FOLLOW_2); 
@@ -13551,14 +13537,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group_14__0"
-    // InternalLightweight.g:4568:1: rule__Credential__Group_14__0 : rule__Credential__Group_14__0__Impl rule__Credential__Group_14__1 ;
+    // InternalLightweight.g:4541:1: rule__Credential__Group_14__0 : rule__Credential__Group_14__0__Impl rule__Credential__Group_14__1 ;
     public final void rule__Credential__Group_14__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4572:1: ( rule__Credential__Group_14__0__Impl rule__Credential__Group_14__1 )
-            // InternalLightweight.g:4573:2: rule__Credential__Group_14__0__Impl rule__Credential__Group_14__1
+            // InternalLightweight.g:4545:1: ( rule__Credential__Group_14__0__Impl rule__Credential__Group_14__1 )
+            // InternalLightweight.g:4546:2: rule__Credential__Group_14__0__Impl rule__Credential__Group_14__1
             {
             pushFollow(FOLLOW_3);
             rule__Credential__Group_14__0__Impl();
@@ -13589,20 +13575,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group_14__0__Impl"
-    // InternalLightweight.g:4580:1: rule__Credential__Group_14__0__Impl : ( 'verification' ) ;
+    // InternalLightweight.g:4553:1: rule__Credential__Group_14__0__Impl : ( 'verification' ) ;
     public final void rule__Credential__Group_14__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4584:1: ( ( 'verification' ) )
-            // InternalLightweight.g:4585:1: ( 'verification' )
+            // InternalLightweight.g:4557:1: ( ( 'verification' ) )
+            // InternalLightweight.g:4558:1: ( 'verification' )
             {
-            // InternalLightweight.g:4585:1: ( 'verification' )
-            // InternalLightweight.g:4586:2: 'verification'
+            // InternalLightweight.g:4558:1: ( 'verification' )
+            // InternalLightweight.g:4559:2: 'verification'
             {
              before(grammarAccess.getCredentialAccess().getVerificationKeyword_14_0()); 
-            match(input,60,FOLLOW_2); 
+            match(input,54,FOLLOW_2); 
              after(grammarAccess.getCredentialAccess().getVerificationKeyword_14_0()); 
 
             }
@@ -13626,14 +13612,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group_14__1"
-    // InternalLightweight.g:4595:1: rule__Credential__Group_14__1 : rule__Credential__Group_14__1__Impl rule__Credential__Group_14__2 ;
+    // InternalLightweight.g:4568:1: rule__Credential__Group_14__1 : rule__Credential__Group_14__1__Impl rule__Credential__Group_14__2 ;
     public final void rule__Credential__Group_14__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4599:1: ( rule__Credential__Group_14__1__Impl rule__Credential__Group_14__2 )
-            // InternalLightweight.g:4600:2: rule__Credential__Group_14__1__Impl rule__Credential__Group_14__2
+            // InternalLightweight.g:4572:1: ( rule__Credential__Group_14__1__Impl rule__Credential__Group_14__2 )
+            // InternalLightweight.g:4573:2: rule__Credential__Group_14__1__Impl rule__Credential__Group_14__2
             {
             pushFollow(FOLLOW_4);
             rule__Credential__Group_14__1__Impl();
@@ -13664,17 +13650,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group_14__1__Impl"
-    // InternalLightweight.g:4607:1: rule__Credential__Group_14__1__Impl : ( ':' ) ;
+    // InternalLightweight.g:4580:1: rule__Credential__Group_14__1__Impl : ( ':' ) ;
     public final void rule__Credential__Group_14__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4611:1: ( ( ':' ) )
-            // InternalLightweight.g:4612:1: ( ':' )
+            // InternalLightweight.g:4584:1: ( ( ':' ) )
+            // InternalLightweight.g:4585:1: ( ':' )
             {
-            // InternalLightweight.g:4612:1: ( ':' )
-            // InternalLightweight.g:4613:2: ':'
+            // InternalLightweight.g:4585:1: ( ':' )
+            // InternalLightweight.g:4586:2: ':'
             {
              before(grammarAccess.getCredentialAccess().getColonKeyword_14_1()); 
             match(input,33,FOLLOW_2); 
@@ -13701,14 +13687,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group_14__2"
-    // InternalLightweight.g:4622:1: rule__Credential__Group_14__2 : rule__Credential__Group_14__2__Impl ;
+    // InternalLightweight.g:4595:1: rule__Credential__Group_14__2 : rule__Credential__Group_14__2__Impl ;
     public final void rule__Credential__Group_14__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4626:1: ( rule__Credential__Group_14__2__Impl )
-            // InternalLightweight.g:4627:2: rule__Credential__Group_14__2__Impl
+            // InternalLightweight.g:4599:1: ( rule__Credential__Group_14__2__Impl )
+            // InternalLightweight.g:4600:2: rule__Credential__Group_14__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Credential__Group_14__2__Impl();
@@ -13734,21 +13720,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__Group_14__2__Impl"
-    // InternalLightweight.g:4633:1: rule__Credential__Group_14__2__Impl : ( ( rule__Credential__VerifmethodAssignment_14_2 ) ) ;
+    // InternalLightweight.g:4606:1: rule__Credential__Group_14__2__Impl : ( ( rule__Credential__VerifmethodAssignment_14_2 ) ) ;
     public final void rule__Credential__Group_14__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4637:1: ( ( ( rule__Credential__VerifmethodAssignment_14_2 ) ) )
-            // InternalLightweight.g:4638:1: ( ( rule__Credential__VerifmethodAssignment_14_2 ) )
+            // InternalLightweight.g:4610:1: ( ( ( rule__Credential__VerifmethodAssignment_14_2 ) ) )
+            // InternalLightweight.g:4611:1: ( ( rule__Credential__VerifmethodAssignment_14_2 ) )
             {
-            // InternalLightweight.g:4638:1: ( ( rule__Credential__VerifmethodAssignment_14_2 ) )
-            // InternalLightweight.g:4639:2: ( rule__Credential__VerifmethodAssignment_14_2 )
+            // InternalLightweight.g:4611:1: ( ( rule__Credential__VerifmethodAssignment_14_2 ) )
+            // InternalLightweight.g:4612:2: ( rule__Credential__VerifmethodAssignment_14_2 )
             {
              before(grammarAccess.getCredentialAccess().getVerifmethodAssignment_14_2()); 
-            // InternalLightweight.g:4640:2: ( rule__Credential__VerifmethodAssignment_14_2 )
-            // InternalLightweight.g:4640:3: rule__Credential__VerifmethodAssignment_14_2
+            // InternalLightweight.g:4613:2: ( rule__Credential__VerifmethodAssignment_14_2 )
+            // InternalLightweight.g:4613:3: rule__Credential__VerifmethodAssignment_14_2
             {
             pushFollow(FOLLOW_2);
             rule__Credential__VerifmethodAssignment_14_2();
@@ -13781,14 +13767,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__0"
-    // InternalLightweight.g:4649:1: rule__VerifMethod__Group__0 : rule__VerifMethod__Group__0__Impl rule__VerifMethod__Group__1 ;
+    // InternalLightweight.g:4622:1: rule__VerifMethod__Group__0 : rule__VerifMethod__Group__0__Impl rule__VerifMethod__Group__1 ;
     public final void rule__VerifMethod__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4653:1: ( rule__VerifMethod__Group__0__Impl rule__VerifMethod__Group__1 )
-            // InternalLightweight.g:4654:2: rule__VerifMethod__Group__0__Impl rule__VerifMethod__Group__1
+            // InternalLightweight.g:4626:1: ( rule__VerifMethod__Group__0__Impl rule__VerifMethod__Group__1 )
+            // InternalLightweight.g:4627:2: rule__VerifMethod__Group__0__Impl rule__VerifMethod__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__VerifMethod__Group__0__Impl();
@@ -13819,21 +13805,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__0__Impl"
-    // InternalLightweight.g:4661:1: rule__VerifMethod__Group__0__Impl : ( () ) ;
+    // InternalLightweight.g:4634:1: rule__VerifMethod__Group__0__Impl : ( () ) ;
     public final void rule__VerifMethod__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4665:1: ( ( () ) )
-            // InternalLightweight.g:4666:1: ( () )
+            // InternalLightweight.g:4638:1: ( ( () ) )
+            // InternalLightweight.g:4639:1: ( () )
             {
-            // InternalLightweight.g:4666:1: ( () )
-            // InternalLightweight.g:4667:2: ()
+            // InternalLightweight.g:4639:1: ( () )
+            // InternalLightweight.g:4640:2: ()
             {
              before(grammarAccess.getVerifMethodAccess().getVerifMethodAction_0()); 
-            // InternalLightweight.g:4668:2: ()
-            // InternalLightweight.g:4668:3: 
+            // InternalLightweight.g:4641:2: ()
+            // InternalLightweight.g:4641:3: 
             {
             }
 
@@ -13856,14 +13842,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__1"
-    // InternalLightweight.g:4676:1: rule__VerifMethod__Group__1 : rule__VerifMethod__Group__1__Impl rule__VerifMethod__Group__2 ;
+    // InternalLightweight.g:4649:1: rule__VerifMethod__Group__1 : rule__VerifMethod__Group__1__Impl rule__VerifMethod__Group__2 ;
     public final void rule__VerifMethod__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4680:1: ( rule__VerifMethod__Group__1__Impl rule__VerifMethod__Group__2 )
-            // InternalLightweight.g:4681:2: rule__VerifMethod__Group__1__Impl rule__VerifMethod__Group__2
+            // InternalLightweight.g:4653:1: ( rule__VerifMethod__Group__1__Impl rule__VerifMethod__Group__2 )
+            // InternalLightweight.g:4654:2: rule__VerifMethod__Group__1__Impl rule__VerifMethod__Group__2
             {
             pushFollow(FOLLOW_39);
             rule__VerifMethod__Group__1__Impl();
@@ -13894,17 +13880,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__1__Impl"
-    // InternalLightweight.g:4688:1: rule__VerifMethod__Group__1__Impl : ( '{' ) ;
+    // InternalLightweight.g:4661:1: rule__VerifMethod__Group__1__Impl : ( '{' ) ;
     public final void rule__VerifMethod__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4692:1: ( ( '{' ) )
-            // InternalLightweight.g:4693:1: ( '{' )
+            // InternalLightweight.g:4665:1: ( ( '{' ) )
+            // InternalLightweight.g:4666:1: ( '{' )
             {
-            // InternalLightweight.g:4693:1: ( '{' )
-            // InternalLightweight.g:4694:2: '{'
+            // InternalLightweight.g:4666:1: ( '{' )
+            // InternalLightweight.g:4667:2: '{'
             {
              before(grammarAccess.getVerifMethodAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,34,FOLLOW_2); 
@@ -13931,14 +13917,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__2"
-    // InternalLightweight.g:4703:1: rule__VerifMethod__Group__2 : rule__VerifMethod__Group__2__Impl rule__VerifMethod__Group__3 ;
+    // InternalLightweight.g:4676:1: rule__VerifMethod__Group__2 : rule__VerifMethod__Group__2__Impl rule__VerifMethod__Group__3 ;
     public final void rule__VerifMethod__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4707:1: ( rule__VerifMethod__Group__2__Impl rule__VerifMethod__Group__3 )
-            // InternalLightweight.g:4708:2: rule__VerifMethod__Group__2__Impl rule__VerifMethod__Group__3
+            // InternalLightweight.g:4680:1: ( rule__VerifMethod__Group__2__Impl rule__VerifMethod__Group__3 )
+            // InternalLightweight.g:4681:2: rule__VerifMethod__Group__2__Impl rule__VerifMethod__Group__3
             {
             pushFollow(FOLLOW_3);
             rule__VerifMethod__Group__2__Impl();
@@ -13969,20 +13955,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__2__Impl"
-    // InternalLightweight.g:4715:1: rule__VerifMethod__Group__2__Impl : ( 'validity' ) ;
+    // InternalLightweight.g:4688:1: rule__VerifMethod__Group__2__Impl : ( 'validity' ) ;
     public final void rule__VerifMethod__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4719:1: ( ( 'validity' ) )
-            // InternalLightweight.g:4720:1: ( 'validity' )
+            // InternalLightweight.g:4692:1: ( ( 'validity' ) )
+            // InternalLightweight.g:4693:1: ( 'validity' )
             {
-            // InternalLightweight.g:4720:1: ( 'validity' )
-            // InternalLightweight.g:4721:2: 'validity'
+            // InternalLightweight.g:4693:1: ( 'validity' )
+            // InternalLightweight.g:4694:2: 'validity'
             {
              before(grammarAccess.getVerifMethodAccess().getValidityKeyword_2()); 
-            match(input,61,FOLLOW_2); 
+            match(input,55,FOLLOW_2); 
              after(grammarAccess.getVerifMethodAccess().getValidityKeyword_2()); 
 
             }
@@ -14006,14 +13992,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__3"
-    // InternalLightweight.g:4730:1: rule__VerifMethod__Group__3 : rule__VerifMethod__Group__3__Impl rule__VerifMethod__Group__4 ;
+    // InternalLightweight.g:4703:1: rule__VerifMethod__Group__3 : rule__VerifMethod__Group__3__Impl rule__VerifMethod__Group__4 ;
     public final void rule__VerifMethod__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4734:1: ( rule__VerifMethod__Group__3__Impl rule__VerifMethod__Group__4 )
-            // InternalLightweight.g:4735:2: rule__VerifMethod__Group__3__Impl rule__VerifMethod__Group__4
+            // InternalLightweight.g:4707:1: ( rule__VerifMethod__Group__3__Impl rule__VerifMethod__Group__4 )
+            // InternalLightweight.g:4708:2: rule__VerifMethod__Group__3__Impl rule__VerifMethod__Group__4
             {
             pushFollow(FOLLOW_23);
             rule__VerifMethod__Group__3__Impl();
@@ -14044,17 +14030,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__3__Impl"
-    // InternalLightweight.g:4742:1: rule__VerifMethod__Group__3__Impl : ( ':' ) ;
+    // InternalLightweight.g:4715:1: rule__VerifMethod__Group__3__Impl : ( ':' ) ;
     public final void rule__VerifMethod__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4746:1: ( ( ':' ) )
-            // InternalLightweight.g:4747:1: ( ':' )
+            // InternalLightweight.g:4719:1: ( ( ':' ) )
+            // InternalLightweight.g:4720:1: ( ':' )
             {
-            // InternalLightweight.g:4747:1: ( ':' )
-            // InternalLightweight.g:4748:2: ':'
+            // InternalLightweight.g:4720:1: ( ':' )
+            // InternalLightweight.g:4721:2: ':'
             {
              before(grammarAccess.getVerifMethodAccess().getColonKeyword_3()); 
             match(input,33,FOLLOW_2); 
@@ -14081,14 +14067,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__4"
-    // InternalLightweight.g:4757:1: rule__VerifMethod__Group__4 : rule__VerifMethod__Group__4__Impl rule__VerifMethod__Group__5 ;
+    // InternalLightweight.g:4730:1: rule__VerifMethod__Group__4 : rule__VerifMethod__Group__4__Impl rule__VerifMethod__Group__5 ;
     public final void rule__VerifMethod__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4761:1: ( rule__VerifMethod__Group__4__Impl rule__VerifMethod__Group__5 )
-            // InternalLightweight.g:4762:2: rule__VerifMethod__Group__4__Impl rule__VerifMethod__Group__5
+            // InternalLightweight.g:4734:1: ( rule__VerifMethod__Group__4__Impl rule__VerifMethod__Group__5 )
+            // InternalLightweight.g:4735:2: rule__VerifMethod__Group__4__Impl rule__VerifMethod__Group__5
             {
             pushFollow(FOLLOW_10);
             rule__VerifMethod__Group__4__Impl();
@@ -14119,21 +14105,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__4__Impl"
-    // InternalLightweight.g:4769:1: rule__VerifMethod__Group__4__Impl : ( ( rule__VerifMethod__ValidityAssignment_4 ) ) ;
+    // InternalLightweight.g:4742:1: rule__VerifMethod__Group__4__Impl : ( ( rule__VerifMethod__ValidityAssignment_4 ) ) ;
     public final void rule__VerifMethod__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4773:1: ( ( ( rule__VerifMethod__ValidityAssignment_4 ) ) )
-            // InternalLightweight.g:4774:1: ( ( rule__VerifMethod__ValidityAssignment_4 ) )
+            // InternalLightweight.g:4746:1: ( ( ( rule__VerifMethod__ValidityAssignment_4 ) ) )
+            // InternalLightweight.g:4747:1: ( ( rule__VerifMethod__ValidityAssignment_4 ) )
             {
-            // InternalLightweight.g:4774:1: ( ( rule__VerifMethod__ValidityAssignment_4 ) )
-            // InternalLightweight.g:4775:2: ( rule__VerifMethod__ValidityAssignment_4 )
+            // InternalLightweight.g:4747:1: ( ( rule__VerifMethod__ValidityAssignment_4 ) )
+            // InternalLightweight.g:4748:2: ( rule__VerifMethod__ValidityAssignment_4 )
             {
              before(grammarAccess.getVerifMethodAccess().getValidityAssignment_4()); 
-            // InternalLightweight.g:4776:2: ( rule__VerifMethod__ValidityAssignment_4 )
-            // InternalLightweight.g:4776:3: rule__VerifMethod__ValidityAssignment_4
+            // InternalLightweight.g:4749:2: ( rule__VerifMethod__ValidityAssignment_4 )
+            // InternalLightweight.g:4749:3: rule__VerifMethod__ValidityAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__VerifMethod__ValidityAssignment_4();
@@ -14166,14 +14152,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__5"
-    // InternalLightweight.g:4784:1: rule__VerifMethod__Group__5 : rule__VerifMethod__Group__5__Impl rule__VerifMethod__Group__6 ;
+    // InternalLightweight.g:4757:1: rule__VerifMethod__Group__5 : rule__VerifMethod__Group__5__Impl rule__VerifMethod__Group__6 ;
     public final void rule__VerifMethod__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4788:1: ( rule__VerifMethod__Group__5__Impl rule__VerifMethod__Group__6 )
-            // InternalLightweight.g:4789:2: rule__VerifMethod__Group__5__Impl rule__VerifMethod__Group__6
+            // InternalLightweight.g:4761:1: ( rule__VerifMethod__Group__5__Impl rule__VerifMethod__Group__6 )
+            // InternalLightweight.g:4762:2: rule__VerifMethod__Group__5__Impl rule__VerifMethod__Group__6
             {
             pushFollow(FOLLOW_40);
             rule__VerifMethod__Group__5__Impl();
@@ -14204,17 +14190,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__5__Impl"
-    // InternalLightweight.g:4796:1: rule__VerifMethod__Group__5__Impl : ( ',' ) ;
+    // InternalLightweight.g:4769:1: rule__VerifMethod__Group__5__Impl : ( ',' ) ;
     public final void rule__VerifMethod__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4800:1: ( ( ',' ) )
-            // InternalLightweight.g:4801:1: ( ',' )
+            // InternalLightweight.g:4773:1: ( ( ',' ) )
+            // InternalLightweight.g:4774:1: ( ',' )
             {
-            // InternalLightweight.g:4801:1: ( ',' )
-            // InternalLightweight.g:4802:2: ','
+            // InternalLightweight.g:4774:1: ( ',' )
+            // InternalLightweight.g:4775:2: ','
             {
              before(grammarAccess.getVerifMethodAccess().getCommaKeyword_5()); 
             match(input,38,FOLLOW_2); 
@@ -14241,14 +14227,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__6"
-    // InternalLightweight.g:4811:1: rule__VerifMethod__Group__6 : rule__VerifMethod__Group__6__Impl rule__VerifMethod__Group__7 ;
+    // InternalLightweight.g:4784:1: rule__VerifMethod__Group__6 : rule__VerifMethod__Group__6__Impl rule__VerifMethod__Group__7 ;
     public final void rule__VerifMethod__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4815:1: ( rule__VerifMethod__Group__6__Impl rule__VerifMethod__Group__7 )
-            // InternalLightweight.g:4816:2: rule__VerifMethod__Group__6__Impl rule__VerifMethod__Group__7
+            // InternalLightweight.g:4788:1: ( rule__VerifMethod__Group__6__Impl rule__VerifMethod__Group__7 )
+            // InternalLightweight.g:4789:2: rule__VerifMethod__Group__6__Impl rule__VerifMethod__Group__7
             {
             pushFollow(FOLLOW_3);
             rule__VerifMethod__Group__6__Impl();
@@ -14279,20 +14265,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__6__Impl"
-    // InternalLightweight.g:4823:1: rule__VerifMethod__Group__6__Impl : ( 'uniqueness' ) ;
+    // InternalLightweight.g:4796:1: rule__VerifMethod__Group__6__Impl : ( 'uniqueness' ) ;
     public final void rule__VerifMethod__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4827:1: ( ( 'uniqueness' ) )
-            // InternalLightweight.g:4828:1: ( 'uniqueness' )
+            // InternalLightweight.g:4800:1: ( ( 'uniqueness' ) )
+            // InternalLightweight.g:4801:1: ( 'uniqueness' )
             {
-            // InternalLightweight.g:4828:1: ( 'uniqueness' )
-            // InternalLightweight.g:4829:2: 'uniqueness'
+            // InternalLightweight.g:4801:1: ( 'uniqueness' )
+            // InternalLightweight.g:4802:2: 'uniqueness'
             {
              before(grammarAccess.getVerifMethodAccess().getUniquenessKeyword_6()); 
-            match(input,62,FOLLOW_2); 
+            match(input,56,FOLLOW_2); 
              after(grammarAccess.getVerifMethodAccess().getUniquenessKeyword_6()); 
 
             }
@@ -14316,14 +14302,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__7"
-    // InternalLightweight.g:4838:1: rule__VerifMethod__Group__7 : rule__VerifMethod__Group__7__Impl rule__VerifMethod__Group__8 ;
+    // InternalLightweight.g:4811:1: rule__VerifMethod__Group__7 : rule__VerifMethod__Group__7__Impl rule__VerifMethod__Group__8 ;
     public final void rule__VerifMethod__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4842:1: ( rule__VerifMethod__Group__7__Impl rule__VerifMethod__Group__8 )
-            // InternalLightweight.g:4843:2: rule__VerifMethod__Group__7__Impl rule__VerifMethod__Group__8
+            // InternalLightweight.g:4815:1: ( rule__VerifMethod__Group__7__Impl rule__VerifMethod__Group__8 )
+            // InternalLightweight.g:4816:2: rule__VerifMethod__Group__7__Impl rule__VerifMethod__Group__8
             {
             pushFollow(FOLLOW_23);
             rule__VerifMethod__Group__7__Impl();
@@ -14354,17 +14340,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__7__Impl"
-    // InternalLightweight.g:4850:1: rule__VerifMethod__Group__7__Impl : ( ':' ) ;
+    // InternalLightweight.g:4823:1: rule__VerifMethod__Group__7__Impl : ( ':' ) ;
     public final void rule__VerifMethod__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4854:1: ( ( ':' ) )
-            // InternalLightweight.g:4855:1: ( ':' )
+            // InternalLightweight.g:4827:1: ( ( ':' ) )
+            // InternalLightweight.g:4828:1: ( ':' )
             {
-            // InternalLightweight.g:4855:1: ( ':' )
-            // InternalLightweight.g:4856:2: ':'
+            // InternalLightweight.g:4828:1: ( ':' )
+            // InternalLightweight.g:4829:2: ':'
             {
              before(grammarAccess.getVerifMethodAccess().getColonKeyword_7()); 
             match(input,33,FOLLOW_2); 
@@ -14391,14 +14377,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__8"
-    // InternalLightweight.g:4865:1: rule__VerifMethod__Group__8 : rule__VerifMethod__Group__8__Impl rule__VerifMethod__Group__9 ;
+    // InternalLightweight.g:4838:1: rule__VerifMethod__Group__8 : rule__VerifMethod__Group__8__Impl rule__VerifMethod__Group__9 ;
     public final void rule__VerifMethod__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4869:1: ( rule__VerifMethod__Group__8__Impl rule__VerifMethod__Group__9 )
-            // InternalLightweight.g:4870:2: rule__VerifMethod__Group__8__Impl rule__VerifMethod__Group__9
+            // InternalLightweight.g:4842:1: ( rule__VerifMethod__Group__8__Impl rule__VerifMethod__Group__9 )
+            // InternalLightweight.g:4843:2: rule__VerifMethod__Group__8__Impl rule__VerifMethod__Group__9
             {
             pushFollow(FOLLOW_10);
             rule__VerifMethod__Group__8__Impl();
@@ -14429,21 +14415,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__8__Impl"
-    // InternalLightweight.g:4877:1: rule__VerifMethod__Group__8__Impl : ( ( rule__VerifMethod__UniquenessAssignment_8 ) ) ;
+    // InternalLightweight.g:4850:1: rule__VerifMethod__Group__8__Impl : ( ( rule__VerifMethod__UniquenessAssignment_8 ) ) ;
     public final void rule__VerifMethod__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4881:1: ( ( ( rule__VerifMethod__UniquenessAssignment_8 ) ) )
-            // InternalLightweight.g:4882:1: ( ( rule__VerifMethod__UniquenessAssignment_8 ) )
+            // InternalLightweight.g:4854:1: ( ( ( rule__VerifMethod__UniquenessAssignment_8 ) ) )
+            // InternalLightweight.g:4855:1: ( ( rule__VerifMethod__UniquenessAssignment_8 ) )
             {
-            // InternalLightweight.g:4882:1: ( ( rule__VerifMethod__UniquenessAssignment_8 ) )
-            // InternalLightweight.g:4883:2: ( rule__VerifMethod__UniquenessAssignment_8 )
+            // InternalLightweight.g:4855:1: ( ( rule__VerifMethod__UniquenessAssignment_8 ) )
+            // InternalLightweight.g:4856:2: ( rule__VerifMethod__UniquenessAssignment_8 )
             {
              before(grammarAccess.getVerifMethodAccess().getUniquenessAssignment_8()); 
-            // InternalLightweight.g:4884:2: ( rule__VerifMethod__UniquenessAssignment_8 )
-            // InternalLightweight.g:4884:3: rule__VerifMethod__UniquenessAssignment_8
+            // InternalLightweight.g:4857:2: ( rule__VerifMethod__UniquenessAssignment_8 )
+            // InternalLightweight.g:4857:3: rule__VerifMethod__UniquenessAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__VerifMethod__UniquenessAssignment_8();
@@ -14476,14 +14462,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__9"
-    // InternalLightweight.g:4892:1: rule__VerifMethod__Group__9 : rule__VerifMethod__Group__9__Impl rule__VerifMethod__Group__10 ;
+    // InternalLightweight.g:4865:1: rule__VerifMethod__Group__9 : rule__VerifMethod__Group__9__Impl rule__VerifMethod__Group__10 ;
     public final void rule__VerifMethod__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4896:1: ( rule__VerifMethod__Group__9__Impl rule__VerifMethod__Group__10 )
-            // InternalLightweight.g:4897:2: rule__VerifMethod__Group__9__Impl rule__VerifMethod__Group__10
+            // InternalLightweight.g:4869:1: ( rule__VerifMethod__Group__9__Impl rule__VerifMethod__Group__10 )
+            // InternalLightweight.g:4870:2: rule__VerifMethod__Group__9__Impl rule__VerifMethod__Group__10
             {
             pushFollow(FOLLOW_41);
             rule__VerifMethod__Group__9__Impl();
@@ -14514,17 +14500,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__9__Impl"
-    // InternalLightweight.g:4904:1: rule__VerifMethod__Group__9__Impl : ( ',' ) ;
+    // InternalLightweight.g:4877:1: rule__VerifMethod__Group__9__Impl : ( ',' ) ;
     public final void rule__VerifMethod__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4908:1: ( ( ',' ) )
-            // InternalLightweight.g:4909:1: ( ',' )
+            // InternalLightweight.g:4881:1: ( ( ',' ) )
+            // InternalLightweight.g:4882:1: ( ',' )
             {
-            // InternalLightweight.g:4909:1: ( ',' )
-            // InternalLightweight.g:4910:2: ','
+            // InternalLightweight.g:4882:1: ( ',' )
+            // InternalLightweight.g:4883:2: ','
             {
              before(grammarAccess.getVerifMethodAccess().getCommaKeyword_9()); 
             match(input,38,FOLLOW_2); 
@@ -14551,14 +14537,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__10"
-    // InternalLightweight.g:4919:1: rule__VerifMethod__Group__10 : rule__VerifMethod__Group__10__Impl rule__VerifMethod__Group__11 ;
+    // InternalLightweight.g:4892:1: rule__VerifMethod__Group__10 : rule__VerifMethod__Group__10__Impl rule__VerifMethod__Group__11 ;
     public final void rule__VerifMethod__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4923:1: ( rule__VerifMethod__Group__10__Impl rule__VerifMethod__Group__11 )
-            // InternalLightweight.g:4924:2: rule__VerifMethod__Group__10__Impl rule__VerifMethod__Group__11
+            // InternalLightweight.g:4896:1: ( rule__VerifMethod__Group__10__Impl rule__VerifMethod__Group__11 )
+            // InternalLightweight.g:4897:2: rule__VerifMethod__Group__10__Impl rule__VerifMethod__Group__11
             {
             pushFollow(FOLLOW_3);
             rule__VerifMethod__Group__10__Impl();
@@ -14589,20 +14575,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__10__Impl"
-    // InternalLightweight.g:4931:1: rule__VerifMethod__Group__10__Impl : ( 'bindings' ) ;
+    // InternalLightweight.g:4904:1: rule__VerifMethod__Group__10__Impl : ( 'bindings' ) ;
     public final void rule__VerifMethod__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4935:1: ( ( 'bindings' ) )
-            // InternalLightweight.g:4936:1: ( 'bindings' )
+            // InternalLightweight.g:4908:1: ( ( 'bindings' ) )
+            // InternalLightweight.g:4909:1: ( 'bindings' )
             {
-            // InternalLightweight.g:4936:1: ( 'bindings' )
-            // InternalLightweight.g:4937:2: 'bindings'
+            // InternalLightweight.g:4909:1: ( 'bindings' )
+            // InternalLightweight.g:4910:2: 'bindings'
             {
              before(grammarAccess.getVerifMethodAccess().getBindingsKeyword_10()); 
-            match(input,63,FOLLOW_2); 
+            match(input,57,FOLLOW_2); 
              after(grammarAccess.getVerifMethodAccess().getBindingsKeyword_10()); 
 
             }
@@ -14626,14 +14612,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__11"
-    // InternalLightweight.g:4946:1: rule__VerifMethod__Group__11 : rule__VerifMethod__Group__11__Impl rule__VerifMethod__Group__12 ;
+    // InternalLightweight.g:4919:1: rule__VerifMethod__Group__11 : rule__VerifMethod__Group__11__Impl rule__VerifMethod__Group__12 ;
     public final void rule__VerifMethod__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4950:1: ( rule__VerifMethod__Group__11__Impl rule__VerifMethod__Group__12 )
-            // InternalLightweight.g:4951:2: rule__VerifMethod__Group__11__Impl rule__VerifMethod__Group__12
+            // InternalLightweight.g:4923:1: ( rule__VerifMethod__Group__11__Impl rule__VerifMethod__Group__12 )
+            // InternalLightweight.g:4924:2: rule__VerifMethod__Group__11__Impl rule__VerifMethod__Group__12
             {
             pushFollow(FOLLOW_23);
             rule__VerifMethod__Group__11__Impl();
@@ -14664,17 +14650,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__11__Impl"
-    // InternalLightweight.g:4958:1: rule__VerifMethod__Group__11__Impl : ( ':' ) ;
+    // InternalLightweight.g:4931:1: rule__VerifMethod__Group__11__Impl : ( ':' ) ;
     public final void rule__VerifMethod__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4962:1: ( ( ':' ) )
-            // InternalLightweight.g:4963:1: ( ':' )
+            // InternalLightweight.g:4935:1: ( ( ':' ) )
+            // InternalLightweight.g:4936:1: ( ':' )
             {
-            // InternalLightweight.g:4963:1: ( ':' )
-            // InternalLightweight.g:4964:2: ':'
+            // InternalLightweight.g:4936:1: ( ':' )
+            // InternalLightweight.g:4937:2: ':'
             {
              before(grammarAccess.getVerifMethodAccess().getColonKeyword_11()); 
             match(input,33,FOLLOW_2); 
@@ -14701,14 +14687,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__12"
-    // InternalLightweight.g:4973:1: rule__VerifMethod__Group__12 : rule__VerifMethod__Group__12__Impl rule__VerifMethod__Group__13 ;
+    // InternalLightweight.g:4946:1: rule__VerifMethod__Group__12 : rule__VerifMethod__Group__12__Impl rule__VerifMethod__Group__13 ;
     public final void rule__VerifMethod__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4977:1: ( rule__VerifMethod__Group__12__Impl rule__VerifMethod__Group__13 )
-            // InternalLightweight.g:4978:2: rule__VerifMethod__Group__12__Impl rule__VerifMethod__Group__13
+            // InternalLightweight.g:4950:1: ( rule__VerifMethod__Group__12__Impl rule__VerifMethod__Group__13 )
+            // InternalLightweight.g:4951:2: rule__VerifMethod__Group__12__Impl rule__VerifMethod__Group__13
             {
             pushFollow(FOLLOW_15);
             rule__VerifMethod__Group__12__Impl();
@@ -14739,21 +14725,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__12__Impl"
-    // InternalLightweight.g:4985:1: rule__VerifMethod__Group__12__Impl : ( ( rule__VerifMethod__BindingsAssignment_12 ) ) ;
+    // InternalLightweight.g:4958:1: rule__VerifMethod__Group__12__Impl : ( ( rule__VerifMethod__BindingsAssignment_12 ) ) ;
     public final void rule__VerifMethod__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:4989:1: ( ( ( rule__VerifMethod__BindingsAssignment_12 ) ) )
-            // InternalLightweight.g:4990:1: ( ( rule__VerifMethod__BindingsAssignment_12 ) )
+            // InternalLightweight.g:4962:1: ( ( ( rule__VerifMethod__BindingsAssignment_12 ) ) )
+            // InternalLightweight.g:4963:1: ( ( rule__VerifMethod__BindingsAssignment_12 ) )
             {
-            // InternalLightweight.g:4990:1: ( ( rule__VerifMethod__BindingsAssignment_12 ) )
-            // InternalLightweight.g:4991:2: ( rule__VerifMethod__BindingsAssignment_12 )
+            // InternalLightweight.g:4963:1: ( ( rule__VerifMethod__BindingsAssignment_12 ) )
+            // InternalLightweight.g:4964:2: ( rule__VerifMethod__BindingsAssignment_12 )
             {
              before(grammarAccess.getVerifMethodAccess().getBindingsAssignment_12()); 
-            // InternalLightweight.g:4992:2: ( rule__VerifMethod__BindingsAssignment_12 )
-            // InternalLightweight.g:4992:3: rule__VerifMethod__BindingsAssignment_12
+            // InternalLightweight.g:4965:2: ( rule__VerifMethod__BindingsAssignment_12 )
+            // InternalLightweight.g:4965:3: rule__VerifMethod__BindingsAssignment_12
             {
             pushFollow(FOLLOW_2);
             rule__VerifMethod__BindingsAssignment_12();
@@ -14786,14 +14772,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__13"
-    // InternalLightweight.g:5000:1: rule__VerifMethod__Group__13 : rule__VerifMethod__Group__13__Impl ;
+    // InternalLightweight.g:4973:1: rule__VerifMethod__Group__13 : rule__VerifMethod__Group__13__Impl ;
     public final void rule__VerifMethod__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5004:1: ( rule__VerifMethod__Group__13__Impl )
-            // InternalLightweight.g:5005:2: rule__VerifMethod__Group__13__Impl
+            // InternalLightweight.g:4977:1: ( rule__VerifMethod__Group__13__Impl )
+            // InternalLightweight.g:4978:2: rule__VerifMethod__Group__13__Impl
             {
             pushFollow(FOLLOW_2);
             rule__VerifMethod__Group__13__Impl();
@@ -14819,17 +14805,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__Group__13__Impl"
-    // InternalLightweight.g:5011:1: rule__VerifMethod__Group__13__Impl : ( '}' ) ;
+    // InternalLightweight.g:4984:1: rule__VerifMethod__Group__13__Impl : ( '}' ) ;
     public final void rule__VerifMethod__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5015:1: ( ( '}' ) )
-            // InternalLightweight.g:5016:1: ( '}' )
+            // InternalLightweight.g:4988:1: ( ( '}' ) )
+            // InternalLightweight.g:4989:1: ( '}' )
             {
-            // InternalLightweight.g:5016:1: ( '}' )
-            // InternalLightweight.g:5017:2: '}'
+            // InternalLightweight.g:4989:1: ( '}' )
+            // InternalLightweight.g:4990:2: '}'
             {
              before(grammarAccess.getVerifMethodAccess().getRightCurlyBracketKeyword_13()); 
             match(input,41,FOLLOW_2); 
@@ -14856,14 +14842,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__0"
-    // InternalLightweight.g:5027:1: rule__Recovery__Group__0 : rule__Recovery__Group__0__Impl rule__Recovery__Group__1 ;
+    // InternalLightweight.g:5000:1: rule__Recovery__Group__0 : rule__Recovery__Group__0__Impl rule__Recovery__Group__1 ;
     public final void rule__Recovery__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5031:1: ( rule__Recovery__Group__0__Impl rule__Recovery__Group__1 )
-            // InternalLightweight.g:5032:2: rule__Recovery__Group__0__Impl rule__Recovery__Group__1
+            // InternalLightweight.g:5004:1: ( rule__Recovery__Group__0__Impl rule__Recovery__Group__1 )
+            // InternalLightweight.g:5005:2: rule__Recovery__Group__0__Impl rule__Recovery__Group__1
             {
             pushFollow(FOLLOW_42);
             rule__Recovery__Group__0__Impl();
@@ -14894,21 +14880,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__0__Impl"
-    // InternalLightweight.g:5039:1: rule__Recovery__Group__0__Impl : ( () ) ;
+    // InternalLightweight.g:5012:1: rule__Recovery__Group__0__Impl : ( () ) ;
     public final void rule__Recovery__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5043:1: ( ( () ) )
-            // InternalLightweight.g:5044:1: ( () )
+            // InternalLightweight.g:5016:1: ( ( () ) )
+            // InternalLightweight.g:5017:1: ( () )
             {
-            // InternalLightweight.g:5044:1: ( () )
-            // InternalLightweight.g:5045:2: ()
+            // InternalLightweight.g:5017:1: ( () )
+            // InternalLightweight.g:5018:2: ()
             {
              before(grammarAccess.getRecoveryAccess().getRecoveryAction_0()); 
-            // InternalLightweight.g:5046:2: ()
-            // InternalLightweight.g:5046:3: 
+            // InternalLightweight.g:5019:2: ()
+            // InternalLightweight.g:5019:3: 
             {
             }
 
@@ -14931,14 +14917,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__1"
-    // InternalLightweight.g:5054:1: rule__Recovery__Group__1 : rule__Recovery__Group__1__Impl rule__Recovery__Group__2 ;
+    // InternalLightweight.g:5027:1: rule__Recovery__Group__1 : rule__Recovery__Group__1__Impl rule__Recovery__Group__2 ;
     public final void rule__Recovery__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5058:1: ( rule__Recovery__Group__1__Impl rule__Recovery__Group__2 )
-            // InternalLightweight.g:5059:2: rule__Recovery__Group__1__Impl rule__Recovery__Group__2
+            // InternalLightweight.g:5031:1: ( rule__Recovery__Group__1__Impl rule__Recovery__Group__2 )
+            // InternalLightweight.g:5032:2: rule__Recovery__Group__1__Impl rule__Recovery__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Recovery__Group__1__Impl();
@@ -14969,21 +14955,31 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__1__Impl"
-    // InternalLightweight.g:5066:1: rule__Recovery__Group__1__Impl : ( 'Recovery' ) ;
+    // InternalLightweight.g:5039:1: rule__Recovery__Group__1__Impl : ( ( rule__Recovery__TypeAssignment_1 ) ) ;
     public final void rule__Recovery__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5070:1: ( ( 'Recovery' ) )
-            // InternalLightweight.g:5071:1: ( 'Recovery' )
+            // InternalLightweight.g:5043:1: ( ( ( rule__Recovery__TypeAssignment_1 ) ) )
+            // InternalLightweight.g:5044:1: ( ( rule__Recovery__TypeAssignment_1 ) )
             {
-            // InternalLightweight.g:5071:1: ( 'Recovery' )
-            // InternalLightweight.g:5072:2: 'Recovery'
+            // InternalLightweight.g:5044:1: ( ( rule__Recovery__TypeAssignment_1 ) )
+            // InternalLightweight.g:5045:2: ( rule__Recovery__TypeAssignment_1 )
             {
-             before(grammarAccess.getRecoveryAccess().getRecoveryKeyword_1()); 
-            match(input,64,FOLLOW_2); 
-             after(grammarAccess.getRecoveryAccess().getRecoveryKeyword_1()); 
+             before(grammarAccess.getRecoveryAccess().getTypeAssignment_1()); 
+            // InternalLightweight.g:5046:2: ( rule__Recovery__TypeAssignment_1 )
+            // InternalLightweight.g:5046:3: rule__Recovery__TypeAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Recovery__TypeAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRecoveryAccess().getTypeAssignment_1()); 
 
             }
 
@@ -15006,14 +15002,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__2"
-    // InternalLightweight.g:5081:1: rule__Recovery__Group__2 : rule__Recovery__Group__2__Impl rule__Recovery__Group__3 ;
+    // InternalLightweight.g:5054:1: rule__Recovery__Group__2 : rule__Recovery__Group__2__Impl rule__Recovery__Group__3 ;
     public final void rule__Recovery__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5085:1: ( rule__Recovery__Group__2__Impl rule__Recovery__Group__3 )
-            // InternalLightweight.g:5086:2: rule__Recovery__Group__2__Impl rule__Recovery__Group__3
+            // InternalLightweight.g:5058:1: ( rule__Recovery__Group__2__Impl rule__Recovery__Group__3 )
+            // InternalLightweight.g:5059:2: rule__Recovery__Group__2__Impl rule__Recovery__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__Recovery__Group__2__Impl();
@@ -15044,17 +15040,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__2__Impl"
-    // InternalLightweight.g:5093:1: rule__Recovery__Group__2__Impl : ( ':' ) ;
+    // InternalLightweight.g:5066:1: rule__Recovery__Group__2__Impl : ( ':' ) ;
     public final void rule__Recovery__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5097:1: ( ( ':' ) )
-            // InternalLightweight.g:5098:1: ( ':' )
+            // InternalLightweight.g:5070:1: ( ( ':' ) )
+            // InternalLightweight.g:5071:1: ( ':' )
             {
-            // InternalLightweight.g:5098:1: ( ':' )
-            // InternalLightweight.g:5099:2: ':'
+            // InternalLightweight.g:5071:1: ( ':' )
+            // InternalLightweight.g:5072:2: ':'
             {
              before(grammarAccess.getRecoveryAccess().getColonKeyword_2()); 
             match(input,33,FOLLOW_2); 
@@ -15081,14 +15077,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__3"
-    // InternalLightweight.g:5108:1: rule__Recovery__Group__3 : rule__Recovery__Group__3__Impl rule__Recovery__Group__4 ;
+    // InternalLightweight.g:5081:1: rule__Recovery__Group__3 : rule__Recovery__Group__3__Impl rule__Recovery__Group__4 ;
     public final void rule__Recovery__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5112:1: ( rule__Recovery__Group__3__Impl rule__Recovery__Group__4 )
-            // InternalLightweight.g:5113:2: rule__Recovery__Group__3__Impl rule__Recovery__Group__4
+            // InternalLightweight.g:5085:1: ( rule__Recovery__Group__3__Impl rule__Recovery__Group__4 )
+            // InternalLightweight.g:5086:2: rule__Recovery__Group__3__Impl rule__Recovery__Group__4
             {
             pushFollow(FOLLOW_16);
             rule__Recovery__Group__3__Impl();
@@ -15119,17 +15115,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__3__Impl"
-    // InternalLightweight.g:5120:1: rule__Recovery__Group__3__Impl : ( '{' ) ;
+    // InternalLightweight.g:5093:1: rule__Recovery__Group__3__Impl : ( '{' ) ;
     public final void rule__Recovery__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5124:1: ( ( '{' ) )
-            // InternalLightweight.g:5125:1: ( '{' )
+            // InternalLightweight.g:5097:1: ( ( '{' ) )
+            // InternalLightweight.g:5098:1: ( '{' )
             {
-            // InternalLightweight.g:5125:1: ( '{' )
-            // InternalLightweight.g:5126:2: '{'
+            // InternalLightweight.g:5098:1: ( '{' )
+            // InternalLightweight.g:5099:2: '{'
             {
              before(grammarAccess.getRecoveryAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,34,FOLLOW_2); 
@@ -15156,14 +15152,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__4"
-    // InternalLightweight.g:5135:1: rule__Recovery__Group__4 : rule__Recovery__Group__4__Impl rule__Recovery__Group__5 ;
+    // InternalLightweight.g:5108:1: rule__Recovery__Group__4 : rule__Recovery__Group__4__Impl rule__Recovery__Group__5 ;
     public final void rule__Recovery__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5139:1: ( rule__Recovery__Group__4__Impl rule__Recovery__Group__5 )
-            // InternalLightweight.g:5140:2: rule__Recovery__Group__4__Impl rule__Recovery__Group__5
+            // InternalLightweight.g:5112:1: ( rule__Recovery__Group__4__Impl rule__Recovery__Group__5 )
+            // InternalLightweight.g:5113:2: rule__Recovery__Group__4__Impl rule__Recovery__Group__5
             {
             pushFollow(FOLLOW_3);
             rule__Recovery__Group__4__Impl();
@@ -15194,20 +15190,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__4__Impl"
-    // InternalLightweight.g:5147:1: rule__Recovery__Group__4__Impl : ( 'name' ) ;
+    // InternalLightweight.g:5120:1: rule__Recovery__Group__4__Impl : ( 'name' ) ;
     public final void rule__Recovery__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5151:1: ( ( 'name' ) )
-            // InternalLightweight.g:5152:1: ( 'name' )
+            // InternalLightweight.g:5124:1: ( ( 'name' ) )
+            // InternalLightweight.g:5125:1: ( 'name' )
             {
-            // InternalLightweight.g:5152:1: ( 'name' )
-            // InternalLightweight.g:5153:2: 'name'
+            // InternalLightweight.g:5125:1: ( 'name' )
+            // InternalLightweight.g:5126:2: 'name'
             {
              before(grammarAccess.getRecoveryAccess().getNameKeyword_4()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getRecoveryAccess().getNameKeyword_4()); 
 
             }
@@ -15231,14 +15227,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__5"
-    // InternalLightweight.g:5162:1: rule__Recovery__Group__5 : rule__Recovery__Group__5__Impl rule__Recovery__Group__6 ;
+    // InternalLightweight.g:5135:1: rule__Recovery__Group__5 : rule__Recovery__Group__5__Impl rule__Recovery__Group__6 ;
     public final void rule__Recovery__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5166:1: ( rule__Recovery__Group__5__Impl rule__Recovery__Group__6 )
-            // InternalLightweight.g:5167:2: rule__Recovery__Group__5__Impl rule__Recovery__Group__6
+            // InternalLightweight.g:5139:1: ( rule__Recovery__Group__5__Impl rule__Recovery__Group__6 )
+            // InternalLightweight.g:5140:2: rule__Recovery__Group__5__Impl rule__Recovery__Group__6
             {
             pushFollow(FOLLOW_17);
             rule__Recovery__Group__5__Impl();
@@ -15269,17 +15265,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__5__Impl"
-    // InternalLightweight.g:5174:1: rule__Recovery__Group__5__Impl : ( ':' ) ;
+    // InternalLightweight.g:5147:1: rule__Recovery__Group__5__Impl : ( ':' ) ;
     public final void rule__Recovery__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5178:1: ( ( ':' ) )
-            // InternalLightweight.g:5179:1: ( ':' )
+            // InternalLightweight.g:5151:1: ( ( ':' ) )
+            // InternalLightweight.g:5152:1: ( ':' )
             {
-            // InternalLightweight.g:5179:1: ( ':' )
-            // InternalLightweight.g:5180:2: ':'
+            // InternalLightweight.g:5152:1: ( ':' )
+            // InternalLightweight.g:5153:2: ':'
             {
              before(grammarAccess.getRecoveryAccess().getColonKeyword_5()); 
             match(input,33,FOLLOW_2); 
@@ -15306,14 +15302,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__6"
-    // InternalLightweight.g:5189:1: rule__Recovery__Group__6 : rule__Recovery__Group__6__Impl rule__Recovery__Group__7 ;
+    // InternalLightweight.g:5162:1: rule__Recovery__Group__6 : rule__Recovery__Group__6__Impl rule__Recovery__Group__7 ;
     public final void rule__Recovery__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5193:1: ( rule__Recovery__Group__6__Impl rule__Recovery__Group__7 )
-            // InternalLightweight.g:5194:2: rule__Recovery__Group__6__Impl rule__Recovery__Group__7
+            // InternalLightweight.g:5166:1: ( rule__Recovery__Group__6__Impl rule__Recovery__Group__7 )
+            // InternalLightweight.g:5167:2: rule__Recovery__Group__6__Impl rule__Recovery__Group__7
             {
             pushFollow(FOLLOW_10);
             rule__Recovery__Group__6__Impl();
@@ -15344,21 +15340,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__6__Impl"
-    // InternalLightweight.g:5201:1: rule__Recovery__Group__6__Impl : ( ( rule__Recovery__NameAssignment_6 ) ) ;
+    // InternalLightweight.g:5174:1: rule__Recovery__Group__6__Impl : ( ( rule__Recovery__NameAssignment_6 ) ) ;
     public final void rule__Recovery__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5205:1: ( ( ( rule__Recovery__NameAssignment_6 ) ) )
-            // InternalLightweight.g:5206:1: ( ( rule__Recovery__NameAssignment_6 ) )
+            // InternalLightweight.g:5178:1: ( ( ( rule__Recovery__NameAssignment_6 ) ) )
+            // InternalLightweight.g:5179:1: ( ( rule__Recovery__NameAssignment_6 ) )
             {
-            // InternalLightweight.g:5206:1: ( ( rule__Recovery__NameAssignment_6 ) )
-            // InternalLightweight.g:5207:2: ( rule__Recovery__NameAssignment_6 )
+            // InternalLightweight.g:5179:1: ( ( rule__Recovery__NameAssignment_6 ) )
+            // InternalLightweight.g:5180:2: ( rule__Recovery__NameAssignment_6 )
             {
              before(grammarAccess.getRecoveryAccess().getNameAssignment_6()); 
-            // InternalLightweight.g:5208:2: ( rule__Recovery__NameAssignment_6 )
-            // InternalLightweight.g:5208:3: rule__Recovery__NameAssignment_6
+            // InternalLightweight.g:5181:2: ( rule__Recovery__NameAssignment_6 )
+            // InternalLightweight.g:5181:3: rule__Recovery__NameAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Recovery__NameAssignment_6();
@@ -15391,14 +15387,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__7"
-    // InternalLightweight.g:5216:1: rule__Recovery__Group__7 : rule__Recovery__Group__7__Impl rule__Recovery__Group__8 ;
+    // InternalLightweight.g:5189:1: rule__Recovery__Group__7 : rule__Recovery__Group__7__Impl rule__Recovery__Group__8 ;
     public final void rule__Recovery__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5220:1: ( rule__Recovery__Group__7__Impl rule__Recovery__Group__8 )
-            // InternalLightweight.g:5221:2: rule__Recovery__Group__7__Impl rule__Recovery__Group__8
+            // InternalLightweight.g:5193:1: ( rule__Recovery__Group__7__Impl rule__Recovery__Group__8 )
+            // InternalLightweight.g:5194:2: rule__Recovery__Group__7__Impl rule__Recovery__Group__8
             {
             pushFollow(FOLLOW_43);
             rule__Recovery__Group__7__Impl();
@@ -15429,17 +15425,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__7__Impl"
-    // InternalLightweight.g:5228:1: rule__Recovery__Group__7__Impl : ( ',' ) ;
+    // InternalLightweight.g:5201:1: rule__Recovery__Group__7__Impl : ( ',' ) ;
     public final void rule__Recovery__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5232:1: ( ( ',' ) )
-            // InternalLightweight.g:5233:1: ( ',' )
+            // InternalLightweight.g:5205:1: ( ( ',' ) )
+            // InternalLightweight.g:5206:1: ( ',' )
             {
-            // InternalLightweight.g:5233:1: ( ',' )
-            // InternalLightweight.g:5234:2: ','
+            // InternalLightweight.g:5206:1: ( ',' )
+            // InternalLightweight.g:5207:2: ','
             {
              before(grammarAccess.getRecoveryAccess().getCommaKeyword_7()); 
             match(input,38,FOLLOW_2); 
@@ -15466,14 +15462,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__8"
-    // InternalLightweight.g:5243:1: rule__Recovery__Group__8 : rule__Recovery__Group__8__Impl rule__Recovery__Group__9 ;
+    // InternalLightweight.g:5216:1: rule__Recovery__Group__8 : rule__Recovery__Group__8__Impl rule__Recovery__Group__9 ;
     public final void rule__Recovery__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5247:1: ( rule__Recovery__Group__8__Impl rule__Recovery__Group__9 )
-            // InternalLightweight.g:5248:2: rule__Recovery__Group__8__Impl rule__Recovery__Group__9
+            // InternalLightweight.g:5220:1: ( rule__Recovery__Group__8__Impl rule__Recovery__Group__9 )
+            // InternalLightweight.g:5221:2: rule__Recovery__Group__8__Impl rule__Recovery__Group__9
             {
             pushFollow(FOLLOW_43);
             rule__Recovery__Group__8__Impl();
@@ -15504,29 +15500,29 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__8__Impl"
-    // InternalLightweight.g:5255:1: rule__Recovery__Group__8__Impl : ( ( rule__Recovery__Group_8__0 )? ) ;
+    // InternalLightweight.g:5228:1: rule__Recovery__Group__8__Impl : ( ( rule__Recovery__Group_8__0 )? ) ;
     public final void rule__Recovery__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5259:1: ( ( ( rule__Recovery__Group_8__0 )? ) )
-            // InternalLightweight.g:5260:1: ( ( rule__Recovery__Group_8__0 )? )
+            // InternalLightweight.g:5232:1: ( ( ( rule__Recovery__Group_8__0 )? ) )
+            // InternalLightweight.g:5233:1: ( ( rule__Recovery__Group_8__0 )? )
             {
-            // InternalLightweight.g:5260:1: ( ( rule__Recovery__Group_8__0 )? )
-            // InternalLightweight.g:5261:2: ( rule__Recovery__Group_8__0 )?
+            // InternalLightweight.g:5233:1: ( ( rule__Recovery__Group_8__0 )? )
+            // InternalLightweight.g:5234:2: ( rule__Recovery__Group_8__0 )?
             {
              before(grammarAccess.getRecoveryAccess().getGroup_8()); 
-            // InternalLightweight.g:5262:2: ( rule__Recovery__Group_8__0 )?
+            // InternalLightweight.g:5235:2: ( rule__Recovery__Group_8__0 )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
-            if ( (LA20_0==49) ) {
+            if ( (LA20_0==47) ) {
                 alt20=1;
             }
             switch (alt20) {
                 case 1 :
-                    // InternalLightweight.g:5262:3: rule__Recovery__Group_8__0
+                    // InternalLightweight.g:5235:3: rule__Recovery__Group_8__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Recovery__Group_8__0();
@@ -15562,14 +15558,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__9"
-    // InternalLightweight.g:5270:1: rule__Recovery__Group__9 : rule__Recovery__Group__9__Impl rule__Recovery__Group__10 ;
+    // InternalLightweight.g:5243:1: rule__Recovery__Group__9 : rule__Recovery__Group__9__Impl rule__Recovery__Group__10 ;
     public final void rule__Recovery__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5274:1: ( rule__Recovery__Group__9__Impl rule__Recovery__Group__10 )
-            // InternalLightweight.g:5275:2: rule__Recovery__Group__9__Impl rule__Recovery__Group__10
+            // InternalLightweight.g:5247:1: ( rule__Recovery__Group__9__Impl rule__Recovery__Group__10 )
+            // InternalLightweight.g:5248:2: rule__Recovery__Group__9__Impl rule__Recovery__Group__10
             {
             pushFollow(FOLLOW_43);
             rule__Recovery__Group__9__Impl();
@@ -15600,29 +15596,29 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__9__Impl"
-    // InternalLightweight.g:5282:1: rule__Recovery__Group__9__Impl : ( ( rule__Recovery__Group_9__0 )? ) ;
+    // InternalLightweight.g:5255:1: rule__Recovery__Group__9__Impl : ( ( rule__Recovery__Group_9__0 )? ) ;
     public final void rule__Recovery__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5286:1: ( ( ( rule__Recovery__Group_9__0 )? ) )
-            // InternalLightweight.g:5287:1: ( ( rule__Recovery__Group_9__0 )? )
+            // InternalLightweight.g:5259:1: ( ( ( rule__Recovery__Group_9__0 )? ) )
+            // InternalLightweight.g:5260:1: ( ( rule__Recovery__Group_9__0 )? )
             {
-            // InternalLightweight.g:5287:1: ( ( rule__Recovery__Group_9__0 )? )
-            // InternalLightweight.g:5288:2: ( rule__Recovery__Group_9__0 )?
+            // InternalLightweight.g:5260:1: ( ( rule__Recovery__Group_9__0 )? )
+            // InternalLightweight.g:5261:2: ( rule__Recovery__Group_9__0 )?
             {
              before(grammarAccess.getRecoveryAccess().getGroup_9()); 
-            // InternalLightweight.g:5289:2: ( rule__Recovery__Group_9__0 )?
+            // InternalLightweight.g:5262:2: ( rule__Recovery__Group_9__0 )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
-            if ( (LA21_0==65) ) {
+            if ( (LA21_0==58) ) {
                 alt21=1;
             }
             switch (alt21) {
                 case 1 :
-                    // InternalLightweight.g:5289:3: rule__Recovery__Group_9__0
+                    // InternalLightweight.g:5262:3: rule__Recovery__Group_9__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Recovery__Group_9__0();
@@ -15658,14 +15654,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__10"
-    // InternalLightweight.g:5297:1: rule__Recovery__Group__10 : rule__Recovery__Group__10__Impl ;
+    // InternalLightweight.g:5270:1: rule__Recovery__Group__10 : rule__Recovery__Group__10__Impl ;
     public final void rule__Recovery__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5301:1: ( rule__Recovery__Group__10__Impl )
-            // InternalLightweight.g:5302:2: rule__Recovery__Group__10__Impl
+            // InternalLightweight.g:5274:1: ( rule__Recovery__Group__10__Impl )
+            // InternalLightweight.g:5275:2: rule__Recovery__Group__10__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Recovery__Group__10__Impl();
@@ -15691,17 +15687,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group__10__Impl"
-    // InternalLightweight.g:5308:1: rule__Recovery__Group__10__Impl : ( '}' ) ;
+    // InternalLightweight.g:5281:1: rule__Recovery__Group__10__Impl : ( '}' ) ;
     public final void rule__Recovery__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5312:1: ( ( '}' ) )
-            // InternalLightweight.g:5313:1: ( '}' )
+            // InternalLightweight.g:5285:1: ( ( '}' ) )
+            // InternalLightweight.g:5286:1: ( '}' )
             {
-            // InternalLightweight.g:5313:1: ( '}' )
-            // InternalLightweight.g:5314:2: '}'
+            // InternalLightweight.g:5286:1: ( '}' )
+            // InternalLightweight.g:5287:2: '}'
             {
              before(grammarAccess.getRecoveryAccess().getRightCurlyBracketKeyword_10()); 
             match(input,41,FOLLOW_2); 
@@ -15728,14 +15724,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_8__0"
-    // InternalLightweight.g:5324:1: rule__Recovery__Group_8__0 : rule__Recovery__Group_8__0__Impl rule__Recovery__Group_8__1 ;
+    // InternalLightweight.g:5297:1: rule__Recovery__Group_8__0 : rule__Recovery__Group_8__0__Impl rule__Recovery__Group_8__1 ;
     public final void rule__Recovery__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5328:1: ( rule__Recovery__Group_8__0__Impl rule__Recovery__Group_8__1 )
-            // InternalLightweight.g:5329:2: rule__Recovery__Group_8__0__Impl rule__Recovery__Group_8__1
+            // InternalLightweight.g:5301:1: ( rule__Recovery__Group_8__0__Impl rule__Recovery__Group_8__1 )
+            // InternalLightweight.g:5302:2: rule__Recovery__Group_8__0__Impl rule__Recovery__Group_8__1
             {
             pushFollow(FOLLOW_3);
             rule__Recovery__Group_8__0__Impl();
@@ -15766,20 +15762,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_8__0__Impl"
-    // InternalLightweight.g:5336:1: rule__Recovery__Group_8__0__Impl : ( 'authenticator' ) ;
+    // InternalLightweight.g:5309:1: rule__Recovery__Group_8__0__Impl : ( 'authenticator' ) ;
     public final void rule__Recovery__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5340:1: ( ( 'authenticator' ) )
-            // InternalLightweight.g:5341:1: ( 'authenticator' )
+            // InternalLightweight.g:5313:1: ( ( 'authenticator' ) )
+            // InternalLightweight.g:5314:1: ( 'authenticator' )
             {
-            // InternalLightweight.g:5341:1: ( 'authenticator' )
-            // InternalLightweight.g:5342:2: 'authenticator'
+            // InternalLightweight.g:5314:1: ( 'authenticator' )
+            // InternalLightweight.g:5315:2: 'authenticator'
             {
              before(grammarAccess.getRecoveryAccess().getAuthenticatorKeyword_8_0()); 
-            match(input,49,FOLLOW_2); 
+            match(input,47,FOLLOW_2); 
              after(grammarAccess.getRecoveryAccess().getAuthenticatorKeyword_8_0()); 
 
             }
@@ -15803,14 +15799,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_8__1"
-    // InternalLightweight.g:5351:1: rule__Recovery__Group_8__1 : rule__Recovery__Group_8__1__Impl rule__Recovery__Group_8__2 ;
+    // InternalLightweight.g:5324:1: rule__Recovery__Group_8__1 : rule__Recovery__Group_8__1__Impl rule__Recovery__Group_8__2 ;
     public final void rule__Recovery__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5355:1: ( rule__Recovery__Group_8__1__Impl rule__Recovery__Group_8__2 )
-            // InternalLightweight.g:5356:2: rule__Recovery__Group_8__1__Impl rule__Recovery__Group_8__2
+            // InternalLightweight.g:5328:1: ( rule__Recovery__Group_8__1__Impl rule__Recovery__Group_8__2 )
+            // InternalLightweight.g:5329:2: rule__Recovery__Group_8__1__Impl rule__Recovery__Group_8__2
             {
             pushFollow(FOLLOW_19);
             rule__Recovery__Group_8__1__Impl();
@@ -15841,17 +15837,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_8__1__Impl"
-    // InternalLightweight.g:5363:1: rule__Recovery__Group_8__1__Impl : ( ':' ) ;
+    // InternalLightweight.g:5336:1: rule__Recovery__Group_8__1__Impl : ( ':' ) ;
     public final void rule__Recovery__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5367:1: ( ( ':' ) )
-            // InternalLightweight.g:5368:1: ( ':' )
+            // InternalLightweight.g:5340:1: ( ( ':' ) )
+            // InternalLightweight.g:5341:1: ( ':' )
             {
-            // InternalLightweight.g:5368:1: ( ':' )
-            // InternalLightweight.g:5369:2: ':'
+            // InternalLightweight.g:5341:1: ( ':' )
+            // InternalLightweight.g:5342:2: ':'
             {
              before(grammarAccess.getRecoveryAccess().getColonKeyword_8_1()); 
             match(input,33,FOLLOW_2); 
@@ -15878,14 +15874,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_8__2"
-    // InternalLightweight.g:5378:1: rule__Recovery__Group_8__2 : rule__Recovery__Group_8__2__Impl rule__Recovery__Group_8__3 ;
+    // InternalLightweight.g:5351:1: rule__Recovery__Group_8__2 : rule__Recovery__Group_8__2__Impl rule__Recovery__Group_8__3 ;
     public final void rule__Recovery__Group_8__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5382:1: ( rule__Recovery__Group_8__2__Impl rule__Recovery__Group_8__3 )
-            // InternalLightweight.g:5383:2: rule__Recovery__Group_8__2__Impl rule__Recovery__Group_8__3
+            // InternalLightweight.g:5355:1: ( rule__Recovery__Group_8__2__Impl rule__Recovery__Group_8__3 )
+            // InternalLightweight.g:5356:2: rule__Recovery__Group_8__2__Impl rule__Recovery__Group_8__3
             {
             pushFollow(FOLLOW_10);
             rule__Recovery__Group_8__2__Impl();
@@ -15916,21 +15912,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_8__2__Impl"
-    // InternalLightweight.g:5390:1: rule__Recovery__Group_8__2__Impl : ( ( rule__Recovery__AuthenticatorAssignment_8_2 ) ) ;
+    // InternalLightweight.g:5363:1: rule__Recovery__Group_8__2__Impl : ( ( rule__Recovery__AuthenticatorAssignment_8_2 ) ) ;
     public final void rule__Recovery__Group_8__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5394:1: ( ( ( rule__Recovery__AuthenticatorAssignment_8_2 ) ) )
-            // InternalLightweight.g:5395:1: ( ( rule__Recovery__AuthenticatorAssignment_8_2 ) )
+            // InternalLightweight.g:5367:1: ( ( ( rule__Recovery__AuthenticatorAssignment_8_2 ) ) )
+            // InternalLightweight.g:5368:1: ( ( rule__Recovery__AuthenticatorAssignment_8_2 ) )
             {
-            // InternalLightweight.g:5395:1: ( ( rule__Recovery__AuthenticatorAssignment_8_2 ) )
-            // InternalLightweight.g:5396:2: ( rule__Recovery__AuthenticatorAssignment_8_2 )
+            // InternalLightweight.g:5368:1: ( ( rule__Recovery__AuthenticatorAssignment_8_2 ) )
+            // InternalLightweight.g:5369:2: ( rule__Recovery__AuthenticatorAssignment_8_2 )
             {
              before(grammarAccess.getRecoveryAccess().getAuthenticatorAssignment_8_2()); 
-            // InternalLightweight.g:5397:2: ( rule__Recovery__AuthenticatorAssignment_8_2 )
-            // InternalLightweight.g:5397:3: rule__Recovery__AuthenticatorAssignment_8_2
+            // InternalLightweight.g:5370:2: ( rule__Recovery__AuthenticatorAssignment_8_2 )
+            // InternalLightweight.g:5370:3: rule__Recovery__AuthenticatorAssignment_8_2
             {
             pushFollow(FOLLOW_2);
             rule__Recovery__AuthenticatorAssignment_8_2();
@@ -15963,14 +15959,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_8__3"
-    // InternalLightweight.g:5405:1: rule__Recovery__Group_8__3 : rule__Recovery__Group_8__3__Impl ;
+    // InternalLightweight.g:5378:1: rule__Recovery__Group_8__3 : rule__Recovery__Group_8__3__Impl ;
     public final void rule__Recovery__Group_8__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5409:1: ( rule__Recovery__Group_8__3__Impl )
-            // InternalLightweight.g:5410:2: rule__Recovery__Group_8__3__Impl
+            // InternalLightweight.g:5382:1: ( rule__Recovery__Group_8__3__Impl )
+            // InternalLightweight.g:5383:2: rule__Recovery__Group_8__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Recovery__Group_8__3__Impl();
@@ -15996,17 +15992,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_8__3__Impl"
-    // InternalLightweight.g:5416:1: rule__Recovery__Group_8__3__Impl : ( ',' ) ;
+    // InternalLightweight.g:5389:1: rule__Recovery__Group_8__3__Impl : ( ',' ) ;
     public final void rule__Recovery__Group_8__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5420:1: ( ( ',' ) )
-            // InternalLightweight.g:5421:1: ( ',' )
+            // InternalLightweight.g:5393:1: ( ( ',' ) )
+            // InternalLightweight.g:5394:1: ( ',' )
             {
-            // InternalLightweight.g:5421:1: ( ',' )
-            // InternalLightweight.g:5422:2: ','
+            // InternalLightweight.g:5394:1: ( ',' )
+            // InternalLightweight.g:5395:2: ','
             {
              before(grammarAccess.getRecoveryAccess().getCommaKeyword_8_3()); 
             match(input,38,FOLLOW_2); 
@@ -16033,14 +16029,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_9__0"
-    // InternalLightweight.g:5432:1: rule__Recovery__Group_9__0 : rule__Recovery__Group_9__0__Impl rule__Recovery__Group_9__1 ;
+    // InternalLightweight.g:5405:1: rule__Recovery__Group_9__0 : rule__Recovery__Group_9__0__Impl rule__Recovery__Group_9__1 ;
     public final void rule__Recovery__Group_9__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5436:1: ( rule__Recovery__Group_9__0__Impl rule__Recovery__Group_9__1 )
-            // InternalLightweight.g:5437:2: rule__Recovery__Group_9__0__Impl rule__Recovery__Group_9__1
+            // InternalLightweight.g:5409:1: ( rule__Recovery__Group_9__0__Impl rule__Recovery__Group_9__1 )
+            // InternalLightweight.g:5410:2: rule__Recovery__Group_9__0__Impl rule__Recovery__Group_9__1
             {
             pushFollow(FOLLOW_3);
             rule__Recovery__Group_9__0__Impl();
@@ -16071,20 +16067,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_9__0__Impl"
-    // InternalLightweight.g:5444:1: rule__Recovery__Group_9__0__Impl : ( 'protocol' ) ;
+    // InternalLightweight.g:5417:1: rule__Recovery__Group_9__0__Impl : ( 'protocol' ) ;
     public final void rule__Recovery__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5448:1: ( ( 'protocol' ) )
-            // InternalLightweight.g:5449:1: ( 'protocol' )
+            // InternalLightweight.g:5421:1: ( ( 'protocol' ) )
+            // InternalLightweight.g:5422:1: ( 'protocol' )
             {
-            // InternalLightweight.g:5449:1: ( 'protocol' )
-            // InternalLightweight.g:5450:2: 'protocol'
+            // InternalLightweight.g:5422:1: ( 'protocol' )
+            // InternalLightweight.g:5423:2: 'protocol'
             {
              before(grammarAccess.getRecoveryAccess().getProtocolKeyword_9_0()); 
-            match(input,65,FOLLOW_2); 
+            match(input,58,FOLLOW_2); 
              after(grammarAccess.getRecoveryAccess().getProtocolKeyword_9_0()); 
 
             }
@@ -16108,14 +16104,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_9__1"
-    // InternalLightweight.g:5459:1: rule__Recovery__Group_9__1 : rule__Recovery__Group_9__1__Impl rule__Recovery__Group_9__2 ;
+    // InternalLightweight.g:5432:1: rule__Recovery__Group_9__1 : rule__Recovery__Group_9__1__Impl rule__Recovery__Group_9__2 ;
     public final void rule__Recovery__Group_9__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5463:1: ( rule__Recovery__Group_9__1__Impl rule__Recovery__Group_9__2 )
-            // InternalLightweight.g:5464:2: rule__Recovery__Group_9__1__Impl rule__Recovery__Group_9__2
+            // InternalLightweight.g:5436:1: ( rule__Recovery__Group_9__1__Impl rule__Recovery__Group_9__2 )
+            // InternalLightweight.g:5437:2: rule__Recovery__Group_9__1__Impl rule__Recovery__Group_9__2
             {
             pushFollow(FOLLOW_44);
             rule__Recovery__Group_9__1__Impl();
@@ -16146,17 +16142,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_9__1__Impl"
-    // InternalLightweight.g:5471:1: rule__Recovery__Group_9__1__Impl : ( ':' ) ;
+    // InternalLightweight.g:5444:1: rule__Recovery__Group_9__1__Impl : ( ':' ) ;
     public final void rule__Recovery__Group_9__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5475:1: ( ( ':' ) )
-            // InternalLightweight.g:5476:1: ( ':' )
+            // InternalLightweight.g:5448:1: ( ( ':' ) )
+            // InternalLightweight.g:5449:1: ( ':' )
             {
-            // InternalLightweight.g:5476:1: ( ':' )
-            // InternalLightweight.g:5477:2: ':'
+            // InternalLightweight.g:5449:1: ( ':' )
+            // InternalLightweight.g:5450:2: ':'
             {
              before(grammarAccess.getRecoveryAccess().getColonKeyword_9_1()); 
             match(input,33,FOLLOW_2); 
@@ -16183,14 +16179,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_9__2"
-    // InternalLightweight.g:5486:1: rule__Recovery__Group_9__2 : rule__Recovery__Group_9__2__Impl ;
+    // InternalLightweight.g:5459:1: rule__Recovery__Group_9__2 : rule__Recovery__Group_9__2__Impl ;
     public final void rule__Recovery__Group_9__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5490:1: ( rule__Recovery__Group_9__2__Impl )
-            // InternalLightweight.g:5491:2: rule__Recovery__Group_9__2__Impl
+            // InternalLightweight.g:5463:1: ( rule__Recovery__Group_9__2__Impl )
+            // InternalLightweight.g:5464:2: rule__Recovery__Group_9__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Recovery__Group_9__2__Impl();
@@ -16216,21 +16212,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__Group_9__2__Impl"
-    // InternalLightweight.g:5497:1: rule__Recovery__Group_9__2__Impl : ( ( rule__Recovery__ProtocolAssignment_9_2 ) ) ;
+    // InternalLightweight.g:5470:1: rule__Recovery__Group_9__2__Impl : ( ( rule__Recovery__ProtocolAssignment_9_2 ) ) ;
     public final void rule__Recovery__Group_9__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5501:1: ( ( ( rule__Recovery__ProtocolAssignment_9_2 ) ) )
-            // InternalLightweight.g:5502:1: ( ( rule__Recovery__ProtocolAssignment_9_2 ) )
+            // InternalLightweight.g:5474:1: ( ( ( rule__Recovery__ProtocolAssignment_9_2 ) ) )
+            // InternalLightweight.g:5475:1: ( ( rule__Recovery__ProtocolAssignment_9_2 ) )
             {
-            // InternalLightweight.g:5502:1: ( ( rule__Recovery__ProtocolAssignment_9_2 ) )
-            // InternalLightweight.g:5503:2: ( rule__Recovery__ProtocolAssignment_9_2 )
+            // InternalLightweight.g:5475:1: ( ( rule__Recovery__ProtocolAssignment_9_2 ) )
+            // InternalLightweight.g:5476:2: ( rule__Recovery__ProtocolAssignment_9_2 )
             {
              before(grammarAccess.getRecoveryAccess().getProtocolAssignment_9_2()); 
-            // InternalLightweight.g:5504:2: ( rule__Recovery__ProtocolAssignment_9_2 )
-            // InternalLightweight.g:5504:3: rule__Recovery__ProtocolAssignment_9_2
+            // InternalLightweight.g:5477:2: ( rule__Recovery__ProtocolAssignment_9_2 )
+            // InternalLightweight.g:5477:3: rule__Recovery__ProtocolAssignment_9_2
             {
             pushFollow(FOLLOW_2);
             rule__Recovery__ProtocolAssignment_9_2();
@@ -16263,14 +16259,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__0"
-    // InternalLightweight.g:5513:1: rule__Login__Group__0 : rule__Login__Group__0__Impl rule__Login__Group__1 ;
+    // InternalLightweight.g:5486:1: rule__Login__Group__0 : rule__Login__Group__0__Impl rule__Login__Group__1 ;
     public final void rule__Login__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5517:1: ( rule__Login__Group__0__Impl rule__Login__Group__1 )
-            // InternalLightweight.g:5518:2: rule__Login__Group__0__Impl rule__Login__Group__1
+            // InternalLightweight.g:5490:1: ( rule__Login__Group__0__Impl rule__Login__Group__1 )
+            // InternalLightweight.g:5491:2: rule__Login__Group__0__Impl rule__Login__Group__1
             {
             pushFollow(FOLLOW_45);
             rule__Login__Group__0__Impl();
@@ -16301,21 +16297,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__0__Impl"
-    // InternalLightweight.g:5525:1: rule__Login__Group__0__Impl : ( () ) ;
+    // InternalLightweight.g:5498:1: rule__Login__Group__0__Impl : ( () ) ;
     public final void rule__Login__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5529:1: ( ( () ) )
-            // InternalLightweight.g:5530:1: ( () )
+            // InternalLightweight.g:5502:1: ( ( () ) )
+            // InternalLightweight.g:5503:1: ( () )
             {
-            // InternalLightweight.g:5530:1: ( () )
-            // InternalLightweight.g:5531:2: ()
+            // InternalLightweight.g:5503:1: ( () )
+            // InternalLightweight.g:5504:2: ()
             {
              before(grammarAccess.getLoginAccess().getLoginAction_0()); 
-            // InternalLightweight.g:5532:2: ()
-            // InternalLightweight.g:5532:3: 
+            // InternalLightweight.g:5505:2: ()
+            // InternalLightweight.g:5505:3: 
             {
             }
 
@@ -16338,14 +16334,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__1"
-    // InternalLightweight.g:5540:1: rule__Login__Group__1 : rule__Login__Group__1__Impl rule__Login__Group__2 ;
+    // InternalLightweight.g:5513:1: rule__Login__Group__1 : rule__Login__Group__1__Impl rule__Login__Group__2 ;
     public final void rule__Login__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5544:1: ( rule__Login__Group__1__Impl rule__Login__Group__2 )
-            // InternalLightweight.g:5545:2: rule__Login__Group__1__Impl rule__Login__Group__2
+            // InternalLightweight.g:5517:1: ( rule__Login__Group__1__Impl rule__Login__Group__2 )
+            // InternalLightweight.g:5518:2: rule__Login__Group__1__Impl rule__Login__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Login__Group__1__Impl();
@@ -16376,21 +16372,31 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__1__Impl"
-    // InternalLightweight.g:5552:1: rule__Login__Group__1__Impl : ( 'Login' ) ;
+    // InternalLightweight.g:5525:1: rule__Login__Group__1__Impl : ( ( rule__Login__TypeAssignment_1 ) ) ;
     public final void rule__Login__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5556:1: ( ( 'Login' ) )
-            // InternalLightweight.g:5557:1: ( 'Login' )
+            // InternalLightweight.g:5529:1: ( ( ( rule__Login__TypeAssignment_1 ) ) )
+            // InternalLightweight.g:5530:1: ( ( rule__Login__TypeAssignment_1 ) )
             {
-            // InternalLightweight.g:5557:1: ( 'Login' )
-            // InternalLightweight.g:5558:2: 'Login'
+            // InternalLightweight.g:5530:1: ( ( rule__Login__TypeAssignment_1 ) )
+            // InternalLightweight.g:5531:2: ( rule__Login__TypeAssignment_1 )
             {
-             before(grammarAccess.getLoginAccess().getLoginKeyword_1()); 
-            match(input,66,FOLLOW_2); 
-             after(grammarAccess.getLoginAccess().getLoginKeyword_1()); 
+             before(grammarAccess.getLoginAccess().getTypeAssignment_1()); 
+            // InternalLightweight.g:5532:2: ( rule__Login__TypeAssignment_1 )
+            // InternalLightweight.g:5532:3: rule__Login__TypeAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Login__TypeAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getLoginAccess().getTypeAssignment_1()); 
 
             }
 
@@ -16413,14 +16419,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__2"
-    // InternalLightweight.g:5567:1: rule__Login__Group__2 : rule__Login__Group__2__Impl rule__Login__Group__3 ;
+    // InternalLightweight.g:5540:1: rule__Login__Group__2 : rule__Login__Group__2__Impl rule__Login__Group__3 ;
     public final void rule__Login__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5571:1: ( rule__Login__Group__2__Impl rule__Login__Group__3 )
-            // InternalLightweight.g:5572:2: rule__Login__Group__2__Impl rule__Login__Group__3
+            // InternalLightweight.g:5544:1: ( rule__Login__Group__2__Impl rule__Login__Group__3 )
+            // InternalLightweight.g:5545:2: rule__Login__Group__2__Impl rule__Login__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__Login__Group__2__Impl();
@@ -16451,17 +16457,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__2__Impl"
-    // InternalLightweight.g:5579:1: rule__Login__Group__2__Impl : ( ':' ) ;
+    // InternalLightweight.g:5552:1: rule__Login__Group__2__Impl : ( ':' ) ;
     public final void rule__Login__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5583:1: ( ( ':' ) )
-            // InternalLightweight.g:5584:1: ( ':' )
+            // InternalLightweight.g:5556:1: ( ( ':' ) )
+            // InternalLightweight.g:5557:1: ( ':' )
             {
-            // InternalLightweight.g:5584:1: ( ':' )
-            // InternalLightweight.g:5585:2: ':'
+            // InternalLightweight.g:5557:1: ( ':' )
+            // InternalLightweight.g:5558:2: ':'
             {
              before(grammarAccess.getLoginAccess().getColonKeyword_2()); 
             match(input,33,FOLLOW_2); 
@@ -16488,14 +16494,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__3"
-    // InternalLightweight.g:5594:1: rule__Login__Group__3 : rule__Login__Group__3__Impl rule__Login__Group__4 ;
+    // InternalLightweight.g:5567:1: rule__Login__Group__3 : rule__Login__Group__3__Impl rule__Login__Group__4 ;
     public final void rule__Login__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5598:1: ( rule__Login__Group__3__Impl rule__Login__Group__4 )
-            // InternalLightweight.g:5599:2: rule__Login__Group__3__Impl rule__Login__Group__4
+            // InternalLightweight.g:5571:1: ( rule__Login__Group__3__Impl rule__Login__Group__4 )
+            // InternalLightweight.g:5572:2: rule__Login__Group__3__Impl rule__Login__Group__4
             {
             pushFollow(FOLLOW_16);
             rule__Login__Group__3__Impl();
@@ -16526,17 +16532,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__3__Impl"
-    // InternalLightweight.g:5606:1: rule__Login__Group__3__Impl : ( '{' ) ;
+    // InternalLightweight.g:5579:1: rule__Login__Group__3__Impl : ( '{' ) ;
     public final void rule__Login__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5610:1: ( ( '{' ) )
-            // InternalLightweight.g:5611:1: ( '{' )
+            // InternalLightweight.g:5583:1: ( ( '{' ) )
+            // InternalLightweight.g:5584:1: ( '{' )
             {
-            // InternalLightweight.g:5611:1: ( '{' )
-            // InternalLightweight.g:5612:2: '{'
+            // InternalLightweight.g:5584:1: ( '{' )
+            // InternalLightweight.g:5585:2: '{'
             {
              before(grammarAccess.getLoginAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,34,FOLLOW_2); 
@@ -16563,14 +16569,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__4"
-    // InternalLightweight.g:5621:1: rule__Login__Group__4 : rule__Login__Group__4__Impl rule__Login__Group__5 ;
+    // InternalLightweight.g:5594:1: rule__Login__Group__4 : rule__Login__Group__4__Impl rule__Login__Group__5 ;
     public final void rule__Login__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5625:1: ( rule__Login__Group__4__Impl rule__Login__Group__5 )
-            // InternalLightweight.g:5626:2: rule__Login__Group__4__Impl rule__Login__Group__5
+            // InternalLightweight.g:5598:1: ( rule__Login__Group__4__Impl rule__Login__Group__5 )
+            // InternalLightweight.g:5599:2: rule__Login__Group__4__Impl rule__Login__Group__5
             {
             pushFollow(FOLLOW_3);
             rule__Login__Group__4__Impl();
@@ -16601,20 +16607,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__4__Impl"
-    // InternalLightweight.g:5633:1: rule__Login__Group__4__Impl : ( 'name' ) ;
+    // InternalLightweight.g:5606:1: rule__Login__Group__4__Impl : ( 'name' ) ;
     public final void rule__Login__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5637:1: ( ( 'name' ) )
-            // InternalLightweight.g:5638:1: ( 'name' )
+            // InternalLightweight.g:5610:1: ( ( 'name' ) )
+            // InternalLightweight.g:5611:1: ( 'name' )
             {
-            // InternalLightweight.g:5638:1: ( 'name' )
-            // InternalLightweight.g:5639:2: 'name'
+            // InternalLightweight.g:5611:1: ( 'name' )
+            // InternalLightweight.g:5612:2: 'name'
             {
              before(grammarAccess.getLoginAccess().getNameKeyword_4()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getLoginAccess().getNameKeyword_4()); 
 
             }
@@ -16638,14 +16644,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__5"
-    // InternalLightweight.g:5648:1: rule__Login__Group__5 : rule__Login__Group__5__Impl rule__Login__Group__6 ;
+    // InternalLightweight.g:5621:1: rule__Login__Group__5 : rule__Login__Group__5__Impl rule__Login__Group__6 ;
     public final void rule__Login__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5652:1: ( rule__Login__Group__5__Impl rule__Login__Group__6 )
-            // InternalLightweight.g:5653:2: rule__Login__Group__5__Impl rule__Login__Group__6
+            // InternalLightweight.g:5625:1: ( rule__Login__Group__5__Impl rule__Login__Group__6 )
+            // InternalLightweight.g:5626:2: rule__Login__Group__5__Impl rule__Login__Group__6
             {
             pushFollow(FOLLOW_17);
             rule__Login__Group__5__Impl();
@@ -16676,17 +16682,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__5__Impl"
-    // InternalLightweight.g:5660:1: rule__Login__Group__5__Impl : ( ':' ) ;
+    // InternalLightweight.g:5633:1: rule__Login__Group__5__Impl : ( ':' ) ;
     public final void rule__Login__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5664:1: ( ( ':' ) )
-            // InternalLightweight.g:5665:1: ( ':' )
+            // InternalLightweight.g:5637:1: ( ( ':' ) )
+            // InternalLightweight.g:5638:1: ( ':' )
             {
-            // InternalLightweight.g:5665:1: ( ':' )
-            // InternalLightweight.g:5666:2: ':'
+            // InternalLightweight.g:5638:1: ( ':' )
+            // InternalLightweight.g:5639:2: ':'
             {
              before(grammarAccess.getLoginAccess().getColonKeyword_5()); 
             match(input,33,FOLLOW_2); 
@@ -16713,14 +16719,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__6"
-    // InternalLightweight.g:5675:1: rule__Login__Group__6 : rule__Login__Group__6__Impl rule__Login__Group__7 ;
+    // InternalLightweight.g:5648:1: rule__Login__Group__6 : rule__Login__Group__6__Impl rule__Login__Group__7 ;
     public final void rule__Login__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5679:1: ( rule__Login__Group__6__Impl rule__Login__Group__7 )
-            // InternalLightweight.g:5680:2: rule__Login__Group__6__Impl rule__Login__Group__7
+            // InternalLightweight.g:5652:1: ( rule__Login__Group__6__Impl rule__Login__Group__7 )
+            // InternalLightweight.g:5653:2: rule__Login__Group__6__Impl rule__Login__Group__7
             {
             pushFollow(FOLLOW_10);
             rule__Login__Group__6__Impl();
@@ -16751,21 +16757,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__6__Impl"
-    // InternalLightweight.g:5687:1: rule__Login__Group__6__Impl : ( ( rule__Login__NameAssignment_6 ) ) ;
+    // InternalLightweight.g:5660:1: rule__Login__Group__6__Impl : ( ( rule__Login__NameAssignment_6 ) ) ;
     public final void rule__Login__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5691:1: ( ( ( rule__Login__NameAssignment_6 ) ) )
-            // InternalLightweight.g:5692:1: ( ( rule__Login__NameAssignment_6 ) )
+            // InternalLightweight.g:5664:1: ( ( ( rule__Login__NameAssignment_6 ) ) )
+            // InternalLightweight.g:5665:1: ( ( rule__Login__NameAssignment_6 ) )
             {
-            // InternalLightweight.g:5692:1: ( ( rule__Login__NameAssignment_6 ) )
-            // InternalLightweight.g:5693:2: ( rule__Login__NameAssignment_6 )
+            // InternalLightweight.g:5665:1: ( ( rule__Login__NameAssignment_6 ) )
+            // InternalLightweight.g:5666:2: ( rule__Login__NameAssignment_6 )
             {
              before(grammarAccess.getLoginAccess().getNameAssignment_6()); 
-            // InternalLightweight.g:5694:2: ( rule__Login__NameAssignment_6 )
-            // InternalLightweight.g:5694:3: rule__Login__NameAssignment_6
+            // InternalLightweight.g:5667:2: ( rule__Login__NameAssignment_6 )
+            // InternalLightweight.g:5667:3: rule__Login__NameAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Login__NameAssignment_6();
@@ -16798,14 +16804,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__7"
-    // InternalLightweight.g:5702:1: rule__Login__Group__7 : rule__Login__Group__7__Impl rule__Login__Group__8 ;
+    // InternalLightweight.g:5675:1: rule__Login__Group__7 : rule__Login__Group__7__Impl rule__Login__Group__8 ;
     public final void rule__Login__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5706:1: ( rule__Login__Group__7__Impl rule__Login__Group__8 )
-            // InternalLightweight.g:5707:2: rule__Login__Group__7__Impl rule__Login__Group__8
+            // InternalLightweight.g:5679:1: ( rule__Login__Group__7__Impl rule__Login__Group__8 )
+            // InternalLightweight.g:5680:2: rule__Login__Group__7__Impl rule__Login__Group__8
             {
             pushFollow(FOLLOW_46);
             rule__Login__Group__7__Impl();
@@ -16836,17 +16842,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__7__Impl"
-    // InternalLightweight.g:5714:1: rule__Login__Group__7__Impl : ( ',' ) ;
+    // InternalLightweight.g:5687:1: rule__Login__Group__7__Impl : ( ',' ) ;
     public final void rule__Login__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5718:1: ( ( ',' ) )
-            // InternalLightweight.g:5719:1: ( ',' )
+            // InternalLightweight.g:5691:1: ( ( ',' ) )
+            // InternalLightweight.g:5692:1: ( ',' )
             {
-            // InternalLightweight.g:5719:1: ( ',' )
-            // InternalLightweight.g:5720:2: ','
+            // InternalLightweight.g:5692:1: ( ',' )
+            // InternalLightweight.g:5693:2: ','
             {
              before(grammarAccess.getLoginAccess().getCommaKeyword_7()); 
             match(input,38,FOLLOW_2); 
@@ -16873,14 +16879,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__8"
-    // InternalLightweight.g:5729:1: rule__Login__Group__8 : rule__Login__Group__8__Impl rule__Login__Group__9 ;
+    // InternalLightweight.g:5702:1: rule__Login__Group__8 : rule__Login__Group__8__Impl rule__Login__Group__9 ;
     public final void rule__Login__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5733:1: ( rule__Login__Group__8__Impl rule__Login__Group__9 )
-            // InternalLightweight.g:5734:2: rule__Login__Group__8__Impl rule__Login__Group__9
+            // InternalLightweight.g:5706:1: ( rule__Login__Group__8__Impl rule__Login__Group__9 )
+            // InternalLightweight.g:5707:2: rule__Login__Group__8__Impl rule__Login__Group__9
             {
             pushFollow(FOLLOW_3);
             rule__Login__Group__8__Impl();
@@ -16911,20 +16917,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__8__Impl"
-    // InternalLightweight.g:5741:1: rule__Login__Group__8__Impl : ( 'persistedSession' ) ;
+    // InternalLightweight.g:5714:1: rule__Login__Group__8__Impl : ( 'persistedSession' ) ;
     public final void rule__Login__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5745:1: ( ( 'persistedSession' ) )
-            // InternalLightweight.g:5746:1: ( 'persistedSession' )
+            // InternalLightweight.g:5718:1: ( ( 'persistedSession' ) )
+            // InternalLightweight.g:5719:1: ( 'persistedSession' )
             {
-            // InternalLightweight.g:5746:1: ( 'persistedSession' )
-            // InternalLightweight.g:5747:2: 'persistedSession'
+            // InternalLightweight.g:5719:1: ( 'persistedSession' )
+            // InternalLightweight.g:5720:2: 'persistedSession'
             {
              before(grammarAccess.getLoginAccess().getPersistedSessionKeyword_8()); 
-            match(input,67,FOLLOW_2); 
+            match(input,59,FOLLOW_2); 
              after(grammarAccess.getLoginAccess().getPersistedSessionKeyword_8()); 
 
             }
@@ -16948,14 +16954,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__9"
-    // InternalLightweight.g:5756:1: rule__Login__Group__9 : rule__Login__Group__9__Impl rule__Login__Group__10 ;
+    // InternalLightweight.g:5729:1: rule__Login__Group__9 : rule__Login__Group__9__Impl rule__Login__Group__10 ;
     public final void rule__Login__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5760:1: ( rule__Login__Group__9__Impl rule__Login__Group__10 )
-            // InternalLightweight.g:5761:2: rule__Login__Group__9__Impl rule__Login__Group__10
+            // InternalLightweight.g:5733:1: ( rule__Login__Group__9__Impl rule__Login__Group__10 )
+            // InternalLightweight.g:5734:2: rule__Login__Group__9__Impl rule__Login__Group__10
             {
             pushFollow(FOLLOW_23);
             rule__Login__Group__9__Impl();
@@ -16986,17 +16992,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__9__Impl"
-    // InternalLightweight.g:5768:1: rule__Login__Group__9__Impl : ( ':' ) ;
+    // InternalLightweight.g:5741:1: rule__Login__Group__9__Impl : ( ':' ) ;
     public final void rule__Login__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5772:1: ( ( ':' ) )
-            // InternalLightweight.g:5773:1: ( ':' )
+            // InternalLightweight.g:5745:1: ( ( ':' ) )
+            // InternalLightweight.g:5746:1: ( ':' )
             {
-            // InternalLightweight.g:5773:1: ( ':' )
-            // InternalLightweight.g:5774:2: ':'
+            // InternalLightweight.g:5746:1: ( ':' )
+            // InternalLightweight.g:5747:2: ':'
             {
              before(grammarAccess.getLoginAccess().getColonKeyword_9()); 
             match(input,33,FOLLOW_2); 
@@ -17023,14 +17029,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__10"
-    // InternalLightweight.g:5783:1: rule__Login__Group__10 : rule__Login__Group__10__Impl rule__Login__Group__11 ;
+    // InternalLightweight.g:5756:1: rule__Login__Group__10 : rule__Login__Group__10__Impl rule__Login__Group__11 ;
     public final void rule__Login__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5787:1: ( rule__Login__Group__10__Impl rule__Login__Group__11 )
-            // InternalLightweight.g:5788:2: rule__Login__Group__10__Impl rule__Login__Group__11
+            // InternalLightweight.g:5760:1: ( rule__Login__Group__10__Impl rule__Login__Group__11 )
+            // InternalLightweight.g:5761:2: rule__Login__Group__10__Impl rule__Login__Group__11
             {
             pushFollow(FOLLOW_10);
             rule__Login__Group__10__Impl();
@@ -17061,21 +17067,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__10__Impl"
-    // InternalLightweight.g:5795:1: rule__Login__Group__10__Impl : ( ( rule__Login__SessionAssignment_10 ) ) ;
+    // InternalLightweight.g:5768:1: rule__Login__Group__10__Impl : ( ( rule__Login__SessionAssignment_10 ) ) ;
     public final void rule__Login__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5799:1: ( ( ( rule__Login__SessionAssignment_10 ) ) )
-            // InternalLightweight.g:5800:1: ( ( rule__Login__SessionAssignment_10 ) )
+            // InternalLightweight.g:5772:1: ( ( ( rule__Login__SessionAssignment_10 ) ) )
+            // InternalLightweight.g:5773:1: ( ( rule__Login__SessionAssignment_10 ) )
             {
-            // InternalLightweight.g:5800:1: ( ( rule__Login__SessionAssignment_10 ) )
-            // InternalLightweight.g:5801:2: ( rule__Login__SessionAssignment_10 )
+            // InternalLightweight.g:5773:1: ( ( rule__Login__SessionAssignment_10 ) )
+            // InternalLightweight.g:5774:2: ( rule__Login__SessionAssignment_10 )
             {
              before(grammarAccess.getLoginAccess().getSessionAssignment_10()); 
-            // InternalLightweight.g:5802:2: ( rule__Login__SessionAssignment_10 )
-            // InternalLightweight.g:5802:3: rule__Login__SessionAssignment_10
+            // InternalLightweight.g:5775:2: ( rule__Login__SessionAssignment_10 )
+            // InternalLightweight.g:5775:3: rule__Login__SessionAssignment_10
             {
             pushFollow(FOLLOW_2);
             rule__Login__SessionAssignment_10();
@@ -17108,14 +17114,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__11"
-    // InternalLightweight.g:5810:1: rule__Login__Group__11 : rule__Login__Group__11__Impl rule__Login__Group__12 ;
+    // InternalLightweight.g:5783:1: rule__Login__Group__11 : rule__Login__Group__11__Impl rule__Login__Group__12 ;
     public final void rule__Login__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5814:1: ( rule__Login__Group__11__Impl rule__Login__Group__12 )
-            // InternalLightweight.g:5815:2: rule__Login__Group__11__Impl rule__Login__Group__12
+            // InternalLightweight.g:5787:1: ( rule__Login__Group__11__Impl rule__Login__Group__12 )
+            // InternalLightweight.g:5788:2: rule__Login__Group__11__Impl rule__Login__Group__12
             {
             pushFollow(FOLLOW_47);
             rule__Login__Group__11__Impl();
@@ -17146,17 +17152,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__11__Impl"
-    // InternalLightweight.g:5822:1: rule__Login__Group__11__Impl : ( ',' ) ;
+    // InternalLightweight.g:5795:1: rule__Login__Group__11__Impl : ( ',' ) ;
     public final void rule__Login__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5826:1: ( ( ',' ) )
-            // InternalLightweight.g:5827:1: ( ',' )
+            // InternalLightweight.g:5799:1: ( ( ',' ) )
+            // InternalLightweight.g:5800:1: ( ',' )
             {
-            // InternalLightweight.g:5827:1: ( ',' )
-            // InternalLightweight.g:5828:2: ','
+            // InternalLightweight.g:5800:1: ( ',' )
+            // InternalLightweight.g:5801:2: ','
             {
              before(grammarAccess.getLoginAccess().getCommaKeyword_11()); 
             match(input,38,FOLLOW_2); 
@@ -17183,14 +17189,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__12"
-    // InternalLightweight.g:5837:1: rule__Login__Group__12 : rule__Login__Group__12__Impl rule__Login__Group__13 ;
+    // InternalLightweight.g:5810:1: rule__Login__Group__12 : rule__Login__Group__12__Impl rule__Login__Group__13 ;
     public final void rule__Login__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5841:1: ( rule__Login__Group__12__Impl rule__Login__Group__13 )
-            // InternalLightweight.g:5842:2: rule__Login__Group__12__Impl rule__Login__Group__13
+            // InternalLightweight.g:5814:1: ( rule__Login__Group__12__Impl rule__Login__Group__13 )
+            // InternalLightweight.g:5815:2: rule__Login__Group__12__Impl rule__Login__Group__13
             {
             pushFollow(FOLLOW_3);
             rule__Login__Group__12__Impl();
@@ -17221,20 +17227,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__12__Impl"
-    // InternalLightweight.g:5849:1: rule__Login__Group__12__Impl : ( 'authentication' ) ;
+    // InternalLightweight.g:5822:1: rule__Login__Group__12__Impl : ( 'authentication' ) ;
     public final void rule__Login__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5853:1: ( ( 'authentication' ) )
-            // InternalLightweight.g:5854:1: ( 'authentication' )
+            // InternalLightweight.g:5826:1: ( ( 'authentication' ) )
+            // InternalLightweight.g:5827:1: ( 'authentication' )
             {
-            // InternalLightweight.g:5854:1: ( 'authentication' )
-            // InternalLightweight.g:5855:2: 'authentication'
+            // InternalLightweight.g:5827:1: ( 'authentication' )
+            // InternalLightweight.g:5828:2: 'authentication'
             {
              before(grammarAccess.getLoginAccess().getAuthenticationKeyword_12()); 
-            match(input,68,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getLoginAccess().getAuthenticationKeyword_12()); 
 
             }
@@ -17258,16 +17264,16 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__13"
-    // InternalLightweight.g:5864:1: rule__Login__Group__13 : rule__Login__Group__13__Impl rule__Login__Group__14 ;
+    // InternalLightweight.g:5837:1: rule__Login__Group__13 : rule__Login__Group__13__Impl rule__Login__Group__14 ;
     public final void rule__Login__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5868:1: ( rule__Login__Group__13__Impl rule__Login__Group__14 )
-            // InternalLightweight.g:5869:2: rule__Login__Group__13__Impl rule__Login__Group__14
+            // InternalLightweight.g:5841:1: ( rule__Login__Group__13__Impl rule__Login__Group__14 )
+            // InternalLightweight.g:5842:2: rule__Login__Group__13__Impl rule__Login__Group__14
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_19);
             rule__Login__Group__13__Impl();
 
             state._fsp--;
@@ -17296,17 +17302,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__13__Impl"
-    // InternalLightweight.g:5876:1: rule__Login__Group__13__Impl : ( ':' ) ;
+    // InternalLightweight.g:5849:1: rule__Login__Group__13__Impl : ( ':' ) ;
     public final void rule__Login__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5880:1: ( ( ':' ) )
-            // InternalLightweight.g:5881:1: ( ':' )
+            // InternalLightweight.g:5853:1: ( ( ':' ) )
+            // InternalLightweight.g:5854:1: ( ':' )
             {
-            // InternalLightweight.g:5881:1: ( ':' )
-            // InternalLightweight.g:5882:2: ':'
+            // InternalLightweight.g:5854:1: ( ':' )
+            // InternalLightweight.g:5855:2: ':'
             {
              before(grammarAccess.getLoginAccess().getColonKeyword_13()); 
             match(input,33,FOLLOW_2); 
@@ -17333,16 +17339,16 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__14"
-    // InternalLightweight.g:5891:1: rule__Login__Group__14 : rule__Login__Group__14__Impl rule__Login__Group__15 ;
+    // InternalLightweight.g:5864:1: rule__Login__Group__14 : rule__Login__Group__14__Impl rule__Login__Group__15 ;
     public final void rule__Login__Group__14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5895:1: ( rule__Login__Group__14__Impl rule__Login__Group__15 )
-            // InternalLightweight.g:5896:2: rule__Login__Group__14__Impl rule__Login__Group__15
+            // InternalLightweight.g:5868:1: ( rule__Login__Group__14__Impl rule__Login__Group__15 )
+            // InternalLightweight.g:5869:2: rule__Login__Group__14__Impl rule__Login__Group__15
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_48);
             rule__Login__Group__14__Impl();
 
             state._fsp--;
@@ -17371,21 +17377,31 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__14__Impl"
-    // InternalLightweight.g:5903:1: rule__Login__Group__14__Impl : ( '[' ) ;
+    // InternalLightweight.g:5876:1: rule__Login__Group__14__Impl : ( ( rule__Login__AuthMethodsAssignment_14 ) ) ;
     public final void rule__Login__Group__14__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5907:1: ( ( '[' ) )
-            // InternalLightweight.g:5908:1: ( '[' )
+            // InternalLightweight.g:5880:1: ( ( ( rule__Login__AuthMethodsAssignment_14 ) ) )
+            // InternalLightweight.g:5881:1: ( ( rule__Login__AuthMethodsAssignment_14 ) )
             {
-            // InternalLightweight.g:5908:1: ( '[' )
-            // InternalLightweight.g:5909:2: '['
+            // InternalLightweight.g:5881:1: ( ( rule__Login__AuthMethodsAssignment_14 ) )
+            // InternalLightweight.g:5882:2: ( rule__Login__AuthMethodsAssignment_14 )
             {
-             before(grammarAccess.getLoginAccess().getLeftSquareBracketKeyword_14()); 
-            match(input,36,FOLLOW_2); 
-             after(grammarAccess.getLoginAccess().getLeftSquareBracketKeyword_14()); 
+             before(grammarAccess.getLoginAccess().getAuthMethodsAssignment_14()); 
+            // InternalLightweight.g:5883:2: ( rule__Login__AuthMethodsAssignment_14 )
+            // InternalLightweight.g:5883:3: rule__Login__AuthMethodsAssignment_14
+            {
+            pushFollow(FOLLOW_2);
+            rule__Login__AuthMethodsAssignment_14();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getLoginAccess().getAuthMethodsAssignment_14()); 
 
             }
 
@@ -17408,16 +17424,16 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__15"
-    // InternalLightweight.g:5918:1: rule__Login__Group__15 : rule__Login__Group__15__Impl rule__Login__Group__16 ;
+    // InternalLightweight.g:5891:1: rule__Login__Group__15 : rule__Login__Group__15__Impl rule__Login__Group__16 ;
     public final void rule__Login__Group__15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5922:1: ( rule__Login__Group__15__Impl rule__Login__Group__16 )
-            // InternalLightweight.g:5923:2: rule__Login__Group__15__Impl rule__Login__Group__16
+            // InternalLightweight.g:5895:1: ( rule__Login__Group__15__Impl rule__Login__Group__16 )
+            // InternalLightweight.g:5896:2: rule__Login__Group__15__Impl rule__Login__Group__16
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_48);
             rule__Login__Group__15__Impl();
 
             state._fsp--;
@@ -17446,31 +17462,49 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__15__Impl"
-    // InternalLightweight.g:5930:1: rule__Login__Group__15__Impl : ( ( rule__Login__AuthMethodsAssignment_15 ) ) ;
+    // InternalLightweight.g:5903:1: rule__Login__Group__15__Impl : ( ( rule__Login__Group_15__0 )* ) ;
     public final void rule__Login__Group__15__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5934:1: ( ( ( rule__Login__AuthMethodsAssignment_15 ) ) )
-            // InternalLightweight.g:5935:1: ( ( rule__Login__AuthMethodsAssignment_15 ) )
+            // InternalLightweight.g:5907:1: ( ( ( rule__Login__Group_15__0 )* ) )
+            // InternalLightweight.g:5908:1: ( ( rule__Login__Group_15__0 )* )
             {
-            // InternalLightweight.g:5935:1: ( ( rule__Login__AuthMethodsAssignment_15 ) )
-            // InternalLightweight.g:5936:2: ( rule__Login__AuthMethodsAssignment_15 )
+            // InternalLightweight.g:5908:1: ( ( rule__Login__Group_15__0 )* )
+            // InternalLightweight.g:5909:2: ( rule__Login__Group_15__0 )*
             {
-             before(grammarAccess.getLoginAccess().getAuthMethodsAssignment_15()); 
-            // InternalLightweight.g:5937:2: ( rule__Login__AuthMethodsAssignment_15 )
-            // InternalLightweight.g:5937:3: rule__Login__AuthMethodsAssignment_15
-            {
-            pushFollow(FOLLOW_2);
-            rule__Login__AuthMethodsAssignment_15();
+             before(grammarAccess.getLoginAccess().getGroup_15()); 
+            // InternalLightweight.g:5910:2: ( rule__Login__Group_15__0 )*
+            loop22:
+            do {
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-            state._fsp--;
+                if ( (LA22_0==61) ) {
+                    alt22=1;
+                }
 
 
-            }
+                switch (alt22) {
+            	case 1 :
+            	    // InternalLightweight.g:5910:3: rule__Login__Group_15__0
+            	    {
+            	    pushFollow(FOLLOW_49);
+            	    rule__Login__Group_15__0();
 
-             after(grammarAccess.getLoginAccess().getAuthMethodsAssignment_15()); 
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop22;
+                }
+            } while (true);
+
+             after(grammarAccess.getLoginAccess().getGroup_15()); 
 
             }
 
@@ -17493,22 +17527,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__16"
-    // InternalLightweight.g:5945:1: rule__Login__Group__16 : rule__Login__Group__16__Impl rule__Login__Group__17 ;
+    // InternalLightweight.g:5918:1: rule__Login__Group__16 : rule__Login__Group__16__Impl ;
     public final void rule__Login__Group__16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5949:1: ( rule__Login__Group__16__Impl rule__Login__Group__17 )
-            // InternalLightweight.g:5950:2: rule__Login__Group__16__Impl rule__Login__Group__17
+            // InternalLightweight.g:5922:1: ( rule__Login__Group__16__Impl )
+            // InternalLightweight.g:5923:2: rule__Login__Group__16__Impl
             {
-            pushFollow(FOLLOW_8);
-            rule__Login__Group__16__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Login__Group__17();
+            rule__Login__Group__16__Impl();
 
             state._fsp--;
 
@@ -17531,49 +17560,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__Group__16__Impl"
-    // InternalLightweight.g:5957:1: rule__Login__Group__16__Impl : ( ( rule__Login__Group_16__0 )* ) ;
+    // InternalLightweight.g:5929:1: rule__Login__Group__16__Impl : ( '}' ) ;
     public final void rule__Login__Group__16__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5961:1: ( ( ( rule__Login__Group_16__0 )* ) )
-            // InternalLightweight.g:5962:1: ( ( rule__Login__Group_16__0 )* )
+            // InternalLightweight.g:5933:1: ( ( '}' ) )
+            // InternalLightweight.g:5934:1: ( '}' )
             {
-            // InternalLightweight.g:5962:1: ( ( rule__Login__Group_16__0 )* )
-            // InternalLightweight.g:5963:2: ( rule__Login__Group_16__0 )*
+            // InternalLightweight.g:5934:1: ( '}' )
+            // InternalLightweight.g:5935:2: '}'
             {
-             before(grammarAccess.getLoginAccess().getGroup_16()); 
-            // InternalLightweight.g:5964:2: ( rule__Login__Group_16__0 )*
-            loop22:
-            do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
-
-                if ( (LA22_0==38) ) {
-                    alt22=1;
-                }
-
-
-                switch (alt22) {
-            	case 1 :
-            	    // InternalLightweight.g:5964:3: rule__Login__Group_16__0
-            	    {
-            	    pushFollow(FOLLOW_9);
-            	    rule__Login__Group_16__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop22;
-                }
-            } while (true);
-
-             after(grammarAccess.getLoginAccess().getGroup_16()); 
+             before(grammarAccess.getLoginAccess().getRightCurlyBracketKeyword_16()); 
+            match(input,41,FOLLOW_2); 
+             after(grammarAccess.getLoginAccess().getRightCurlyBracketKeyword_16()); 
 
             }
 
@@ -17595,168 +17596,23 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Login__Group__16__Impl"
 
 
-    // $ANTLR start "rule__Login__Group__17"
-    // InternalLightweight.g:5972:1: rule__Login__Group__17 : rule__Login__Group__17__Impl rule__Login__Group__18 ;
-    public final void rule__Login__Group__17() throws RecognitionException {
+    // $ANTLR start "rule__Login__Group_15__0"
+    // InternalLightweight.g:5945:1: rule__Login__Group_15__0 : rule__Login__Group_15__0__Impl rule__Login__Group_15__1 ;
+    public final void rule__Login__Group_15__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:5976:1: ( rule__Login__Group__17__Impl rule__Login__Group__18 )
-            // InternalLightweight.g:5977:2: rule__Login__Group__17__Impl rule__Login__Group__18
-            {
-            pushFollow(FOLLOW_15);
-            rule__Login__Group__17__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Login__Group__18();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Login__Group__17"
-
-
-    // $ANTLR start "rule__Login__Group__17__Impl"
-    // InternalLightweight.g:5984:1: rule__Login__Group__17__Impl : ( ']' ) ;
-    public final void rule__Login__Group__17__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLightweight.g:5988:1: ( ( ']' ) )
-            // InternalLightweight.g:5989:1: ( ']' )
-            {
-            // InternalLightweight.g:5989:1: ( ']' )
-            // InternalLightweight.g:5990:2: ']'
-            {
-             before(grammarAccess.getLoginAccess().getRightSquareBracketKeyword_17()); 
-            match(input,37,FOLLOW_2); 
-             after(grammarAccess.getLoginAccess().getRightSquareBracketKeyword_17()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Login__Group__17__Impl"
-
-
-    // $ANTLR start "rule__Login__Group__18"
-    // InternalLightweight.g:5999:1: rule__Login__Group__18 : rule__Login__Group__18__Impl ;
-    public final void rule__Login__Group__18() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLightweight.g:6003:1: ( rule__Login__Group__18__Impl )
-            // InternalLightweight.g:6004:2: rule__Login__Group__18__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Login__Group__18__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Login__Group__18"
-
-
-    // $ANTLR start "rule__Login__Group__18__Impl"
-    // InternalLightweight.g:6010:1: rule__Login__Group__18__Impl : ( '}' ) ;
-    public final void rule__Login__Group__18__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLightweight.g:6014:1: ( ( '}' ) )
-            // InternalLightweight.g:6015:1: ( '}' )
-            {
-            // InternalLightweight.g:6015:1: ( '}' )
-            // InternalLightweight.g:6016:2: '}'
-            {
-             before(grammarAccess.getLoginAccess().getRightCurlyBracketKeyword_18()); 
-            match(input,41,FOLLOW_2); 
-             after(grammarAccess.getLoginAccess().getRightCurlyBracketKeyword_18()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Login__Group__18__Impl"
-
-
-    // $ANTLR start "rule__Login__Group_16__0"
-    // InternalLightweight.g:6026:1: rule__Login__Group_16__0 : rule__Login__Group_16__0__Impl rule__Login__Group_16__1 ;
-    public final void rule__Login__Group_16__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLightweight.g:6030:1: ( rule__Login__Group_16__0__Impl rule__Login__Group_16__1 )
-            // InternalLightweight.g:6031:2: rule__Login__Group_16__0__Impl rule__Login__Group_16__1
+            // InternalLightweight.g:5949:1: ( rule__Login__Group_15__0__Impl rule__Login__Group_15__1 )
+            // InternalLightweight.g:5950:2: rule__Login__Group_15__0__Impl rule__Login__Group_15__1
             {
             pushFollow(FOLLOW_19);
-            rule__Login__Group_16__0__Impl();
+            rule__Login__Group_15__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Login__Group_16__1();
+            rule__Login__Group_15__1();
 
             state._fsp--;
 
@@ -17775,25 +17631,25 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Login__Group_16__0"
+    // $ANTLR end "rule__Login__Group_15__0"
 
 
-    // $ANTLR start "rule__Login__Group_16__0__Impl"
-    // InternalLightweight.g:6038:1: rule__Login__Group_16__0__Impl : ( ',' ) ;
-    public final void rule__Login__Group_16__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Login__Group_15__0__Impl"
+    // InternalLightweight.g:5957:1: rule__Login__Group_15__0__Impl : ( '||' ) ;
+    public final void rule__Login__Group_15__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6042:1: ( ( ',' ) )
-            // InternalLightweight.g:6043:1: ( ',' )
+            // InternalLightweight.g:5961:1: ( ( '||' ) )
+            // InternalLightweight.g:5962:1: ( '||' )
             {
-            // InternalLightweight.g:6043:1: ( ',' )
-            // InternalLightweight.g:6044:2: ','
+            // InternalLightweight.g:5962:1: ( '||' )
+            // InternalLightweight.g:5963:2: '||'
             {
-             before(grammarAccess.getLoginAccess().getCommaKeyword_16_0()); 
-            match(input,38,FOLLOW_2); 
-             after(grammarAccess.getLoginAccess().getCommaKeyword_16_0()); 
+             before(grammarAccess.getLoginAccess().getVerticalLineVerticalLineKeyword_15_0()); 
+            match(input,61,FOLLOW_2); 
+             after(grammarAccess.getLoginAccess().getVerticalLineVerticalLineKeyword_15_0()); 
 
             }
 
@@ -17812,21 +17668,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Login__Group_16__0__Impl"
+    // $ANTLR end "rule__Login__Group_15__0__Impl"
 
 
-    // $ANTLR start "rule__Login__Group_16__1"
-    // InternalLightweight.g:6053:1: rule__Login__Group_16__1 : rule__Login__Group_16__1__Impl ;
-    public final void rule__Login__Group_16__1() throws RecognitionException {
+    // $ANTLR start "rule__Login__Group_15__1"
+    // InternalLightweight.g:5972:1: rule__Login__Group_15__1 : rule__Login__Group_15__1__Impl ;
+    public final void rule__Login__Group_15__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6057:1: ( rule__Login__Group_16__1__Impl )
-            // InternalLightweight.g:6058:2: rule__Login__Group_16__1__Impl
+            // InternalLightweight.g:5976:1: ( rule__Login__Group_15__1__Impl )
+            // InternalLightweight.g:5977:2: rule__Login__Group_15__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Login__Group_16__1__Impl();
+            rule__Login__Group_15__1__Impl();
 
             state._fsp--;
 
@@ -17845,35 +17701,35 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Login__Group_16__1"
+    // $ANTLR end "rule__Login__Group_15__1"
 
 
-    // $ANTLR start "rule__Login__Group_16__1__Impl"
-    // InternalLightweight.g:6064:1: rule__Login__Group_16__1__Impl : ( ( rule__Login__AuthMethodsAssignment_16_1 ) ) ;
-    public final void rule__Login__Group_16__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Login__Group_15__1__Impl"
+    // InternalLightweight.g:5983:1: rule__Login__Group_15__1__Impl : ( ( rule__Login__AuthMethodsAssignment_15_1 ) ) ;
+    public final void rule__Login__Group_15__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6068:1: ( ( ( rule__Login__AuthMethodsAssignment_16_1 ) ) )
-            // InternalLightweight.g:6069:1: ( ( rule__Login__AuthMethodsAssignment_16_1 ) )
+            // InternalLightweight.g:5987:1: ( ( ( rule__Login__AuthMethodsAssignment_15_1 ) ) )
+            // InternalLightweight.g:5988:1: ( ( rule__Login__AuthMethodsAssignment_15_1 ) )
             {
-            // InternalLightweight.g:6069:1: ( ( rule__Login__AuthMethodsAssignment_16_1 ) )
-            // InternalLightweight.g:6070:2: ( rule__Login__AuthMethodsAssignment_16_1 )
+            // InternalLightweight.g:5988:1: ( ( rule__Login__AuthMethodsAssignment_15_1 ) )
+            // InternalLightweight.g:5989:2: ( rule__Login__AuthMethodsAssignment_15_1 )
             {
-             before(grammarAccess.getLoginAccess().getAuthMethodsAssignment_16_1()); 
-            // InternalLightweight.g:6071:2: ( rule__Login__AuthMethodsAssignment_16_1 )
-            // InternalLightweight.g:6071:3: rule__Login__AuthMethodsAssignment_16_1
+             before(grammarAccess.getLoginAccess().getAuthMethodsAssignment_15_1()); 
+            // InternalLightweight.g:5990:2: ( rule__Login__AuthMethodsAssignment_15_1 )
+            // InternalLightweight.g:5990:3: rule__Login__AuthMethodsAssignment_15_1
             {
             pushFollow(FOLLOW_2);
-            rule__Login__AuthMethodsAssignment_16_1();
+            rule__Login__AuthMethodsAssignment_15_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getLoginAccess().getAuthMethodsAssignment_16_1()); 
+             after(grammarAccess.getLoginAccess().getAuthMethodsAssignment_15_1()); 
 
             }
 
@@ -17892,18 +17748,18 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Login__Group_16__1__Impl"
+    // $ANTLR end "rule__Login__Group_15__1__Impl"
 
 
     // $ANTLR start "rule__Reset__Group__0"
-    // InternalLightweight.g:6080:1: rule__Reset__Group__0 : rule__Reset__Group__0__Impl rule__Reset__Group__1 ;
+    // InternalLightweight.g:5999:1: rule__Reset__Group__0 : rule__Reset__Group__0__Impl rule__Reset__Group__1 ;
     public final void rule__Reset__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6084:1: ( rule__Reset__Group__0__Impl rule__Reset__Group__1 )
-            // InternalLightweight.g:6085:2: rule__Reset__Group__0__Impl rule__Reset__Group__1
+            // InternalLightweight.g:6003:1: ( rule__Reset__Group__0__Impl rule__Reset__Group__1 )
+            // InternalLightweight.g:6004:2: rule__Reset__Group__0__Impl rule__Reset__Group__1
             {
             pushFollow(FOLLOW_14);
             rule__Reset__Group__0__Impl();
@@ -17934,21 +17790,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__0__Impl"
-    // InternalLightweight.g:6092:1: rule__Reset__Group__0__Impl : ( () ) ;
+    // InternalLightweight.g:6011:1: rule__Reset__Group__0__Impl : ( () ) ;
     public final void rule__Reset__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6096:1: ( ( () ) )
-            // InternalLightweight.g:6097:1: ( () )
+            // InternalLightweight.g:6015:1: ( ( () ) )
+            // InternalLightweight.g:6016:1: ( () )
             {
-            // InternalLightweight.g:6097:1: ( () )
-            // InternalLightweight.g:6098:2: ()
+            // InternalLightweight.g:6016:1: ( () )
+            // InternalLightweight.g:6017:2: ()
             {
              before(grammarAccess.getResetAccess().getResetAction_0()); 
-            // InternalLightweight.g:6099:2: ()
-            // InternalLightweight.g:6099:3: 
+            // InternalLightweight.g:6018:2: ()
+            // InternalLightweight.g:6018:3: 
             {
             }
 
@@ -17971,14 +17827,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__1"
-    // InternalLightweight.g:6107:1: rule__Reset__Group__1 : rule__Reset__Group__1__Impl rule__Reset__Group__2 ;
+    // InternalLightweight.g:6026:1: rule__Reset__Group__1 : rule__Reset__Group__1__Impl rule__Reset__Group__2 ;
     public final void rule__Reset__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6111:1: ( rule__Reset__Group__1__Impl rule__Reset__Group__2 )
-            // InternalLightweight.g:6112:2: rule__Reset__Group__1__Impl rule__Reset__Group__2
+            // InternalLightweight.g:6030:1: ( rule__Reset__Group__1__Impl rule__Reset__Group__2 )
+            // InternalLightweight.g:6031:2: rule__Reset__Group__1__Impl rule__Reset__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Reset__Group__1__Impl();
@@ -18009,21 +17865,31 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__1__Impl"
-    // InternalLightweight.g:6119:1: rule__Reset__Group__1__Impl : ( 'Reset' ) ;
+    // InternalLightweight.g:6038:1: rule__Reset__Group__1__Impl : ( ( rule__Reset__TypeAssignment_1 ) ) ;
     public final void rule__Reset__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6123:1: ( ( 'Reset' ) )
-            // InternalLightweight.g:6124:1: ( 'Reset' )
+            // InternalLightweight.g:6042:1: ( ( ( rule__Reset__TypeAssignment_1 ) ) )
+            // InternalLightweight.g:6043:1: ( ( rule__Reset__TypeAssignment_1 ) )
             {
-            // InternalLightweight.g:6124:1: ( 'Reset' )
-            // InternalLightweight.g:6125:2: 'Reset'
+            // InternalLightweight.g:6043:1: ( ( rule__Reset__TypeAssignment_1 ) )
+            // InternalLightweight.g:6044:2: ( rule__Reset__TypeAssignment_1 )
             {
-             before(grammarAccess.getResetAccess().getResetKeyword_1()); 
-            match(input,69,FOLLOW_2); 
-             after(grammarAccess.getResetAccess().getResetKeyword_1()); 
+             before(grammarAccess.getResetAccess().getTypeAssignment_1()); 
+            // InternalLightweight.g:6045:2: ( rule__Reset__TypeAssignment_1 )
+            // InternalLightweight.g:6045:3: rule__Reset__TypeAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Reset__TypeAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getResetAccess().getTypeAssignment_1()); 
 
             }
 
@@ -18046,14 +17912,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__2"
-    // InternalLightweight.g:6134:1: rule__Reset__Group__2 : rule__Reset__Group__2__Impl rule__Reset__Group__3 ;
+    // InternalLightweight.g:6053:1: rule__Reset__Group__2 : rule__Reset__Group__2__Impl rule__Reset__Group__3 ;
     public final void rule__Reset__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6138:1: ( rule__Reset__Group__2__Impl rule__Reset__Group__3 )
-            // InternalLightweight.g:6139:2: rule__Reset__Group__2__Impl rule__Reset__Group__3
+            // InternalLightweight.g:6057:1: ( rule__Reset__Group__2__Impl rule__Reset__Group__3 )
+            // InternalLightweight.g:6058:2: rule__Reset__Group__2__Impl rule__Reset__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__Reset__Group__2__Impl();
@@ -18084,17 +17950,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__2__Impl"
-    // InternalLightweight.g:6146:1: rule__Reset__Group__2__Impl : ( ':' ) ;
+    // InternalLightweight.g:6065:1: rule__Reset__Group__2__Impl : ( ':' ) ;
     public final void rule__Reset__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6150:1: ( ( ':' ) )
-            // InternalLightweight.g:6151:1: ( ':' )
+            // InternalLightweight.g:6069:1: ( ( ':' ) )
+            // InternalLightweight.g:6070:1: ( ':' )
             {
-            // InternalLightweight.g:6151:1: ( ':' )
-            // InternalLightweight.g:6152:2: ':'
+            // InternalLightweight.g:6070:1: ( ':' )
+            // InternalLightweight.g:6071:2: ':'
             {
              before(grammarAccess.getResetAccess().getColonKeyword_2()); 
             match(input,33,FOLLOW_2); 
@@ -18121,14 +17987,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__3"
-    // InternalLightweight.g:6161:1: rule__Reset__Group__3 : rule__Reset__Group__3__Impl rule__Reset__Group__4 ;
+    // InternalLightweight.g:6080:1: rule__Reset__Group__3 : rule__Reset__Group__3__Impl rule__Reset__Group__4 ;
     public final void rule__Reset__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6165:1: ( rule__Reset__Group__3__Impl rule__Reset__Group__4 )
-            // InternalLightweight.g:6166:2: rule__Reset__Group__3__Impl rule__Reset__Group__4
+            // InternalLightweight.g:6084:1: ( rule__Reset__Group__3__Impl rule__Reset__Group__4 )
+            // InternalLightweight.g:6085:2: rule__Reset__Group__3__Impl rule__Reset__Group__4
             {
             pushFollow(FOLLOW_16);
             rule__Reset__Group__3__Impl();
@@ -18159,17 +18025,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__3__Impl"
-    // InternalLightweight.g:6173:1: rule__Reset__Group__3__Impl : ( '{' ) ;
+    // InternalLightweight.g:6092:1: rule__Reset__Group__3__Impl : ( '{' ) ;
     public final void rule__Reset__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6177:1: ( ( '{' ) )
-            // InternalLightweight.g:6178:1: ( '{' )
+            // InternalLightweight.g:6096:1: ( ( '{' ) )
+            // InternalLightweight.g:6097:1: ( '{' )
             {
-            // InternalLightweight.g:6178:1: ( '{' )
-            // InternalLightweight.g:6179:2: '{'
+            // InternalLightweight.g:6097:1: ( '{' )
+            // InternalLightweight.g:6098:2: '{'
             {
              before(grammarAccess.getResetAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,34,FOLLOW_2); 
@@ -18196,14 +18062,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__4"
-    // InternalLightweight.g:6188:1: rule__Reset__Group__4 : rule__Reset__Group__4__Impl rule__Reset__Group__5 ;
+    // InternalLightweight.g:6107:1: rule__Reset__Group__4 : rule__Reset__Group__4__Impl rule__Reset__Group__5 ;
     public final void rule__Reset__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6192:1: ( rule__Reset__Group__4__Impl rule__Reset__Group__5 )
-            // InternalLightweight.g:6193:2: rule__Reset__Group__4__Impl rule__Reset__Group__5
+            // InternalLightweight.g:6111:1: ( rule__Reset__Group__4__Impl rule__Reset__Group__5 )
+            // InternalLightweight.g:6112:2: rule__Reset__Group__4__Impl rule__Reset__Group__5
             {
             pushFollow(FOLLOW_3);
             rule__Reset__Group__4__Impl();
@@ -18234,20 +18100,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__4__Impl"
-    // InternalLightweight.g:6200:1: rule__Reset__Group__4__Impl : ( 'name' ) ;
+    // InternalLightweight.g:6119:1: rule__Reset__Group__4__Impl : ( 'name' ) ;
     public final void rule__Reset__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6204:1: ( ( 'name' ) )
-            // InternalLightweight.g:6205:1: ( 'name' )
+            // InternalLightweight.g:6123:1: ( ( 'name' ) )
+            // InternalLightweight.g:6124:1: ( 'name' )
             {
-            // InternalLightweight.g:6205:1: ( 'name' )
-            // InternalLightweight.g:6206:2: 'name'
+            // InternalLightweight.g:6124:1: ( 'name' )
+            // InternalLightweight.g:6125:2: 'name'
             {
              before(grammarAccess.getResetAccess().getNameKeyword_4()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getResetAccess().getNameKeyword_4()); 
 
             }
@@ -18271,14 +18137,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__5"
-    // InternalLightweight.g:6215:1: rule__Reset__Group__5 : rule__Reset__Group__5__Impl rule__Reset__Group__6 ;
+    // InternalLightweight.g:6134:1: rule__Reset__Group__5 : rule__Reset__Group__5__Impl rule__Reset__Group__6 ;
     public final void rule__Reset__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6219:1: ( rule__Reset__Group__5__Impl rule__Reset__Group__6 )
-            // InternalLightweight.g:6220:2: rule__Reset__Group__5__Impl rule__Reset__Group__6
+            // InternalLightweight.g:6138:1: ( rule__Reset__Group__5__Impl rule__Reset__Group__6 )
+            // InternalLightweight.g:6139:2: rule__Reset__Group__5__Impl rule__Reset__Group__6
             {
             pushFollow(FOLLOW_17);
             rule__Reset__Group__5__Impl();
@@ -18309,17 +18175,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__5__Impl"
-    // InternalLightweight.g:6227:1: rule__Reset__Group__5__Impl : ( ':' ) ;
+    // InternalLightweight.g:6146:1: rule__Reset__Group__5__Impl : ( ':' ) ;
     public final void rule__Reset__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6231:1: ( ( ':' ) )
-            // InternalLightweight.g:6232:1: ( ':' )
+            // InternalLightweight.g:6150:1: ( ( ':' ) )
+            // InternalLightweight.g:6151:1: ( ':' )
             {
-            // InternalLightweight.g:6232:1: ( ':' )
-            // InternalLightweight.g:6233:2: ':'
+            // InternalLightweight.g:6151:1: ( ':' )
+            // InternalLightweight.g:6152:2: ':'
             {
              before(grammarAccess.getResetAccess().getColonKeyword_5()); 
             match(input,33,FOLLOW_2); 
@@ -18346,14 +18212,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__6"
-    // InternalLightweight.g:6242:1: rule__Reset__Group__6 : rule__Reset__Group__6__Impl rule__Reset__Group__7 ;
+    // InternalLightweight.g:6161:1: rule__Reset__Group__6 : rule__Reset__Group__6__Impl rule__Reset__Group__7 ;
     public final void rule__Reset__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6246:1: ( rule__Reset__Group__6__Impl rule__Reset__Group__7 )
-            // InternalLightweight.g:6247:2: rule__Reset__Group__6__Impl rule__Reset__Group__7
+            // InternalLightweight.g:6165:1: ( rule__Reset__Group__6__Impl rule__Reset__Group__7 )
+            // InternalLightweight.g:6166:2: rule__Reset__Group__6__Impl rule__Reset__Group__7
             {
             pushFollow(FOLLOW_10);
             rule__Reset__Group__6__Impl();
@@ -18384,21 +18250,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__6__Impl"
-    // InternalLightweight.g:6254:1: rule__Reset__Group__6__Impl : ( ( rule__Reset__NameAssignment_6 ) ) ;
+    // InternalLightweight.g:6173:1: rule__Reset__Group__6__Impl : ( ( rule__Reset__NameAssignment_6 ) ) ;
     public final void rule__Reset__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6258:1: ( ( ( rule__Reset__NameAssignment_6 ) ) )
-            // InternalLightweight.g:6259:1: ( ( rule__Reset__NameAssignment_6 ) )
+            // InternalLightweight.g:6177:1: ( ( ( rule__Reset__NameAssignment_6 ) ) )
+            // InternalLightweight.g:6178:1: ( ( rule__Reset__NameAssignment_6 ) )
             {
-            // InternalLightweight.g:6259:1: ( ( rule__Reset__NameAssignment_6 ) )
-            // InternalLightweight.g:6260:2: ( rule__Reset__NameAssignment_6 )
+            // InternalLightweight.g:6178:1: ( ( rule__Reset__NameAssignment_6 ) )
+            // InternalLightweight.g:6179:2: ( rule__Reset__NameAssignment_6 )
             {
              before(grammarAccess.getResetAccess().getNameAssignment_6()); 
-            // InternalLightweight.g:6261:2: ( rule__Reset__NameAssignment_6 )
-            // InternalLightweight.g:6261:3: rule__Reset__NameAssignment_6
+            // InternalLightweight.g:6180:2: ( rule__Reset__NameAssignment_6 )
+            // InternalLightweight.g:6180:3: rule__Reset__NameAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Reset__NameAssignment_6();
@@ -18431,16 +18297,16 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__7"
-    // InternalLightweight.g:6269:1: rule__Reset__Group__7 : rule__Reset__Group__7__Impl rule__Reset__Group__8 ;
+    // InternalLightweight.g:6188:1: rule__Reset__Group__7 : rule__Reset__Group__7__Impl rule__Reset__Group__8 ;
     public final void rule__Reset__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6273:1: ( rule__Reset__Group__7__Impl rule__Reset__Group__8 )
-            // InternalLightweight.g:6274:2: rule__Reset__Group__7__Impl rule__Reset__Group__8
+            // InternalLightweight.g:6192:1: ( rule__Reset__Group__7__Impl rule__Reset__Group__8 )
+            // InternalLightweight.g:6193:2: rule__Reset__Group__7__Impl rule__Reset__Group__8
             {
-            pushFollow(FOLLOW_48);
+            pushFollow(FOLLOW_50);
             rule__Reset__Group__7__Impl();
 
             state._fsp--;
@@ -18469,17 +18335,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__7__Impl"
-    // InternalLightweight.g:6281:1: rule__Reset__Group__7__Impl : ( ',' ) ;
+    // InternalLightweight.g:6200:1: rule__Reset__Group__7__Impl : ( ',' ) ;
     public final void rule__Reset__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6285:1: ( ( ',' ) )
-            // InternalLightweight.g:6286:1: ( ',' )
+            // InternalLightweight.g:6204:1: ( ( ',' ) )
+            // InternalLightweight.g:6205:1: ( ',' )
             {
-            // InternalLightweight.g:6286:1: ( ',' )
-            // InternalLightweight.g:6287:2: ','
+            // InternalLightweight.g:6205:1: ( ',' )
+            // InternalLightweight.g:6206:2: ','
             {
              before(grammarAccess.getResetAccess().getCommaKeyword_7()); 
             match(input,38,FOLLOW_2); 
@@ -18506,16 +18372,16 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__8"
-    // InternalLightweight.g:6296:1: rule__Reset__Group__8 : rule__Reset__Group__8__Impl rule__Reset__Group__9 ;
+    // InternalLightweight.g:6215:1: rule__Reset__Group__8 : rule__Reset__Group__8__Impl rule__Reset__Group__9 ;
     public final void rule__Reset__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6300:1: ( rule__Reset__Group__8__Impl rule__Reset__Group__9 )
-            // InternalLightweight.g:6301:2: rule__Reset__Group__8__Impl rule__Reset__Group__9
+            // InternalLightweight.g:6219:1: ( rule__Reset__Group__8__Impl rule__Reset__Group__9 )
+            // InternalLightweight.g:6220:2: rule__Reset__Group__8__Impl rule__Reset__Group__9
             {
-            pushFollow(FOLLOW_48);
+            pushFollow(FOLLOW_50);
             rule__Reset__Group__8__Impl();
 
             state._fsp--;
@@ -18544,29 +18410,29 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__8__Impl"
-    // InternalLightweight.g:6308:1: rule__Reset__Group__8__Impl : ( ( rule__Reset__Group_8__0 )? ) ;
+    // InternalLightweight.g:6227:1: rule__Reset__Group__8__Impl : ( ( rule__Reset__Group_8__0 )? ) ;
     public final void rule__Reset__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6312:1: ( ( ( rule__Reset__Group_8__0 )? ) )
-            // InternalLightweight.g:6313:1: ( ( rule__Reset__Group_8__0 )? )
+            // InternalLightweight.g:6231:1: ( ( ( rule__Reset__Group_8__0 )? ) )
+            // InternalLightweight.g:6232:1: ( ( rule__Reset__Group_8__0 )? )
             {
-            // InternalLightweight.g:6313:1: ( ( rule__Reset__Group_8__0 )? )
-            // InternalLightweight.g:6314:2: ( rule__Reset__Group_8__0 )?
+            // InternalLightweight.g:6232:1: ( ( rule__Reset__Group_8__0 )? )
+            // InternalLightweight.g:6233:2: ( rule__Reset__Group_8__0 )?
             {
              before(grammarAccess.getResetAccess().getGroup_8()); 
-            // InternalLightweight.g:6315:2: ( rule__Reset__Group_8__0 )?
+            // InternalLightweight.g:6234:2: ( rule__Reset__Group_8__0 )?
             int alt23=2;
             int LA23_0 = input.LA(1);
 
-            if ( (LA23_0==49) ) {
+            if ( (LA23_0==47) ) {
                 alt23=1;
             }
             switch (alt23) {
                 case 1 :
-                    // InternalLightweight.g:6315:3: rule__Reset__Group_8__0
+                    // InternalLightweight.g:6234:3: rule__Reset__Group_8__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Reset__Group_8__0();
@@ -18602,14 +18468,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__9"
-    // InternalLightweight.g:6323:1: rule__Reset__Group__9 : rule__Reset__Group__9__Impl rule__Reset__Group__10 ;
+    // InternalLightweight.g:6242:1: rule__Reset__Group__9 : rule__Reset__Group__9__Impl rule__Reset__Group__10 ;
     public final void rule__Reset__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6327:1: ( rule__Reset__Group__9__Impl rule__Reset__Group__10 )
-            // InternalLightweight.g:6328:2: rule__Reset__Group__9__Impl rule__Reset__Group__10
+            // InternalLightweight.g:6246:1: ( rule__Reset__Group__9__Impl rule__Reset__Group__10 )
+            // InternalLightweight.g:6247:2: rule__Reset__Group__9__Impl rule__Reset__Group__10
             {
             pushFollow(FOLLOW_3);
             rule__Reset__Group__9__Impl();
@@ -18640,20 +18506,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__9__Impl"
-    // InternalLightweight.g:6335:1: rule__Reset__Group__9__Impl : ( 'authentication' ) ;
+    // InternalLightweight.g:6254:1: rule__Reset__Group__9__Impl : ( 'authentication' ) ;
     public final void rule__Reset__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6339:1: ( ( 'authentication' ) )
-            // InternalLightweight.g:6340:1: ( 'authentication' )
+            // InternalLightweight.g:6258:1: ( ( 'authentication' ) )
+            // InternalLightweight.g:6259:1: ( 'authentication' )
             {
-            // InternalLightweight.g:6340:1: ( 'authentication' )
-            // InternalLightweight.g:6341:2: 'authentication'
+            // InternalLightweight.g:6259:1: ( 'authentication' )
+            // InternalLightweight.g:6260:2: 'authentication'
             {
              before(grammarAccess.getResetAccess().getAuthenticationKeyword_9()); 
-            match(input,68,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getResetAccess().getAuthenticationKeyword_9()); 
 
             }
@@ -18677,16 +18543,16 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__10"
-    // InternalLightweight.g:6350:1: rule__Reset__Group__10 : rule__Reset__Group__10__Impl rule__Reset__Group__11 ;
+    // InternalLightweight.g:6269:1: rule__Reset__Group__10 : rule__Reset__Group__10__Impl rule__Reset__Group__11 ;
     public final void rule__Reset__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6354:1: ( rule__Reset__Group__10__Impl rule__Reset__Group__11 )
-            // InternalLightweight.g:6355:2: rule__Reset__Group__10__Impl rule__Reset__Group__11
+            // InternalLightweight.g:6273:1: ( rule__Reset__Group__10__Impl rule__Reset__Group__11 )
+            // InternalLightweight.g:6274:2: rule__Reset__Group__10__Impl rule__Reset__Group__11
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_19);
             rule__Reset__Group__10__Impl();
 
             state._fsp--;
@@ -18715,17 +18581,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__10__Impl"
-    // InternalLightweight.g:6362:1: rule__Reset__Group__10__Impl : ( ':' ) ;
+    // InternalLightweight.g:6281:1: rule__Reset__Group__10__Impl : ( ':' ) ;
     public final void rule__Reset__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6366:1: ( ( ':' ) )
-            // InternalLightweight.g:6367:1: ( ':' )
+            // InternalLightweight.g:6285:1: ( ( ':' ) )
+            // InternalLightweight.g:6286:1: ( ':' )
             {
-            // InternalLightweight.g:6367:1: ( ':' )
-            // InternalLightweight.g:6368:2: ':'
+            // InternalLightweight.g:6286:1: ( ':' )
+            // InternalLightweight.g:6287:2: ':'
             {
              before(grammarAccess.getResetAccess().getColonKeyword_10()); 
             match(input,33,FOLLOW_2); 
@@ -18752,16 +18618,16 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__11"
-    // InternalLightweight.g:6377:1: rule__Reset__Group__11 : rule__Reset__Group__11__Impl rule__Reset__Group__12 ;
+    // InternalLightweight.g:6296:1: rule__Reset__Group__11 : rule__Reset__Group__11__Impl rule__Reset__Group__12 ;
     public final void rule__Reset__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6381:1: ( rule__Reset__Group__11__Impl rule__Reset__Group__12 )
-            // InternalLightweight.g:6382:2: rule__Reset__Group__11__Impl rule__Reset__Group__12
+            // InternalLightweight.g:6300:1: ( rule__Reset__Group__11__Impl rule__Reset__Group__12 )
+            // InternalLightweight.g:6301:2: rule__Reset__Group__11__Impl rule__Reset__Group__12
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_48);
             rule__Reset__Group__11__Impl();
 
             state._fsp--;
@@ -18790,21 +18656,31 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__11__Impl"
-    // InternalLightweight.g:6389:1: rule__Reset__Group__11__Impl : ( '[' ) ;
+    // InternalLightweight.g:6308:1: rule__Reset__Group__11__Impl : ( ( rule__Reset__AuthMethodsAssignment_11 ) ) ;
     public final void rule__Reset__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6393:1: ( ( '[' ) )
-            // InternalLightweight.g:6394:1: ( '[' )
+            // InternalLightweight.g:6312:1: ( ( ( rule__Reset__AuthMethodsAssignment_11 ) ) )
+            // InternalLightweight.g:6313:1: ( ( rule__Reset__AuthMethodsAssignment_11 ) )
             {
-            // InternalLightweight.g:6394:1: ( '[' )
-            // InternalLightweight.g:6395:2: '['
+            // InternalLightweight.g:6313:1: ( ( rule__Reset__AuthMethodsAssignment_11 ) )
+            // InternalLightweight.g:6314:2: ( rule__Reset__AuthMethodsAssignment_11 )
             {
-             before(grammarAccess.getResetAccess().getLeftSquareBracketKeyword_11()); 
-            match(input,36,FOLLOW_2); 
-             after(grammarAccess.getResetAccess().getLeftSquareBracketKeyword_11()); 
+             before(grammarAccess.getResetAccess().getAuthMethodsAssignment_11()); 
+            // InternalLightweight.g:6315:2: ( rule__Reset__AuthMethodsAssignment_11 )
+            // InternalLightweight.g:6315:3: rule__Reset__AuthMethodsAssignment_11
+            {
+            pushFollow(FOLLOW_2);
+            rule__Reset__AuthMethodsAssignment_11();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getResetAccess().getAuthMethodsAssignment_11()); 
 
             }
 
@@ -18827,16 +18703,16 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__12"
-    // InternalLightweight.g:6404:1: rule__Reset__Group__12 : rule__Reset__Group__12__Impl rule__Reset__Group__13 ;
+    // InternalLightweight.g:6323:1: rule__Reset__Group__12 : rule__Reset__Group__12__Impl rule__Reset__Group__13 ;
     public final void rule__Reset__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6408:1: ( rule__Reset__Group__12__Impl rule__Reset__Group__13 )
-            // InternalLightweight.g:6409:2: rule__Reset__Group__12__Impl rule__Reset__Group__13
+            // InternalLightweight.g:6327:1: ( rule__Reset__Group__12__Impl rule__Reset__Group__13 )
+            // InternalLightweight.g:6328:2: rule__Reset__Group__12__Impl rule__Reset__Group__13
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_48);
             rule__Reset__Group__12__Impl();
 
             state._fsp--;
@@ -18865,31 +18741,49 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__12__Impl"
-    // InternalLightweight.g:6416:1: rule__Reset__Group__12__Impl : ( ( rule__Reset__AuthMethodsAssignment_12 ) ) ;
+    // InternalLightweight.g:6335:1: rule__Reset__Group__12__Impl : ( ( rule__Reset__Group_12__0 )* ) ;
     public final void rule__Reset__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6420:1: ( ( ( rule__Reset__AuthMethodsAssignment_12 ) ) )
-            // InternalLightweight.g:6421:1: ( ( rule__Reset__AuthMethodsAssignment_12 ) )
+            // InternalLightweight.g:6339:1: ( ( ( rule__Reset__Group_12__0 )* ) )
+            // InternalLightweight.g:6340:1: ( ( rule__Reset__Group_12__0 )* )
             {
-            // InternalLightweight.g:6421:1: ( ( rule__Reset__AuthMethodsAssignment_12 ) )
-            // InternalLightweight.g:6422:2: ( rule__Reset__AuthMethodsAssignment_12 )
+            // InternalLightweight.g:6340:1: ( ( rule__Reset__Group_12__0 )* )
+            // InternalLightweight.g:6341:2: ( rule__Reset__Group_12__0 )*
             {
-             before(grammarAccess.getResetAccess().getAuthMethodsAssignment_12()); 
-            // InternalLightweight.g:6423:2: ( rule__Reset__AuthMethodsAssignment_12 )
-            // InternalLightweight.g:6423:3: rule__Reset__AuthMethodsAssignment_12
-            {
-            pushFollow(FOLLOW_2);
-            rule__Reset__AuthMethodsAssignment_12();
+             before(grammarAccess.getResetAccess().getGroup_12()); 
+            // InternalLightweight.g:6342:2: ( rule__Reset__Group_12__0 )*
+            loop24:
+            do {
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-            state._fsp--;
+                if ( (LA24_0==61) ) {
+                    alt24=1;
+                }
 
 
-            }
+                switch (alt24) {
+            	case 1 :
+            	    // InternalLightweight.g:6342:3: rule__Reset__Group_12__0
+            	    {
+            	    pushFollow(FOLLOW_49);
+            	    rule__Reset__Group_12__0();
 
-             after(grammarAccess.getResetAccess().getAuthMethodsAssignment_12()); 
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop24;
+                }
+            } while (true);
+
+             after(grammarAccess.getResetAccess().getGroup_12()); 
 
             }
 
@@ -18912,22 +18806,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__13"
-    // InternalLightweight.g:6431:1: rule__Reset__Group__13 : rule__Reset__Group__13__Impl rule__Reset__Group__14 ;
+    // InternalLightweight.g:6350:1: rule__Reset__Group__13 : rule__Reset__Group__13__Impl ;
     public final void rule__Reset__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6435:1: ( rule__Reset__Group__13__Impl rule__Reset__Group__14 )
-            // InternalLightweight.g:6436:2: rule__Reset__Group__13__Impl rule__Reset__Group__14
+            // InternalLightweight.g:6354:1: ( rule__Reset__Group__13__Impl )
+            // InternalLightweight.g:6355:2: rule__Reset__Group__13__Impl
             {
-            pushFollow(FOLLOW_8);
-            rule__Reset__Group__13__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Reset__Group__14();
+            rule__Reset__Group__13__Impl();
 
             state._fsp--;
 
@@ -18950,49 +18839,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group__13__Impl"
-    // InternalLightweight.g:6443:1: rule__Reset__Group__13__Impl : ( ( rule__Reset__Group_13__0 )* ) ;
+    // InternalLightweight.g:6361:1: rule__Reset__Group__13__Impl : ( '}' ) ;
     public final void rule__Reset__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6447:1: ( ( ( rule__Reset__Group_13__0 )* ) )
-            // InternalLightweight.g:6448:1: ( ( rule__Reset__Group_13__0 )* )
+            // InternalLightweight.g:6365:1: ( ( '}' ) )
+            // InternalLightweight.g:6366:1: ( '}' )
             {
-            // InternalLightweight.g:6448:1: ( ( rule__Reset__Group_13__0 )* )
-            // InternalLightweight.g:6449:2: ( rule__Reset__Group_13__0 )*
+            // InternalLightweight.g:6366:1: ( '}' )
+            // InternalLightweight.g:6367:2: '}'
             {
-             before(grammarAccess.getResetAccess().getGroup_13()); 
-            // InternalLightweight.g:6450:2: ( rule__Reset__Group_13__0 )*
-            loop24:
-            do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
-
-                if ( (LA24_0==38) ) {
-                    alt24=1;
-                }
-
-
-                switch (alt24) {
-            	case 1 :
-            	    // InternalLightweight.g:6450:3: rule__Reset__Group_13__0
-            	    {
-            	    pushFollow(FOLLOW_9);
-            	    rule__Reset__Group_13__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop24;
-                }
-            } while (true);
-
-             after(grammarAccess.getResetAccess().getGroup_13()); 
+             before(grammarAccess.getResetAccess().getRightCurlyBracketKeyword_13()); 
+            match(input,41,FOLLOW_2); 
+             after(grammarAccess.getResetAccess().getRightCurlyBracketKeyword_13()); 
 
             }
 
@@ -19014,160 +18875,15 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Reset__Group__13__Impl"
 
 
-    // $ANTLR start "rule__Reset__Group__14"
-    // InternalLightweight.g:6458:1: rule__Reset__Group__14 : rule__Reset__Group__14__Impl rule__Reset__Group__15 ;
-    public final void rule__Reset__Group__14() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLightweight.g:6462:1: ( rule__Reset__Group__14__Impl rule__Reset__Group__15 )
-            // InternalLightweight.g:6463:2: rule__Reset__Group__14__Impl rule__Reset__Group__15
-            {
-            pushFollow(FOLLOW_15);
-            rule__Reset__Group__14__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Reset__Group__15();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Reset__Group__14"
-
-
-    // $ANTLR start "rule__Reset__Group__14__Impl"
-    // InternalLightweight.g:6470:1: rule__Reset__Group__14__Impl : ( ']' ) ;
-    public final void rule__Reset__Group__14__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLightweight.g:6474:1: ( ( ']' ) )
-            // InternalLightweight.g:6475:1: ( ']' )
-            {
-            // InternalLightweight.g:6475:1: ( ']' )
-            // InternalLightweight.g:6476:2: ']'
-            {
-             before(grammarAccess.getResetAccess().getRightSquareBracketKeyword_14()); 
-            match(input,37,FOLLOW_2); 
-             after(grammarAccess.getResetAccess().getRightSquareBracketKeyword_14()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Reset__Group__14__Impl"
-
-
-    // $ANTLR start "rule__Reset__Group__15"
-    // InternalLightweight.g:6485:1: rule__Reset__Group__15 : rule__Reset__Group__15__Impl ;
-    public final void rule__Reset__Group__15() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLightweight.g:6489:1: ( rule__Reset__Group__15__Impl )
-            // InternalLightweight.g:6490:2: rule__Reset__Group__15__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Reset__Group__15__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Reset__Group__15"
-
-
-    // $ANTLR start "rule__Reset__Group__15__Impl"
-    // InternalLightweight.g:6496:1: rule__Reset__Group__15__Impl : ( '}' ) ;
-    public final void rule__Reset__Group__15__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLightweight.g:6500:1: ( ( '}' ) )
-            // InternalLightweight.g:6501:1: ( '}' )
-            {
-            // InternalLightweight.g:6501:1: ( '}' )
-            // InternalLightweight.g:6502:2: '}'
-            {
-             before(grammarAccess.getResetAccess().getRightCurlyBracketKeyword_15()); 
-            match(input,41,FOLLOW_2); 
-             after(grammarAccess.getResetAccess().getRightCurlyBracketKeyword_15()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Reset__Group__15__Impl"
-
-
     // $ANTLR start "rule__Reset__Group_8__0"
-    // InternalLightweight.g:6512:1: rule__Reset__Group_8__0 : rule__Reset__Group_8__0__Impl rule__Reset__Group_8__1 ;
+    // InternalLightweight.g:6377:1: rule__Reset__Group_8__0 : rule__Reset__Group_8__0__Impl rule__Reset__Group_8__1 ;
     public final void rule__Reset__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6516:1: ( rule__Reset__Group_8__0__Impl rule__Reset__Group_8__1 )
-            // InternalLightweight.g:6517:2: rule__Reset__Group_8__0__Impl rule__Reset__Group_8__1
+            // InternalLightweight.g:6381:1: ( rule__Reset__Group_8__0__Impl rule__Reset__Group_8__1 )
+            // InternalLightweight.g:6382:2: rule__Reset__Group_8__0__Impl rule__Reset__Group_8__1
             {
             pushFollow(FOLLOW_3);
             rule__Reset__Group_8__0__Impl();
@@ -19198,20 +18914,20 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group_8__0__Impl"
-    // InternalLightweight.g:6524:1: rule__Reset__Group_8__0__Impl : ( 'authenticator' ) ;
+    // InternalLightweight.g:6389:1: rule__Reset__Group_8__0__Impl : ( 'authenticator' ) ;
     public final void rule__Reset__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6528:1: ( ( 'authenticator' ) )
-            // InternalLightweight.g:6529:1: ( 'authenticator' )
+            // InternalLightweight.g:6393:1: ( ( 'authenticator' ) )
+            // InternalLightweight.g:6394:1: ( 'authenticator' )
             {
-            // InternalLightweight.g:6529:1: ( 'authenticator' )
-            // InternalLightweight.g:6530:2: 'authenticator'
+            // InternalLightweight.g:6394:1: ( 'authenticator' )
+            // InternalLightweight.g:6395:2: 'authenticator'
             {
              before(grammarAccess.getResetAccess().getAuthenticatorKeyword_8_0()); 
-            match(input,49,FOLLOW_2); 
+            match(input,47,FOLLOW_2); 
              after(grammarAccess.getResetAccess().getAuthenticatorKeyword_8_0()); 
 
             }
@@ -19235,14 +18951,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group_8__1"
-    // InternalLightweight.g:6539:1: rule__Reset__Group_8__1 : rule__Reset__Group_8__1__Impl rule__Reset__Group_8__2 ;
+    // InternalLightweight.g:6404:1: rule__Reset__Group_8__1 : rule__Reset__Group_8__1__Impl rule__Reset__Group_8__2 ;
     public final void rule__Reset__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6543:1: ( rule__Reset__Group_8__1__Impl rule__Reset__Group_8__2 )
-            // InternalLightweight.g:6544:2: rule__Reset__Group_8__1__Impl rule__Reset__Group_8__2
+            // InternalLightweight.g:6408:1: ( rule__Reset__Group_8__1__Impl rule__Reset__Group_8__2 )
+            // InternalLightweight.g:6409:2: rule__Reset__Group_8__1__Impl rule__Reset__Group_8__2
             {
             pushFollow(FOLLOW_19);
             rule__Reset__Group_8__1__Impl();
@@ -19273,17 +18989,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group_8__1__Impl"
-    // InternalLightweight.g:6551:1: rule__Reset__Group_8__1__Impl : ( ':' ) ;
+    // InternalLightweight.g:6416:1: rule__Reset__Group_8__1__Impl : ( ':' ) ;
     public final void rule__Reset__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6555:1: ( ( ':' ) )
-            // InternalLightweight.g:6556:1: ( ':' )
+            // InternalLightweight.g:6420:1: ( ( ':' ) )
+            // InternalLightweight.g:6421:1: ( ':' )
             {
-            // InternalLightweight.g:6556:1: ( ':' )
-            // InternalLightweight.g:6557:2: ':'
+            // InternalLightweight.g:6421:1: ( ':' )
+            // InternalLightweight.g:6422:2: ':'
             {
              before(grammarAccess.getResetAccess().getColonKeyword_8_1()); 
             match(input,33,FOLLOW_2); 
@@ -19310,14 +19026,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group_8__2"
-    // InternalLightweight.g:6566:1: rule__Reset__Group_8__2 : rule__Reset__Group_8__2__Impl rule__Reset__Group_8__3 ;
+    // InternalLightweight.g:6431:1: rule__Reset__Group_8__2 : rule__Reset__Group_8__2__Impl rule__Reset__Group_8__3 ;
     public final void rule__Reset__Group_8__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6570:1: ( rule__Reset__Group_8__2__Impl rule__Reset__Group_8__3 )
-            // InternalLightweight.g:6571:2: rule__Reset__Group_8__2__Impl rule__Reset__Group_8__3
+            // InternalLightweight.g:6435:1: ( rule__Reset__Group_8__2__Impl rule__Reset__Group_8__3 )
+            // InternalLightweight.g:6436:2: rule__Reset__Group_8__2__Impl rule__Reset__Group_8__3
             {
             pushFollow(FOLLOW_10);
             rule__Reset__Group_8__2__Impl();
@@ -19348,21 +19064,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group_8__2__Impl"
-    // InternalLightweight.g:6578:1: rule__Reset__Group_8__2__Impl : ( ( rule__Reset__AuthenticatorAssignment_8_2 ) ) ;
+    // InternalLightweight.g:6443:1: rule__Reset__Group_8__2__Impl : ( ( rule__Reset__AuthenticatorAssignment_8_2 ) ) ;
     public final void rule__Reset__Group_8__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6582:1: ( ( ( rule__Reset__AuthenticatorAssignment_8_2 ) ) )
-            // InternalLightweight.g:6583:1: ( ( rule__Reset__AuthenticatorAssignment_8_2 ) )
+            // InternalLightweight.g:6447:1: ( ( ( rule__Reset__AuthenticatorAssignment_8_2 ) ) )
+            // InternalLightweight.g:6448:1: ( ( rule__Reset__AuthenticatorAssignment_8_2 ) )
             {
-            // InternalLightweight.g:6583:1: ( ( rule__Reset__AuthenticatorAssignment_8_2 ) )
-            // InternalLightweight.g:6584:2: ( rule__Reset__AuthenticatorAssignment_8_2 )
+            // InternalLightweight.g:6448:1: ( ( rule__Reset__AuthenticatorAssignment_8_2 ) )
+            // InternalLightweight.g:6449:2: ( rule__Reset__AuthenticatorAssignment_8_2 )
             {
              before(grammarAccess.getResetAccess().getAuthenticatorAssignment_8_2()); 
-            // InternalLightweight.g:6585:2: ( rule__Reset__AuthenticatorAssignment_8_2 )
-            // InternalLightweight.g:6585:3: rule__Reset__AuthenticatorAssignment_8_2
+            // InternalLightweight.g:6450:2: ( rule__Reset__AuthenticatorAssignment_8_2 )
+            // InternalLightweight.g:6450:3: rule__Reset__AuthenticatorAssignment_8_2
             {
             pushFollow(FOLLOW_2);
             rule__Reset__AuthenticatorAssignment_8_2();
@@ -19395,14 +19111,14 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group_8__3"
-    // InternalLightweight.g:6593:1: rule__Reset__Group_8__3 : rule__Reset__Group_8__3__Impl ;
+    // InternalLightweight.g:6458:1: rule__Reset__Group_8__3 : rule__Reset__Group_8__3__Impl ;
     public final void rule__Reset__Group_8__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6597:1: ( rule__Reset__Group_8__3__Impl )
-            // InternalLightweight.g:6598:2: rule__Reset__Group_8__3__Impl
+            // InternalLightweight.g:6462:1: ( rule__Reset__Group_8__3__Impl )
+            // InternalLightweight.g:6463:2: rule__Reset__Group_8__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Reset__Group_8__3__Impl();
@@ -19428,17 +19144,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__Group_8__3__Impl"
-    // InternalLightweight.g:6604:1: rule__Reset__Group_8__3__Impl : ( ',' ) ;
+    // InternalLightweight.g:6469:1: rule__Reset__Group_8__3__Impl : ( ',' ) ;
     public final void rule__Reset__Group_8__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6608:1: ( ( ',' ) )
-            // InternalLightweight.g:6609:1: ( ',' )
+            // InternalLightweight.g:6473:1: ( ( ',' ) )
+            // InternalLightweight.g:6474:1: ( ',' )
             {
-            // InternalLightweight.g:6609:1: ( ',' )
-            // InternalLightweight.g:6610:2: ','
+            // InternalLightweight.g:6474:1: ( ',' )
+            // InternalLightweight.g:6475:2: ','
             {
              before(grammarAccess.getResetAccess().getCommaKeyword_8_3()); 
             match(input,38,FOLLOW_2); 
@@ -19464,23 +19180,23 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Reset__Group_8__3__Impl"
 
 
-    // $ANTLR start "rule__Reset__Group_13__0"
-    // InternalLightweight.g:6620:1: rule__Reset__Group_13__0 : rule__Reset__Group_13__0__Impl rule__Reset__Group_13__1 ;
-    public final void rule__Reset__Group_13__0() throws RecognitionException {
+    // $ANTLR start "rule__Reset__Group_12__0"
+    // InternalLightweight.g:6485:1: rule__Reset__Group_12__0 : rule__Reset__Group_12__0__Impl rule__Reset__Group_12__1 ;
+    public final void rule__Reset__Group_12__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6624:1: ( rule__Reset__Group_13__0__Impl rule__Reset__Group_13__1 )
-            // InternalLightweight.g:6625:2: rule__Reset__Group_13__0__Impl rule__Reset__Group_13__1
+            // InternalLightweight.g:6489:1: ( rule__Reset__Group_12__0__Impl rule__Reset__Group_12__1 )
+            // InternalLightweight.g:6490:2: rule__Reset__Group_12__0__Impl rule__Reset__Group_12__1
             {
             pushFollow(FOLLOW_19);
-            rule__Reset__Group_13__0__Impl();
+            rule__Reset__Group_12__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Reset__Group_13__1();
+            rule__Reset__Group_12__1();
 
             state._fsp--;
 
@@ -19499,25 +19215,25 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Reset__Group_13__0"
+    // $ANTLR end "rule__Reset__Group_12__0"
 
 
-    // $ANTLR start "rule__Reset__Group_13__0__Impl"
-    // InternalLightweight.g:6632:1: rule__Reset__Group_13__0__Impl : ( ',' ) ;
-    public final void rule__Reset__Group_13__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Reset__Group_12__0__Impl"
+    // InternalLightweight.g:6497:1: rule__Reset__Group_12__0__Impl : ( '||' ) ;
+    public final void rule__Reset__Group_12__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6636:1: ( ( ',' ) )
-            // InternalLightweight.g:6637:1: ( ',' )
+            // InternalLightweight.g:6501:1: ( ( '||' ) )
+            // InternalLightweight.g:6502:1: ( '||' )
             {
-            // InternalLightweight.g:6637:1: ( ',' )
-            // InternalLightweight.g:6638:2: ','
+            // InternalLightweight.g:6502:1: ( '||' )
+            // InternalLightweight.g:6503:2: '||'
             {
-             before(grammarAccess.getResetAccess().getCommaKeyword_13_0()); 
-            match(input,38,FOLLOW_2); 
-             after(grammarAccess.getResetAccess().getCommaKeyword_13_0()); 
+             before(grammarAccess.getResetAccess().getVerticalLineVerticalLineKeyword_12_0()); 
+            match(input,61,FOLLOW_2); 
+             after(grammarAccess.getResetAccess().getVerticalLineVerticalLineKeyword_12_0()); 
 
             }
 
@@ -19536,21 +19252,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Reset__Group_13__0__Impl"
+    // $ANTLR end "rule__Reset__Group_12__0__Impl"
 
 
-    // $ANTLR start "rule__Reset__Group_13__1"
-    // InternalLightweight.g:6647:1: rule__Reset__Group_13__1 : rule__Reset__Group_13__1__Impl ;
-    public final void rule__Reset__Group_13__1() throws RecognitionException {
+    // $ANTLR start "rule__Reset__Group_12__1"
+    // InternalLightweight.g:6512:1: rule__Reset__Group_12__1 : rule__Reset__Group_12__1__Impl ;
+    public final void rule__Reset__Group_12__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6651:1: ( rule__Reset__Group_13__1__Impl )
-            // InternalLightweight.g:6652:2: rule__Reset__Group_13__1__Impl
+            // InternalLightweight.g:6516:1: ( rule__Reset__Group_12__1__Impl )
+            // InternalLightweight.g:6517:2: rule__Reset__Group_12__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Reset__Group_13__1__Impl();
+            rule__Reset__Group_12__1__Impl();
 
             state._fsp--;
 
@@ -19569,35 +19285,35 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Reset__Group_13__1"
+    // $ANTLR end "rule__Reset__Group_12__1"
 
 
-    // $ANTLR start "rule__Reset__Group_13__1__Impl"
-    // InternalLightweight.g:6658:1: rule__Reset__Group_13__1__Impl : ( ( rule__Reset__AuthMethodsAssignment_13_1 ) ) ;
-    public final void rule__Reset__Group_13__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Reset__Group_12__1__Impl"
+    // InternalLightweight.g:6523:1: rule__Reset__Group_12__1__Impl : ( ( rule__Reset__AuthMethodsAssignment_12_1 ) ) ;
+    public final void rule__Reset__Group_12__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6662:1: ( ( ( rule__Reset__AuthMethodsAssignment_13_1 ) ) )
-            // InternalLightweight.g:6663:1: ( ( rule__Reset__AuthMethodsAssignment_13_1 ) )
+            // InternalLightweight.g:6527:1: ( ( ( rule__Reset__AuthMethodsAssignment_12_1 ) ) )
+            // InternalLightweight.g:6528:1: ( ( rule__Reset__AuthMethodsAssignment_12_1 ) )
             {
-            // InternalLightweight.g:6663:1: ( ( rule__Reset__AuthMethodsAssignment_13_1 ) )
-            // InternalLightweight.g:6664:2: ( rule__Reset__AuthMethodsAssignment_13_1 )
+            // InternalLightweight.g:6528:1: ( ( rule__Reset__AuthMethodsAssignment_12_1 ) )
+            // InternalLightweight.g:6529:2: ( rule__Reset__AuthMethodsAssignment_12_1 )
             {
-             before(grammarAccess.getResetAccess().getAuthMethodsAssignment_13_1()); 
-            // InternalLightweight.g:6665:2: ( rule__Reset__AuthMethodsAssignment_13_1 )
-            // InternalLightweight.g:6665:3: rule__Reset__AuthMethodsAssignment_13_1
+             before(grammarAccess.getResetAccess().getAuthMethodsAssignment_12_1()); 
+            // InternalLightweight.g:6530:2: ( rule__Reset__AuthMethodsAssignment_12_1 )
+            // InternalLightweight.g:6530:3: rule__Reset__AuthMethodsAssignment_12_1
             {
             pushFollow(FOLLOW_2);
-            rule__Reset__AuthMethodsAssignment_13_1();
+            rule__Reset__AuthMethodsAssignment_12_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getResetAccess().getAuthMethodsAssignment_13_1()); 
+             after(grammarAccess.getResetAccess().getAuthMethodsAssignment_12_1()); 
 
             }
 
@@ -19616,21 +19332,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Reset__Group_13__1__Impl"
+    // $ANTLR end "rule__Reset__Group_12__1__Impl"
 
 
     // $ANTLR start "rule__App__AuthenticatorsAssignment_6"
-    // InternalLightweight.g:6674:1: rule__App__AuthenticatorsAssignment_6 : ( ruleAuthenticator ) ;
+    // InternalLightweight.g:6539:1: rule__App__AuthenticatorsAssignment_6 : ( ruleAuthenticator ) ;
     public final void rule__App__AuthenticatorsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6678:1: ( ( ruleAuthenticator ) )
-            // InternalLightweight.g:6679:2: ( ruleAuthenticator )
+            // InternalLightweight.g:6543:1: ( ( ruleAuthenticator ) )
+            // InternalLightweight.g:6544:2: ( ruleAuthenticator )
             {
-            // InternalLightweight.g:6679:2: ( ruleAuthenticator )
-            // InternalLightweight.g:6680:3: ruleAuthenticator
+            // InternalLightweight.g:6544:2: ( ruleAuthenticator )
+            // InternalLightweight.g:6545:3: ruleAuthenticator
             {
              before(grammarAccess.getAppAccess().getAuthenticatorsAuthenticatorParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -19661,17 +19377,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__App__AuthenticatorsAssignment_7_1"
-    // InternalLightweight.g:6689:1: rule__App__AuthenticatorsAssignment_7_1 : ( ruleAuthenticator ) ;
+    // InternalLightweight.g:6554:1: rule__App__AuthenticatorsAssignment_7_1 : ( ruleAuthenticator ) ;
     public final void rule__App__AuthenticatorsAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6693:1: ( ( ruleAuthenticator ) )
-            // InternalLightweight.g:6694:2: ( ruleAuthenticator )
+            // InternalLightweight.g:6558:1: ( ( ruleAuthenticator ) )
+            // InternalLightweight.g:6559:2: ( ruleAuthenticator )
             {
-            // InternalLightweight.g:6694:2: ( ruleAuthenticator )
-            // InternalLightweight.g:6695:3: ruleAuthenticator
+            // InternalLightweight.g:6559:2: ( ruleAuthenticator )
+            // InternalLightweight.g:6560:3: ruleAuthenticator
             {
              before(grammarAccess.getAppAccess().getAuthenticatorsAuthenticatorParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19702,17 +19418,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__App__AuthMethodsAssignment_13"
-    // InternalLightweight.g:6704:1: rule__App__AuthMethodsAssignment_13 : ( ruleAuthMethod ) ;
+    // InternalLightweight.g:6569:1: rule__App__AuthMethodsAssignment_13 : ( ruleAuthMethod ) ;
     public final void rule__App__AuthMethodsAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6708:1: ( ( ruleAuthMethod ) )
-            // InternalLightweight.g:6709:2: ( ruleAuthMethod )
+            // InternalLightweight.g:6573:1: ( ( ruleAuthMethod ) )
+            // InternalLightweight.g:6574:2: ( ruleAuthMethod )
             {
-            // InternalLightweight.g:6709:2: ( ruleAuthMethod )
-            // InternalLightweight.g:6710:3: ruleAuthMethod
+            // InternalLightweight.g:6574:2: ( ruleAuthMethod )
+            // InternalLightweight.g:6575:3: ruleAuthMethod
             {
              before(grammarAccess.getAppAccess().getAuthMethodsAuthMethodParserRuleCall_13_0()); 
             pushFollow(FOLLOW_2);
@@ -19743,17 +19459,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__App__AuthMethodsAssignment_14_1"
-    // InternalLightweight.g:6719:1: rule__App__AuthMethodsAssignment_14_1 : ( ruleAuthMethod ) ;
+    // InternalLightweight.g:6584:1: rule__App__AuthMethodsAssignment_14_1 : ( ruleAuthMethod ) ;
     public final void rule__App__AuthMethodsAssignment_14_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6723:1: ( ( ruleAuthMethod ) )
-            // InternalLightweight.g:6724:2: ( ruleAuthMethod )
+            // InternalLightweight.g:6588:1: ( ( ruleAuthMethod ) )
+            // InternalLightweight.g:6589:2: ( ruleAuthMethod )
             {
-            // InternalLightweight.g:6724:2: ( ruleAuthMethod )
-            // InternalLightweight.g:6725:3: ruleAuthMethod
+            // InternalLightweight.g:6589:2: ( ruleAuthMethod )
+            // InternalLightweight.g:6590:3: ruleAuthMethod
             {
              before(grammarAccess.getAppAccess().getAuthMethodsAuthMethodParserRuleCall_14_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19784,17 +19500,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__App__PhasesAssignment_20"
-    // InternalLightweight.g:6734:1: rule__App__PhasesAssignment_20 : ( rulePhase ) ;
+    // InternalLightweight.g:6599:1: rule__App__PhasesAssignment_20 : ( rulePhase ) ;
     public final void rule__App__PhasesAssignment_20() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6738:1: ( ( rulePhase ) )
-            // InternalLightweight.g:6739:2: ( rulePhase )
+            // InternalLightweight.g:6603:1: ( ( rulePhase ) )
+            // InternalLightweight.g:6604:2: ( rulePhase )
             {
-            // InternalLightweight.g:6739:2: ( rulePhase )
-            // InternalLightweight.g:6740:3: rulePhase
+            // InternalLightweight.g:6604:2: ( rulePhase )
+            // InternalLightweight.g:6605:3: rulePhase
             {
              before(grammarAccess.getAppAccess().getPhasesPhaseParserRuleCall_20_0()); 
             pushFollow(FOLLOW_2);
@@ -19825,17 +19541,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__App__PhasesAssignment_21_1"
-    // InternalLightweight.g:6749:1: rule__App__PhasesAssignment_21_1 : ( rulePhase ) ;
+    // InternalLightweight.g:6614:1: rule__App__PhasesAssignment_21_1 : ( rulePhase ) ;
     public final void rule__App__PhasesAssignment_21_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6753:1: ( ( rulePhase ) )
-            // InternalLightweight.g:6754:2: ( rulePhase )
+            // InternalLightweight.g:6618:1: ( ( rulePhase ) )
+            // InternalLightweight.g:6619:2: ( rulePhase )
             {
-            // InternalLightweight.g:6754:2: ( rulePhase )
-            // InternalLightweight.g:6755:3: rulePhase
+            // InternalLightweight.g:6619:2: ( rulePhase )
+            // InternalLightweight.g:6620:3: rulePhase
             {
              before(grammarAccess.getAppAccess().getPhasesPhaseParserRuleCall_21_1_0()); 
             pushFollow(FOLLOW_2);
@@ -19865,18 +19581,63 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__App__PhasesAssignment_21_1"
 
 
+    // $ANTLR start "rule__MFA__TypeAssignment_0"
+    // InternalLightweight.g:6629:1: rule__MFA__TypeAssignment_0 : ( ( '2FA' ) ) ;
+    public final void rule__MFA__TypeAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLightweight.g:6633:1: ( ( ( '2FA' ) ) )
+            // InternalLightweight.g:6634:2: ( ( '2FA' ) )
+            {
+            // InternalLightweight.g:6634:2: ( ( '2FA' ) )
+            // InternalLightweight.g:6635:3: ( '2FA' )
+            {
+             before(grammarAccess.getMFAAccess().getType2FAKeyword_0_0()); 
+            // InternalLightweight.g:6636:3: ( '2FA' )
+            // InternalLightweight.g:6637:4: '2FA'
+            {
+             before(grammarAccess.getMFAAccess().getType2FAKeyword_0_0()); 
+            match(input,62,FOLLOW_2); 
+             after(grammarAccess.getMFAAccess().getType2FAKeyword_0_0()); 
+
+            }
+
+             after(grammarAccess.getMFAAccess().getType2FAKeyword_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MFA__TypeAssignment_0"
+
+
     // $ANTLR start "rule__MFA__NameAssignment_5"
-    // InternalLightweight.g:6764:1: rule__MFA__NameAssignment_5 : ( ruleEString ) ;
+    // InternalLightweight.g:6648:1: rule__MFA__NameAssignment_5 : ( ruleEString ) ;
     public final void rule__MFA__NameAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6768:1: ( ( ruleEString ) )
-            // InternalLightweight.g:6769:2: ( ruleEString )
+            // InternalLightweight.g:6652:1: ( ( ruleEString ) )
+            // InternalLightweight.g:6653:2: ( ruleEString )
             {
-            // InternalLightweight.g:6769:2: ( ruleEString )
-            // InternalLightweight.g:6770:3: ruleEString
+            // InternalLightweight.g:6653:2: ( ruleEString )
+            // InternalLightweight.g:6654:3: ruleEString
             {
              before(grammarAccess.getMFAAccess().getNameEStringParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -19907,21 +19668,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MFA__AuthenticatorsAssignment_9"
-    // InternalLightweight.g:6779:1: rule__MFA__AuthenticatorsAssignment_9 : ( ( RULE_ID ) ) ;
+    // InternalLightweight.g:6663:1: rule__MFA__AuthenticatorsAssignment_9 : ( ( RULE_ID ) ) ;
     public final void rule__MFA__AuthenticatorsAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6783:1: ( ( ( RULE_ID ) ) )
-            // InternalLightweight.g:6784:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:6667:1: ( ( ( RULE_ID ) ) )
+            // InternalLightweight.g:6668:2: ( ( RULE_ID ) )
             {
-            // InternalLightweight.g:6784:2: ( ( RULE_ID ) )
-            // InternalLightweight.g:6785:3: ( RULE_ID )
+            // InternalLightweight.g:6668:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:6669:3: ( RULE_ID )
             {
              before(grammarAccess.getMFAAccess().getAuthenticatorsAuthenticatorCrossReference_9_0()); 
-            // InternalLightweight.g:6786:3: ( RULE_ID )
-            // InternalLightweight.g:6787:4: RULE_ID
+            // InternalLightweight.g:6670:3: ( RULE_ID )
+            // InternalLightweight.g:6671:4: RULE_ID
             {
              before(grammarAccess.getMFAAccess().getAuthenticatorsAuthenticatorIDTerminalRuleCall_9_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19952,21 +19713,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MFA__AuthenticatorsAssignment_11"
-    // InternalLightweight.g:6798:1: rule__MFA__AuthenticatorsAssignment_11 : ( ( RULE_ID ) ) ;
+    // InternalLightweight.g:6682:1: rule__MFA__AuthenticatorsAssignment_11 : ( ( RULE_ID ) ) ;
     public final void rule__MFA__AuthenticatorsAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6802:1: ( ( ( RULE_ID ) ) )
-            // InternalLightweight.g:6803:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:6686:1: ( ( ( RULE_ID ) ) )
+            // InternalLightweight.g:6687:2: ( ( RULE_ID ) )
             {
-            // InternalLightweight.g:6803:2: ( ( RULE_ID ) )
-            // InternalLightweight.g:6804:3: ( RULE_ID )
+            // InternalLightweight.g:6687:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:6688:3: ( RULE_ID )
             {
              before(grammarAccess.getMFAAccess().getAuthenticatorsAuthenticatorCrossReference_11_0()); 
-            // InternalLightweight.g:6805:3: ( RULE_ID )
-            // InternalLightweight.g:6806:4: RULE_ID
+            // InternalLightweight.g:6689:3: ( RULE_ID )
+            // InternalLightweight.g:6690:4: RULE_ID
             {
              before(grammarAccess.getMFAAccess().getAuthenticatorsAuthenticatorIDTerminalRuleCall_11_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -19997,17 +19758,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MFA__CorrelationAssignment_15"
-    // InternalLightweight.g:6817:1: rule__MFA__CorrelationAssignment_15 : ( ruleEBoolean ) ;
+    // InternalLightweight.g:6701:1: rule__MFA__CorrelationAssignment_15 : ( ruleEBoolean ) ;
     public final void rule__MFA__CorrelationAssignment_15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6821:1: ( ( ruleEBoolean ) )
-            // InternalLightweight.g:6822:2: ( ruleEBoolean )
+            // InternalLightweight.g:6705:1: ( ( ruleEBoolean ) )
+            // InternalLightweight.g:6706:2: ( ruleEBoolean )
             {
-            // InternalLightweight.g:6822:2: ( ruleEBoolean )
-            // InternalLightweight.g:6823:3: ruleEBoolean
+            // InternalLightweight.g:6706:2: ( ruleEBoolean )
+            // InternalLightweight.g:6707:3: ruleEBoolean
             {
              before(grammarAccess.getMFAAccess().getCorrelationEBooleanParserRuleCall_15_0()); 
             pushFollow(FOLLOW_2);
@@ -20038,17 +19799,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MFA__ValidationAssignment_19"
-    // InternalLightweight.g:6832:1: rule__MFA__ValidationAssignment_19 : ( ruleValidationType ) ;
+    // InternalLightweight.g:6716:1: rule__MFA__ValidationAssignment_19 : ( ruleValidationType ) ;
     public final void rule__MFA__ValidationAssignment_19() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6836:1: ( ( ruleValidationType ) )
-            // InternalLightweight.g:6837:2: ( ruleValidationType )
+            // InternalLightweight.g:6720:1: ( ( ruleValidationType ) )
+            // InternalLightweight.g:6721:2: ( ruleValidationType )
             {
-            // InternalLightweight.g:6837:2: ( ruleValidationType )
-            // InternalLightweight.g:6838:3: ruleValidationType
+            // InternalLightweight.g:6721:2: ( ruleValidationType )
+            // InternalLightweight.g:6722:3: ruleValidationType
             {
              before(grammarAccess.getMFAAccess().getValidationValidationTypeEnumRuleCall_19_0()); 
             pushFollow(FOLLOW_2);
@@ -20078,18 +19839,63 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__MFA__ValidationAssignment_19"
 
 
+    // $ANTLR start "rule__SFA__TypeAssignment_0"
+    // InternalLightweight.g:6731:1: rule__SFA__TypeAssignment_0 : ( ( 'SFA' ) ) ;
+    public final void rule__SFA__TypeAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLightweight.g:6735:1: ( ( ( 'SFA' ) ) )
+            // InternalLightweight.g:6736:2: ( ( 'SFA' ) )
+            {
+            // InternalLightweight.g:6736:2: ( ( 'SFA' ) )
+            // InternalLightweight.g:6737:3: ( 'SFA' )
+            {
+             before(grammarAccess.getSFAAccess().getTypeSFAKeyword_0_0()); 
+            // InternalLightweight.g:6738:3: ( 'SFA' )
+            // InternalLightweight.g:6739:4: 'SFA'
+            {
+             before(grammarAccess.getSFAAccess().getTypeSFAKeyword_0_0()); 
+            match(input,63,FOLLOW_2); 
+             after(grammarAccess.getSFAAccess().getTypeSFAKeyword_0_0()); 
+
+            }
+
+             after(grammarAccess.getSFAAccess().getTypeSFAKeyword_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SFA__TypeAssignment_0"
+
+
     // $ANTLR start "rule__SFA__NameAssignment_5"
-    // InternalLightweight.g:6847:1: rule__SFA__NameAssignment_5 : ( ruleEString ) ;
+    // InternalLightweight.g:6750:1: rule__SFA__NameAssignment_5 : ( ruleEString ) ;
     public final void rule__SFA__NameAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6851:1: ( ( ruleEString ) )
-            // InternalLightweight.g:6852:2: ( ruleEString )
+            // InternalLightweight.g:6754:1: ( ( ruleEString ) )
+            // InternalLightweight.g:6755:2: ( ruleEString )
             {
-            // InternalLightweight.g:6852:2: ( ruleEString )
-            // InternalLightweight.g:6853:3: ruleEString
+            // InternalLightweight.g:6755:2: ( ruleEString )
+            // InternalLightweight.g:6756:3: ruleEString
             {
              before(grammarAccess.getSFAAccess().getNameEStringParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -20120,21 +19926,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SFA__AuthenticatorsAssignment_9"
-    // InternalLightweight.g:6862:1: rule__SFA__AuthenticatorsAssignment_9 : ( ( RULE_ID ) ) ;
+    // InternalLightweight.g:6765:1: rule__SFA__AuthenticatorsAssignment_9 : ( ( RULE_ID ) ) ;
     public final void rule__SFA__AuthenticatorsAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6866:1: ( ( ( RULE_ID ) ) )
-            // InternalLightweight.g:6867:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:6769:1: ( ( ( RULE_ID ) ) )
+            // InternalLightweight.g:6770:2: ( ( RULE_ID ) )
             {
-            // InternalLightweight.g:6867:2: ( ( RULE_ID ) )
-            // InternalLightweight.g:6868:3: ( RULE_ID )
+            // InternalLightweight.g:6770:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:6771:3: ( RULE_ID )
             {
              before(grammarAccess.getSFAAccess().getAuthenticatorsAuthenticatorCrossReference_9_0()); 
-            // InternalLightweight.g:6869:3: ( RULE_ID )
-            // InternalLightweight.g:6870:4: RULE_ID
+            // InternalLightweight.g:6772:3: ( RULE_ID )
+            // InternalLightweight.g:6773:4: RULE_ID
             {
              before(grammarAccess.getSFAAccess().getAuthenticatorsAuthenticatorIDTerminalRuleCall_9_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -20164,18 +19970,63 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__SFA__AuthenticatorsAssignment_9"
 
 
+    // $ANTLR start "rule__Possession__TypeAssignment_0"
+    // InternalLightweight.g:6784:1: rule__Possession__TypeAssignment_0 : ( ( 'Possession' ) ) ;
+    public final void rule__Possession__TypeAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLightweight.g:6788:1: ( ( ( 'Possession' ) ) )
+            // InternalLightweight.g:6789:2: ( ( 'Possession' ) )
+            {
+            // InternalLightweight.g:6789:2: ( ( 'Possession' ) )
+            // InternalLightweight.g:6790:3: ( 'Possession' )
+            {
+             before(grammarAccess.getPossessionAccess().getTypePossessionKeyword_0_0()); 
+            // InternalLightweight.g:6791:3: ( 'Possession' )
+            // InternalLightweight.g:6792:4: 'Possession'
+            {
+             before(grammarAccess.getPossessionAccess().getTypePossessionKeyword_0_0()); 
+            match(input,64,FOLLOW_2); 
+             after(grammarAccess.getPossessionAccess().getTypePossessionKeyword_0_0()); 
+
+            }
+
+             after(grammarAccess.getPossessionAccess().getTypePossessionKeyword_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Possession__TypeAssignment_0"
+
+
     // $ANTLR start "rule__Possession__NameAssignment_5"
-    // InternalLightweight.g:6881:1: rule__Possession__NameAssignment_5 : ( ruleEString ) ;
+    // InternalLightweight.g:6803:1: rule__Possession__NameAssignment_5 : ( ruleEString ) ;
     public final void rule__Possession__NameAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6885:1: ( ( ruleEString ) )
-            // InternalLightweight.g:6886:2: ( ruleEString )
+            // InternalLightweight.g:6807:1: ( ( ruleEString ) )
+            // InternalLightweight.g:6808:2: ( ruleEString )
             {
-            // InternalLightweight.g:6886:2: ( ruleEString )
-            // InternalLightweight.g:6887:3: ruleEString
+            // InternalLightweight.g:6808:2: ( ruleEString )
+            // InternalLightweight.g:6809:3: ruleEString
             {
              before(grammarAccess.getPossessionAccess().getNameEStringParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -20206,17 +20057,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Possession__ValueAssignment_9"
-    // InternalLightweight.g:6896:1: rule__Possession__ValueAssignment_9 : ( rulePVALUE ) ;
+    // InternalLightweight.g:6818:1: rule__Possession__ValueAssignment_9 : ( rulePVALUE ) ;
     public final void rule__Possession__ValueAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6900:1: ( ( rulePVALUE ) )
-            // InternalLightweight.g:6901:2: ( rulePVALUE )
+            // InternalLightweight.g:6822:1: ( ( rulePVALUE ) )
+            // InternalLightweight.g:6823:2: ( rulePVALUE )
             {
-            // InternalLightweight.g:6901:2: ( rulePVALUE )
-            // InternalLightweight.g:6902:3: rulePVALUE
+            // InternalLightweight.g:6823:2: ( rulePVALUE )
+            // InternalLightweight.g:6824:3: rulePVALUE
             {
              before(grammarAccess.getPossessionAccess().getValuePVALUEEnumRuleCall_9_0()); 
             pushFollow(FOLLOW_2);
@@ -20246,18 +20097,63 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Possession__ValueAssignment_9"
 
 
+    // $ANTLR start "rule__Knowledge__TypeAssignment_0"
+    // InternalLightweight.g:6833:1: rule__Knowledge__TypeAssignment_0 : ( ( 'Knowledge' ) ) ;
+    public final void rule__Knowledge__TypeAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLightweight.g:6837:1: ( ( ( 'Knowledge' ) ) )
+            // InternalLightweight.g:6838:2: ( ( 'Knowledge' ) )
+            {
+            // InternalLightweight.g:6838:2: ( ( 'Knowledge' ) )
+            // InternalLightweight.g:6839:3: ( 'Knowledge' )
+            {
+             before(grammarAccess.getKnowledgeAccess().getTypeKnowledgeKeyword_0_0()); 
+            // InternalLightweight.g:6840:3: ( 'Knowledge' )
+            // InternalLightweight.g:6841:4: 'Knowledge'
+            {
+             before(grammarAccess.getKnowledgeAccess().getTypeKnowledgeKeyword_0_0()); 
+            match(input,65,FOLLOW_2); 
+             after(grammarAccess.getKnowledgeAccess().getTypeKnowledgeKeyword_0_0()); 
+
+            }
+
+             after(grammarAccess.getKnowledgeAccess().getTypeKnowledgeKeyword_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Knowledge__TypeAssignment_0"
+
+
     // $ANTLR start "rule__Knowledge__NameAssignment_5"
-    // InternalLightweight.g:6911:1: rule__Knowledge__NameAssignment_5 : ( ruleEString ) ;
+    // InternalLightweight.g:6852:1: rule__Knowledge__NameAssignment_5 : ( ruleEString ) ;
     public final void rule__Knowledge__NameAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6915:1: ( ( ruleEString ) )
-            // InternalLightweight.g:6916:2: ( ruleEString )
+            // InternalLightweight.g:6856:1: ( ( ruleEString ) )
+            // InternalLightweight.g:6857:2: ( ruleEString )
             {
-            // InternalLightweight.g:6916:2: ( ruleEString )
-            // InternalLightweight.g:6917:3: ruleEString
+            // InternalLightweight.g:6857:2: ( ruleEString )
+            // InternalLightweight.g:6858:3: ruleEString
             {
              before(grammarAccess.getKnowledgeAccess().getNameEStringParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -20288,17 +20184,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__ValueAssignment_9"
-    // InternalLightweight.g:6926:1: rule__Knowledge__ValueAssignment_9 : ( ruleKVALUE ) ;
+    // InternalLightweight.g:6867:1: rule__Knowledge__ValueAssignment_9 : ( ruleKVALUE ) ;
     public final void rule__Knowledge__ValueAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6930:1: ( ( ruleKVALUE ) )
-            // InternalLightweight.g:6931:2: ( ruleKVALUE )
+            // InternalLightweight.g:6871:1: ( ( ruleKVALUE ) )
+            // InternalLightweight.g:6872:2: ( ruleKVALUE )
             {
-            // InternalLightweight.g:6931:2: ( ruleKVALUE )
-            // InternalLightweight.g:6932:3: ruleKVALUE
+            // InternalLightweight.g:6872:2: ( ruleKVALUE )
+            // InternalLightweight.g:6873:3: ruleKVALUE
             {
              before(grammarAccess.getKnowledgeAccess().getValueKVALUEEnumRuleCall_9_0()); 
             pushFollow(FOLLOW_2);
@@ -20329,17 +20225,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__LimitedAttemptsAssignment_13"
-    // InternalLightweight.g:6941:1: rule__Knowledge__LimitedAttemptsAssignment_13 : ( ruleEBoolean ) ;
+    // InternalLightweight.g:6882:1: rule__Knowledge__LimitedAttemptsAssignment_13 : ( ruleEBoolean ) ;
     public final void rule__Knowledge__LimitedAttemptsAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6945:1: ( ( ruleEBoolean ) )
-            // InternalLightweight.g:6946:2: ( ruleEBoolean )
+            // InternalLightweight.g:6886:1: ( ( ruleEBoolean ) )
+            // InternalLightweight.g:6887:2: ( ruleEBoolean )
             {
-            // InternalLightweight.g:6946:2: ( ruleEBoolean )
-            // InternalLightweight.g:6947:3: ruleEBoolean
+            // InternalLightweight.g:6887:2: ( ruleEBoolean )
+            // InternalLightweight.g:6888:3: ruleEBoolean
             {
              before(grammarAccess.getKnowledgeAccess().getLimitedAttemptsEBooleanParserRuleCall_13_0()); 
             pushFollow(FOLLOW_2);
@@ -20370,17 +20266,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Knowledge__AutofilledAssignment_17"
-    // InternalLightweight.g:6956:1: rule__Knowledge__AutofilledAssignment_17 : ( ruleEBoolean ) ;
+    // InternalLightweight.g:6897:1: rule__Knowledge__AutofilledAssignment_17 : ( ruleEBoolean ) ;
     public final void rule__Knowledge__AutofilledAssignment_17() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6960:1: ( ( ruleEBoolean ) )
-            // InternalLightweight.g:6961:2: ( ruleEBoolean )
+            // InternalLightweight.g:6901:1: ( ( ruleEBoolean ) )
+            // InternalLightweight.g:6902:2: ( ruleEBoolean )
             {
-            // InternalLightweight.g:6961:2: ( ruleEBoolean )
-            // InternalLightweight.g:6962:3: ruleEBoolean
+            // InternalLightweight.g:6902:2: ( ruleEBoolean )
+            // InternalLightweight.g:6903:3: ruleEBoolean
             {
              before(grammarAccess.getKnowledgeAccess().getAutofilledEBooleanParserRuleCall_17_0()); 
             pushFollow(FOLLOW_2);
@@ -20410,18 +20306,63 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Knowledge__AutofilledAssignment_17"
 
 
+    // $ANTLR start "rule__Biometrics__TypeAssignment_0"
+    // InternalLightweight.g:6912:1: rule__Biometrics__TypeAssignment_0 : ( ( 'Biometrics' ) ) ;
+    public final void rule__Biometrics__TypeAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLightweight.g:6916:1: ( ( ( 'Biometrics' ) ) )
+            // InternalLightweight.g:6917:2: ( ( 'Biometrics' ) )
+            {
+            // InternalLightweight.g:6917:2: ( ( 'Biometrics' ) )
+            // InternalLightweight.g:6918:3: ( 'Biometrics' )
+            {
+             before(grammarAccess.getBiometricsAccess().getTypeBiometricsKeyword_0_0()); 
+            // InternalLightweight.g:6919:3: ( 'Biometrics' )
+            // InternalLightweight.g:6920:4: 'Biometrics'
+            {
+             before(grammarAccess.getBiometricsAccess().getTypeBiometricsKeyword_0_0()); 
+            match(input,66,FOLLOW_2); 
+             after(grammarAccess.getBiometricsAccess().getTypeBiometricsKeyword_0_0()); 
+
+            }
+
+             after(grammarAccess.getBiometricsAccess().getTypeBiometricsKeyword_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Biometrics__TypeAssignment_0"
+
+
     // $ANTLR start "rule__Biometrics__NameAssignment_5"
-    // InternalLightweight.g:6971:1: rule__Biometrics__NameAssignment_5 : ( ruleEString ) ;
+    // InternalLightweight.g:6931:1: rule__Biometrics__NameAssignment_5 : ( ruleEString ) ;
     public final void rule__Biometrics__NameAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6975:1: ( ( ruleEString ) )
-            // InternalLightweight.g:6976:2: ( ruleEString )
+            // InternalLightweight.g:6935:1: ( ( ruleEString ) )
+            // InternalLightweight.g:6936:2: ( ruleEString )
             {
-            // InternalLightweight.g:6976:2: ( ruleEString )
-            // InternalLightweight.g:6977:3: ruleEString
+            // InternalLightweight.g:6936:2: ( ruleEString )
+            // InternalLightweight.g:6937:3: ruleEString
             {
              before(grammarAccess.getBiometricsAccess().getNameEStringParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -20452,17 +20393,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Biometrics__ValueAssignment_9"
-    // InternalLightweight.g:6986:1: rule__Biometrics__ValueAssignment_9 : ( ruleBVALUE ) ;
+    // InternalLightweight.g:6946:1: rule__Biometrics__ValueAssignment_9 : ( ruleBVALUE ) ;
     public final void rule__Biometrics__ValueAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:6990:1: ( ( ruleBVALUE ) )
-            // InternalLightweight.g:6991:2: ( ruleBVALUE )
+            // InternalLightweight.g:6950:1: ( ( ruleBVALUE ) )
+            // InternalLightweight.g:6951:2: ( ruleBVALUE )
             {
-            // InternalLightweight.g:6991:2: ( ruleBVALUE )
-            // InternalLightweight.g:6992:3: ruleBVALUE
+            // InternalLightweight.g:6951:2: ( ruleBVALUE )
+            // InternalLightweight.g:6952:3: ruleBVALUE
             {
              before(grammarAccess.getBiometricsAccess().getValueBVALUEEnumRuleCall_9_0()); 
             pushFollow(FOLLOW_2);
@@ -20492,18 +20433,63 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Biometrics__ValueAssignment_9"
 
 
+    // $ANTLR start "rule__Registration__TypeAssignment_0"
+    // InternalLightweight.g:6961:1: rule__Registration__TypeAssignment_0 : ( ( 'Registration' ) ) ;
+    public final void rule__Registration__TypeAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLightweight.g:6965:1: ( ( ( 'Registration' ) ) )
+            // InternalLightweight.g:6966:2: ( ( 'Registration' ) )
+            {
+            // InternalLightweight.g:6966:2: ( ( 'Registration' ) )
+            // InternalLightweight.g:6967:3: ( 'Registration' )
+            {
+             before(grammarAccess.getRegistrationAccess().getTypeRegistrationKeyword_0_0()); 
+            // InternalLightweight.g:6968:3: ( 'Registration' )
+            // InternalLightweight.g:6969:4: 'Registration'
+            {
+             before(grammarAccess.getRegistrationAccess().getTypeRegistrationKeyword_0_0()); 
+            match(input,67,FOLLOW_2); 
+             after(grammarAccess.getRegistrationAccess().getTypeRegistrationKeyword_0_0()); 
+
+            }
+
+             after(grammarAccess.getRegistrationAccess().getTypeRegistrationKeyword_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Registration__TypeAssignment_0"
+
+
     // $ANTLR start "rule__Registration__NameAssignment_5"
-    // InternalLightweight.g:7001:1: rule__Registration__NameAssignment_5 : ( ruleEString ) ;
+    // InternalLightweight.g:6980:1: rule__Registration__NameAssignment_5 : ( ruleEString ) ;
     public final void rule__Registration__NameAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7005:1: ( ( ruleEString ) )
-            // InternalLightweight.g:7006:2: ( ruleEString )
+            // InternalLightweight.g:6984:1: ( ( ruleEString ) )
+            // InternalLightweight.g:6985:2: ( ruleEString )
             {
-            // InternalLightweight.g:7006:2: ( ruleEString )
-            // InternalLightweight.g:7007:3: ruleEString
+            // InternalLightweight.g:6985:2: ( ruleEString )
+            // InternalLightweight.g:6986:3: ruleEString
             {
              before(grammarAccess.getRegistrationAccess().getNameEStringParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -20534,17 +20520,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__CredentialsAssignment_10"
-    // InternalLightweight.g:7016:1: rule__Registration__CredentialsAssignment_10 : ( ruleCredential ) ;
+    // InternalLightweight.g:6995:1: rule__Registration__CredentialsAssignment_10 : ( ruleCredential ) ;
     public final void rule__Registration__CredentialsAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7020:1: ( ( ruleCredential ) )
-            // InternalLightweight.g:7021:2: ( ruleCredential )
+            // InternalLightweight.g:6999:1: ( ( ruleCredential ) )
+            // InternalLightweight.g:7000:2: ( ruleCredential )
             {
-            // InternalLightweight.g:7021:2: ( ruleCredential )
-            // InternalLightweight.g:7022:3: ruleCredential
+            // InternalLightweight.g:7000:2: ( ruleCredential )
+            // InternalLightweight.g:7001:3: ruleCredential
             {
              before(grammarAccess.getRegistrationAccess().getCredentialsCredentialParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -20575,17 +20561,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Registration__CredentialsAssignment_11_1"
-    // InternalLightweight.g:7031:1: rule__Registration__CredentialsAssignment_11_1 : ( ruleCredential ) ;
+    // InternalLightweight.g:7010:1: rule__Registration__CredentialsAssignment_11_1 : ( ruleCredential ) ;
     public final void rule__Registration__CredentialsAssignment_11_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7035:1: ( ( ruleCredential ) )
-            // InternalLightweight.g:7036:2: ( ruleCredential )
+            // InternalLightweight.g:7014:1: ( ( ruleCredential ) )
+            // InternalLightweight.g:7015:2: ( ruleCredential )
             {
-            // InternalLightweight.g:7036:2: ( ruleCredential )
-            // InternalLightweight.g:7037:3: ruleCredential
+            // InternalLightweight.g:7015:2: ( ruleCredential )
+            // InternalLightweight.g:7016:3: ruleCredential
             {
              before(grammarAccess.getRegistrationAccess().getCredentialsCredentialParserRuleCall_11_1_0()); 
             pushFollow(FOLLOW_2);
@@ -20616,17 +20602,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__NameAssignment_4"
-    // InternalLightweight.g:7046:1: rule__Credential__NameAssignment_4 : ( ruleEString ) ;
+    // InternalLightweight.g:7025:1: rule__Credential__NameAssignment_4 : ( ruleEString ) ;
     public final void rule__Credential__NameAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7050:1: ( ( ruleEString ) )
-            // InternalLightweight.g:7051:2: ( ruleEString )
+            // InternalLightweight.g:7029:1: ( ( ruleEString ) )
+            // InternalLightweight.g:7030:2: ( ruleEString )
             {
-            // InternalLightweight.g:7051:2: ( ruleEString )
-            // InternalLightweight.g:7052:3: ruleEString
+            // InternalLightweight.g:7030:2: ( ruleEString )
+            // InternalLightweight.g:7031:3: ruleEString
             {
              before(grammarAccess.getCredentialAccess().getNameEStringParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -20657,17 +20643,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__ProviderAssignment_8"
-    // InternalLightweight.g:7061:1: rule__Credential__ProviderAssignment_8 : ( rulePROVIDER ) ;
+    // InternalLightweight.g:7040:1: rule__Credential__ProviderAssignment_8 : ( rulePROVIDER ) ;
     public final void rule__Credential__ProviderAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7065:1: ( ( rulePROVIDER ) )
-            // InternalLightweight.g:7066:2: ( rulePROVIDER )
+            // InternalLightweight.g:7044:1: ( ( rulePROVIDER ) )
+            // InternalLightweight.g:7045:2: ( rulePROVIDER )
             {
-            // InternalLightweight.g:7066:2: ( rulePROVIDER )
-            // InternalLightweight.g:7067:3: rulePROVIDER
+            // InternalLightweight.g:7045:2: ( rulePROVIDER )
+            // InternalLightweight.g:7046:3: rulePROVIDER
             {
              before(grammarAccess.getCredentialAccess().getProviderPROVIDEREnumRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -20698,17 +20684,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__TypeAssignment_12"
-    // InternalLightweight.g:7076:1: rule__Credential__TypeAssignment_12 : ( ruleCredTYPE ) ;
+    // InternalLightweight.g:7055:1: rule__Credential__TypeAssignment_12 : ( ruleCredTYPE ) ;
     public final void rule__Credential__TypeAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7080:1: ( ( ruleCredTYPE ) )
-            // InternalLightweight.g:7081:2: ( ruleCredTYPE )
+            // InternalLightweight.g:7059:1: ( ( ruleCredTYPE ) )
+            // InternalLightweight.g:7060:2: ( ruleCredTYPE )
             {
-            // InternalLightweight.g:7081:2: ( ruleCredTYPE )
-            // InternalLightweight.g:7082:3: ruleCredTYPE
+            // InternalLightweight.g:7060:2: ( ruleCredTYPE )
+            // InternalLightweight.g:7061:3: ruleCredTYPE
             {
              before(grammarAccess.getCredentialAccess().getTypeCredTYPEEnumRuleCall_12_0()); 
             pushFollow(FOLLOW_2);
@@ -20739,17 +20725,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Credential__VerifmethodAssignment_14_2"
-    // InternalLightweight.g:7091:1: rule__Credential__VerifmethodAssignment_14_2 : ( ruleVerifMethod ) ;
+    // InternalLightweight.g:7070:1: rule__Credential__VerifmethodAssignment_14_2 : ( ruleVerifMethod ) ;
     public final void rule__Credential__VerifmethodAssignment_14_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7095:1: ( ( ruleVerifMethod ) )
-            // InternalLightweight.g:7096:2: ( ruleVerifMethod )
+            // InternalLightweight.g:7074:1: ( ( ruleVerifMethod ) )
+            // InternalLightweight.g:7075:2: ( ruleVerifMethod )
             {
-            // InternalLightweight.g:7096:2: ( ruleVerifMethod )
-            // InternalLightweight.g:7097:3: ruleVerifMethod
+            // InternalLightweight.g:7075:2: ( ruleVerifMethod )
+            // InternalLightweight.g:7076:3: ruleVerifMethod
             {
              before(grammarAccess.getCredentialAccess().getVerifmethodVerifMethodParserRuleCall_14_2_0()); 
             pushFollow(FOLLOW_2);
@@ -20780,17 +20766,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__ValidityAssignment_4"
-    // InternalLightweight.g:7106:1: rule__VerifMethod__ValidityAssignment_4 : ( ruleEBoolean ) ;
+    // InternalLightweight.g:7085:1: rule__VerifMethod__ValidityAssignment_4 : ( ruleEBoolean ) ;
     public final void rule__VerifMethod__ValidityAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7110:1: ( ( ruleEBoolean ) )
-            // InternalLightweight.g:7111:2: ( ruleEBoolean )
+            // InternalLightweight.g:7089:1: ( ( ruleEBoolean ) )
+            // InternalLightweight.g:7090:2: ( ruleEBoolean )
             {
-            // InternalLightweight.g:7111:2: ( ruleEBoolean )
-            // InternalLightweight.g:7112:3: ruleEBoolean
+            // InternalLightweight.g:7090:2: ( ruleEBoolean )
+            // InternalLightweight.g:7091:3: ruleEBoolean
             {
              before(grammarAccess.getVerifMethodAccess().getValidityEBooleanParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -20821,17 +20807,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__UniquenessAssignment_8"
-    // InternalLightweight.g:7121:1: rule__VerifMethod__UniquenessAssignment_8 : ( ruleEBoolean ) ;
+    // InternalLightweight.g:7100:1: rule__VerifMethod__UniquenessAssignment_8 : ( ruleEBoolean ) ;
     public final void rule__VerifMethod__UniquenessAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7125:1: ( ( ruleEBoolean ) )
-            // InternalLightweight.g:7126:2: ( ruleEBoolean )
+            // InternalLightweight.g:7104:1: ( ( ruleEBoolean ) )
+            // InternalLightweight.g:7105:2: ( ruleEBoolean )
             {
-            // InternalLightweight.g:7126:2: ( ruleEBoolean )
-            // InternalLightweight.g:7127:3: ruleEBoolean
+            // InternalLightweight.g:7105:2: ( ruleEBoolean )
+            // InternalLightweight.g:7106:3: ruleEBoolean
             {
              before(grammarAccess.getVerifMethodAccess().getUniquenessEBooleanParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -20862,17 +20848,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__VerifMethod__BindingsAssignment_12"
-    // InternalLightweight.g:7136:1: rule__VerifMethod__BindingsAssignment_12 : ( ruleEBoolean ) ;
+    // InternalLightweight.g:7115:1: rule__VerifMethod__BindingsAssignment_12 : ( ruleEBoolean ) ;
     public final void rule__VerifMethod__BindingsAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7140:1: ( ( ruleEBoolean ) )
-            // InternalLightweight.g:7141:2: ( ruleEBoolean )
+            // InternalLightweight.g:7119:1: ( ( ruleEBoolean ) )
+            // InternalLightweight.g:7120:2: ( ruleEBoolean )
             {
-            // InternalLightweight.g:7141:2: ( ruleEBoolean )
-            // InternalLightweight.g:7142:3: ruleEBoolean
+            // InternalLightweight.g:7120:2: ( ruleEBoolean )
+            // InternalLightweight.g:7121:3: ruleEBoolean
             {
              before(grammarAccess.getVerifMethodAccess().getBindingsEBooleanParserRuleCall_12_0()); 
             pushFollow(FOLLOW_2);
@@ -20902,18 +20888,63 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__VerifMethod__BindingsAssignment_12"
 
 
+    // $ANTLR start "rule__Recovery__TypeAssignment_1"
+    // InternalLightweight.g:7130:1: rule__Recovery__TypeAssignment_1 : ( ( 'Recovery' ) ) ;
+    public final void rule__Recovery__TypeAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLightweight.g:7134:1: ( ( ( 'Recovery' ) ) )
+            // InternalLightweight.g:7135:2: ( ( 'Recovery' ) )
+            {
+            // InternalLightweight.g:7135:2: ( ( 'Recovery' ) )
+            // InternalLightweight.g:7136:3: ( 'Recovery' )
+            {
+             before(grammarAccess.getRecoveryAccess().getTypeRecoveryKeyword_1_0()); 
+            // InternalLightweight.g:7137:3: ( 'Recovery' )
+            // InternalLightweight.g:7138:4: 'Recovery'
+            {
+             before(grammarAccess.getRecoveryAccess().getTypeRecoveryKeyword_1_0()); 
+            match(input,68,FOLLOW_2); 
+             after(grammarAccess.getRecoveryAccess().getTypeRecoveryKeyword_1_0()); 
+
+            }
+
+             after(grammarAccess.getRecoveryAccess().getTypeRecoveryKeyword_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Recovery__TypeAssignment_1"
+
+
     // $ANTLR start "rule__Recovery__NameAssignment_6"
-    // InternalLightweight.g:7151:1: rule__Recovery__NameAssignment_6 : ( ruleEString ) ;
+    // InternalLightweight.g:7149:1: rule__Recovery__NameAssignment_6 : ( ruleEString ) ;
     public final void rule__Recovery__NameAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7155:1: ( ( ruleEString ) )
-            // InternalLightweight.g:7156:2: ( ruleEString )
+            // InternalLightweight.g:7153:1: ( ( ruleEString ) )
+            // InternalLightweight.g:7154:2: ( ruleEString )
             {
-            // InternalLightweight.g:7156:2: ( ruleEString )
-            // InternalLightweight.g:7157:3: ruleEString
+            // InternalLightweight.g:7154:2: ( ruleEString )
+            // InternalLightweight.g:7155:3: ruleEString
             {
              before(grammarAccess.getRecoveryAccess().getNameEStringParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -20944,21 +20975,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__AuthenticatorAssignment_8_2"
-    // InternalLightweight.g:7166:1: rule__Recovery__AuthenticatorAssignment_8_2 : ( ( RULE_ID ) ) ;
+    // InternalLightweight.g:7164:1: rule__Recovery__AuthenticatorAssignment_8_2 : ( ( RULE_ID ) ) ;
     public final void rule__Recovery__AuthenticatorAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7170:1: ( ( ( RULE_ID ) ) )
-            // InternalLightweight.g:7171:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7168:1: ( ( ( RULE_ID ) ) )
+            // InternalLightweight.g:7169:2: ( ( RULE_ID ) )
             {
-            // InternalLightweight.g:7171:2: ( ( RULE_ID ) )
-            // InternalLightweight.g:7172:3: ( RULE_ID )
+            // InternalLightweight.g:7169:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7170:3: ( RULE_ID )
             {
              before(grammarAccess.getRecoveryAccess().getAuthenticatorAuthenticatorCrossReference_8_2_0()); 
-            // InternalLightweight.g:7173:3: ( RULE_ID )
-            // InternalLightweight.g:7174:4: RULE_ID
+            // InternalLightweight.g:7171:3: ( RULE_ID )
+            // InternalLightweight.g:7172:4: RULE_ID
             {
              before(grammarAccess.getRecoveryAccess().getAuthenticatorAuthenticatorIDTerminalRuleCall_8_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -20989,17 +21020,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Recovery__ProtocolAssignment_9_2"
-    // InternalLightweight.g:7185:1: rule__Recovery__ProtocolAssignment_9_2 : ( ruleProtocol ) ;
+    // InternalLightweight.g:7183:1: rule__Recovery__ProtocolAssignment_9_2 : ( ruleProtocol ) ;
     public final void rule__Recovery__ProtocolAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7189:1: ( ( ruleProtocol ) )
-            // InternalLightweight.g:7190:2: ( ruleProtocol )
+            // InternalLightweight.g:7187:1: ( ( ruleProtocol ) )
+            // InternalLightweight.g:7188:2: ( ruleProtocol )
             {
-            // InternalLightweight.g:7190:2: ( ruleProtocol )
-            // InternalLightweight.g:7191:3: ruleProtocol
+            // InternalLightweight.g:7188:2: ( ruleProtocol )
+            // InternalLightweight.g:7189:3: ruleProtocol
             {
              before(grammarAccess.getRecoveryAccess().getProtocolProtocolEnumRuleCall_9_2_0()); 
             pushFollow(FOLLOW_2);
@@ -21029,18 +21060,63 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Recovery__ProtocolAssignment_9_2"
 
 
+    // $ANTLR start "rule__Login__TypeAssignment_1"
+    // InternalLightweight.g:7198:1: rule__Login__TypeAssignment_1 : ( ( 'Login' ) ) ;
+    public final void rule__Login__TypeAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLightweight.g:7202:1: ( ( ( 'Login' ) ) )
+            // InternalLightweight.g:7203:2: ( ( 'Login' ) )
+            {
+            // InternalLightweight.g:7203:2: ( ( 'Login' ) )
+            // InternalLightweight.g:7204:3: ( 'Login' )
+            {
+             before(grammarAccess.getLoginAccess().getTypeLoginKeyword_1_0()); 
+            // InternalLightweight.g:7205:3: ( 'Login' )
+            // InternalLightweight.g:7206:4: 'Login'
+            {
+             before(grammarAccess.getLoginAccess().getTypeLoginKeyword_1_0()); 
+            match(input,69,FOLLOW_2); 
+             after(grammarAccess.getLoginAccess().getTypeLoginKeyword_1_0()); 
+
+            }
+
+             after(grammarAccess.getLoginAccess().getTypeLoginKeyword_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Login__TypeAssignment_1"
+
+
     // $ANTLR start "rule__Login__NameAssignment_6"
-    // InternalLightweight.g:7200:1: rule__Login__NameAssignment_6 : ( ruleEString ) ;
+    // InternalLightweight.g:7217:1: rule__Login__NameAssignment_6 : ( ruleEString ) ;
     public final void rule__Login__NameAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7204:1: ( ( ruleEString ) )
-            // InternalLightweight.g:7205:2: ( ruleEString )
+            // InternalLightweight.g:7221:1: ( ( ruleEString ) )
+            // InternalLightweight.g:7222:2: ( ruleEString )
             {
-            // InternalLightweight.g:7205:2: ( ruleEString )
-            // InternalLightweight.g:7206:3: ruleEString
+            // InternalLightweight.g:7222:2: ( ruleEString )
+            // InternalLightweight.g:7223:3: ruleEString
             {
              before(grammarAccess.getLoginAccess().getNameEStringParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -21071,17 +21147,17 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Login__SessionAssignment_10"
-    // InternalLightweight.g:7215:1: rule__Login__SessionAssignment_10 : ( ruleEBoolean ) ;
+    // InternalLightweight.g:7232:1: rule__Login__SessionAssignment_10 : ( ruleEBoolean ) ;
     public final void rule__Login__SessionAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7219:1: ( ( ruleEBoolean ) )
-            // InternalLightweight.g:7220:2: ( ruleEBoolean )
+            // InternalLightweight.g:7236:1: ( ( ruleEBoolean ) )
+            // InternalLightweight.g:7237:2: ( ruleEBoolean )
             {
-            // InternalLightweight.g:7220:2: ( ruleEBoolean )
-            // InternalLightweight.g:7221:3: ruleEBoolean
+            // InternalLightweight.g:7237:2: ( ruleEBoolean )
+            // InternalLightweight.g:7238:3: ruleEBoolean
             {
              before(grammarAccess.getLoginAccess().getSessionEBooleanParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -21111,30 +21187,30 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Login__SessionAssignment_10"
 
 
-    // $ANTLR start "rule__Login__AuthMethodsAssignment_15"
-    // InternalLightweight.g:7230:1: rule__Login__AuthMethodsAssignment_15 : ( ( RULE_ID ) ) ;
-    public final void rule__Login__AuthMethodsAssignment_15() throws RecognitionException {
+    // $ANTLR start "rule__Login__AuthMethodsAssignment_14"
+    // InternalLightweight.g:7247:1: rule__Login__AuthMethodsAssignment_14 : ( ( RULE_ID ) ) ;
+    public final void rule__Login__AuthMethodsAssignment_14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7234:1: ( ( ( RULE_ID ) ) )
-            // InternalLightweight.g:7235:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7251:1: ( ( ( RULE_ID ) ) )
+            // InternalLightweight.g:7252:2: ( ( RULE_ID ) )
             {
-            // InternalLightweight.g:7235:2: ( ( RULE_ID ) )
-            // InternalLightweight.g:7236:3: ( RULE_ID )
+            // InternalLightweight.g:7252:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7253:3: ( RULE_ID )
             {
-             before(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_15_0()); 
-            // InternalLightweight.g:7237:3: ( RULE_ID )
-            // InternalLightweight.g:7238:4: RULE_ID
+             before(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_14_0()); 
+            // InternalLightweight.g:7254:3: ( RULE_ID )
+            // InternalLightweight.g:7255:4: RULE_ID
             {
-             before(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_15_0_1()); 
+             before(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_14_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_15_0_1()); 
+             after(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_14_0_1()); 
 
             }
 
-             after(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_15_0()); 
+             after(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_14_0()); 
 
             }
 
@@ -21153,33 +21229,33 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Login__AuthMethodsAssignment_15"
+    // $ANTLR end "rule__Login__AuthMethodsAssignment_14"
 
 
-    // $ANTLR start "rule__Login__AuthMethodsAssignment_16_1"
-    // InternalLightweight.g:7249:1: rule__Login__AuthMethodsAssignment_16_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Login__AuthMethodsAssignment_16_1() throws RecognitionException {
+    // $ANTLR start "rule__Login__AuthMethodsAssignment_15_1"
+    // InternalLightweight.g:7266:1: rule__Login__AuthMethodsAssignment_15_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Login__AuthMethodsAssignment_15_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7253:1: ( ( ( RULE_ID ) ) )
-            // InternalLightweight.g:7254:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7270:1: ( ( ( RULE_ID ) ) )
+            // InternalLightweight.g:7271:2: ( ( RULE_ID ) )
             {
-            // InternalLightweight.g:7254:2: ( ( RULE_ID ) )
-            // InternalLightweight.g:7255:3: ( RULE_ID )
+            // InternalLightweight.g:7271:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7272:3: ( RULE_ID )
             {
-             before(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_16_1_0()); 
-            // InternalLightweight.g:7256:3: ( RULE_ID )
-            // InternalLightweight.g:7257:4: RULE_ID
+             before(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_15_1_0()); 
+            // InternalLightweight.g:7273:3: ( RULE_ID )
+            // InternalLightweight.g:7274:4: RULE_ID
             {
-             before(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_16_1_0_1()); 
+             before(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_15_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_16_1_0_1()); 
+             after(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_15_1_0_1()); 
 
             }
 
-             after(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_16_1_0()); 
+             after(grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_15_1_0()); 
 
             }
 
@@ -21198,21 +21274,66 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Login__AuthMethodsAssignment_16_1"
+    // $ANTLR end "rule__Login__AuthMethodsAssignment_15_1"
+
+
+    // $ANTLR start "rule__Reset__TypeAssignment_1"
+    // InternalLightweight.g:7285:1: rule__Reset__TypeAssignment_1 : ( ( 'Reset' ) ) ;
+    public final void rule__Reset__TypeAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLightweight.g:7289:1: ( ( ( 'Reset' ) ) )
+            // InternalLightweight.g:7290:2: ( ( 'Reset' ) )
+            {
+            // InternalLightweight.g:7290:2: ( ( 'Reset' ) )
+            // InternalLightweight.g:7291:3: ( 'Reset' )
+            {
+             before(grammarAccess.getResetAccess().getTypeResetKeyword_1_0()); 
+            // InternalLightweight.g:7292:3: ( 'Reset' )
+            // InternalLightweight.g:7293:4: 'Reset'
+            {
+             before(grammarAccess.getResetAccess().getTypeResetKeyword_1_0()); 
+            match(input,70,FOLLOW_2); 
+             after(grammarAccess.getResetAccess().getTypeResetKeyword_1_0()); 
+
+            }
+
+             after(grammarAccess.getResetAccess().getTypeResetKeyword_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Reset__TypeAssignment_1"
 
 
     // $ANTLR start "rule__Reset__NameAssignment_6"
-    // InternalLightweight.g:7268:1: rule__Reset__NameAssignment_6 : ( ruleEString ) ;
+    // InternalLightweight.g:7304:1: rule__Reset__NameAssignment_6 : ( ruleEString ) ;
     public final void rule__Reset__NameAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7272:1: ( ( ruleEString ) )
-            // InternalLightweight.g:7273:2: ( ruleEString )
+            // InternalLightweight.g:7308:1: ( ( ruleEString ) )
+            // InternalLightweight.g:7309:2: ( ruleEString )
             {
-            // InternalLightweight.g:7273:2: ( ruleEString )
-            // InternalLightweight.g:7274:3: ruleEString
+            // InternalLightweight.g:7309:2: ( ruleEString )
+            // InternalLightweight.g:7310:3: ruleEString
             {
              before(grammarAccess.getResetAccess().getNameEStringParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -21243,21 +21364,21 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reset__AuthenticatorAssignment_8_2"
-    // InternalLightweight.g:7283:1: rule__Reset__AuthenticatorAssignment_8_2 : ( ( RULE_ID ) ) ;
+    // InternalLightweight.g:7319:1: rule__Reset__AuthenticatorAssignment_8_2 : ( ( RULE_ID ) ) ;
     public final void rule__Reset__AuthenticatorAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7287:1: ( ( ( RULE_ID ) ) )
-            // InternalLightweight.g:7288:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7323:1: ( ( ( RULE_ID ) ) )
+            // InternalLightweight.g:7324:2: ( ( RULE_ID ) )
             {
-            // InternalLightweight.g:7288:2: ( ( RULE_ID ) )
-            // InternalLightweight.g:7289:3: ( RULE_ID )
+            // InternalLightweight.g:7324:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7325:3: ( RULE_ID )
             {
              before(grammarAccess.getResetAccess().getAuthenticatorAuthenticatorCrossReference_8_2_0()); 
-            // InternalLightweight.g:7290:3: ( RULE_ID )
-            // InternalLightweight.g:7291:4: RULE_ID
+            // InternalLightweight.g:7326:3: ( RULE_ID )
+            // InternalLightweight.g:7327:4: RULE_ID
             {
              before(grammarAccess.getResetAccess().getAuthenticatorAuthenticatorIDTerminalRuleCall_8_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21287,30 +21408,30 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Reset__AuthenticatorAssignment_8_2"
 
 
-    // $ANTLR start "rule__Reset__AuthMethodsAssignment_12"
-    // InternalLightweight.g:7302:1: rule__Reset__AuthMethodsAssignment_12 : ( ( RULE_ID ) ) ;
-    public final void rule__Reset__AuthMethodsAssignment_12() throws RecognitionException {
+    // $ANTLR start "rule__Reset__AuthMethodsAssignment_11"
+    // InternalLightweight.g:7338:1: rule__Reset__AuthMethodsAssignment_11 : ( ( RULE_ID ) ) ;
+    public final void rule__Reset__AuthMethodsAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7306:1: ( ( ( RULE_ID ) ) )
-            // InternalLightweight.g:7307:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7342:1: ( ( ( RULE_ID ) ) )
+            // InternalLightweight.g:7343:2: ( ( RULE_ID ) )
             {
-            // InternalLightweight.g:7307:2: ( ( RULE_ID ) )
-            // InternalLightweight.g:7308:3: ( RULE_ID )
+            // InternalLightweight.g:7343:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7344:3: ( RULE_ID )
             {
-             before(grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_12_0()); 
-            // InternalLightweight.g:7309:3: ( RULE_ID )
-            // InternalLightweight.g:7310:4: RULE_ID
+             before(grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_11_0()); 
+            // InternalLightweight.g:7345:3: ( RULE_ID )
+            // InternalLightweight.g:7346:4: RULE_ID
             {
-             before(grammarAccess.getResetAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_12_0_1()); 
+             before(grammarAccess.getResetAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_11_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getResetAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_12_0_1()); 
+             after(grammarAccess.getResetAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_11_0_1()); 
 
             }
 
-             after(grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_12_0()); 
+             after(grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_11_0()); 
 
             }
 
@@ -21329,33 +21450,33 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Reset__AuthMethodsAssignment_12"
+    // $ANTLR end "rule__Reset__AuthMethodsAssignment_11"
 
 
-    // $ANTLR start "rule__Reset__AuthMethodsAssignment_13_1"
-    // InternalLightweight.g:7321:1: rule__Reset__AuthMethodsAssignment_13_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Reset__AuthMethodsAssignment_13_1() throws RecognitionException {
+    // $ANTLR start "rule__Reset__AuthMethodsAssignment_12_1"
+    // InternalLightweight.g:7357:1: rule__Reset__AuthMethodsAssignment_12_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Reset__AuthMethodsAssignment_12_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLightweight.g:7325:1: ( ( ( RULE_ID ) ) )
-            // InternalLightweight.g:7326:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7361:1: ( ( ( RULE_ID ) ) )
+            // InternalLightweight.g:7362:2: ( ( RULE_ID ) )
             {
-            // InternalLightweight.g:7326:2: ( ( RULE_ID ) )
-            // InternalLightweight.g:7327:3: ( RULE_ID )
+            // InternalLightweight.g:7362:2: ( ( RULE_ID ) )
+            // InternalLightweight.g:7363:3: ( RULE_ID )
             {
-             before(grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_13_1_0()); 
-            // InternalLightweight.g:7328:3: ( RULE_ID )
-            // InternalLightweight.g:7329:4: RULE_ID
+             before(grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_12_1_0()); 
+            // InternalLightweight.g:7364:3: ( RULE_ID )
+            // InternalLightweight.g:7365:4: RULE_ID
             {
-             before(grammarAccess.getResetAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_13_1_0_1()); 
+             before(grammarAccess.getResetAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_12_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getResetAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_13_1_0_1()); 
+             after(grammarAccess.getResetAccess().getAuthMethodsAuthMethodIDTerminalRuleCall_12_1_0_1()); 
 
             }
 
-             after(grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_13_1_0()); 
+             after(grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_12_1_0()); 
 
             }
 
@@ -21374,7 +21495,7 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Reset__AuthMethodsAssignment_13_1"
+    // $ANTLR end "rule__Reset__AuthMethodsAssignment_12_1"
 
     // Delegated rules
 
@@ -21387,47 +21508,49 @@ public class InternalLightweightParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0094000000000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000007L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000006000000000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000004000000002L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0001040000000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0xC000000000000000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0100000000000000L,0x0000000000000025L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000078L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000040000000000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000404000000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000204000000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000022L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000400000000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x00000000C0000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0001000000000000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000030000000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000003E00000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0004000000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x000000000C000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0010000000000000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x000000000000E000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0020000000000000L});
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000030000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x1000020000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x4000000000000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x8000000000000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0002020000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0040020000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0400820000000000L});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x00000000001C0000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0002000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x1000000000000000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x2000020000000000L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x2000000000000002L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x1000800000000000L});
 
 }

@@ -142,6 +142,11 @@ public class LightweightDSLAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseRisk(Risk object) {
+			return createRiskAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -367,6 +372,20 @@ public class LightweightDSLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBiometricsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link lightweightDSL.Risk <em>Risk</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see lightweightDSL.Risk
+	 * @generated
+	 */
+	public Adapter createRiskAdapter() {
 		return null;
 	}
 

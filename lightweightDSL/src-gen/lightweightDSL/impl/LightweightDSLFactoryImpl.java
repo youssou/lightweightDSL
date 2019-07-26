@@ -81,6 +81,8 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 			return createPossession();
 		case LightweightDSLPackage.BIOMETRICS:
 			return createBiometrics();
+		case LightweightDSLPackage.RISK:
+			return createRisk();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -262,6 +264,16 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	public Biometrics createBiometrics() {
 		BiometricsImpl biometrics = new BiometricsImpl();
 		return biometrics;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Risk createRisk() {
+		RiskImpl risk = new RiskImpl();
+		return risk;
 	}
 
 	/**

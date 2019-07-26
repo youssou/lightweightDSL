@@ -130,6 +130,15 @@ public interface LightweightDSLFactory extends EFactory {
 	Biometrics createBiometrics();
 
 	/**
+	 * Returns a new object of class '<em>Risk</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Risk</em>'.
+	 * @generated
+	 */
+	Risk createRisk();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

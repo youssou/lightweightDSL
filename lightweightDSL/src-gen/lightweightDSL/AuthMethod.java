@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link lightweightDSL.AuthMethod#getName <em>Name</em>}</li>
  *   <li>{@link lightweightDSL.AuthMethod#getAuthenticators <em>Authenticators</em>}</li>
- *   <li>{@link lightweightDSL.AuthMethod#getLevel <em>Level</em>}</li>
+ *   <li>{@link lightweightDSL.AuthMethod#getType <em>Type</em>}</li>
+ *   <li>{@link lightweightDSL.AuthMethod#getRisk <em>Risk</em>}</li>
  * </ul>
  *
  * @see lightweightDSL.LightweightDSLPackage#getAuthMethod()
@@ -67,33 +68,56 @@ public interface AuthMethod extends EObject {
 	EList<Authenticator> getAuthenticators();
 
 	/**
-	 * Returns the value of the '<em><b>Level</b></em>' attribute.
-	 * The literals are from the enumeration {@link lightweightDSL.LEVEL}.
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Level</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Level</em>' attribute.
-	 * @see lightweightDSL.LEVEL
-	 * @see #setLevel(LEVEL)
-	 * @see lightweightDSL.LightweightDSLPackage#getAuthMethod_Level()
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #setType(String)
+	 * @see lightweightDSL.LightweightDSLPackage#getAuthMethod_Type()
 	 * @model
 	 * @generated
 	 */
-	LEVEL getLevel();
+	String getType();
 
 	/**
-	 * Sets the value of the '{@link lightweightDSL.AuthMethod#getLevel <em>Level</em>}' attribute.
+	 * Sets the value of the '{@link lightweightDSL.AuthMethod#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Level</em>' attribute.
-	 * @see lightweightDSL.LEVEL
-	 * @see #getLevel()
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #getType()
 	 * @generated
 	 */
-	void setLevel(LEVEL value);
+	void setType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Risk</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Risk</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Risk</em>' reference.
+	 * @see #setRisk(Risk)
+	 * @see lightweightDSL.LightweightDSLPackage#getAuthMethod_Risk()
+	 * @model
+	 * @generated
+	 */
+	Risk getRisk();
+
+	/**
+	 * Sets the value of the '{@link lightweightDSL.AuthMethod#getRisk <em>Risk</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Risk</em>' reference.
+	 * @see #getRisk()
+	 * @generated
+	 */
+	void setRisk(Risk value);
 
 	/**
 	 * <!-- begin-user-doc -->

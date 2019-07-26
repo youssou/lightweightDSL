@@ -7,7 +7,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authenticators" lowerBound="1"
         upperBound="2" eType="#//Authenticator"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//LEVEL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="risk" eType="#//Risk"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Registration" eSuperTypes="#//Phase">
     <eStructuralFeatures xsi:type="ecore:EReference" name="credentials" lowerBound="1"
@@ -30,6 +31,9 @@
         upperBound="-1" eType="#//Authenticator" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authMethods" lowerBound="1"
         upperBound="-1" eType="#//AuthMethod" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="risks" upperBound="-1"
+        eType="#//Risk"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="registration" eType="#//Registration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Credential">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -37,6 +41,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//CredTYPE"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="verifmethod" eType="#//VerifMethod"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="risk" eType="#//Risk"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="LEVEL">
     <eLiterals name="LOW"/>
@@ -67,16 +72,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Phase" abstract="true">
     <eOperations name="computeLevel" eType="#//LEVEL"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//LEVEL"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authMethods" upperBound="-1"
         eType="#//AuthMethod"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="risk" eType="#//Risk"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Authenticator" abstract="true">
     <eOperations name="computeLevel" eType="#//LEVEL"/>
-    <eOperations name="newOperation2"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//LEVEL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="risk" eType="#//Risk"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VerifMethod">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -110,5 +116,11 @@
   <eClassifiers xsi:type="ecore:EEnum" name="PVALUE">
     <eLiterals name="DEVICE"/>
     <eLiterals name="TOKEN" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Risk">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//LEVEL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="information" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

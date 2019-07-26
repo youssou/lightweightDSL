@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link lightweightDSL.App#getPhases <em>Phases</em>}</li>
  *   <li>{@link lightweightDSL.App#getAuthenticators <em>Authenticators</em>}</li>
  *   <li>{@link lightweightDSL.App#getAuthMethods <em>Auth Methods</em>}</li>
+ *   <li>{@link lightweightDSL.App#getRisks <em>Risks</em>}</li>
+ *   <li>{@link lightweightDSL.App#getRegistration <em>Registration</em>}</li>
  * </ul>
  *
  * @see lightweightDSL.LightweightDSLPackage#getApp()
@@ -72,5 +74,47 @@ public interface App extends EObject {
 	 * @generated
 	 */
 	EList<AuthMethod> getAuthMethods();
+
+	/**
+	 * Returns the value of the '<em><b>Risks</b></em>' reference list.
+	 * The list contents are of type {@link lightweightDSL.Risk}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Risks</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Risks</em>' reference list.
+	 * @see lightweightDSL.LightweightDSLPackage#getApp_Risks()
+	 * @model
+	 * @generated
+	 */
+	EList<Risk> getRisks();
+
+	/**
+	 * Returns the value of the '<em><b>Registration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Registration</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Registration</em>' reference.
+	 * @see #setRegistration(Registration)
+	 * @see lightweightDSL.LightweightDSLPackage#getApp_Registration()
+	 * @model
+	 * @generated
+	 */
+	Registration getRegistration();
+
+	/**
+	 * Sets the value of the '{@link lightweightDSL.App#getRegistration <em>Registration</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Registration</em>' reference.
+	 * @see #getRegistration()
+	 * @generated
+	 */
+	void setRegistration(Registration value);
 
 } // App

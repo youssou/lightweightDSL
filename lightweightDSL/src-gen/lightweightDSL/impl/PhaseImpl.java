@@ -10,12 +10,14 @@ import lightweightDSL.LEVEL;
 import lightweightDSL.LightweightDSLPackage;
 import lightweightDSL.Phase;
 
+import lightweightDSL.Risk;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -28,34 +30,15 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link lightweightDSL.impl.PhaseImpl#getLevel <em>Level</em>}</li>
  *   <li>{@link lightweightDSL.impl.PhaseImpl#getName <em>Name</em>}</li>
  *   <li>{@link lightweightDSL.impl.PhaseImpl#getAuthMethods <em>Auth Methods</em>}</li>
+ *   <li>{@link lightweightDSL.impl.PhaseImpl#getType <em>Type</em>}</li>
+ *   <li>{@link lightweightDSL.impl.PhaseImpl#getRisk <em>Risk</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements Phase {
-	/**
-	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLevel()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final LEVEL LEVEL_EDEFAULT = LEVEL.LOW;
-
-	/**
-	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLevel()
-	 * @generated
-	 * @ordered
-	 */
-	protected LEVEL level = LEVEL_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -87,6 +70,36 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	protected EList<AuthMethod> authMethods;
 
 	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String type = TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRisk() <em>Risk</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRisk()
+	 * @generated
+	 * @ordered
+	 */
+	protected Risk risk;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -103,27 +116,6 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	protected EClass eStaticClass() {
 		return LightweightDSLPackage.Literals.PHASE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LEVEL getLevel() {
-		return level;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLevel(LEVEL newLevel) {
-		LEVEL oldLevel = level;
-		level = newLevel == null ? LEVEL_EDEFAULT : newLevel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.PHASE__LEVEL, oldLevel, level));
 	}
 
 	/**
@@ -165,6 +157,66 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.PHASE__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Risk getRisk() {
+		if (risk != null && risk.eIsProxy()) {
+			InternalEObject oldRisk = (InternalEObject) risk;
+			risk = (Risk) eResolveProxy(oldRisk);
+			if (risk != oldRisk) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LightweightDSLPackage.PHASE__RISK,
+							oldRisk, risk));
+			}
+		}
+		return risk;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Risk basicGetRisk() {
+		return risk;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRisk(Risk newRisk) {
+		Risk oldRisk = risk;
+		risk = newRisk;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.PHASE__RISK, oldRisk, risk));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public LEVEL computeLevel() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -179,12 +231,16 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case LightweightDSLPackage.PHASE__LEVEL:
-			return getLevel();
 		case LightweightDSLPackage.PHASE__NAME:
 			return getName();
 		case LightweightDSLPackage.PHASE__AUTH_METHODS:
 			return getAuthMethods();
+		case LightweightDSLPackage.PHASE__TYPE:
+			return getType();
+		case LightweightDSLPackage.PHASE__RISK:
+			if (resolve)
+				return getRisk();
+			return basicGetRisk();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -198,15 +254,18 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case LightweightDSLPackage.PHASE__LEVEL:
-			setLevel((LEVEL) newValue);
-			return;
 		case LightweightDSLPackage.PHASE__NAME:
 			setName((String) newValue);
 			return;
 		case LightweightDSLPackage.PHASE__AUTH_METHODS:
 			getAuthMethods().clear();
 			getAuthMethods().addAll((Collection<? extends AuthMethod>) newValue);
+			return;
+		case LightweightDSLPackage.PHASE__TYPE:
+			setType((String) newValue);
+			return;
+		case LightweightDSLPackage.PHASE__RISK:
+			setRisk((Risk) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -220,14 +279,17 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case LightweightDSLPackage.PHASE__LEVEL:
-			setLevel(LEVEL_EDEFAULT);
-			return;
 		case LightweightDSLPackage.PHASE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
 		case LightweightDSLPackage.PHASE__AUTH_METHODS:
 			getAuthMethods().clear();
+			return;
+		case LightweightDSLPackage.PHASE__TYPE:
+			setType(TYPE_EDEFAULT);
+			return;
+		case LightweightDSLPackage.PHASE__RISK:
+			setRisk((Risk) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -241,12 +303,14 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case LightweightDSLPackage.PHASE__LEVEL:
-			return level != LEVEL_EDEFAULT;
 		case LightweightDSLPackage.PHASE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case LightweightDSLPackage.PHASE__AUTH_METHODS:
 			return authMethods != null && !authMethods.isEmpty();
+		case LightweightDSLPackage.PHASE__TYPE:
+			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		case LightweightDSLPackage.PHASE__RISK:
+			return risk != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -276,10 +340,10 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (level: ");
-		result.append(level);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

@@ -10,6 +10,9 @@ import lightweightDSL.Authenticator;
 import lightweightDSL.LightweightDSLPackage;
 import lightweightDSL.Phase;
 
+import lightweightDSL.Registration;
+import lightweightDSL.Risk;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,9 +20,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,6 +38,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link lightweightDSL.impl.AppImpl#getPhases <em>Phases</em>}</li>
  *   <li>{@link lightweightDSL.impl.AppImpl#getAuthenticators <em>Authenticators</em>}</li>
  *   <li>{@link lightweightDSL.impl.AppImpl#getAuthMethods <em>Auth Methods</em>}</li>
+ *   <li>{@link lightweightDSL.impl.AppImpl#getRisks <em>Risks</em>}</li>
+ *   <li>{@link lightweightDSL.impl.AppImpl#getRegistration <em>Registration</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +74,26 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * @ordered
 	 */
 	protected EList<AuthMethod> authMethods;
+
+	/**
+	 * The cached value of the '{@link #getRisks() <em>Risks</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRisks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Risk> risks;
+
+	/**
+	 * The cached value of the '{@link #getRegistration() <em>Registration</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRegistration()
+	 * @generated
+	 * @ordered
+	 */
+	protected Registration registration;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,6 +157,58 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Risk> getRisks() {
+		if (risks == null) {
+			risks = new EObjectResolvingEList<Risk>(Risk.class, this, LightweightDSLPackage.APP__RISKS);
+		}
+		return risks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Registration getRegistration() {
+		if (registration != null && registration.eIsProxy()) {
+			InternalEObject oldRegistration = (InternalEObject) registration;
+			registration = (Registration) eResolveProxy(oldRegistration);
+			if (registration != oldRegistration) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LightweightDSLPackage.APP__REGISTRATION,
+							oldRegistration, registration));
+			}
+		}
+		return registration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Registration basicGetRegistration() {
+		return registration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRegistration(Registration newRegistration) {
+		Registration oldRegistration = registration;
+		registration = newRegistration;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.APP__REGISTRATION,
+					oldRegistration, registration));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -157,6 +236,12 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 			return getAuthenticators();
 		case LightweightDSLPackage.APP__AUTH_METHODS:
 			return getAuthMethods();
+		case LightweightDSLPackage.APP__RISKS:
+			return getRisks();
+		case LightweightDSLPackage.APP__REGISTRATION:
+			if (resolve)
+				return getRegistration();
+			return basicGetRegistration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,6 +267,13 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 			getAuthMethods().clear();
 			getAuthMethods().addAll((Collection<? extends AuthMethod>) newValue);
 			return;
+		case LightweightDSLPackage.APP__RISKS:
+			getRisks().clear();
+			getRisks().addAll((Collection<? extends Risk>) newValue);
+			return;
+		case LightweightDSLPackage.APP__REGISTRATION:
+			setRegistration((Registration) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -203,6 +295,12 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 		case LightweightDSLPackage.APP__AUTH_METHODS:
 			getAuthMethods().clear();
 			return;
+		case LightweightDSLPackage.APP__RISKS:
+			getRisks().clear();
+			return;
+		case LightweightDSLPackage.APP__REGISTRATION:
+			setRegistration((Registration) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -221,6 +319,10 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 			return authenticators != null && !authenticators.isEmpty();
 		case LightweightDSLPackage.APP__AUTH_METHODS:
 			return authMethods != null && !authMethods.isEmpty();
+		case LightweightDSLPackage.APP__RISKS:
+			return risks != null && !risks.isEmpty();
+		case LightweightDSLPackage.APP__REGISTRATION:
+			return registration != null;
 		}
 		return super.eIsSet(featureID);
 	}

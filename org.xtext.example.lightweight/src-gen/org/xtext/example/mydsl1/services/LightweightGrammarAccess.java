@@ -211,7 +211,8 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	public class MFAElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.MFA");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFAKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cType2FAKeyword_0_0 = (Keyword)cTypeAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -241,7 +242,7 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_20 = (Keyword)cGroup.eContents().get(20);
 		
 		//MFA:
-		//	'2FA' ":"
+		//	type='2FA' ":"
 		//	'{'
 		//	'name' ":" name=EString ","
 		//	'authenticators' ":" authenticators+=[Authenticator] "&" authenticators+=[Authenticator]+ ","?
@@ -250,13 +251,16 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'2FA' ":" '{' 'name' ":" name=EString "," 'authenticators' ":" authenticators+=[Authenticator] "&"
+		//type='2FA' ":" '{' 'name' ":" name=EString "," 'authenticators' ":" authenticators+=[Authenticator] "&"
 		//authenticators+=[Authenticator]+ ","? 'correlation' ":" correlation?=EBoolean "," 'validation' ":"
 		//validation=ValidationType '}'
 		public Group getGroup() { return cGroup; }
 		
+		//type='2FA'
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		
 		//'2FA'
-		public Keyword getFAKeyword_0() { return cFAKeyword_0; }
+		public Keyword getType2FAKeyword_0_0() { return cType2FAKeyword_0_0; }
 		
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -342,7 +346,8 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	public class SFAElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.SFA");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSFAKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cTypeSFAKeyword_0_0 = (Keyword)cTypeAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -355,22 +360,24 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAuthenticatorsAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final CrossReference cAuthenticatorsAuthenticatorCrossReference_9_0 = (CrossReference)cAuthenticatorsAssignment_9.eContents().get(0);
 		private final RuleCall cAuthenticatorsAuthenticatorIDTerminalRuleCall_9_0_1 = (RuleCall)cAuthenticatorsAuthenticatorCrossReference_9_0.eContents().get(1);
-		private final Keyword cCommaKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//SFA:
-		//	'SFA' ":"
+		//	type='SFA' ":"
 		//	'{'
 		//	'name' ":" name=EString ","
-		//	'authenticator' ":" authenticators+=[Authenticator] ","
+		//	'authenticator' ":" authenticators+=[Authenticator]
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SFA' ":" '{' 'name' ":" name=EString "," 'authenticator' ":" authenticators+=[Authenticator] "," '}'
+		//type='SFA' ":" '{' 'name' ":" name=EString "," 'authenticator' ":" authenticators+=[Authenticator] '}'
 		public Group getGroup() { return cGroup; }
 		
+		//type='SFA'
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		
 		//'SFA'
-		public Keyword getSFAKeyword_0() { return cSFAKeyword_0; }
+		public Keyword getTypeSFAKeyword_0_0() { return cTypeSFAKeyword_0_0; }
 		
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -408,11 +415,8 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getAuthenticatorsAuthenticatorIDTerminalRuleCall_9_0_1() { return cAuthenticatorsAuthenticatorIDTerminalRuleCall_9_0_1; }
 		
-		//","
-		public Keyword getCommaKeyword_10() { return cCommaKeyword_10; }
-		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 	public class AuthenticatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.Authenticator");
@@ -440,7 +444,8 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	public class PossessionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.Possession");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPossessionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cTypePossessionKeyword_0_0 = (Keyword)cTypeAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -455,18 +460,21 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//Possession:
-		//	'possession' ':'
+		//	type='Possession' ':'
 		//	"{"
 		//	'name' ":" name=EString ","
 		//	'value' ":" value=PVALUE
 		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'possession' ':' "{" 'name' ":" name=EString "," 'value' ":" value=PVALUE "}"
+		//type='Possession' ':' "{" 'name' ":" name=EString "," 'value' ":" value=PVALUE "}"
 		public Group getGroup() { return cGroup; }
 		
-		//'possession'
-		public Keyword getPossessionKeyword_0() { return cPossessionKeyword_0; }
+		//type='Possession'
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		
+		//'Possession'
+		public Keyword getTypePossessionKeyword_0_0() { return cTypePossessionKeyword_0_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -507,7 +515,8 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	public class KnowledgeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.Knowledge");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cKnowledgeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cTypeKnowledgeKeyword_0_0 = (Keyword)cTypeAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -532,7 +541,7 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_18 = (Keyword)cGroup.eContents().get(18);
 		
 		//Knowledge:
-		//	'knowledge' ':' '{'
+		//	type='Knowledge' ':' '{'
 		//	'name' ":" name=EString ","
 		//	'value' ":" value=KVALUE ","
 		//	"limitedAttempts" ':' limitedAttempts?=EBoolean ","
@@ -540,12 +549,15 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'knowledge' ':' '{' 'name' ":" name=EString "," 'value' ":" value=KVALUE "," "limitedAttempts" ':'
+		//type='Knowledge' ':' '{' 'name' ":" name=EString "," 'value' ":" value=KVALUE "," "limitedAttempts" ':'
 		//limitedAttempts?=EBoolean "," 'autofillable' ":" autofilled?=EBoolean '}'
 		public Group getGroup() { return cGroup; }
 		
-		//'knowledge'
-		public Keyword getKnowledgeKeyword_0() { return cKnowledgeKeyword_0; }
+		//type='Knowledge'
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		
+		//'Knowledge'
+		public Keyword getTypeKnowledgeKeyword_0_0() { return cTypeKnowledgeKeyword_0_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -616,7 +628,8 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	public class BiometricsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.Biometrics");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBiometricsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cTypeBiometricsKeyword_0_0 = (Keyword)cTypeAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -631,18 +644,21 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//Biometrics:
-		//	'biometrics' ':'
+		//	type='Biometrics' ':'
 		//	"{"
 		//	'name' ":" name=EString ","
 		//	'value' ":" value=BVALUE
 		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'biometrics' ':' "{" 'name' ":" name=EString "," 'value' ":" value=BVALUE "}"
+		//type='Biometrics' ':' "{" 'name' ":" name=EString "," 'value' ":" value=BVALUE "}"
 		public Group getGroup() { return cGroup; }
 		
-		//'biometrics'
-		public Keyword getBiometricsKeyword_0() { return cBiometricsKeyword_0; }
+		//type='Biometrics'
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		
+		//'Biometrics'
+		public Keyword getTypeBiometricsKeyword_0_0() { return cTypeBiometricsKeyword_0_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -729,7 +745,8 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	public class RegistrationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.Registration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cRegistrationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cTypeRegistrationKeyword_0_0 = (Keyword)cTypeAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -750,19 +767,22 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//Registration:
-		//	'Registration' ":"
+		//	type='Registration' ":"
 		//	'{'
 		//	'name' ":" name=EString ","
 		//	'credentials' ":" '[' credentials+=Credential ("," credentials+=Credential)* ']'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Registration' ":" '{' 'name' ":" name=EString "," 'credentials' ":" '[' credentials+=Credential (","
+		//type='Registration' ":" '{' 'name' ":" name=EString "," 'credentials' ":" '[' credentials+=Credential (","
 		//credentials+=Credential)* ']' '}'
 		public Group getGroup() { return cGroup; }
 		
+		//type='Registration'
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		
 		//'Registration'
-		public Keyword getRegistrationKeyword_0() { return cRegistrationKeyword_0; }
+		public Keyword getTypeRegistrationKeyword_0_0() { return cTypeRegistrationKeyword_0_0; }
 		
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -1016,7 +1036,8 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.Recovery");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cRecoveryAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cRecoveryKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cTypeRecoveryKeyword_1_0 = (Keyword)cTypeAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cNameKeyword_4 = (Keyword)cGroup.eContents().get(4);
@@ -1039,23 +1060,25 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//Recovery:
-		//	{Recovery}
-		//	'Recovery' ":"
+		//	{Recovery} type='Recovery' ":"
 		//	'{'
 		//	'name' ":" name=EString "," ('authenticator' ":" authenticator=[Authenticator] ",")? ('protocol' ":"
 		//	protocol=Protocol)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Recovery} 'Recovery' ":" '{' 'name' ":" name=EString "," ('authenticator' ":" authenticator=[Authenticator] ",")?
+		//{Recovery} type='Recovery' ":" '{' 'name' ":" name=EString "," ('authenticator' ":" authenticator=[Authenticator] ",")?
 		//('protocol' ":" protocol=Protocol)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Recovery}
 		public Action getRecoveryAction_0() { return cRecoveryAction_0; }
 		
+		//type='Recovery'
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
+		
 		//'Recovery'
-		public Keyword getRecoveryKeyword_1() { return cRecoveryKeyword_1; }
+		public Keyword getTypeRecoveryKeyword_1_0() { return cTypeRecoveryKeyword_1_0; }
 		
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
@@ -1121,7 +1144,8 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.Login");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLoginAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cLoginKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cTypeLoginKeyword_1_0 = (Keyword)cTypeAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cNameKeyword_4 = (Keyword)cGroup.eContents().get(4);
@@ -1136,37 +1160,37 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cAuthenticationKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		private final Keyword cColonKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Keyword cLeftSquareBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Assignment cAuthMethodsAssignment_15 = (Assignment)cGroup.eContents().get(15);
-		private final CrossReference cAuthMethodsAuthMethodCrossReference_15_0 = (CrossReference)cAuthMethodsAssignment_15.eContents().get(0);
-		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_15_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_15_0.eContents().get(1);
-		private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
-		private final Keyword cCommaKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
-		private final Assignment cAuthMethodsAssignment_16_1 = (Assignment)cGroup_16.eContents().get(1);
-		private final CrossReference cAuthMethodsAuthMethodCrossReference_16_1_0 = (CrossReference)cAuthMethodsAssignment_16_1.eContents().get(0);
-		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_16_1_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_16_1_0.eContents().get(1);
-		private final Keyword cRightSquareBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
-		private final Keyword cRightCurlyBracketKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Assignment cAuthMethodsAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final CrossReference cAuthMethodsAuthMethodCrossReference_14_0 = (CrossReference)cAuthMethodsAssignment_14.eContents().get(0);
+		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_14_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_14_0.eContents().get(1);
+		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
+		private final Keyword cVerticalLineVerticalLineKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
+		private final Assignment cAuthMethodsAssignment_15_1 = (Assignment)cGroup_15.eContents().get(1);
+		private final CrossReference cAuthMethodsAuthMethodCrossReference_15_1_0 = (CrossReference)cAuthMethodsAssignment_15_1.eContents().get(0);
+		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_15_1_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_15_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//Login:
-		//	{Login}
-		//	'Login' ":"
+		//	{Login} type='Login' ":"
 		//	'{'
 		//	'name' ":" name=EString ","
 		//	'persistedSession' ":" session=EBoolean ","
-		//	'authentication' ":" '[' authMethods+=[AuthMethod] ("," authMethods+=[AuthMethod])* ']'
+		//	'authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Login} 'Login' ":" '{' 'name' ":" name=EString "," 'persistedSession' ":" session=EBoolean "," 'authentication' ":" '['
-		//authMethods+=[AuthMethod] ("," authMethods+=[AuthMethod])* ']' '}'
+		//{Login} type='Login' ":" '{' 'name' ":" name=EString "," 'persistedSession' ":" session=EBoolean "," 'authentication'
+		//":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Login}
 		public Action getLoginAction_0() { return cLoginAction_0; }
 		
+		//type='Login'
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
+		
 		//'Login'
-		public Keyword getLoginKeyword_1() { return cLoginKeyword_1; }
+		public Keyword getTypeLoginKeyword_1_0() { return cTypeLoginKeyword_1_0; }
 		
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
@@ -1210,44 +1234,39 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_13() { return cColonKeyword_13; }
 		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_14() { return cLeftSquareBracketKeyword_14; }
-		
 		//authMethods+=[AuthMethod]
-		public Assignment getAuthMethodsAssignment_15() { return cAuthMethodsAssignment_15; }
+		public Assignment getAuthMethodsAssignment_14() { return cAuthMethodsAssignment_14; }
 		
 		//[AuthMethod]
-		public CrossReference getAuthMethodsAuthMethodCrossReference_15_0() { return cAuthMethodsAuthMethodCrossReference_15_0; }
+		public CrossReference getAuthMethodsAuthMethodCrossReference_14_0() { return cAuthMethodsAuthMethodCrossReference_14_0; }
 		
 		//ID
-		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_15_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_15_0_1; }
+		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_14_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_14_0_1; }
 		
-		//("," authMethods+=[AuthMethod])*
-		public Group getGroup_16() { return cGroup_16; }
+		//("||" authMethods+=[AuthMethod])*
+		public Group getGroup_15() { return cGroup_15; }
 		
-		//","
-		public Keyword getCommaKeyword_16_0() { return cCommaKeyword_16_0; }
+		//"||"
+		public Keyword getVerticalLineVerticalLineKeyword_15_0() { return cVerticalLineVerticalLineKeyword_15_0; }
 		
 		//authMethods+=[AuthMethod]
-		public Assignment getAuthMethodsAssignment_16_1() { return cAuthMethodsAssignment_16_1; }
+		public Assignment getAuthMethodsAssignment_15_1() { return cAuthMethodsAssignment_15_1; }
 		
 		//[AuthMethod]
-		public CrossReference getAuthMethodsAuthMethodCrossReference_16_1_0() { return cAuthMethodsAuthMethodCrossReference_16_1_0; }
+		public CrossReference getAuthMethodsAuthMethodCrossReference_15_1_0() { return cAuthMethodsAuthMethodCrossReference_15_1_0; }
 		
 		//ID
-		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_16_1_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_16_1_0_1; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_17() { return cRightSquareBracketKeyword_17; }
+		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_15_1_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_15_1_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_18() { return cRightCurlyBracketKeyword_18; }
+		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
 	}
 	public class ResetElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.Reset");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cResetAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cResetKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cTypeResetKeyword_1_0 = (Keyword)cTypeAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cNameKeyword_4 = (Keyword)cGroup.eContents().get(4);
@@ -1264,36 +1283,36 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_8_3 = (Keyword)cGroup_8.eContents().get(3);
 		private final Keyword cAuthenticationKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cLeftSquareBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cAuthMethodsAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final CrossReference cAuthMethodsAuthMethodCrossReference_12_0 = (CrossReference)cAuthMethodsAssignment_12.eContents().get(0);
-		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_12_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_12_0.eContents().get(1);
-		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Keyword cCommaKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final Assignment cAuthMethodsAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
-		private final CrossReference cAuthMethodsAuthMethodCrossReference_13_1_0 = (CrossReference)cAuthMethodsAssignment_13_1.eContents().get(0);
-		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_13_1_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_13_1_0.eContents().get(1);
-		private final Keyword cRightSquareBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cAuthMethodsAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final CrossReference cAuthMethodsAuthMethodCrossReference_11_0 = (CrossReference)cAuthMethodsAssignment_11.eContents().get(0);
+		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_11_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_11_0.eContents().get(1);
+		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
+		private final Keyword cVerticalLineVerticalLineKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Assignment cAuthMethodsAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+		private final CrossReference cAuthMethodsAuthMethodCrossReference_12_1_0 = (CrossReference)cAuthMethodsAssignment_12_1.eContents().get(0);
+		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_12_1_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_12_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//Reset:
-		//	{Reset}
-		//	'Reset' ":"
+		//	{Reset} type='Reset' ":"
 		//	'{'
 		//	'name' ":" name=EString "," ('authenticator' ":" authenticator=[Authenticator] ",")?
-		//	'authentication' ":" '[' authMethods+=[AuthMethod] ("," authMethods+=[AuthMethod])* ']'
+		//	'authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Reset} 'Reset' ":" '{' 'name' ":" name=EString "," ('authenticator' ":" authenticator=[Authenticator] ",")?
-		//'authentication' ":" '[' authMethods+=[AuthMethod] ("," authMethods+=[AuthMethod])* ']' '}'
+		//{Reset} type='Reset' ":" '{' 'name' ":" name=EString "," ('authenticator' ":" authenticator=[Authenticator] ",")?
+		//'authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Reset}
 		public Action getResetAction_0() { return cResetAction_0; }
 		
+		//type='Reset'
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
+		
 		//'Reset'
-		public Keyword getResetKeyword_1() { return cResetKeyword_1; }
+		public Keyword getTypeResetKeyword_1_0() { return cTypeResetKeyword_1_0; }
 		
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
@@ -1343,38 +1362,32 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
 		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_11() { return cLeftSquareBracketKeyword_11; }
-		
 		//authMethods+=[AuthMethod]
-		public Assignment getAuthMethodsAssignment_12() { return cAuthMethodsAssignment_12; }
+		public Assignment getAuthMethodsAssignment_11() { return cAuthMethodsAssignment_11; }
 		
 		//[AuthMethod]
-		public CrossReference getAuthMethodsAuthMethodCrossReference_12_0() { return cAuthMethodsAuthMethodCrossReference_12_0; }
+		public CrossReference getAuthMethodsAuthMethodCrossReference_11_0() { return cAuthMethodsAuthMethodCrossReference_11_0; }
 		
 		//ID
-		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_12_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_12_0_1; }
+		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_11_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_11_0_1; }
 		
-		//("," authMethods+=[AuthMethod])*
-		public Group getGroup_13() { return cGroup_13; }
+		//("||" authMethods+=[AuthMethod])*
+		public Group getGroup_12() { return cGroup_12; }
 		
-		//","
-		public Keyword getCommaKeyword_13_0() { return cCommaKeyword_13_0; }
+		//"||"
+		public Keyword getVerticalLineVerticalLineKeyword_12_0() { return cVerticalLineVerticalLineKeyword_12_0; }
 		
 		//authMethods+=[AuthMethod]
-		public Assignment getAuthMethodsAssignment_13_1() { return cAuthMethodsAssignment_13_1; }
+		public Assignment getAuthMethodsAssignment_12_1() { return cAuthMethodsAssignment_12_1; }
 		
 		//[AuthMethod]
-		public CrossReference getAuthMethodsAuthMethodCrossReference_13_1_0() { return cAuthMethodsAuthMethodCrossReference_13_1_0; }
+		public CrossReference getAuthMethodsAuthMethodCrossReference_12_1_0() { return cAuthMethodsAuthMethodCrossReference_12_1_0; }
 		
 		//ID
-		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_13_1_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_13_1_0_1; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_14() { return cRightSquareBracketKeyword_14; }
+		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_12_1_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_12_1_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
+		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
 	}
 	public class EBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.EBoolean");
@@ -1783,7 +1796,7 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MFA:
-	//	'2FA' ":"
+	//	type='2FA' ":"
 	//	'{'
 	//	'name' ":" name=EString ","
 	//	'authenticators' ":" authenticators+=[Authenticator] "&" authenticators+=[Authenticator]+ ","?
@@ -1799,10 +1812,10 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SFA:
-	//	'SFA' ":"
+	//	type='SFA' ":"
 	//	'{'
 	//	'name' ":" name=EString ","
-	//	'authenticator' ":" authenticators+=[Authenticator] ","
+	//	'authenticator' ":" authenticators+=[Authenticator]
 	//	'}';
 	public SFAElements getSFAAccess() {
 		return pSFA;
@@ -1823,7 +1836,7 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Possession:
-	//	'possession' ':'
+	//	type='Possession' ':'
 	//	"{"
 	//	'name' ":" name=EString ","
 	//	'value' ":" value=PVALUE
@@ -1837,7 +1850,7 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Knowledge:
-	//	'knowledge' ':' '{'
+	//	type='Knowledge' ':' '{'
 	//	'name' ":" name=EString ","
 	//	'value' ":" value=KVALUE ","
 	//	"limitedAttempts" ':' limitedAttempts?=EBoolean ","
@@ -1852,7 +1865,7 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Biometrics:
-	//	'biometrics' ':'
+	//	type='Biometrics' ':'
 	//	"{"
 	//	'name' ":" name=EString ","
 	//	'value' ":" value=BVALUE
@@ -1896,7 +1909,7 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Registration:
-	//	'Registration' ":"
+	//	type='Registration' ":"
 	//	'{'
 	//	'name' ":" name=EString ","
 	//	'credentials' ":" '[' credentials+=Credential ("," credentials+=Credential)* ']'
@@ -1940,8 +1953,7 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Recovery:
-	//	{Recovery}
-	//	'Recovery' ":"
+	//	{Recovery} type='Recovery' ":"
 	//	'{'
 	//	'name' ":" name=EString "," ('authenticator' ":" authenticator=[Authenticator] ",")? ('protocol' ":"
 	//	protocol=Protocol)?
@@ -1955,12 +1967,11 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Login:
-	//	{Login}
-	//	'Login' ":"
+	//	{Login} type='Login' ":"
 	//	'{'
 	//	'name' ":" name=EString ","
 	//	'persistedSession' ":" session=EBoolean ","
-	//	'authentication' ":" '[' authMethods+=[AuthMethod] ("," authMethods+=[AuthMethod])* ']'
+	//	'authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*
 	//	'}';
 	public LoginElements getLoginAccess() {
 		return pLogin;
@@ -1971,11 +1982,10 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Reset:
-	//	{Reset}
-	//	'Reset' ":"
+	//	{Reset} type='Reset' ":"
 	//	'{'
 	//	'name' ":" name=EString "," ('authenticator' ":" authenticator=[Authenticator] ",")?
-	//	'authentication' ":" '[' authMethods+=[AuthMethod] ("," authMethods+=[AuthMethod])* ']'
+	//	'authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*
 	//	'}';
 	public ResetElements getResetAccess() {
 		return pReset;

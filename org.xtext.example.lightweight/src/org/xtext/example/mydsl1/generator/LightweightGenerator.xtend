@@ -20,6 +20,9 @@ import lightweightDSL.Provider
 import lightweightDSL.Login
 import lightweightDSL.SFA
 import javax.print.attribute.Attribute
+import lightweightDSL.Utils
+import lightweightDSL.Knowledge
+import lightweightDSL.KVALUE
 
 /**
  * Generates code from your model files on save.
@@ -38,65 +41,160 @@ class LightweightGenerator extends AbstractGenerator {
 		
 	val app = resource.contents.head as App
 		
-		app.assignAuthenticator 
+		app.initAuthenticator 
+		app.initAuthentications
 		app.assignMethod
+		
+		
 		
 	}
 	
-	def assignAuthenticator(App app) {
+	// function to initialize authenticators
+	def initAuthenticator(App app) {
 		for(auth : app.authenticators) {
-			
+			switch(auth.type) {
+				
+				case Utils.POSSESSION : {
+					
+					auth.risk.instance = Utils.POSSESSION
+					auth.risk.value = LEVEL.MEDIUM
+					auth.risk.message = "Use of possession based authentication"
+					auth.risk.information = ""
+				}
+				
+				case Utils.BIOMETRICS : {
+					auth.risk.instance = Utils.BIOMETRICS
+					auth.risk.value = LEVEL.LOW
+					auth.risk.message = "Use of biometrics based authenticator"
+					auth.risk.information = ""
+				}
+				
+				case Utils.KNOWLEDGE : {
+					
+					val knowledgeAuth = auth as Knowledge
+					auth.risk.instance = Utils.KNOWLEDGE
+					
+					//Basic evaluation 
+					
+					if (knowledgeAuth.value == KVALUE.PREFERENCES) {
+						
+						auth.risk.value = LEVEL.HIGH
+						auth.risk.message = "Use of preference based authentication "+auth.name+"!" 
+						auth.risk.information = ""	
+						
+					} else if(knowledgeAuth.value == KVALUE.PIN || knowledgeAuth.value == KVALUE.LTBP){
+						
+						auth.risk.value = LEVEL.MEDIUM // 
+						auth.risk.message = "Use of low security text based "+auth.name+"!" 
+						auth.risk.information = ""	
+						
+					} else {
+						
+						auth.risk.value = LEVEL.LOW // assessed as posession based	
+						auth.risk.message = "Use of string text based authentication "+auth.name+"!" 
+						auth.risk.information = ""
+						
+					}
+					
+					//Refactoring with the autofilled form and the number of attempts.
+					
+					if (!knowledgeAuth.limitedAttempts || knowledgeAuth.autofilled) {
+						if(knowledgeAuth.autofilled) {
+							if(auth.risk.value < LEVEL.MEDIUM) { // Low security level.
+								auth.risk.value = LEVEL.MEDIUM // 
+								auth.risk.message.concat("\n The risk is rised because of the use of autofilled form considered as possession-based authentication")
+								auth.risk.information = ""	
+							} // Level is high because of preferences.
+						} else {
+							
+							if(auth.risk.value ==  LEVEL.MEDIUM) { // From medium to high
+								auth.risk.value = LEVEL.HIGH // 
+								auth.risk.message.concat("\n The risk is raised because of the unlimited attemps")
+								auth.risk.information = ""	
+							}
+							if (auth.risk.value ==  LEVEL.LOW) { // from low to medium
+								auth.risk.value = LEVEL.MEDIUM // 
+								auth.risk.message.concat("\n The risk is raised because of the unlimited attemps")
+								auth.risk.information = ""	
+							}
+						}
+					}
+				}
+				
+			}
 		}
 		
 	}
 	
+	def initAuthentications(App app) {
+		for(method : app.authMethods) {
+			if(method.type == Utils.SFA) {
+				method.risk = method.authenticators.get(0).risk;
+			} else {
+				// TODO correlation and type of validation.
+			}
+		}
+	}
+	
 	def assignMethod(App app) {
+		println("Initializing methods")
 		for(phase : app.phases) {
-			switch(phase.class.name) {
-				case "Registration" : {
+			switch(phase.type) {
+				case Utils.REGISTRATION : {
 					val r = phase as Registration
+					phase.risk.instance = Utils.REGISTRATION
 					
-					for(credential : r.credentials)
-					if(credential.verifmethod.uniqueness && 
-						credential.verifmethod.validity && 
-						credential.verifmethod.bindings ) {
-						phase.level = LEVEL.LOW
-						println("Risk level for fraudulent enrollment is LOW or Inexistant all requirements are satisfied")
+					for(credential : r.credentials) {
 						
-					} else if (!credential.verifmethod.uniqueness || 
-						!credential.verifmethod.validity || 
-						!credential.verifmethod.bindings) {
-							phase.level = LEVEL.MEDIUM
-							println("Risk level for fraudulent enrollment is MEDIUM because on the property are not ensured")
-
-						} else {
-							if(credential.provider == Provider.ID_P) {
-								phase.level = LEVEL.MEDIUM
-								println("Risk level for fraudulent enrollment is MEDIUM since the IdP may be voiolated")
-								
+						if(!credential.verifmethod.uniqueness && 
+							!credential.verifmethod.validity && 
+							!credential.verifmethod.bindings ) {
+							credential.risk.value = LEVEL.HIGH
+							credential.risk.message = credential.name+ " : No requirements are satisfied "
+							credential.risk.information = ""
+						}
+						else if (!credential.verifmethod.uniqueness || 
+							!credential.verifmethod.validity || 
+							!credential.verifmethod.bindings) {
+							credential.risk.value = LEVEL.MEDIUM
+							credential.risk.message = credential.name+ ": One or two requirements are unsatisfied"
+							credential.risk.information = ""
+	
+						} 
+						else {
+							credential.risk.value = LEVEL.LOW
+							credential.risk.message = credential.name+" : All requirements are satisfied"
+							credential.risk.information = ""
+	
+						}
+						// Additional risk for informational report
+						if(credential.provider == Provider.ID_P) {
+							if(credential.risk.value < LEVEL.MEDIUM) {
+							credential.risk.value = LEVEL.MEDIUM
+							credential.risk.message = credential.name+ " :Identity provider put the risk to MEDIUM"
+							credential.risk.information = ""
 							} else {
-								phase.level = LEVEL.HIGH
-								println("Risk level for fraudulent enrollment is HIGH because of absence of verification method")
-								
+								credential.risk.information = ""
 							}
 						}
-				}
-				
-				case "Login" : {
-					val l = phase as Login 
-					// is persisted session exist or authofill form ==> eval = Medium
-					for(auth : l.authMethods) {
 						
 					}
+					app.registration = phase as Registration // initializing the main registration
+				}
+				
+				case Utils.LOGIN : {
+					val login = phase as Login 
+					// If persistent session exist or autofill form.
+					
 						
 				}
 				
-				case "Reset" : {
-					
+				case Utils.RESET : {
+					//TODO 
 				}
 				
-				case "Recovery" : {
-					
+				case Utils.RECOVERY : {
+					//TODO
 				}
 				
 				

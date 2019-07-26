@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLightweightParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'App'", "':'", "'{'", "'Authenticators'", "'['", "','", "']'", "'Authentications'", "'Procedures'", "'}'", "'2FA'", "'name'", "'authenticators'", "'&'", "'correlation'", "'validation'", "'SFA'", "'authenticator'", "'possession'", "'value'", "'knowledge'", "'limitedAttempts'", "'autofillable'", "'biometrics'", "'Registration'", "'credentials'", "'provider'", "'type'", "'verification'", "'validity'", "'uniqueness'", "'bindings'", "'Recovery'", "'protocol'", "'Login'", "'persistedSession'", "'authentication'", "'Reset'", "'true'", "'false'", "'Identity provider'", "'Self provided'", "'Institutional'", "'Digital'", "'Physical'", "'Email-Based'", "'MS-based'", "'Local'", "'High Entropy Text-Based Password'", "'Pass phrase'", "'Knowledge-based Preferences'", "'Low Entropy Text-Based Password'", "'Pin Code'", "'Fingerprint Recognition'", "'Facial Recognition'", "'Hard Drive Token'", "'Physical device'", "'local validation'", "'Remote validation'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'App'", "':'", "'{'", "'Authenticators'", "'['", "','", "']'", "'Authentications'", "'Procedures'", "'}'", "'2FA'", "'name'", "'authenticators'", "'&'", "'correlation'", "'validation'", "'SFA'", "'authenticator'", "'Possession'", "'value'", "'Knowledge'", "'limitedAttempts'", "'autofillable'", "'Biometrics'", "'Registration'", "'credentials'", "'provider'", "'type'", "'verification'", "'validity'", "'uniqueness'", "'bindings'", "'Recovery'", "'protocol'", "'Login'", "'persistedSession'", "'authentication'", "'||'", "'Reset'", "'true'", "'false'", "'Identity provider'", "'Self provided'", "'Institutional'", "'Digital'", "'Physical'", "'Email-Based'", "'MS-based'", "'Local'", "'High Entropy Text-Based Password'", "'Pass phrase'", "'Knowledge-based Preferences'", "'Low Entropy Text-Based Password'", "'Pin Code'", "'Fingerprint Recognition'", "'Facial Recognition'", "'Hard Drive Token'", "'Physical device'", "'local validation'", "'Remote validation'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -66,6 +66,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
     public static final int T__64=64;
     public static final int T__21=21;
     public static final int T__65=65;
+    public static final int T__70=70;
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__37=37;
@@ -745,11 +746,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMFA"
-    // InternalLightweight.g:331:1: ruleMFA returns [EObject current=null] : (otherlv_0= '2FA' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticators' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '&' ( (otherlv_11= RULE_ID ) )+ (otherlv_12= ',' )? otherlv_13= 'correlation' otherlv_14= ':' ( (lv_correlation_15_0= ruleEBoolean ) ) otherlv_16= ',' otherlv_17= 'validation' otherlv_18= ':' ( (lv_validation_19_0= ruleValidationType ) ) otherlv_20= '}' ) ;
+    // InternalLightweight.g:331:1: ruleMFA returns [EObject current=null] : ( ( (lv_type_0_0= '2FA' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticators' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '&' ( (otherlv_11= RULE_ID ) )+ (otherlv_12= ',' )? otherlv_13= 'correlation' otherlv_14= ':' ( (lv_correlation_15_0= ruleEBoolean ) ) otherlv_16= ',' otherlv_17= 'validation' otherlv_18= ':' ( (lv_validation_19_0= ruleValidationType ) ) otherlv_20= '}' ) ;
     public final EObject ruleMFA() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token lv_type_0_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
@@ -778,16 +779,34 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:337:2: ( (otherlv_0= '2FA' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticators' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '&' ( (otherlv_11= RULE_ID ) )+ (otherlv_12= ',' )? otherlv_13= 'correlation' otherlv_14= ':' ( (lv_correlation_15_0= ruleEBoolean ) ) otherlv_16= ',' otherlv_17= 'validation' otherlv_18= ':' ( (lv_validation_19_0= ruleValidationType ) ) otherlv_20= '}' ) )
-            // InternalLightweight.g:338:2: (otherlv_0= '2FA' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticators' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '&' ( (otherlv_11= RULE_ID ) )+ (otherlv_12= ',' )? otherlv_13= 'correlation' otherlv_14= ':' ( (lv_correlation_15_0= ruleEBoolean ) ) otherlv_16= ',' otherlv_17= 'validation' otherlv_18= ':' ( (lv_validation_19_0= ruleValidationType ) ) otherlv_20= '}' )
+            // InternalLightweight.g:337:2: ( ( ( (lv_type_0_0= '2FA' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticators' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '&' ( (otherlv_11= RULE_ID ) )+ (otherlv_12= ',' )? otherlv_13= 'correlation' otherlv_14= ':' ( (lv_correlation_15_0= ruleEBoolean ) ) otherlv_16= ',' otherlv_17= 'validation' otherlv_18= ':' ( (lv_validation_19_0= ruleValidationType ) ) otherlv_20= '}' ) )
+            // InternalLightweight.g:338:2: ( ( (lv_type_0_0= '2FA' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticators' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '&' ( (otherlv_11= RULE_ID ) )+ (otherlv_12= ',' )? otherlv_13= 'correlation' otherlv_14= ':' ( (lv_correlation_15_0= ruleEBoolean ) ) otherlv_16= ',' otherlv_17= 'validation' otherlv_18= ':' ( (lv_validation_19_0= ruleValidationType ) ) otherlv_20= '}' )
             {
-            // InternalLightweight.g:338:2: (otherlv_0= '2FA' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticators' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '&' ( (otherlv_11= RULE_ID ) )+ (otherlv_12= ',' )? otherlv_13= 'correlation' otherlv_14= ':' ( (lv_correlation_15_0= ruleEBoolean ) ) otherlv_16= ',' otherlv_17= 'validation' otherlv_18= ':' ( (lv_validation_19_0= ruleValidationType ) ) otherlv_20= '}' )
-            // InternalLightweight.g:339:3: otherlv_0= '2FA' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticators' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '&' ( (otherlv_11= RULE_ID ) )+ (otherlv_12= ',' )? otherlv_13= 'correlation' otherlv_14= ':' ( (lv_correlation_15_0= ruleEBoolean ) ) otherlv_16= ',' otherlv_17= 'validation' otherlv_18= ':' ( (lv_validation_19_0= ruleValidationType ) ) otherlv_20= '}'
+            // InternalLightweight.g:338:2: ( ( (lv_type_0_0= '2FA' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticators' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '&' ( (otherlv_11= RULE_ID ) )+ (otherlv_12= ',' )? otherlv_13= 'correlation' otherlv_14= ':' ( (lv_correlation_15_0= ruleEBoolean ) ) otherlv_16= ',' otherlv_17= 'validation' otherlv_18= ':' ( (lv_validation_19_0= ruleValidationType ) ) otherlv_20= '}' )
+            // InternalLightweight.g:339:3: ( (lv_type_0_0= '2FA' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticators' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '&' ( (otherlv_11= RULE_ID ) )+ (otherlv_12= ',' )? otherlv_13= 'correlation' otherlv_14= ':' ( (lv_correlation_15_0= ruleEBoolean ) ) otherlv_16= ',' otherlv_17= 'validation' otherlv_18= ':' ( (lv_validation_19_0= ruleValidationType ) ) otherlv_20= '}'
             {
-            otherlv_0=(Token)match(input,21,FOLLOW_3); 
+            // InternalLightweight.g:339:3: ( (lv_type_0_0= '2FA' ) )
+            // InternalLightweight.g:340:4: (lv_type_0_0= '2FA' )
+            {
+            // InternalLightweight.g:340:4: (lv_type_0_0= '2FA' )
+            // InternalLightweight.g:341:5: lv_type_0_0= '2FA'
+            {
+            lv_type_0_0=(Token)match(input,21,FOLLOW_3); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getMFAAccess().getFAKeyword_0());
-            		
+            					newLeafNode(lv_type_0_0, grammarAccess.getMFAAccess().getType2FAKeyword_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getMFARule());
+            					}
+            					setWithLastConsumed(current, "type", lv_type_0_0, "2FA");
+            				
+
+            }
+
+
+            }
+
             otherlv_1=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_1, grammarAccess.getMFAAccess().getColonKeyword_1());
@@ -804,11 +823,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getMFAAccess().getColonKeyword_4());
             		
-            // InternalLightweight.g:359:3: ( (lv_name_5_0= ruleEString ) )
-            // InternalLightweight.g:360:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:369:3: ( (lv_name_5_0= ruleEString ) )
+            // InternalLightweight.g:370:4: (lv_name_5_0= ruleEString )
             {
-            // InternalLightweight.g:360:4: (lv_name_5_0= ruleEString )
-            // InternalLightweight.g:361:5: lv_name_5_0= ruleEString
+            // InternalLightweight.g:370:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:371:5: lv_name_5_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getMFAAccess().getNameEStringParserRuleCall_5_0());
@@ -847,11 +866,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getMFAAccess().getColonKeyword_8());
             		
-            // InternalLightweight.g:390:3: ( (otherlv_9= RULE_ID ) )
-            // InternalLightweight.g:391:4: (otherlv_9= RULE_ID )
+            // InternalLightweight.g:400:3: ( (otherlv_9= RULE_ID ) )
+            // InternalLightweight.g:401:4: (otherlv_9= RULE_ID )
             {
-            // InternalLightweight.g:391:4: (otherlv_9= RULE_ID )
-            // InternalLightweight.g:392:5: otherlv_9= RULE_ID
+            // InternalLightweight.g:401:4: (otherlv_9= RULE_ID )
+            // InternalLightweight.g:402:5: otherlv_9= RULE_ID
             {
 
             					if (current==null) {
@@ -872,7 +891,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_10, grammarAccess.getMFAAccess().getAmpersandKeyword_10());
             		
-            // InternalLightweight.g:407:3: ( (otherlv_11= RULE_ID ) )+
+            // InternalLightweight.g:417:3: ( (otherlv_11= RULE_ID ) )+
             int cnt5=0;
             loop5:
             do {
@@ -886,10 +905,10 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalLightweight.g:408:4: (otherlv_11= RULE_ID )
+            	    // InternalLightweight.g:418:4: (otherlv_11= RULE_ID )
             	    {
-            	    // InternalLightweight.g:408:4: (otherlv_11= RULE_ID )
-            	    // InternalLightweight.g:409:5: otherlv_11= RULE_ID
+            	    // InternalLightweight.g:418:4: (otherlv_11= RULE_ID )
+            	    // InternalLightweight.g:419:5: otherlv_11= RULE_ID
             	    {
 
             	    					if (current==null) {
@@ -916,7 +935,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                 cnt5++;
             } while (true);
 
-            // InternalLightweight.g:420:3: (otherlv_12= ',' )?
+            // InternalLightweight.g:430:3: (otherlv_12= ',' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -925,7 +944,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalLightweight.g:421:4: otherlv_12= ','
+                    // InternalLightweight.g:431:4: otherlv_12= ','
                     {
                     otherlv_12=(Token)match(input,16,FOLLOW_21); 
 
@@ -945,11 +964,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_14, grammarAccess.getMFAAccess().getColonKeyword_14());
             		
-            // InternalLightweight.g:434:3: ( (lv_correlation_15_0= ruleEBoolean ) )
-            // InternalLightweight.g:435:4: (lv_correlation_15_0= ruleEBoolean )
+            // InternalLightweight.g:444:3: ( (lv_correlation_15_0= ruleEBoolean ) )
+            // InternalLightweight.g:445:4: (lv_correlation_15_0= ruleEBoolean )
             {
-            // InternalLightweight.g:435:4: (lv_correlation_15_0= ruleEBoolean )
-            // InternalLightweight.g:436:5: lv_correlation_15_0= ruleEBoolean
+            // InternalLightweight.g:445:4: (lv_correlation_15_0= ruleEBoolean )
+            // InternalLightweight.g:446:5: lv_correlation_15_0= ruleEBoolean
             {
 
             					newCompositeNode(grammarAccess.getMFAAccess().getCorrelationEBooleanParserRuleCall_15_0());
@@ -988,11 +1007,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_18, grammarAccess.getMFAAccess().getColonKeyword_18());
             		
-            // InternalLightweight.g:465:3: ( (lv_validation_19_0= ruleValidationType ) )
-            // InternalLightweight.g:466:4: (lv_validation_19_0= ruleValidationType )
+            // InternalLightweight.g:475:3: ( (lv_validation_19_0= ruleValidationType ) )
+            // InternalLightweight.g:476:4: (lv_validation_19_0= ruleValidationType )
             {
-            // InternalLightweight.g:466:4: (lv_validation_19_0= ruleValidationType )
-            // InternalLightweight.g:467:5: lv_validation_19_0= ruleValidationType
+            // InternalLightweight.g:476:4: (lv_validation_19_0= ruleValidationType )
+            // InternalLightweight.g:477:5: lv_validation_19_0= ruleValidationType
             {
 
             					newCompositeNode(grammarAccess.getMFAAccess().getValidationValidationTypeEnumRuleCall_19_0());
@@ -1046,7 +1065,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSFA"
-    // InternalLightweight.g:492:1: entryRuleSFA returns [EObject current=null] : iv_ruleSFA= ruleSFA EOF ;
+    // InternalLightweight.g:502:1: entryRuleSFA returns [EObject current=null] : iv_ruleSFA= ruleSFA EOF ;
     public final EObject entryRuleSFA() throws RecognitionException {
         EObject current = null;
 
@@ -1054,8 +1073,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:492:44: (iv_ruleSFA= ruleSFA EOF )
-            // InternalLightweight.g:493:2: iv_ruleSFA= ruleSFA EOF
+            // InternalLightweight.g:502:44: (iv_ruleSFA= ruleSFA EOF )
+            // InternalLightweight.g:503:2: iv_ruleSFA= ruleSFA EOF
             {
              newCompositeNode(grammarAccess.getSFARule()); 
             pushFollow(FOLLOW_1);
@@ -1082,11 +1101,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSFA"
-    // InternalLightweight.g:499:1: ruleSFA returns [EObject current=null] : (otherlv_0= 'SFA' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticator' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= ',' otherlv_11= '}' ) ;
+    // InternalLightweight.g:509:1: ruleSFA returns [EObject current=null] : ( ( (lv_type_0_0= 'SFA' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticator' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '}' ) ;
     public final EObject ruleSFA() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token lv_type_0_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
@@ -1096,7 +1115,6 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         Token otherlv_8=null;
         Token otherlv_9=null;
         Token otherlv_10=null;
-        Token otherlv_11=null;
         AntlrDatatypeRuleToken lv_name_5_0 = null;
 
 
@@ -1104,16 +1122,34 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:505:2: ( (otherlv_0= 'SFA' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticator' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= ',' otherlv_11= '}' ) )
-            // InternalLightweight.g:506:2: (otherlv_0= 'SFA' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticator' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= ',' otherlv_11= '}' )
+            // InternalLightweight.g:515:2: ( ( ( (lv_type_0_0= 'SFA' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticator' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '}' ) )
+            // InternalLightweight.g:516:2: ( ( (lv_type_0_0= 'SFA' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticator' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '}' )
             {
-            // InternalLightweight.g:506:2: (otherlv_0= 'SFA' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticator' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= ',' otherlv_11= '}' )
-            // InternalLightweight.g:507:3: otherlv_0= 'SFA' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticator' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= ',' otherlv_11= '}'
+            // InternalLightweight.g:516:2: ( ( (lv_type_0_0= 'SFA' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticator' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '}' )
+            // InternalLightweight.g:517:3: ( (lv_type_0_0= 'SFA' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'authenticator' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) otherlv_10= '}'
             {
-            otherlv_0=(Token)match(input,27,FOLLOW_3); 
+            // InternalLightweight.g:517:3: ( (lv_type_0_0= 'SFA' ) )
+            // InternalLightweight.g:518:4: (lv_type_0_0= 'SFA' )
+            {
+            // InternalLightweight.g:518:4: (lv_type_0_0= 'SFA' )
+            // InternalLightweight.g:519:5: lv_type_0_0= 'SFA'
+            {
+            lv_type_0_0=(Token)match(input,27,FOLLOW_3); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getSFAAccess().getSFAKeyword_0());
-            		
+            					newLeafNode(lv_type_0_0, grammarAccess.getSFAAccess().getTypeSFAKeyword_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSFARule());
+            					}
+            					setWithLastConsumed(current, "type", lv_type_0_0, "SFA");
+            				
+
+            }
+
+
+            }
+
             otherlv_1=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSFAAccess().getColonKeyword_1());
@@ -1130,11 +1166,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getSFAAccess().getColonKeyword_4());
             		
-            // InternalLightweight.g:527:3: ( (lv_name_5_0= ruleEString ) )
-            // InternalLightweight.g:528:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:547:3: ( (lv_name_5_0= ruleEString ) )
+            // InternalLightweight.g:548:4: (lv_name_5_0= ruleEString )
             {
-            // InternalLightweight.g:528:4: (lv_name_5_0= ruleEString )
-            // InternalLightweight.g:529:5: lv_name_5_0= ruleEString
+            // InternalLightweight.g:548:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:549:5: lv_name_5_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getSFAAccess().getNameEStringParserRuleCall_5_0());
@@ -1173,18 +1209,18 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getSFAAccess().getColonKeyword_8());
             		
-            // InternalLightweight.g:558:3: ( (otherlv_9= RULE_ID ) )
-            // InternalLightweight.g:559:4: (otherlv_9= RULE_ID )
+            // InternalLightweight.g:578:3: ( (otherlv_9= RULE_ID ) )
+            // InternalLightweight.g:579:4: (otherlv_9= RULE_ID )
             {
-            // InternalLightweight.g:559:4: (otherlv_9= RULE_ID )
-            // InternalLightweight.g:560:5: otherlv_9= RULE_ID
+            // InternalLightweight.g:579:4: (otherlv_9= RULE_ID )
+            // InternalLightweight.g:580:5: otherlv_9= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getSFARule());
             					}
             				
-            otherlv_9=(Token)match(input,RULE_ID,FOLLOW_9); 
+            otherlv_9=(Token)match(input,RULE_ID,FOLLOW_14); 
 
             					newLeafNode(otherlv_9, grammarAccess.getSFAAccess().getAuthenticatorsAuthenticatorCrossReference_9_0());
             				
@@ -1194,13 +1230,9 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,16,FOLLOW_14); 
+            otherlv_10=(Token)match(input,20,FOLLOW_2); 
 
-            			newLeafNode(otherlv_10, grammarAccess.getSFAAccess().getCommaKeyword_10());
-            		
-            otherlv_11=(Token)match(input,20,FOLLOW_2); 
-
-            			newLeafNode(otherlv_11, grammarAccess.getSFAAccess().getRightCurlyBracketKeyword_11());
+            			newLeafNode(otherlv_10, grammarAccess.getSFAAccess().getRightCurlyBracketKeyword_10());
             		
 
             }
@@ -1225,7 +1257,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAuthenticator"
-    // InternalLightweight.g:583:1: entryRuleAuthenticator returns [EObject current=null] : iv_ruleAuthenticator= ruleAuthenticator EOF ;
+    // InternalLightweight.g:599:1: entryRuleAuthenticator returns [EObject current=null] : iv_ruleAuthenticator= ruleAuthenticator EOF ;
     public final EObject entryRuleAuthenticator() throws RecognitionException {
         EObject current = null;
 
@@ -1233,8 +1265,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:583:54: (iv_ruleAuthenticator= ruleAuthenticator EOF )
-            // InternalLightweight.g:584:2: iv_ruleAuthenticator= ruleAuthenticator EOF
+            // InternalLightweight.g:599:54: (iv_ruleAuthenticator= ruleAuthenticator EOF )
+            // InternalLightweight.g:600:2: iv_ruleAuthenticator= ruleAuthenticator EOF
             {
              newCompositeNode(grammarAccess.getAuthenticatorRule()); 
             pushFollow(FOLLOW_1);
@@ -1261,7 +1293,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAuthenticator"
-    // InternalLightweight.g:590:1: ruleAuthenticator returns [EObject current=null] : (this_Possession_0= rulePossession | this_Biometrics_1= ruleBiometrics | this_Knowledge_2= ruleKnowledge ) ;
+    // InternalLightweight.g:606:1: ruleAuthenticator returns [EObject current=null] : (this_Possession_0= rulePossession | this_Biometrics_1= ruleBiometrics | this_Knowledge_2= ruleKnowledge ) ;
     public final EObject ruleAuthenticator() throws RecognitionException {
         EObject current = null;
 
@@ -1276,10 +1308,10 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:596:2: ( (this_Possession_0= rulePossession | this_Biometrics_1= ruleBiometrics | this_Knowledge_2= ruleKnowledge ) )
-            // InternalLightweight.g:597:2: (this_Possession_0= rulePossession | this_Biometrics_1= ruleBiometrics | this_Knowledge_2= ruleKnowledge )
+            // InternalLightweight.g:612:2: ( (this_Possession_0= rulePossession | this_Biometrics_1= ruleBiometrics | this_Knowledge_2= ruleKnowledge ) )
+            // InternalLightweight.g:613:2: (this_Possession_0= rulePossession | this_Biometrics_1= ruleBiometrics | this_Knowledge_2= ruleKnowledge )
             {
-            // InternalLightweight.g:597:2: (this_Possession_0= rulePossession | this_Biometrics_1= ruleBiometrics | this_Knowledge_2= ruleKnowledge )
+            // InternalLightweight.g:613:2: (this_Possession_0= rulePossession | this_Biometrics_1= ruleBiometrics | this_Knowledge_2= ruleKnowledge )
             int alt7=3;
             switch ( input.LA(1) ) {
             case 29:
@@ -1306,7 +1338,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             switch (alt7) {
                 case 1 :
-                    // InternalLightweight.g:598:3: this_Possession_0= rulePossession
+                    // InternalLightweight.g:614:3: this_Possession_0= rulePossession
                     {
 
                     			newCompositeNode(grammarAccess.getAuthenticatorAccess().getPossessionParserRuleCall_0());
@@ -1324,7 +1356,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:607:3: this_Biometrics_1= ruleBiometrics
+                    // InternalLightweight.g:623:3: this_Biometrics_1= ruleBiometrics
                     {
 
                     			newCompositeNode(grammarAccess.getAuthenticatorAccess().getBiometricsParserRuleCall_1());
@@ -1342,7 +1374,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLightweight.g:616:3: this_Knowledge_2= ruleKnowledge
+                    // InternalLightweight.g:632:3: this_Knowledge_2= ruleKnowledge
                     {
 
                     			newCompositeNode(grammarAccess.getAuthenticatorAccess().getKnowledgeParserRuleCall_2());
@@ -1382,7 +1414,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePossession"
-    // InternalLightweight.g:628:1: entryRulePossession returns [EObject current=null] : iv_rulePossession= rulePossession EOF ;
+    // InternalLightweight.g:644:1: entryRulePossession returns [EObject current=null] : iv_rulePossession= rulePossession EOF ;
     public final EObject entryRulePossession() throws RecognitionException {
         EObject current = null;
 
@@ -1390,8 +1422,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:628:51: (iv_rulePossession= rulePossession EOF )
-            // InternalLightweight.g:629:2: iv_rulePossession= rulePossession EOF
+            // InternalLightweight.g:644:51: (iv_rulePossession= rulePossession EOF )
+            // InternalLightweight.g:645:2: iv_rulePossession= rulePossession EOF
             {
              newCompositeNode(grammarAccess.getPossessionRule()); 
             pushFollow(FOLLOW_1);
@@ -1418,11 +1450,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePossession"
-    // InternalLightweight.g:635:1: rulePossession returns [EObject current=null] : (otherlv_0= 'possession' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= rulePVALUE ) ) otherlv_10= '}' ) ;
+    // InternalLightweight.g:651:1: rulePossession returns [EObject current=null] : ( ( (lv_type_0_0= 'Possession' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= rulePVALUE ) ) otherlv_10= '}' ) ;
     public final EObject rulePossession() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token lv_type_0_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
@@ -1440,16 +1472,34 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:641:2: ( (otherlv_0= 'possession' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= rulePVALUE ) ) otherlv_10= '}' ) )
-            // InternalLightweight.g:642:2: (otherlv_0= 'possession' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= rulePVALUE ) ) otherlv_10= '}' )
+            // InternalLightweight.g:657:2: ( ( ( (lv_type_0_0= 'Possession' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= rulePVALUE ) ) otherlv_10= '}' ) )
+            // InternalLightweight.g:658:2: ( ( (lv_type_0_0= 'Possession' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= rulePVALUE ) ) otherlv_10= '}' )
             {
-            // InternalLightweight.g:642:2: (otherlv_0= 'possession' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= rulePVALUE ) ) otherlv_10= '}' )
-            // InternalLightweight.g:643:3: otherlv_0= 'possession' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= rulePVALUE ) ) otherlv_10= '}'
+            // InternalLightweight.g:658:2: ( ( (lv_type_0_0= 'Possession' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= rulePVALUE ) ) otherlv_10= '}' )
+            // InternalLightweight.g:659:3: ( (lv_type_0_0= 'Possession' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= rulePVALUE ) ) otherlv_10= '}'
             {
-            otherlv_0=(Token)match(input,29,FOLLOW_3); 
+            // InternalLightweight.g:659:3: ( (lv_type_0_0= 'Possession' ) )
+            // InternalLightweight.g:660:4: (lv_type_0_0= 'Possession' )
+            {
+            // InternalLightweight.g:660:4: (lv_type_0_0= 'Possession' )
+            // InternalLightweight.g:661:5: lv_type_0_0= 'Possession'
+            {
+            lv_type_0_0=(Token)match(input,29,FOLLOW_3); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getPossessionAccess().getPossessionKeyword_0());
-            		
+            					newLeafNode(lv_type_0_0, grammarAccess.getPossessionAccess().getTypePossessionKeyword_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getPossessionRule());
+            					}
+            					setWithLastConsumed(current, "type", lv_type_0_0, "Possession");
+            				
+
+            }
+
+
+            }
+
             otherlv_1=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPossessionAccess().getColonKeyword_1());
@@ -1466,11 +1516,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getPossessionAccess().getColonKeyword_4());
             		
-            // InternalLightweight.g:663:3: ( (lv_name_5_0= ruleEString ) )
-            // InternalLightweight.g:664:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:689:3: ( (lv_name_5_0= ruleEString ) )
+            // InternalLightweight.g:690:4: (lv_name_5_0= ruleEString )
             {
-            // InternalLightweight.g:664:4: (lv_name_5_0= ruleEString )
-            // InternalLightweight.g:665:5: lv_name_5_0= ruleEString
+            // InternalLightweight.g:690:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:691:5: lv_name_5_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getPossessionAccess().getNameEStringParserRuleCall_5_0());
@@ -1509,11 +1559,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getPossessionAccess().getColonKeyword_8());
             		
-            // InternalLightweight.g:694:3: ( (lv_value_9_0= rulePVALUE ) )
-            // InternalLightweight.g:695:4: (lv_value_9_0= rulePVALUE )
+            // InternalLightweight.g:720:3: ( (lv_value_9_0= rulePVALUE ) )
+            // InternalLightweight.g:721:4: (lv_value_9_0= rulePVALUE )
             {
-            // InternalLightweight.g:695:4: (lv_value_9_0= rulePVALUE )
-            // InternalLightweight.g:696:5: lv_value_9_0= rulePVALUE
+            // InternalLightweight.g:721:4: (lv_value_9_0= rulePVALUE )
+            // InternalLightweight.g:722:5: lv_value_9_0= rulePVALUE
             {
 
             					newCompositeNode(grammarAccess.getPossessionAccess().getValuePVALUEEnumRuleCall_9_0());
@@ -1567,7 +1617,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleKnowledge"
-    // InternalLightweight.g:721:1: entryRuleKnowledge returns [EObject current=null] : iv_ruleKnowledge= ruleKnowledge EOF ;
+    // InternalLightweight.g:747:1: entryRuleKnowledge returns [EObject current=null] : iv_ruleKnowledge= ruleKnowledge EOF ;
     public final EObject entryRuleKnowledge() throws RecognitionException {
         EObject current = null;
 
@@ -1575,8 +1625,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:721:50: (iv_ruleKnowledge= ruleKnowledge EOF )
-            // InternalLightweight.g:722:2: iv_ruleKnowledge= ruleKnowledge EOF
+            // InternalLightweight.g:747:50: (iv_ruleKnowledge= ruleKnowledge EOF )
+            // InternalLightweight.g:748:2: iv_ruleKnowledge= ruleKnowledge EOF
             {
              newCompositeNode(grammarAccess.getKnowledgeRule()); 
             pushFollow(FOLLOW_1);
@@ -1603,11 +1653,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKnowledge"
-    // InternalLightweight.g:728:1: ruleKnowledge returns [EObject current=null] : (otherlv_0= 'knowledge' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleKVALUE ) ) otherlv_10= ',' otherlv_11= 'limitedAttempts' otherlv_12= ':' ( (lv_limitedAttempts_13_0= ruleEBoolean ) ) otherlv_14= ',' otherlv_15= 'autofillable' otherlv_16= ':' ( (lv_autofilled_17_0= ruleEBoolean ) ) otherlv_18= '}' ) ;
+    // InternalLightweight.g:754:1: ruleKnowledge returns [EObject current=null] : ( ( (lv_type_0_0= 'Knowledge' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleKVALUE ) ) otherlv_10= ',' otherlv_11= 'limitedAttempts' otherlv_12= ':' ( (lv_limitedAttempts_13_0= ruleEBoolean ) ) otherlv_14= ',' otherlv_15= 'autofillable' otherlv_16= ':' ( (lv_autofilled_17_0= ruleEBoolean ) ) otherlv_18= '}' ) ;
     public final EObject ruleKnowledge() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token lv_type_0_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
@@ -1635,16 +1685,34 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:734:2: ( (otherlv_0= 'knowledge' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleKVALUE ) ) otherlv_10= ',' otherlv_11= 'limitedAttempts' otherlv_12= ':' ( (lv_limitedAttempts_13_0= ruleEBoolean ) ) otherlv_14= ',' otherlv_15= 'autofillable' otherlv_16= ':' ( (lv_autofilled_17_0= ruleEBoolean ) ) otherlv_18= '}' ) )
-            // InternalLightweight.g:735:2: (otherlv_0= 'knowledge' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleKVALUE ) ) otherlv_10= ',' otherlv_11= 'limitedAttempts' otherlv_12= ':' ( (lv_limitedAttempts_13_0= ruleEBoolean ) ) otherlv_14= ',' otherlv_15= 'autofillable' otherlv_16= ':' ( (lv_autofilled_17_0= ruleEBoolean ) ) otherlv_18= '}' )
+            // InternalLightweight.g:760:2: ( ( ( (lv_type_0_0= 'Knowledge' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleKVALUE ) ) otherlv_10= ',' otherlv_11= 'limitedAttempts' otherlv_12= ':' ( (lv_limitedAttempts_13_0= ruleEBoolean ) ) otherlv_14= ',' otherlv_15= 'autofillable' otherlv_16= ':' ( (lv_autofilled_17_0= ruleEBoolean ) ) otherlv_18= '}' ) )
+            // InternalLightweight.g:761:2: ( ( (lv_type_0_0= 'Knowledge' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleKVALUE ) ) otherlv_10= ',' otherlv_11= 'limitedAttempts' otherlv_12= ':' ( (lv_limitedAttempts_13_0= ruleEBoolean ) ) otherlv_14= ',' otherlv_15= 'autofillable' otherlv_16= ':' ( (lv_autofilled_17_0= ruleEBoolean ) ) otherlv_18= '}' )
             {
-            // InternalLightweight.g:735:2: (otherlv_0= 'knowledge' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleKVALUE ) ) otherlv_10= ',' otherlv_11= 'limitedAttempts' otherlv_12= ':' ( (lv_limitedAttempts_13_0= ruleEBoolean ) ) otherlv_14= ',' otherlv_15= 'autofillable' otherlv_16= ':' ( (lv_autofilled_17_0= ruleEBoolean ) ) otherlv_18= '}' )
-            // InternalLightweight.g:736:3: otherlv_0= 'knowledge' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleKVALUE ) ) otherlv_10= ',' otherlv_11= 'limitedAttempts' otherlv_12= ':' ( (lv_limitedAttempts_13_0= ruleEBoolean ) ) otherlv_14= ',' otherlv_15= 'autofillable' otherlv_16= ':' ( (lv_autofilled_17_0= ruleEBoolean ) ) otherlv_18= '}'
+            // InternalLightweight.g:761:2: ( ( (lv_type_0_0= 'Knowledge' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleKVALUE ) ) otherlv_10= ',' otherlv_11= 'limitedAttempts' otherlv_12= ':' ( (lv_limitedAttempts_13_0= ruleEBoolean ) ) otherlv_14= ',' otherlv_15= 'autofillable' otherlv_16= ':' ( (lv_autofilled_17_0= ruleEBoolean ) ) otherlv_18= '}' )
+            // InternalLightweight.g:762:3: ( (lv_type_0_0= 'Knowledge' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleKVALUE ) ) otherlv_10= ',' otherlv_11= 'limitedAttempts' otherlv_12= ':' ( (lv_limitedAttempts_13_0= ruleEBoolean ) ) otherlv_14= ',' otherlv_15= 'autofillable' otherlv_16= ':' ( (lv_autofilled_17_0= ruleEBoolean ) ) otherlv_18= '}'
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_3); 
+            // InternalLightweight.g:762:3: ( (lv_type_0_0= 'Knowledge' ) )
+            // InternalLightweight.g:763:4: (lv_type_0_0= 'Knowledge' )
+            {
+            // InternalLightweight.g:763:4: (lv_type_0_0= 'Knowledge' )
+            // InternalLightweight.g:764:5: lv_type_0_0= 'Knowledge'
+            {
+            lv_type_0_0=(Token)match(input,31,FOLLOW_3); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getKnowledgeAccess().getKnowledgeKeyword_0());
-            		
+            					newLeafNode(lv_type_0_0, grammarAccess.getKnowledgeAccess().getTypeKnowledgeKeyword_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getKnowledgeRule());
+            					}
+            					setWithLastConsumed(current, "type", lv_type_0_0, "Knowledge");
+            				
+
+            }
+
+
+            }
+
             otherlv_1=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_1, grammarAccess.getKnowledgeAccess().getColonKeyword_1());
@@ -1661,11 +1729,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getKnowledgeAccess().getColonKeyword_4());
             		
-            // InternalLightweight.g:756:3: ( (lv_name_5_0= ruleEString ) )
-            // InternalLightweight.g:757:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:792:3: ( (lv_name_5_0= ruleEString ) )
+            // InternalLightweight.g:793:4: (lv_name_5_0= ruleEString )
             {
-            // InternalLightweight.g:757:4: (lv_name_5_0= ruleEString )
-            // InternalLightweight.g:758:5: lv_name_5_0= ruleEString
+            // InternalLightweight.g:793:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:794:5: lv_name_5_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getKnowledgeAccess().getNameEStringParserRuleCall_5_0());
@@ -1704,11 +1772,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getKnowledgeAccess().getColonKeyword_8());
             		
-            // InternalLightweight.g:787:3: ( (lv_value_9_0= ruleKVALUE ) )
-            // InternalLightweight.g:788:4: (lv_value_9_0= ruleKVALUE )
+            // InternalLightweight.g:823:3: ( (lv_value_9_0= ruleKVALUE ) )
+            // InternalLightweight.g:824:4: (lv_value_9_0= ruleKVALUE )
             {
-            // InternalLightweight.g:788:4: (lv_value_9_0= ruleKVALUE )
-            // InternalLightweight.g:789:5: lv_value_9_0= ruleKVALUE
+            // InternalLightweight.g:824:4: (lv_value_9_0= ruleKVALUE )
+            // InternalLightweight.g:825:5: lv_value_9_0= ruleKVALUE
             {
 
             					newCompositeNode(grammarAccess.getKnowledgeAccess().getValueKVALUEEnumRuleCall_9_0());
@@ -1747,11 +1815,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_12, grammarAccess.getKnowledgeAccess().getColonKeyword_12());
             		
-            // InternalLightweight.g:818:3: ( (lv_limitedAttempts_13_0= ruleEBoolean ) )
-            // InternalLightweight.g:819:4: (lv_limitedAttempts_13_0= ruleEBoolean )
+            // InternalLightweight.g:854:3: ( (lv_limitedAttempts_13_0= ruleEBoolean ) )
+            // InternalLightweight.g:855:4: (lv_limitedAttempts_13_0= ruleEBoolean )
             {
-            // InternalLightweight.g:819:4: (lv_limitedAttempts_13_0= ruleEBoolean )
-            // InternalLightweight.g:820:5: lv_limitedAttempts_13_0= ruleEBoolean
+            // InternalLightweight.g:855:4: (lv_limitedAttempts_13_0= ruleEBoolean )
+            // InternalLightweight.g:856:5: lv_limitedAttempts_13_0= ruleEBoolean
             {
 
             					newCompositeNode(grammarAccess.getKnowledgeAccess().getLimitedAttemptsEBooleanParserRuleCall_13_0());
@@ -1790,11 +1858,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_16, grammarAccess.getKnowledgeAccess().getColonKeyword_16());
             		
-            // InternalLightweight.g:849:3: ( (lv_autofilled_17_0= ruleEBoolean ) )
-            // InternalLightweight.g:850:4: (lv_autofilled_17_0= ruleEBoolean )
+            // InternalLightweight.g:885:3: ( (lv_autofilled_17_0= ruleEBoolean ) )
+            // InternalLightweight.g:886:4: (lv_autofilled_17_0= ruleEBoolean )
             {
-            // InternalLightweight.g:850:4: (lv_autofilled_17_0= ruleEBoolean )
-            // InternalLightweight.g:851:5: lv_autofilled_17_0= ruleEBoolean
+            // InternalLightweight.g:886:4: (lv_autofilled_17_0= ruleEBoolean )
+            // InternalLightweight.g:887:5: lv_autofilled_17_0= ruleEBoolean
             {
 
             					newCompositeNode(grammarAccess.getKnowledgeAccess().getAutofilledEBooleanParserRuleCall_17_0());
@@ -1848,7 +1916,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBiometrics"
-    // InternalLightweight.g:876:1: entryRuleBiometrics returns [EObject current=null] : iv_ruleBiometrics= ruleBiometrics EOF ;
+    // InternalLightweight.g:912:1: entryRuleBiometrics returns [EObject current=null] : iv_ruleBiometrics= ruleBiometrics EOF ;
     public final EObject entryRuleBiometrics() throws RecognitionException {
         EObject current = null;
 
@@ -1856,8 +1924,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:876:51: (iv_ruleBiometrics= ruleBiometrics EOF )
-            // InternalLightweight.g:877:2: iv_ruleBiometrics= ruleBiometrics EOF
+            // InternalLightweight.g:912:51: (iv_ruleBiometrics= ruleBiometrics EOF )
+            // InternalLightweight.g:913:2: iv_ruleBiometrics= ruleBiometrics EOF
             {
              newCompositeNode(grammarAccess.getBiometricsRule()); 
             pushFollow(FOLLOW_1);
@@ -1884,11 +1952,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBiometrics"
-    // InternalLightweight.g:883:1: ruleBiometrics returns [EObject current=null] : (otherlv_0= 'biometrics' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleBVALUE ) ) otherlv_10= '}' ) ;
+    // InternalLightweight.g:919:1: ruleBiometrics returns [EObject current=null] : ( ( (lv_type_0_0= 'Biometrics' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleBVALUE ) ) otherlv_10= '}' ) ;
     public final EObject ruleBiometrics() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token lv_type_0_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
@@ -1906,16 +1974,34 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:889:2: ( (otherlv_0= 'biometrics' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleBVALUE ) ) otherlv_10= '}' ) )
-            // InternalLightweight.g:890:2: (otherlv_0= 'biometrics' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleBVALUE ) ) otherlv_10= '}' )
+            // InternalLightweight.g:925:2: ( ( ( (lv_type_0_0= 'Biometrics' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleBVALUE ) ) otherlv_10= '}' ) )
+            // InternalLightweight.g:926:2: ( ( (lv_type_0_0= 'Biometrics' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleBVALUE ) ) otherlv_10= '}' )
             {
-            // InternalLightweight.g:890:2: (otherlv_0= 'biometrics' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleBVALUE ) ) otherlv_10= '}' )
-            // InternalLightweight.g:891:3: otherlv_0= 'biometrics' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleBVALUE ) ) otherlv_10= '}'
+            // InternalLightweight.g:926:2: ( ( (lv_type_0_0= 'Biometrics' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleBVALUE ) ) otherlv_10= '}' )
+            // InternalLightweight.g:927:3: ( (lv_type_0_0= 'Biometrics' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'value' otherlv_8= ':' ( (lv_value_9_0= ruleBVALUE ) ) otherlv_10= '}'
             {
-            otherlv_0=(Token)match(input,34,FOLLOW_3); 
+            // InternalLightweight.g:927:3: ( (lv_type_0_0= 'Biometrics' ) )
+            // InternalLightweight.g:928:4: (lv_type_0_0= 'Biometrics' )
+            {
+            // InternalLightweight.g:928:4: (lv_type_0_0= 'Biometrics' )
+            // InternalLightweight.g:929:5: lv_type_0_0= 'Biometrics'
+            {
+            lv_type_0_0=(Token)match(input,34,FOLLOW_3); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getBiometricsAccess().getBiometricsKeyword_0());
-            		
+            					newLeafNode(lv_type_0_0, grammarAccess.getBiometricsAccess().getTypeBiometricsKeyword_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getBiometricsRule());
+            					}
+            					setWithLastConsumed(current, "type", lv_type_0_0, "Biometrics");
+            				
+
+            }
+
+
+            }
+
             otherlv_1=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_1, grammarAccess.getBiometricsAccess().getColonKeyword_1());
@@ -1932,11 +2018,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getBiometricsAccess().getColonKeyword_4());
             		
-            // InternalLightweight.g:911:3: ( (lv_name_5_0= ruleEString ) )
-            // InternalLightweight.g:912:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:957:3: ( (lv_name_5_0= ruleEString ) )
+            // InternalLightweight.g:958:4: (lv_name_5_0= ruleEString )
             {
-            // InternalLightweight.g:912:4: (lv_name_5_0= ruleEString )
-            // InternalLightweight.g:913:5: lv_name_5_0= ruleEString
+            // InternalLightweight.g:958:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:959:5: lv_name_5_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getBiometricsAccess().getNameEStringParserRuleCall_5_0());
@@ -1975,11 +2061,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getBiometricsAccess().getColonKeyword_8());
             		
-            // InternalLightweight.g:942:3: ( (lv_value_9_0= ruleBVALUE ) )
-            // InternalLightweight.g:943:4: (lv_value_9_0= ruleBVALUE )
+            // InternalLightweight.g:988:3: ( (lv_value_9_0= ruleBVALUE ) )
+            // InternalLightweight.g:989:4: (lv_value_9_0= ruleBVALUE )
             {
-            // InternalLightweight.g:943:4: (lv_value_9_0= ruleBVALUE )
-            // InternalLightweight.g:944:5: lv_value_9_0= ruleBVALUE
+            // InternalLightweight.g:989:4: (lv_value_9_0= ruleBVALUE )
+            // InternalLightweight.g:990:5: lv_value_9_0= ruleBVALUE
             {
 
             					newCompositeNode(grammarAccess.getBiometricsAccess().getValueBVALUEEnumRuleCall_9_0());
@@ -2033,7 +2119,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePhase"
-    // InternalLightweight.g:969:1: entryRulePhase returns [EObject current=null] : iv_rulePhase= rulePhase EOF ;
+    // InternalLightweight.g:1015:1: entryRulePhase returns [EObject current=null] : iv_rulePhase= rulePhase EOF ;
     public final EObject entryRulePhase() throws RecognitionException {
         EObject current = null;
 
@@ -2041,8 +2127,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:969:46: (iv_rulePhase= rulePhase EOF )
-            // InternalLightweight.g:970:2: iv_rulePhase= rulePhase EOF
+            // InternalLightweight.g:1015:46: (iv_rulePhase= rulePhase EOF )
+            // InternalLightweight.g:1016:2: iv_rulePhase= rulePhase EOF
             {
              newCompositeNode(grammarAccess.getPhaseRule()); 
             pushFollow(FOLLOW_1);
@@ -2069,7 +2155,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePhase"
-    // InternalLightweight.g:976:1: rulePhase returns [EObject current=null] : (this_Registration_0= ruleRegistration | this_Recovery_1= ruleRecovery | this_Login_2= ruleLogin | this_Reset_3= ruleReset ) ;
+    // InternalLightweight.g:1022:1: rulePhase returns [EObject current=null] : (this_Registration_0= ruleRegistration | this_Recovery_1= ruleRecovery | this_Login_2= ruleLogin | this_Reset_3= ruleReset ) ;
     public final EObject rulePhase() throws RecognitionException {
         EObject current = null;
 
@@ -2086,10 +2172,10 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:982:2: ( (this_Registration_0= ruleRegistration | this_Recovery_1= ruleRecovery | this_Login_2= ruleLogin | this_Reset_3= ruleReset ) )
-            // InternalLightweight.g:983:2: (this_Registration_0= ruleRegistration | this_Recovery_1= ruleRecovery | this_Login_2= ruleLogin | this_Reset_3= ruleReset )
+            // InternalLightweight.g:1028:2: ( (this_Registration_0= ruleRegistration | this_Recovery_1= ruleRecovery | this_Login_2= ruleLogin | this_Reset_3= ruleReset ) )
+            // InternalLightweight.g:1029:2: (this_Registration_0= ruleRegistration | this_Recovery_1= ruleRecovery | this_Login_2= ruleLogin | this_Reset_3= ruleReset )
             {
-            // InternalLightweight.g:983:2: (this_Registration_0= ruleRegistration | this_Recovery_1= ruleRecovery | this_Login_2= ruleLogin | this_Reset_3= ruleReset )
+            // InternalLightweight.g:1029:2: (this_Registration_0= ruleRegistration | this_Recovery_1= ruleRecovery | this_Login_2= ruleLogin | this_Reset_3= ruleReset )
             int alt8=4;
             switch ( input.LA(1) ) {
             case 35:
@@ -2107,7 +2193,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                 alt8=3;
                 }
                 break;
-            case 48:
+            case 49:
                 {
                 alt8=4;
                 }
@@ -2121,7 +2207,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             switch (alt8) {
                 case 1 :
-                    // InternalLightweight.g:984:3: this_Registration_0= ruleRegistration
+                    // InternalLightweight.g:1030:3: this_Registration_0= ruleRegistration
                     {
 
                     			newCompositeNode(grammarAccess.getPhaseAccess().getRegistrationParserRuleCall_0());
@@ -2139,7 +2225,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:993:3: this_Recovery_1= ruleRecovery
+                    // InternalLightweight.g:1039:3: this_Recovery_1= ruleRecovery
                     {
 
                     			newCompositeNode(grammarAccess.getPhaseAccess().getRecoveryParserRuleCall_1());
@@ -2157,7 +2243,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLightweight.g:1002:3: this_Login_2= ruleLogin
+                    // InternalLightweight.g:1048:3: this_Login_2= ruleLogin
                     {
 
                     			newCompositeNode(grammarAccess.getPhaseAccess().getLoginParserRuleCall_2());
@@ -2175,7 +2261,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalLightweight.g:1011:3: this_Reset_3= ruleReset
+                    // InternalLightweight.g:1057:3: this_Reset_3= ruleReset
                     {
 
                     			newCompositeNode(grammarAccess.getPhaseAccess().getResetParserRuleCall_3());
@@ -2215,7 +2301,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalLightweight.g:1023:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalLightweight.g:1069:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -2223,8 +2309,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:1023:47: (iv_ruleEString= ruleEString EOF )
-            // InternalLightweight.g:1024:2: iv_ruleEString= ruleEString EOF
+            // InternalLightweight.g:1069:47: (iv_ruleEString= ruleEString EOF )
+            // InternalLightweight.g:1070:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -2251,7 +2337,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalLightweight.g:1030:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalLightweight.g:1076:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2262,10 +2348,10 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:1036:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalLightweight.g:1037:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalLightweight.g:1082:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalLightweight.g:1083:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalLightweight.g:1037:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalLightweight.g:1083:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2283,7 +2369,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalLightweight.g:1038:3: this_STRING_0= RULE_STRING
+                    // InternalLightweight.g:1084:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -2296,7 +2382,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:1046:3: this_ID_1= RULE_ID
+                    // InternalLightweight.g:1092:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -2331,7 +2417,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRegistration"
-    // InternalLightweight.g:1057:1: entryRuleRegistration returns [EObject current=null] : iv_ruleRegistration= ruleRegistration EOF ;
+    // InternalLightweight.g:1103:1: entryRuleRegistration returns [EObject current=null] : iv_ruleRegistration= ruleRegistration EOF ;
     public final EObject entryRuleRegistration() throws RecognitionException {
         EObject current = null;
 
@@ -2339,8 +2425,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:1057:53: (iv_ruleRegistration= ruleRegistration EOF )
-            // InternalLightweight.g:1058:2: iv_ruleRegistration= ruleRegistration EOF
+            // InternalLightweight.g:1103:53: (iv_ruleRegistration= ruleRegistration EOF )
+            // InternalLightweight.g:1104:2: iv_ruleRegistration= ruleRegistration EOF
             {
              newCompositeNode(grammarAccess.getRegistrationRule()); 
             pushFollow(FOLLOW_1);
@@ -2367,11 +2453,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRegistration"
-    // InternalLightweight.g:1064:1: ruleRegistration returns [EObject current=null] : (otherlv_0= 'Registration' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'credentials' otherlv_8= ':' otherlv_9= '[' ( (lv_credentials_10_0= ruleCredential ) ) (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )* otherlv_13= ']' otherlv_14= '}' ) ;
+    // InternalLightweight.g:1110:1: ruleRegistration returns [EObject current=null] : ( ( (lv_type_0_0= 'Registration' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'credentials' otherlv_8= ':' otherlv_9= '[' ( (lv_credentials_10_0= ruleCredential ) ) (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )* otherlv_13= ']' otherlv_14= '}' ) ;
     public final EObject ruleRegistration() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token lv_type_0_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
@@ -2394,16 +2480,34 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:1070:2: ( (otherlv_0= 'Registration' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'credentials' otherlv_8= ':' otherlv_9= '[' ( (lv_credentials_10_0= ruleCredential ) ) (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )* otherlv_13= ']' otherlv_14= '}' ) )
-            // InternalLightweight.g:1071:2: (otherlv_0= 'Registration' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'credentials' otherlv_8= ':' otherlv_9= '[' ( (lv_credentials_10_0= ruleCredential ) ) (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )* otherlv_13= ']' otherlv_14= '}' )
+            // InternalLightweight.g:1116:2: ( ( ( (lv_type_0_0= 'Registration' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'credentials' otherlv_8= ':' otherlv_9= '[' ( (lv_credentials_10_0= ruleCredential ) ) (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )* otherlv_13= ']' otherlv_14= '}' ) )
+            // InternalLightweight.g:1117:2: ( ( (lv_type_0_0= 'Registration' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'credentials' otherlv_8= ':' otherlv_9= '[' ( (lv_credentials_10_0= ruleCredential ) ) (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )* otherlv_13= ']' otherlv_14= '}' )
             {
-            // InternalLightweight.g:1071:2: (otherlv_0= 'Registration' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'credentials' otherlv_8= ':' otherlv_9= '[' ( (lv_credentials_10_0= ruleCredential ) ) (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )* otherlv_13= ']' otherlv_14= '}' )
-            // InternalLightweight.g:1072:3: otherlv_0= 'Registration' otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'credentials' otherlv_8= ':' otherlv_9= '[' ( (lv_credentials_10_0= ruleCredential ) ) (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )* otherlv_13= ']' otherlv_14= '}'
+            // InternalLightweight.g:1117:2: ( ( (lv_type_0_0= 'Registration' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'credentials' otherlv_8= ':' otherlv_9= '[' ( (lv_credentials_10_0= ruleCredential ) ) (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )* otherlv_13= ']' otherlv_14= '}' )
+            // InternalLightweight.g:1118:3: ( (lv_type_0_0= 'Registration' ) ) otherlv_1= ':' otherlv_2= '{' otherlv_3= 'name' otherlv_4= ':' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ',' otherlv_7= 'credentials' otherlv_8= ':' otherlv_9= '[' ( (lv_credentials_10_0= ruleCredential ) ) (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )* otherlv_13= ']' otherlv_14= '}'
             {
-            otherlv_0=(Token)match(input,35,FOLLOW_3); 
+            // InternalLightweight.g:1118:3: ( (lv_type_0_0= 'Registration' ) )
+            // InternalLightweight.g:1119:4: (lv_type_0_0= 'Registration' )
+            {
+            // InternalLightweight.g:1119:4: (lv_type_0_0= 'Registration' )
+            // InternalLightweight.g:1120:5: lv_type_0_0= 'Registration'
+            {
+            lv_type_0_0=(Token)match(input,35,FOLLOW_3); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getRegistrationAccess().getRegistrationKeyword_0());
-            		
+            					newLeafNode(lv_type_0_0, grammarAccess.getRegistrationAccess().getTypeRegistrationKeyword_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getRegistrationRule());
+            					}
+            					setWithLastConsumed(current, "type", lv_type_0_0, "Registration");
+            				
+
+            }
+
+
+            }
+
             otherlv_1=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRegistrationAccess().getColonKeyword_1());
@@ -2420,11 +2524,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getRegistrationAccess().getColonKeyword_4());
             		
-            // InternalLightweight.g:1092:3: ( (lv_name_5_0= ruleEString ) )
-            // InternalLightweight.g:1093:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:1148:3: ( (lv_name_5_0= ruleEString ) )
+            // InternalLightweight.g:1149:4: (lv_name_5_0= ruleEString )
             {
-            // InternalLightweight.g:1093:4: (lv_name_5_0= ruleEString )
-            // InternalLightweight.g:1094:5: lv_name_5_0= ruleEString
+            // InternalLightweight.g:1149:4: (lv_name_5_0= ruleEString )
+            // InternalLightweight.g:1150:5: lv_name_5_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRegistrationAccess().getNameEStringParserRuleCall_5_0());
@@ -2467,11 +2571,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getRegistrationAccess().getLeftSquareBracketKeyword_9());
             		
-            // InternalLightweight.g:1127:3: ( (lv_credentials_10_0= ruleCredential ) )
-            // InternalLightweight.g:1128:4: (lv_credentials_10_0= ruleCredential )
+            // InternalLightweight.g:1183:3: ( (lv_credentials_10_0= ruleCredential ) )
+            // InternalLightweight.g:1184:4: (lv_credentials_10_0= ruleCredential )
             {
-            // InternalLightweight.g:1128:4: (lv_credentials_10_0= ruleCredential )
-            // InternalLightweight.g:1129:5: lv_credentials_10_0= ruleCredential
+            // InternalLightweight.g:1184:4: (lv_credentials_10_0= ruleCredential )
+            // InternalLightweight.g:1185:5: lv_credentials_10_0= ruleCredential
             {
 
             					newCompositeNode(grammarAccess.getRegistrationAccess().getCredentialsCredentialParserRuleCall_10_0());
@@ -2498,7 +2602,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLightweight.g:1146:3: (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )*
+            // InternalLightweight.g:1202:3: (otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -2511,17 +2615,17 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalLightweight.g:1147:4: otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) )
+            	    // InternalLightweight.g:1203:4: otherlv_11= ',' ( (lv_credentials_12_0= ruleCredential ) )
             	    {
             	    otherlv_11=(Token)match(input,16,FOLLOW_4); 
 
             	    				newLeafNode(otherlv_11, grammarAccess.getRegistrationAccess().getCommaKeyword_11_0());
             	    			
-            	    // InternalLightweight.g:1151:4: ( (lv_credentials_12_0= ruleCredential ) )
-            	    // InternalLightweight.g:1152:5: (lv_credentials_12_0= ruleCredential )
+            	    // InternalLightweight.g:1207:4: ( (lv_credentials_12_0= ruleCredential ) )
+            	    // InternalLightweight.g:1208:5: (lv_credentials_12_0= ruleCredential )
             	    {
-            	    // InternalLightweight.g:1152:5: (lv_credentials_12_0= ruleCredential )
-            	    // InternalLightweight.g:1153:6: lv_credentials_12_0= ruleCredential
+            	    // InternalLightweight.g:1208:5: (lv_credentials_12_0= ruleCredential )
+            	    // InternalLightweight.g:1209:6: lv_credentials_12_0= ruleCredential
             	    {
 
             	    						newCompositeNode(grammarAccess.getRegistrationAccess().getCredentialsCredentialParserRuleCall_11_1_0());
@@ -2588,7 +2692,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCredential"
-    // InternalLightweight.g:1183:1: entryRuleCredential returns [EObject current=null] : iv_ruleCredential= ruleCredential EOF ;
+    // InternalLightweight.g:1239:1: entryRuleCredential returns [EObject current=null] : iv_ruleCredential= ruleCredential EOF ;
     public final EObject entryRuleCredential() throws RecognitionException {
         EObject current = null;
 
@@ -2596,8 +2700,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:1183:51: (iv_ruleCredential= ruleCredential EOF )
-            // InternalLightweight.g:1184:2: iv_ruleCredential= ruleCredential EOF
+            // InternalLightweight.g:1239:51: (iv_ruleCredential= ruleCredential EOF )
+            // InternalLightweight.g:1240:2: iv_ruleCredential= ruleCredential EOF
             {
              newCompositeNode(grammarAccess.getCredentialRule()); 
             pushFollow(FOLLOW_1);
@@ -2624,7 +2728,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCredential"
-    // InternalLightweight.g:1190:1: ruleCredential returns [EObject current=null] : ( () otherlv_1= '{' otherlv_2= 'name' otherlv_3= ':' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ',' otherlv_6= 'provider' otherlv_7= ':' ( (lv_provider_8_0= rulePROVIDER ) ) otherlv_9= ',' otherlv_10= 'type' otherlv_11= ':' ( (lv_type_12_0= ruleCredTYPE ) ) otherlv_13= ',' (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )? otherlv_17= '}' ) ;
+    // InternalLightweight.g:1246:1: ruleCredential returns [EObject current=null] : ( () otherlv_1= '{' otherlv_2= 'name' otherlv_3= ':' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ',' otherlv_6= 'provider' otherlv_7= ':' ( (lv_provider_8_0= rulePROVIDER ) ) otherlv_9= ',' otherlv_10= 'type' otherlv_11= ':' ( (lv_type_12_0= ruleCredTYPE ) ) otherlv_13= ',' (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )? otherlv_17= '}' ) ;
     public final EObject ruleCredential() throws RecognitionException {
         EObject current = null;
 
@@ -2654,14 +2758,14 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:1196:2: ( ( () otherlv_1= '{' otherlv_2= 'name' otherlv_3= ':' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ',' otherlv_6= 'provider' otherlv_7= ':' ( (lv_provider_8_0= rulePROVIDER ) ) otherlv_9= ',' otherlv_10= 'type' otherlv_11= ':' ( (lv_type_12_0= ruleCredTYPE ) ) otherlv_13= ',' (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )? otherlv_17= '}' ) )
-            // InternalLightweight.g:1197:2: ( () otherlv_1= '{' otherlv_2= 'name' otherlv_3= ':' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ',' otherlv_6= 'provider' otherlv_7= ':' ( (lv_provider_8_0= rulePROVIDER ) ) otherlv_9= ',' otherlv_10= 'type' otherlv_11= ':' ( (lv_type_12_0= ruleCredTYPE ) ) otherlv_13= ',' (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )? otherlv_17= '}' )
+            // InternalLightweight.g:1252:2: ( ( () otherlv_1= '{' otherlv_2= 'name' otherlv_3= ':' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ',' otherlv_6= 'provider' otherlv_7= ':' ( (lv_provider_8_0= rulePROVIDER ) ) otherlv_9= ',' otherlv_10= 'type' otherlv_11= ':' ( (lv_type_12_0= ruleCredTYPE ) ) otherlv_13= ',' (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )? otherlv_17= '}' ) )
+            // InternalLightweight.g:1253:2: ( () otherlv_1= '{' otherlv_2= 'name' otherlv_3= ':' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ',' otherlv_6= 'provider' otherlv_7= ':' ( (lv_provider_8_0= rulePROVIDER ) ) otherlv_9= ',' otherlv_10= 'type' otherlv_11= ':' ( (lv_type_12_0= ruleCredTYPE ) ) otherlv_13= ',' (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )? otherlv_17= '}' )
             {
-            // InternalLightweight.g:1197:2: ( () otherlv_1= '{' otherlv_2= 'name' otherlv_3= ':' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ',' otherlv_6= 'provider' otherlv_7= ':' ( (lv_provider_8_0= rulePROVIDER ) ) otherlv_9= ',' otherlv_10= 'type' otherlv_11= ':' ( (lv_type_12_0= ruleCredTYPE ) ) otherlv_13= ',' (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )? otherlv_17= '}' )
-            // InternalLightweight.g:1198:3: () otherlv_1= '{' otherlv_2= 'name' otherlv_3= ':' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ',' otherlv_6= 'provider' otherlv_7= ':' ( (lv_provider_8_0= rulePROVIDER ) ) otherlv_9= ',' otherlv_10= 'type' otherlv_11= ':' ( (lv_type_12_0= ruleCredTYPE ) ) otherlv_13= ',' (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )? otherlv_17= '}'
+            // InternalLightweight.g:1253:2: ( () otherlv_1= '{' otherlv_2= 'name' otherlv_3= ':' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ',' otherlv_6= 'provider' otherlv_7= ':' ( (lv_provider_8_0= rulePROVIDER ) ) otherlv_9= ',' otherlv_10= 'type' otherlv_11= ':' ( (lv_type_12_0= ruleCredTYPE ) ) otherlv_13= ',' (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )? otherlv_17= '}' )
+            // InternalLightweight.g:1254:3: () otherlv_1= '{' otherlv_2= 'name' otherlv_3= ':' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ',' otherlv_6= 'provider' otherlv_7= ':' ( (lv_provider_8_0= rulePROVIDER ) ) otherlv_9= ',' otherlv_10= 'type' otherlv_11= ':' ( (lv_type_12_0= ruleCredTYPE ) ) otherlv_13= ',' (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )? otherlv_17= '}'
             {
-            // InternalLightweight.g:1198:3: ()
-            // InternalLightweight.g:1199:4: 
+            // InternalLightweight.g:1254:3: ()
+            // InternalLightweight.g:1255:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2683,11 +2787,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getCredentialAccess().getColonKeyword_3());
             		
-            // InternalLightweight.g:1217:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalLightweight.g:1218:4: (lv_name_4_0= ruleEString )
+            // InternalLightweight.g:1273:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalLightweight.g:1274:4: (lv_name_4_0= ruleEString )
             {
-            // InternalLightweight.g:1218:4: (lv_name_4_0= ruleEString )
-            // InternalLightweight.g:1219:5: lv_name_4_0= ruleEString
+            // InternalLightweight.g:1274:4: (lv_name_4_0= ruleEString )
+            // InternalLightweight.g:1275:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getCredentialAccess().getNameEStringParserRuleCall_4_0());
@@ -2726,11 +2830,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getCredentialAccess().getColonKeyword_7());
             		
-            // InternalLightweight.g:1248:3: ( (lv_provider_8_0= rulePROVIDER ) )
-            // InternalLightweight.g:1249:4: (lv_provider_8_0= rulePROVIDER )
+            // InternalLightweight.g:1304:3: ( (lv_provider_8_0= rulePROVIDER ) )
+            // InternalLightweight.g:1305:4: (lv_provider_8_0= rulePROVIDER )
             {
-            // InternalLightweight.g:1249:4: (lv_provider_8_0= rulePROVIDER )
-            // InternalLightweight.g:1250:5: lv_provider_8_0= rulePROVIDER
+            // InternalLightweight.g:1305:4: (lv_provider_8_0= rulePROVIDER )
+            // InternalLightweight.g:1306:5: lv_provider_8_0= rulePROVIDER
             {
 
             					newCompositeNode(grammarAccess.getCredentialAccess().getProviderPROVIDEREnumRuleCall_8_0());
@@ -2769,11 +2873,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getCredentialAccess().getColonKeyword_11());
             		
-            // InternalLightweight.g:1279:3: ( (lv_type_12_0= ruleCredTYPE ) )
-            // InternalLightweight.g:1280:4: (lv_type_12_0= ruleCredTYPE )
+            // InternalLightweight.g:1335:3: ( (lv_type_12_0= ruleCredTYPE ) )
+            // InternalLightweight.g:1336:4: (lv_type_12_0= ruleCredTYPE )
             {
-            // InternalLightweight.g:1280:4: (lv_type_12_0= ruleCredTYPE )
-            // InternalLightweight.g:1281:5: lv_type_12_0= ruleCredTYPE
+            // InternalLightweight.g:1336:4: (lv_type_12_0= ruleCredTYPE )
+            // InternalLightweight.g:1337:5: lv_type_12_0= ruleCredTYPE
             {
 
             					newCompositeNode(grammarAccess.getCredentialAccess().getTypeCredTYPEEnumRuleCall_12_0());
@@ -2804,7 +2908,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_13, grammarAccess.getCredentialAccess().getCommaKeyword_13());
             		
-            // InternalLightweight.g:1302:3: (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )?
+            // InternalLightweight.g:1358:3: (otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) ) )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -2813,7 +2917,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalLightweight.g:1303:4: otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) )
+                    // InternalLightweight.g:1359:4: otherlv_14= 'verification' otherlv_15= ':' ( (lv_verifmethod_16_0= ruleVerifMethod ) )
                     {
                     otherlv_14=(Token)match(input,39,FOLLOW_3); 
 
@@ -2823,11 +2927,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_15, grammarAccess.getCredentialAccess().getColonKeyword_14_1());
                     			
-                    // InternalLightweight.g:1311:4: ( (lv_verifmethod_16_0= ruleVerifMethod ) )
-                    // InternalLightweight.g:1312:5: (lv_verifmethod_16_0= ruleVerifMethod )
+                    // InternalLightweight.g:1367:4: ( (lv_verifmethod_16_0= ruleVerifMethod ) )
+                    // InternalLightweight.g:1368:5: (lv_verifmethod_16_0= ruleVerifMethod )
                     {
-                    // InternalLightweight.g:1312:5: (lv_verifmethod_16_0= ruleVerifMethod )
-                    // InternalLightweight.g:1313:6: lv_verifmethod_16_0= ruleVerifMethod
+                    // InternalLightweight.g:1368:5: (lv_verifmethod_16_0= ruleVerifMethod )
+                    // InternalLightweight.g:1369:6: lv_verifmethod_16_0= ruleVerifMethod
                     {
 
                     						newCompositeNode(grammarAccess.getCredentialAccess().getVerifmethodVerifMethodParserRuleCall_14_2_0());
@@ -2887,7 +2991,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVerifMethod"
-    // InternalLightweight.g:1339:1: entryRuleVerifMethod returns [EObject current=null] : iv_ruleVerifMethod= ruleVerifMethod EOF ;
+    // InternalLightweight.g:1395:1: entryRuleVerifMethod returns [EObject current=null] : iv_ruleVerifMethod= ruleVerifMethod EOF ;
     public final EObject entryRuleVerifMethod() throws RecognitionException {
         EObject current = null;
 
@@ -2895,8 +2999,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:1339:52: (iv_ruleVerifMethod= ruleVerifMethod EOF )
-            // InternalLightweight.g:1340:2: iv_ruleVerifMethod= ruleVerifMethod EOF
+            // InternalLightweight.g:1395:52: (iv_ruleVerifMethod= ruleVerifMethod EOF )
+            // InternalLightweight.g:1396:2: iv_ruleVerifMethod= ruleVerifMethod EOF
             {
              newCompositeNode(grammarAccess.getVerifMethodRule()); 
             pushFollow(FOLLOW_1);
@@ -2923,7 +3027,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVerifMethod"
-    // InternalLightweight.g:1346:1: ruleVerifMethod returns [EObject current=null] : ( () otherlv_1= '{' otherlv_2= 'validity' otherlv_3= ':' ( (lv_validity_4_0= ruleEBoolean ) ) otherlv_5= ',' otherlv_6= 'uniqueness' otherlv_7= ':' ( (lv_uniqueness_8_0= ruleEBoolean ) ) otherlv_9= ',' otherlv_10= 'bindings' otherlv_11= ':' ( (lv_bindings_12_0= ruleEBoolean ) ) otherlv_13= '}' ) ;
+    // InternalLightweight.g:1402:1: ruleVerifMethod returns [EObject current=null] : ( () otherlv_1= '{' otherlv_2= 'validity' otherlv_3= ':' ( (lv_validity_4_0= ruleEBoolean ) ) otherlv_5= ',' otherlv_6= 'uniqueness' otherlv_7= ':' ( (lv_uniqueness_8_0= ruleEBoolean ) ) otherlv_9= ',' otherlv_10= 'bindings' otherlv_11= ':' ( (lv_bindings_12_0= ruleEBoolean ) ) otherlv_13= '}' ) ;
     public final EObject ruleVerifMethod() throws RecognitionException {
         EObject current = null;
 
@@ -2948,14 +3052,14 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:1352:2: ( ( () otherlv_1= '{' otherlv_2= 'validity' otherlv_3= ':' ( (lv_validity_4_0= ruleEBoolean ) ) otherlv_5= ',' otherlv_6= 'uniqueness' otherlv_7= ':' ( (lv_uniqueness_8_0= ruleEBoolean ) ) otherlv_9= ',' otherlv_10= 'bindings' otherlv_11= ':' ( (lv_bindings_12_0= ruleEBoolean ) ) otherlv_13= '}' ) )
-            // InternalLightweight.g:1353:2: ( () otherlv_1= '{' otherlv_2= 'validity' otherlv_3= ':' ( (lv_validity_4_0= ruleEBoolean ) ) otherlv_5= ',' otherlv_6= 'uniqueness' otherlv_7= ':' ( (lv_uniqueness_8_0= ruleEBoolean ) ) otherlv_9= ',' otherlv_10= 'bindings' otherlv_11= ':' ( (lv_bindings_12_0= ruleEBoolean ) ) otherlv_13= '}' )
+            // InternalLightweight.g:1408:2: ( ( () otherlv_1= '{' otherlv_2= 'validity' otherlv_3= ':' ( (lv_validity_4_0= ruleEBoolean ) ) otherlv_5= ',' otherlv_6= 'uniqueness' otherlv_7= ':' ( (lv_uniqueness_8_0= ruleEBoolean ) ) otherlv_9= ',' otherlv_10= 'bindings' otherlv_11= ':' ( (lv_bindings_12_0= ruleEBoolean ) ) otherlv_13= '}' ) )
+            // InternalLightweight.g:1409:2: ( () otherlv_1= '{' otherlv_2= 'validity' otherlv_3= ':' ( (lv_validity_4_0= ruleEBoolean ) ) otherlv_5= ',' otherlv_6= 'uniqueness' otherlv_7= ':' ( (lv_uniqueness_8_0= ruleEBoolean ) ) otherlv_9= ',' otherlv_10= 'bindings' otherlv_11= ':' ( (lv_bindings_12_0= ruleEBoolean ) ) otherlv_13= '}' )
             {
-            // InternalLightweight.g:1353:2: ( () otherlv_1= '{' otherlv_2= 'validity' otherlv_3= ':' ( (lv_validity_4_0= ruleEBoolean ) ) otherlv_5= ',' otherlv_6= 'uniqueness' otherlv_7= ':' ( (lv_uniqueness_8_0= ruleEBoolean ) ) otherlv_9= ',' otherlv_10= 'bindings' otherlv_11= ':' ( (lv_bindings_12_0= ruleEBoolean ) ) otherlv_13= '}' )
-            // InternalLightweight.g:1354:3: () otherlv_1= '{' otherlv_2= 'validity' otherlv_3= ':' ( (lv_validity_4_0= ruleEBoolean ) ) otherlv_5= ',' otherlv_6= 'uniqueness' otherlv_7= ':' ( (lv_uniqueness_8_0= ruleEBoolean ) ) otherlv_9= ',' otherlv_10= 'bindings' otherlv_11= ':' ( (lv_bindings_12_0= ruleEBoolean ) ) otherlv_13= '}'
+            // InternalLightweight.g:1409:2: ( () otherlv_1= '{' otherlv_2= 'validity' otherlv_3= ':' ( (lv_validity_4_0= ruleEBoolean ) ) otherlv_5= ',' otherlv_6= 'uniqueness' otherlv_7= ':' ( (lv_uniqueness_8_0= ruleEBoolean ) ) otherlv_9= ',' otherlv_10= 'bindings' otherlv_11= ':' ( (lv_bindings_12_0= ruleEBoolean ) ) otherlv_13= '}' )
+            // InternalLightweight.g:1410:3: () otherlv_1= '{' otherlv_2= 'validity' otherlv_3= ':' ( (lv_validity_4_0= ruleEBoolean ) ) otherlv_5= ',' otherlv_6= 'uniqueness' otherlv_7= ':' ( (lv_uniqueness_8_0= ruleEBoolean ) ) otherlv_9= ',' otherlv_10= 'bindings' otherlv_11= ':' ( (lv_bindings_12_0= ruleEBoolean ) ) otherlv_13= '}'
             {
-            // InternalLightweight.g:1354:3: ()
-            // InternalLightweight.g:1355:4: 
+            // InternalLightweight.g:1410:3: ()
+            // InternalLightweight.g:1411:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2977,11 +3081,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getVerifMethodAccess().getColonKeyword_3());
             		
-            // InternalLightweight.g:1373:3: ( (lv_validity_4_0= ruleEBoolean ) )
-            // InternalLightweight.g:1374:4: (lv_validity_4_0= ruleEBoolean )
+            // InternalLightweight.g:1429:3: ( (lv_validity_4_0= ruleEBoolean ) )
+            // InternalLightweight.g:1430:4: (lv_validity_4_0= ruleEBoolean )
             {
-            // InternalLightweight.g:1374:4: (lv_validity_4_0= ruleEBoolean )
-            // InternalLightweight.g:1375:5: lv_validity_4_0= ruleEBoolean
+            // InternalLightweight.g:1430:4: (lv_validity_4_0= ruleEBoolean )
+            // InternalLightweight.g:1431:5: lv_validity_4_0= ruleEBoolean
             {
 
             					newCompositeNode(grammarAccess.getVerifMethodAccess().getValidityEBooleanParserRuleCall_4_0());
@@ -3020,11 +3124,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getVerifMethodAccess().getColonKeyword_7());
             		
-            // InternalLightweight.g:1404:3: ( (lv_uniqueness_8_0= ruleEBoolean ) )
-            // InternalLightweight.g:1405:4: (lv_uniqueness_8_0= ruleEBoolean )
+            // InternalLightweight.g:1460:3: ( (lv_uniqueness_8_0= ruleEBoolean ) )
+            // InternalLightweight.g:1461:4: (lv_uniqueness_8_0= ruleEBoolean )
             {
-            // InternalLightweight.g:1405:4: (lv_uniqueness_8_0= ruleEBoolean )
-            // InternalLightweight.g:1406:5: lv_uniqueness_8_0= ruleEBoolean
+            // InternalLightweight.g:1461:4: (lv_uniqueness_8_0= ruleEBoolean )
+            // InternalLightweight.g:1462:5: lv_uniqueness_8_0= ruleEBoolean
             {
 
             					newCompositeNode(grammarAccess.getVerifMethodAccess().getUniquenessEBooleanParserRuleCall_8_0());
@@ -3063,11 +3167,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getVerifMethodAccess().getColonKeyword_11());
             		
-            // InternalLightweight.g:1435:3: ( (lv_bindings_12_0= ruleEBoolean ) )
-            // InternalLightweight.g:1436:4: (lv_bindings_12_0= ruleEBoolean )
+            // InternalLightweight.g:1491:3: ( (lv_bindings_12_0= ruleEBoolean ) )
+            // InternalLightweight.g:1492:4: (lv_bindings_12_0= ruleEBoolean )
             {
-            // InternalLightweight.g:1436:4: (lv_bindings_12_0= ruleEBoolean )
-            // InternalLightweight.g:1437:5: lv_bindings_12_0= ruleEBoolean
+            // InternalLightweight.g:1492:4: (lv_bindings_12_0= ruleEBoolean )
+            // InternalLightweight.g:1493:5: lv_bindings_12_0= ruleEBoolean
             {
 
             					newCompositeNode(grammarAccess.getVerifMethodAccess().getBindingsEBooleanParserRuleCall_12_0());
@@ -3121,7 +3225,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRecovery"
-    // InternalLightweight.g:1462:1: entryRuleRecovery returns [EObject current=null] : iv_ruleRecovery= ruleRecovery EOF ;
+    // InternalLightweight.g:1518:1: entryRuleRecovery returns [EObject current=null] : iv_ruleRecovery= ruleRecovery EOF ;
     public final EObject entryRuleRecovery() throws RecognitionException {
         EObject current = null;
 
@@ -3129,8 +3233,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:1462:49: (iv_ruleRecovery= ruleRecovery EOF )
-            // InternalLightweight.g:1463:2: iv_ruleRecovery= ruleRecovery EOF
+            // InternalLightweight.g:1518:49: (iv_ruleRecovery= ruleRecovery EOF )
+            // InternalLightweight.g:1519:2: iv_ruleRecovery= ruleRecovery EOF
             {
              newCompositeNode(grammarAccess.getRecoveryRule()); 
             pushFollow(FOLLOW_1);
@@ -3157,11 +3261,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRecovery"
-    // InternalLightweight.g:1469:1: ruleRecovery returns [EObject current=null] : ( () otherlv_1= 'Recovery' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )? otherlv_15= '}' ) ;
+    // InternalLightweight.g:1525:1: ruleRecovery returns [EObject current=null] : ( () ( (lv_type_1_0= 'Recovery' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )? otherlv_15= '}' ) ;
     public final EObject ruleRecovery() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
+        Token lv_type_1_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
@@ -3183,14 +3287,14 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:1475:2: ( ( () otherlv_1= 'Recovery' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )? otherlv_15= '}' ) )
-            // InternalLightweight.g:1476:2: ( () otherlv_1= 'Recovery' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )? otherlv_15= '}' )
+            // InternalLightweight.g:1531:2: ( ( () ( (lv_type_1_0= 'Recovery' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )? otherlv_15= '}' ) )
+            // InternalLightweight.g:1532:2: ( () ( (lv_type_1_0= 'Recovery' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )? otherlv_15= '}' )
             {
-            // InternalLightweight.g:1476:2: ( () otherlv_1= 'Recovery' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )? otherlv_15= '}' )
-            // InternalLightweight.g:1477:3: () otherlv_1= 'Recovery' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )? otherlv_15= '}'
+            // InternalLightweight.g:1532:2: ( () ( (lv_type_1_0= 'Recovery' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )? otherlv_15= '}' )
+            // InternalLightweight.g:1533:3: () ( (lv_type_1_0= 'Recovery' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )? otherlv_15= '}'
             {
-            // InternalLightweight.g:1477:3: ()
-            // InternalLightweight.g:1478:4: 
+            // InternalLightweight.g:1533:3: ()
+            // InternalLightweight.g:1534:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3200,10 +3304,28 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,43,FOLLOW_3); 
+            // InternalLightweight.g:1540:3: ( (lv_type_1_0= 'Recovery' ) )
+            // InternalLightweight.g:1541:4: (lv_type_1_0= 'Recovery' )
+            {
+            // InternalLightweight.g:1541:4: (lv_type_1_0= 'Recovery' )
+            // InternalLightweight.g:1542:5: lv_type_1_0= 'Recovery'
+            {
+            lv_type_1_0=(Token)match(input,43,FOLLOW_3); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getRecoveryAccess().getRecoveryKeyword_1());
-            		
+            					newLeafNode(lv_type_1_0, grammarAccess.getRecoveryAccess().getTypeRecoveryKeyword_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getRecoveryRule());
+            					}
+            					setWithLastConsumed(current, "type", lv_type_1_0, "Recovery");
+            				
+
+            }
+
+
+            }
+
             otherlv_2=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_2, grammarAccess.getRecoveryAccess().getColonKeyword_2());
@@ -3220,11 +3342,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getRecoveryAccess().getColonKeyword_5());
             		
-            // InternalLightweight.g:1504:3: ( (lv_name_6_0= ruleEString ) )
-            // InternalLightweight.g:1505:4: (lv_name_6_0= ruleEString )
+            // InternalLightweight.g:1570:3: ( (lv_name_6_0= ruleEString ) )
+            // InternalLightweight.g:1571:4: (lv_name_6_0= ruleEString )
             {
-            // InternalLightweight.g:1505:4: (lv_name_6_0= ruleEString )
-            // InternalLightweight.g:1506:5: lv_name_6_0= ruleEString
+            // InternalLightweight.g:1571:4: (lv_name_6_0= ruleEString )
+            // InternalLightweight.g:1572:5: lv_name_6_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRecoveryAccess().getNameEStringParserRuleCall_6_0());
@@ -3255,7 +3377,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getRecoveryAccess().getCommaKeyword_7());
             		
-            // InternalLightweight.g:1527:3: (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )?
+            // InternalLightweight.g:1593:3: (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -3264,7 +3386,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalLightweight.g:1528:4: otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ','
+                    // InternalLightweight.g:1594:4: otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ','
                     {
                     otherlv_8=(Token)match(input,28,FOLLOW_3); 
 
@@ -3274,11 +3396,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_9, grammarAccess.getRecoveryAccess().getColonKeyword_8_1());
                     			
-                    // InternalLightweight.g:1536:4: ( (otherlv_10= RULE_ID ) )
-                    // InternalLightweight.g:1537:5: (otherlv_10= RULE_ID )
+                    // InternalLightweight.g:1602:4: ( (otherlv_10= RULE_ID ) )
+                    // InternalLightweight.g:1603:5: (otherlv_10= RULE_ID )
                     {
-                    // InternalLightweight.g:1537:5: (otherlv_10= RULE_ID )
-                    // InternalLightweight.g:1538:6: otherlv_10= RULE_ID
+                    // InternalLightweight.g:1603:5: (otherlv_10= RULE_ID )
+                    // InternalLightweight.g:1604:6: otherlv_10= RULE_ID
                     {
 
                     						if (current==null) {
@@ -3305,7 +3427,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLightweight.g:1554:3: (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )?
+            // InternalLightweight.g:1620:3: (otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) ) )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -3314,7 +3436,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalLightweight.g:1555:4: otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) )
+                    // InternalLightweight.g:1621:4: otherlv_12= 'protocol' otherlv_13= ':' ( (lv_protocol_14_0= ruleProtocol ) )
                     {
                     otherlv_12=(Token)match(input,44,FOLLOW_3); 
 
@@ -3324,11 +3446,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_13, grammarAccess.getRecoveryAccess().getColonKeyword_9_1());
                     			
-                    // InternalLightweight.g:1563:4: ( (lv_protocol_14_0= ruleProtocol ) )
-                    // InternalLightweight.g:1564:5: (lv_protocol_14_0= ruleProtocol )
+                    // InternalLightweight.g:1629:4: ( (lv_protocol_14_0= ruleProtocol ) )
+                    // InternalLightweight.g:1630:5: (lv_protocol_14_0= ruleProtocol )
                     {
-                    // InternalLightweight.g:1564:5: (lv_protocol_14_0= ruleProtocol )
-                    // InternalLightweight.g:1565:6: lv_protocol_14_0= ruleProtocol
+                    // InternalLightweight.g:1630:5: (lv_protocol_14_0= ruleProtocol )
+                    // InternalLightweight.g:1631:6: lv_protocol_14_0= ruleProtocol
                     {
 
                     						newCompositeNode(grammarAccess.getRecoveryAccess().getProtocolProtocolEnumRuleCall_9_2_0());
@@ -3388,7 +3510,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLogin"
-    // InternalLightweight.g:1591:1: entryRuleLogin returns [EObject current=null] : iv_ruleLogin= ruleLogin EOF ;
+    // InternalLightweight.g:1657:1: entryRuleLogin returns [EObject current=null] : iv_ruleLogin= ruleLogin EOF ;
     public final EObject entryRuleLogin() throws RecognitionException {
         EObject current = null;
 
@@ -3396,8 +3518,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:1591:46: (iv_ruleLogin= ruleLogin EOF )
-            // InternalLightweight.g:1592:2: iv_ruleLogin= ruleLogin EOF
+            // InternalLightweight.g:1657:46: (iv_ruleLogin= ruleLogin EOF )
+            // InternalLightweight.g:1658:2: iv_ruleLogin= ruleLogin EOF
             {
              newCompositeNode(grammarAccess.getLoginRule()); 
             pushFollow(FOLLOW_1);
@@ -3424,11 +3546,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLogin"
-    // InternalLightweight.g:1598:1: ruleLogin returns [EObject current=null] : ( () otherlv_1= 'Login' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'persistedSession' otherlv_9= ':' ( (lv_session_10_0= ruleEBoolean ) ) otherlv_11= ',' otherlv_12= 'authentication' otherlv_13= ':' otherlv_14= '[' ( (otherlv_15= RULE_ID ) ) (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )* otherlv_18= ']' otherlv_19= '}' ) ;
+    // InternalLightweight.g:1664:1: ruleLogin returns [EObject current=null] : ( () ( (lv_type_1_0= 'Login' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'persistedSession' otherlv_9= ':' ( (lv_session_10_0= ruleEBoolean ) ) otherlv_11= ',' otherlv_12= 'authentication' otherlv_13= ':' ( (otherlv_14= RULE_ID ) ) (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )* otherlv_17= '}' ) ;
     public final EObject ruleLogin() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
+        Token lv_type_1_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
@@ -3443,8 +3565,6 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         Token otherlv_15=null;
         Token otherlv_16=null;
         Token otherlv_17=null;
-        Token otherlv_18=null;
-        Token otherlv_19=null;
         AntlrDatatypeRuleToken lv_name_6_0 = null;
 
         AntlrDatatypeRuleToken lv_session_10_0 = null;
@@ -3454,14 +3574,14 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:1604:2: ( ( () otherlv_1= 'Login' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'persistedSession' otherlv_9= ':' ( (lv_session_10_0= ruleEBoolean ) ) otherlv_11= ',' otherlv_12= 'authentication' otherlv_13= ':' otherlv_14= '[' ( (otherlv_15= RULE_ID ) ) (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )* otherlv_18= ']' otherlv_19= '}' ) )
-            // InternalLightweight.g:1605:2: ( () otherlv_1= 'Login' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'persistedSession' otherlv_9= ':' ( (lv_session_10_0= ruleEBoolean ) ) otherlv_11= ',' otherlv_12= 'authentication' otherlv_13= ':' otherlv_14= '[' ( (otherlv_15= RULE_ID ) ) (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )* otherlv_18= ']' otherlv_19= '}' )
+            // InternalLightweight.g:1670:2: ( ( () ( (lv_type_1_0= 'Login' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'persistedSession' otherlv_9= ':' ( (lv_session_10_0= ruleEBoolean ) ) otherlv_11= ',' otherlv_12= 'authentication' otherlv_13= ':' ( (otherlv_14= RULE_ID ) ) (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )* otherlv_17= '}' ) )
+            // InternalLightweight.g:1671:2: ( () ( (lv_type_1_0= 'Login' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'persistedSession' otherlv_9= ':' ( (lv_session_10_0= ruleEBoolean ) ) otherlv_11= ',' otherlv_12= 'authentication' otherlv_13= ':' ( (otherlv_14= RULE_ID ) ) (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )* otherlv_17= '}' )
             {
-            // InternalLightweight.g:1605:2: ( () otherlv_1= 'Login' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'persistedSession' otherlv_9= ':' ( (lv_session_10_0= ruleEBoolean ) ) otherlv_11= ',' otherlv_12= 'authentication' otherlv_13= ':' otherlv_14= '[' ( (otherlv_15= RULE_ID ) ) (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )* otherlv_18= ']' otherlv_19= '}' )
-            // InternalLightweight.g:1606:3: () otherlv_1= 'Login' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'persistedSession' otherlv_9= ':' ( (lv_session_10_0= ruleEBoolean ) ) otherlv_11= ',' otherlv_12= 'authentication' otherlv_13= ':' otherlv_14= '[' ( (otherlv_15= RULE_ID ) ) (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )* otherlv_18= ']' otherlv_19= '}'
+            // InternalLightweight.g:1671:2: ( () ( (lv_type_1_0= 'Login' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'persistedSession' otherlv_9= ':' ( (lv_session_10_0= ruleEBoolean ) ) otherlv_11= ',' otherlv_12= 'authentication' otherlv_13= ':' ( (otherlv_14= RULE_ID ) ) (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )* otherlv_17= '}' )
+            // InternalLightweight.g:1672:3: () ( (lv_type_1_0= 'Login' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'persistedSession' otherlv_9= ':' ( (lv_session_10_0= ruleEBoolean ) ) otherlv_11= ',' otherlv_12= 'authentication' otherlv_13= ':' ( (otherlv_14= RULE_ID ) ) (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )* otherlv_17= '}'
             {
-            // InternalLightweight.g:1606:3: ()
-            // InternalLightweight.g:1607:4: 
+            // InternalLightweight.g:1672:3: ()
+            // InternalLightweight.g:1673:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3471,10 +3591,28 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,45,FOLLOW_3); 
+            // InternalLightweight.g:1679:3: ( (lv_type_1_0= 'Login' ) )
+            // InternalLightweight.g:1680:4: (lv_type_1_0= 'Login' )
+            {
+            // InternalLightweight.g:1680:4: (lv_type_1_0= 'Login' )
+            // InternalLightweight.g:1681:5: lv_type_1_0= 'Login'
+            {
+            lv_type_1_0=(Token)match(input,45,FOLLOW_3); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getLoginAccess().getLoginKeyword_1());
-            		
+            					newLeafNode(lv_type_1_0, grammarAccess.getLoginAccess().getTypeLoginKeyword_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getLoginRule());
+            					}
+            					setWithLastConsumed(current, "type", lv_type_1_0, "Login");
+            				
+
+            }
+
+
+            }
+
             otherlv_2=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_2, grammarAccess.getLoginAccess().getColonKeyword_2());
@@ -3491,11 +3629,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getLoginAccess().getColonKeyword_5());
             		
-            // InternalLightweight.g:1633:3: ( (lv_name_6_0= ruleEString ) )
-            // InternalLightweight.g:1634:4: (lv_name_6_0= ruleEString )
+            // InternalLightweight.g:1709:3: ( (lv_name_6_0= ruleEString ) )
+            // InternalLightweight.g:1710:4: (lv_name_6_0= ruleEString )
             {
-            // InternalLightweight.g:1634:4: (lv_name_6_0= ruleEString )
-            // InternalLightweight.g:1635:5: lv_name_6_0= ruleEString
+            // InternalLightweight.g:1710:4: (lv_name_6_0= ruleEString )
+            // InternalLightweight.g:1711:5: lv_name_6_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getLoginAccess().getNameEStringParserRuleCall_6_0());
@@ -3534,11 +3672,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getLoginAccess().getColonKeyword_9());
             		
-            // InternalLightweight.g:1664:3: ( (lv_session_10_0= ruleEBoolean ) )
-            // InternalLightweight.g:1665:4: (lv_session_10_0= ruleEBoolean )
+            // InternalLightweight.g:1740:3: ( (lv_session_10_0= ruleEBoolean ) )
+            // InternalLightweight.g:1741:4: (lv_session_10_0= ruleEBoolean )
             {
-            // InternalLightweight.g:1665:4: (lv_session_10_0= ruleEBoolean )
-            // InternalLightweight.g:1666:5: lv_session_10_0= ruleEBoolean
+            // InternalLightweight.g:1741:4: (lv_session_10_0= ruleEBoolean )
+            // InternalLightweight.g:1742:5: lv_session_10_0= ruleEBoolean
             {
 
             					newCompositeNode(grammarAccess.getLoginAccess().getSessionEBooleanParserRuleCall_10_0());
@@ -3573,28 +3711,24 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_12, grammarAccess.getLoginAccess().getAuthenticationKeyword_12());
             		
-            otherlv_13=(Token)match(input,12,FOLLOW_6); 
+            otherlv_13=(Token)match(input,12,FOLLOW_18); 
 
             			newLeafNode(otherlv_13, grammarAccess.getLoginAccess().getColonKeyword_13());
             		
-            otherlv_14=(Token)match(input,15,FOLLOW_18); 
-
-            			newLeafNode(otherlv_14, grammarAccess.getLoginAccess().getLeftSquareBracketKeyword_14());
-            		
-            // InternalLightweight.g:1699:3: ( (otherlv_15= RULE_ID ) )
-            // InternalLightweight.g:1700:4: (otherlv_15= RULE_ID )
+            // InternalLightweight.g:1771:3: ( (otherlv_14= RULE_ID ) )
+            // InternalLightweight.g:1772:4: (otherlv_14= RULE_ID )
             {
-            // InternalLightweight.g:1700:4: (otherlv_15= RULE_ID )
-            // InternalLightweight.g:1701:5: otherlv_15= RULE_ID
+            // InternalLightweight.g:1772:4: (otherlv_14= RULE_ID )
+            // InternalLightweight.g:1773:5: otherlv_14= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getLoginRule());
             					}
             				
-            otherlv_15=(Token)match(input,RULE_ID,FOLLOW_8); 
+            otherlv_14=(Token)match(input,RULE_ID,FOLLOW_46); 
 
-            					newLeafNode(otherlv_15, grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_15_0());
+            					newLeafNode(otherlv_14, grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_14_0());
             				
 
             }
@@ -3602,39 +3736,39 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLightweight.g:1712:3: (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )*
+            // InternalLightweight.g:1784:3: (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )*
             loop14:
             do {
                 int alt14=2;
                 int LA14_0 = input.LA(1);
 
-                if ( (LA14_0==16) ) {
+                if ( (LA14_0==48) ) {
                     alt14=1;
                 }
 
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalLightweight.g:1713:4: otherlv_16= ',' ( (otherlv_17= RULE_ID ) )
+            	    // InternalLightweight.g:1785:4: otherlv_15= '||' ( (otherlv_16= RULE_ID ) )
             	    {
-            	    otherlv_16=(Token)match(input,16,FOLLOW_18); 
+            	    otherlv_15=(Token)match(input,48,FOLLOW_18); 
 
-            	    				newLeafNode(otherlv_16, grammarAccess.getLoginAccess().getCommaKeyword_16_0());
+            	    				newLeafNode(otherlv_15, grammarAccess.getLoginAccess().getVerticalLineVerticalLineKeyword_15_0());
             	    			
-            	    // InternalLightweight.g:1717:4: ( (otherlv_17= RULE_ID ) )
-            	    // InternalLightweight.g:1718:5: (otherlv_17= RULE_ID )
+            	    // InternalLightweight.g:1789:4: ( (otherlv_16= RULE_ID ) )
+            	    // InternalLightweight.g:1790:5: (otherlv_16= RULE_ID )
             	    {
-            	    // InternalLightweight.g:1718:5: (otherlv_17= RULE_ID )
-            	    // InternalLightweight.g:1719:6: otherlv_17= RULE_ID
+            	    // InternalLightweight.g:1790:5: (otherlv_16= RULE_ID )
+            	    // InternalLightweight.g:1791:6: otherlv_16= RULE_ID
             	    {
 
             	    						if (current==null) {
             	    							current = createModelElement(grammarAccess.getLoginRule());
             	    						}
             	    					
-            	    otherlv_17=(Token)match(input,RULE_ID,FOLLOW_8); 
+            	    otherlv_16=(Token)match(input,RULE_ID,FOLLOW_46); 
 
-            	    						newLeafNode(otherlv_17, grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_16_1_0());
+            	    						newLeafNode(otherlv_16, grammarAccess.getLoginAccess().getAuthMethodsAuthMethodCrossReference_15_1_0());
             	    					
 
             	    }
@@ -3651,13 +3785,9 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_18=(Token)match(input,17,FOLLOW_14); 
+            otherlv_17=(Token)match(input,20,FOLLOW_2); 
 
-            			newLeafNode(otherlv_18, grammarAccess.getLoginAccess().getRightSquareBracketKeyword_17());
-            		
-            otherlv_19=(Token)match(input,20,FOLLOW_2); 
-
-            			newLeafNode(otherlv_19, grammarAccess.getLoginAccess().getRightCurlyBracketKeyword_18());
+            			newLeafNode(otherlv_17, grammarAccess.getLoginAccess().getRightCurlyBracketKeyword_16());
             		
 
             }
@@ -3682,7 +3812,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReset"
-    // InternalLightweight.g:1743:1: entryRuleReset returns [EObject current=null] : iv_ruleReset= ruleReset EOF ;
+    // InternalLightweight.g:1811:1: entryRuleReset returns [EObject current=null] : iv_ruleReset= ruleReset EOF ;
     public final EObject entryRuleReset() throws RecognitionException {
         EObject current = null;
 
@@ -3690,8 +3820,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:1743:46: (iv_ruleReset= ruleReset EOF )
-            // InternalLightweight.g:1744:2: iv_ruleReset= ruleReset EOF
+            // InternalLightweight.g:1811:46: (iv_ruleReset= ruleReset EOF )
+            // InternalLightweight.g:1812:2: iv_ruleReset= ruleReset EOF
             {
              newCompositeNode(grammarAccess.getResetRule()); 
             pushFollow(FOLLOW_1);
@@ -3718,11 +3848,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReset"
-    // InternalLightweight.g:1750:1: ruleReset returns [EObject current=null] : ( () otherlv_1= 'Reset' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? otherlv_12= 'authentication' otherlv_13= ':' otherlv_14= '[' ( (otherlv_15= RULE_ID ) ) (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )* otherlv_18= ']' otherlv_19= '}' ) ;
+    // InternalLightweight.g:1818:1: ruleReset returns [EObject current=null] : ( () ( (lv_type_1_0= 'Reset' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? otherlv_12= 'authentication' otherlv_13= ':' ( (otherlv_14= RULE_ID ) ) (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )* otherlv_17= '}' ) ;
     public final EObject ruleReset() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
+        Token lv_type_1_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
@@ -3738,8 +3868,6 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         Token otherlv_15=null;
         Token otherlv_16=null;
         Token otherlv_17=null;
-        Token otherlv_18=null;
-        Token otherlv_19=null;
         AntlrDatatypeRuleToken lv_name_6_0 = null;
 
 
@@ -3747,14 +3875,14 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:1756:2: ( ( () otherlv_1= 'Reset' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? otherlv_12= 'authentication' otherlv_13= ':' otherlv_14= '[' ( (otherlv_15= RULE_ID ) ) (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )* otherlv_18= ']' otherlv_19= '}' ) )
-            // InternalLightweight.g:1757:2: ( () otherlv_1= 'Reset' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? otherlv_12= 'authentication' otherlv_13= ':' otherlv_14= '[' ( (otherlv_15= RULE_ID ) ) (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )* otherlv_18= ']' otherlv_19= '}' )
+            // InternalLightweight.g:1824:2: ( ( () ( (lv_type_1_0= 'Reset' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? otherlv_12= 'authentication' otherlv_13= ':' ( (otherlv_14= RULE_ID ) ) (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )* otherlv_17= '}' ) )
+            // InternalLightweight.g:1825:2: ( () ( (lv_type_1_0= 'Reset' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? otherlv_12= 'authentication' otherlv_13= ':' ( (otherlv_14= RULE_ID ) ) (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )* otherlv_17= '}' )
             {
-            // InternalLightweight.g:1757:2: ( () otherlv_1= 'Reset' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? otherlv_12= 'authentication' otherlv_13= ':' otherlv_14= '[' ( (otherlv_15= RULE_ID ) ) (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )* otherlv_18= ']' otherlv_19= '}' )
-            // InternalLightweight.g:1758:3: () otherlv_1= 'Reset' otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? otherlv_12= 'authentication' otherlv_13= ':' otherlv_14= '[' ( (otherlv_15= RULE_ID ) ) (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )* otherlv_18= ']' otherlv_19= '}'
+            // InternalLightweight.g:1825:2: ( () ( (lv_type_1_0= 'Reset' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? otherlv_12= 'authentication' otherlv_13= ':' ( (otherlv_14= RULE_ID ) ) (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )* otherlv_17= '}' )
+            // InternalLightweight.g:1826:3: () ( (lv_type_1_0= 'Reset' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )? otherlv_12= 'authentication' otherlv_13= ':' ( (otherlv_14= RULE_ID ) ) (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )* otherlv_17= '}'
             {
-            // InternalLightweight.g:1758:3: ()
-            // InternalLightweight.g:1759:4: 
+            // InternalLightweight.g:1826:3: ()
+            // InternalLightweight.g:1827:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3764,10 +3892,28 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,48,FOLLOW_3); 
+            // InternalLightweight.g:1833:3: ( (lv_type_1_0= 'Reset' ) )
+            // InternalLightweight.g:1834:4: (lv_type_1_0= 'Reset' )
+            {
+            // InternalLightweight.g:1834:4: (lv_type_1_0= 'Reset' )
+            // InternalLightweight.g:1835:5: lv_type_1_0= 'Reset'
+            {
+            lv_type_1_0=(Token)match(input,49,FOLLOW_3); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getResetAccess().getResetKeyword_1());
-            		
+            					newLeafNode(lv_type_1_0, grammarAccess.getResetAccess().getTypeResetKeyword_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getResetRule());
+            					}
+            					setWithLastConsumed(current, "type", lv_type_1_0, "Reset");
+            				
+
+            }
+
+
+            }
+
             otherlv_2=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_2, grammarAccess.getResetAccess().getColonKeyword_2());
@@ -3784,11 +3930,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getResetAccess().getColonKeyword_5());
             		
-            // InternalLightweight.g:1785:3: ( (lv_name_6_0= ruleEString ) )
-            // InternalLightweight.g:1786:4: (lv_name_6_0= ruleEString )
+            // InternalLightweight.g:1863:3: ( (lv_name_6_0= ruleEString ) )
+            // InternalLightweight.g:1864:4: (lv_name_6_0= ruleEString )
             {
-            // InternalLightweight.g:1786:4: (lv_name_6_0= ruleEString )
-            // InternalLightweight.g:1787:5: lv_name_6_0= ruleEString
+            // InternalLightweight.g:1864:4: (lv_name_6_0= ruleEString )
+            // InternalLightweight.g:1865:5: lv_name_6_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getResetAccess().getNameEStringParserRuleCall_6_0());
@@ -3815,11 +3961,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,16,FOLLOW_46); 
+            otherlv_7=(Token)match(input,16,FOLLOW_47); 
 
             			newLeafNode(otherlv_7, grammarAccess.getResetAccess().getCommaKeyword_7());
             		
-            // InternalLightweight.g:1808:3: (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )?
+            // InternalLightweight.g:1886:3: (otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ',' )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -3828,7 +3974,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalLightweight.g:1809:4: otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ','
+                    // InternalLightweight.g:1887:4: otherlv_8= 'authenticator' otherlv_9= ':' ( (otherlv_10= RULE_ID ) ) otherlv_11= ','
                     {
                     otherlv_8=(Token)match(input,28,FOLLOW_3); 
 
@@ -3838,11 +3984,11 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_9, grammarAccess.getResetAccess().getColonKeyword_8_1());
                     			
-                    // InternalLightweight.g:1817:4: ( (otherlv_10= RULE_ID ) )
-                    // InternalLightweight.g:1818:5: (otherlv_10= RULE_ID )
+                    // InternalLightweight.g:1895:4: ( (otherlv_10= RULE_ID ) )
+                    // InternalLightweight.g:1896:5: (otherlv_10= RULE_ID )
                     {
-                    // InternalLightweight.g:1818:5: (otherlv_10= RULE_ID )
-                    // InternalLightweight.g:1819:6: otherlv_10= RULE_ID
+                    // InternalLightweight.g:1896:5: (otherlv_10= RULE_ID )
+                    // InternalLightweight.g:1897:6: otherlv_10= RULE_ID
                     {
 
                     						if (current==null) {
@@ -3873,28 +4019,24 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_12, grammarAccess.getResetAccess().getAuthenticationKeyword_9());
             		
-            otherlv_13=(Token)match(input,12,FOLLOW_6); 
+            otherlv_13=(Token)match(input,12,FOLLOW_18); 
 
             			newLeafNode(otherlv_13, grammarAccess.getResetAccess().getColonKeyword_10());
             		
-            otherlv_14=(Token)match(input,15,FOLLOW_18); 
-
-            			newLeafNode(otherlv_14, grammarAccess.getResetAccess().getLeftSquareBracketKeyword_11());
-            		
-            // InternalLightweight.g:1847:3: ( (otherlv_15= RULE_ID ) )
-            // InternalLightweight.g:1848:4: (otherlv_15= RULE_ID )
+            // InternalLightweight.g:1921:3: ( (otherlv_14= RULE_ID ) )
+            // InternalLightweight.g:1922:4: (otherlv_14= RULE_ID )
             {
-            // InternalLightweight.g:1848:4: (otherlv_15= RULE_ID )
-            // InternalLightweight.g:1849:5: otherlv_15= RULE_ID
+            // InternalLightweight.g:1922:4: (otherlv_14= RULE_ID )
+            // InternalLightweight.g:1923:5: otherlv_14= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getResetRule());
             					}
             				
-            otherlv_15=(Token)match(input,RULE_ID,FOLLOW_8); 
+            otherlv_14=(Token)match(input,RULE_ID,FOLLOW_46); 
 
-            					newLeafNode(otherlv_15, grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_12_0());
+            					newLeafNode(otherlv_14, grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_11_0());
             				
 
             }
@@ -3902,39 +4044,39 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLightweight.g:1860:3: (otherlv_16= ',' ( (otherlv_17= RULE_ID ) ) )*
+            // InternalLightweight.g:1934:3: (otherlv_15= '||' ( (otherlv_16= RULE_ID ) ) )*
             loop16:
             do {
                 int alt16=2;
                 int LA16_0 = input.LA(1);
 
-                if ( (LA16_0==16) ) {
+                if ( (LA16_0==48) ) {
                     alt16=1;
                 }
 
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalLightweight.g:1861:4: otherlv_16= ',' ( (otherlv_17= RULE_ID ) )
+            	    // InternalLightweight.g:1935:4: otherlv_15= '||' ( (otherlv_16= RULE_ID ) )
             	    {
-            	    otherlv_16=(Token)match(input,16,FOLLOW_18); 
+            	    otherlv_15=(Token)match(input,48,FOLLOW_18); 
 
-            	    				newLeafNode(otherlv_16, grammarAccess.getResetAccess().getCommaKeyword_13_0());
+            	    				newLeafNode(otherlv_15, grammarAccess.getResetAccess().getVerticalLineVerticalLineKeyword_12_0());
             	    			
-            	    // InternalLightweight.g:1865:4: ( (otherlv_17= RULE_ID ) )
-            	    // InternalLightweight.g:1866:5: (otherlv_17= RULE_ID )
+            	    // InternalLightweight.g:1939:4: ( (otherlv_16= RULE_ID ) )
+            	    // InternalLightweight.g:1940:5: (otherlv_16= RULE_ID )
             	    {
-            	    // InternalLightweight.g:1866:5: (otherlv_17= RULE_ID )
-            	    // InternalLightweight.g:1867:6: otherlv_17= RULE_ID
+            	    // InternalLightweight.g:1940:5: (otherlv_16= RULE_ID )
+            	    // InternalLightweight.g:1941:6: otherlv_16= RULE_ID
             	    {
 
             	    						if (current==null) {
             	    							current = createModelElement(grammarAccess.getResetRule());
             	    						}
             	    					
-            	    otherlv_17=(Token)match(input,RULE_ID,FOLLOW_8); 
+            	    otherlv_16=(Token)match(input,RULE_ID,FOLLOW_46); 
 
-            	    						newLeafNode(otherlv_17, grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_13_1_0());
+            	    						newLeafNode(otherlv_16, grammarAccess.getResetAccess().getAuthMethodsAuthMethodCrossReference_12_1_0());
             	    					
 
             	    }
@@ -3951,13 +4093,9 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_18=(Token)match(input,17,FOLLOW_14); 
+            otherlv_17=(Token)match(input,20,FOLLOW_2); 
 
-            			newLeafNode(otherlv_18, grammarAccess.getResetAccess().getRightSquareBracketKeyword_14());
-            		
-            otherlv_19=(Token)match(input,20,FOLLOW_2); 
-
-            			newLeafNode(otherlv_19, grammarAccess.getResetAccess().getRightCurlyBracketKeyword_15());
+            			newLeafNode(otherlv_17, grammarAccess.getResetAccess().getRightCurlyBracketKeyword_13());
             		
 
             }
@@ -3982,7 +4120,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEBoolean"
-    // InternalLightweight.g:1891:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
+    // InternalLightweight.g:1961:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
     public final String entryRuleEBoolean() throws RecognitionException {
         String current = null;
 
@@ -3990,8 +4128,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLightweight.g:1891:48: (iv_ruleEBoolean= ruleEBoolean EOF )
-            // InternalLightweight.g:1892:2: iv_ruleEBoolean= ruleEBoolean EOF
+            // InternalLightweight.g:1961:48: (iv_ruleEBoolean= ruleEBoolean EOF )
+            // InternalLightweight.g:1962:2: iv_ruleEBoolean= ruleEBoolean EOF
             {
              newCompositeNode(grammarAccess.getEBooleanRule()); 
             pushFollow(FOLLOW_1);
@@ -4018,7 +4156,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEBoolean"
-    // InternalLightweight.g:1898:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    // InternalLightweight.g:1968:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleEBoolean() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4028,17 +4166,17 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:1904:2: ( (kw= 'true' | kw= 'false' ) )
-            // InternalLightweight.g:1905:2: (kw= 'true' | kw= 'false' )
+            // InternalLightweight.g:1974:2: ( (kw= 'true' | kw= 'false' ) )
+            // InternalLightweight.g:1975:2: (kw= 'true' | kw= 'false' )
             {
-            // InternalLightweight.g:1905:2: (kw= 'true' | kw= 'false' )
+            // InternalLightweight.g:1975:2: (kw= 'true' | kw= 'false' )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==49) ) {
+            if ( (LA17_0==50) ) {
                 alt17=1;
             }
-            else if ( (LA17_0==50) ) {
+            else if ( (LA17_0==51) ) {
                 alt17=2;
             }
             else {
@@ -4049,9 +4187,9 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalLightweight.g:1906:3: kw= 'true'
+                    // InternalLightweight.g:1976:3: kw= 'true'
                     {
-                    kw=(Token)match(input,49,FOLLOW_2); 
+                    kw=(Token)match(input,50,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getEBooleanAccess().getTrueKeyword_0());
@@ -4060,9 +4198,9 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:1912:3: kw= 'false'
+                    // InternalLightweight.g:1982:3: kw= 'false'
                     {
-                    kw=(Token)match(input,50,FOLLOW_2); 
+                    kw=(Token)match(input,51,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getEBooleanAccess().getFalseKeyword_1());
@@ -4093,7 +4231,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePROVIDER"
-    // InternalLightweight.g:1921:1: rulePROVIDER returns [Enumerator current=null] : ( (enumLiteral_0= 'Identity provider' ) | (enumLiteral_1= 'Self provided' ) | (enumLiteral_2= 'Institutional' ) ) ;
+    // InternalLightweight.g:1991:1: rulePROVIDER returns [Enumerator current=null] : ( (enumLiteral_0= 'Identity provider' ) | (enumLiteral_1= 'Self provided' ) | (enumLiteral_2= 'Institutional' ) ) ;
     public final Enumerator rulePROVIDER() throws RecognitionException {
         Enumerator current = null;
 
@@ -4105,23 +4243,23 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:1927:2: ( ( (enumLiteral_0= 'Identity provider' ) | (enumLiteral_1= 'Self provided' ) | (enumLiteral_2= 'Institutional' ) ) )
-            // InternalLightweight.g:1928:2: ( (enumLiteral_0= 'Identity provider' ) | (enumLiteral_1= 'Self provided' ) | (enumLiteral_2= 'Institutional' ) )
+            // InternalLightweight.g:1997:2: ( ( (enumLiteral_0= 'Identity provider' ) | (enumLiteral_1= 'Self provided' ) | (enumLiteral_2= 'Institutional' ) ) )
+            // InternalLightweight.g:1998:2: ( (enumLiteral_0= 'Identity provider' ) | (enumLiteral_1= 'Self provided' ) | (enumLiteral_2= 'Institutional' ) )
             {
-            // InternalLightweight.g:1928:2: ( (enumLiteral_0= 'Identity provider' ) | (enumLiteral_1= 'Self provided' ) | (enumLiteral_2= 'Institutional' ) )
+            // InternalLightweight.g:1998:2: ( (enumLiteral_0= 'Identity provider' ) | (enumLiteral_1= 'Self provided' ) | (enumLiteral_2= 'Institutional' ) )
             int alt18=3;
             switch ( input.LA(1) ) {
-            case 51:
+            case 52:
                 {
                 alt18=1;
                 }
                 break;
-            case 52:
+            case 53:
                 {
                 alt18=2;
                 }
                 break;
-            case 53:
+            case 54:
                 {
                 alt18=3;
                 }
@@ -4135,12 +4273,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             switch (alt18) {
                 case 1 :
-                    // InternalLightweight.g:1929:3: (enumLiteral_0= 'Identity provider' )
+                    // InternalLightweight.g:1999:3: (enumLiteral_0= 'Identity provider' )
                     {
-                    // InternalLightweight.g:1929:3: (enumLiteral_0= 'Identity provider' )
-                    // InternalLightweight.g:1930:4: enumLiteral_0= 'Identity provider'
+                    // InternalLightweight.g:1999:3: (enumLiteral_0= 'Identity provider' )
+                    // InternalLightweight.g:2000:4: enumLiteral_0= 'Identity provider'
                     {
-                    enumLiteral_0=(Token)match(input,51,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,52,FOLLOW_2); 
 
                     				current = grammarAccess.getPROVIDERAccess().getIdPEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getPROVIDERAccess().getIdPEnumLiteralDeclaration_0());
@@ -4152,12 +4290,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:1937:3: (enumLiteral_1= 'Self provided' )
+                    // InternalLightweight.g:2007:3: (enumLiteral_1= 'Self provided' )
                     {
-                    // InternalLightweight.g:1937:3: (enumLiteral_1= 'Self provided' )
-                    // InternalLightweight.g:1938:4: enumLiteral_1= 'Self provided'
+                    // InternalLightweight.g:2007:3: (enumLiteral_1= 'Self provided' )
+                    // InternalLightweight.g:2008:4: enumLiteral_1= 'Self provided'
                     {
-                    enumLiteral_1=(Token)match(input,52,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,53,FOLLOW_2); 
 
                     				current = grammarAccess.getPROVIDERAccess().getSELFEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getPROVIDERAccess().getSELFEnumLiteralDeclaration_1());
@@ -4169,12 +4307,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLightweight.g:1945:3: (enumLiteral_2= 'Institutional' )
+                    // InternalLightweight.g:2015:3: (enumLiteral_2= 'Institutional' )
                     {
-                    // InternalLightweight.g:1945:3: (enumLiteral_2= 'Institutional' )
-                    // InternalLightweight.g:1946:4: enumLiteral_2= 'Institutional'
+                    // InternalLightweight.g:2015:3: (enumLiteral_2= 'Institutional' )
+                    // InternalLightweight.g:2016:4: enumLiteral_2= 'Institutional'
                     {
-                    enumLiteral_2=(Token)match(input,53,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,54,FOLLOW_2); 
 
                     				current = grammarAccess.getPROVIDERAccess().getINSTITUTIONALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getPROVIDERAccess().getINSTITUTIONALEnumLiteralDeclaration_2());
@@ -4208,7 +4346,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCredTYPE"
-    // InternalLightweight.g:1956:1: ruleCredTYPE returns [Enumerator current=null] : ( (enumLiteral_0= 'Digital' ) | (enumLiteral_1= 'Physical' ) ) ;
+    // InternalLightweight.g:2026:1: ruleCredTYPE returns [Enumerator current=null] : ( (enumLiteral_0= 'Digital' ) | (enumLiteral_1= 'Physical' ) ) ;
     public final Enumerator ruleCredTYPE() throws RecognitionException {
         Enumerator current = null;
 
@@ -4219,17 +4357,17 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:1962:2: ( ( (enumLiteral_0= 'Digital' ) | (enumLiteral_1= 'Physical' ) ) )
-            // InternalLightweight.g:1963:2: ( (enumLiteral_0= 'Digital' ) | (enumLiteral_1= 'Physical' ) )
+            // InternalLightweight.g:2032:2: ( ( (enumLiteral_0= 'Digital' ) | (enumLiteral_1= 'Physical' ) ) )
+            // InternalLightweight.g:2033:2: ( (enumLiteral_0= 'Digital' ) | (enumLiteral_1= 'Physical' ) )
             {
-            // InternalLightweight.g:1963:2: ( (enumLiteral_0= 'Digital' ) | (enumLiteral_1= 'Physical' ) )
+            // InternalLightweight.g:2033:2: ( (enumLiteral_0= 'Digital' ) | (enumLiteral_1= 'Physical' ) )
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==54) ) {
+            if ( (LA19_0==55) ) {
                 alt19=1;
             }
-            else if ( (LA19_0==55) ) {
+            else if ( (LA19_0==56) ) {
                 alt19=2;
             }
             else {
@@ -4240,12 +4378,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalLightweight.g:1964:3: (enumLiteral_0= 'Digital' )
+                    // InternalLightweight.g:2034:3: (enumLiteral_0= 'Digital' )
                     {
-                    // InternalLightweight.g:1964:3: (enumLiteral_0= 'Digital' )
-                    // InternalLightweight.g:1965:4: enumLiteral_0= 'Digital'
+                    // InternalLightweight.g:2034:3: (enumLiteral_0= 'Digital' )
+                    // InternalLightweight.g:2035:4: enumLiteral_0= 'Digital'
                     {
-                    enumLiteral_0=(Token)match(input,54,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,55,FOLLOW_2); 
 
                     				current = grammarAccess.getCredTYPEAccess().getDIGITALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getCredTYPEAccess().getDIGITALEnumLiteralDeclaration_0());
@@ -4257,12 +4395,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:1972:3: (enumLiteral_1= 'Physical' )
+                    // InternalLightweight.g:2042:3: (enumLiteral_1= 'Physical' )
                     {
-                    // InternalLightweight.g:1972:3: (enumLiteral_1= 'Physical' )
-                    // InternalLightweight.g:1973:4: enumLiteral_1= 'Physical'
+                    // InternalLightweight.g:2042:3: (enumLiteral_1= 'Physical' )
+                    // InternalLightweight.g:2043:4: enumLiteral_1= 'Physical'
                     {
-                    enumLiteral_1=(Token)match(input,55,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,56,FOLLOW_2); 
 
                     				current = grammarAccess.getCredTYPEAccess().getPHYSICALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getCredTYPEAccess().getPHYSICALEnumLiteralDeclaration_1());
@@ -4296,7 +4434,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProtocol"
-    // InternalLightweight.g:1983:1: ruleProtocol returns [Enumerator current=null] : ( (enumLiteral_0= 'Email-Based' ) | (enumLiteral_1= 'MS-based' ) | (enumLiteral_2= 'Local' ) ) ;
+    // InternalLightweight.g:2053:1: ruleProtocol returns [Enumerator current=null] : ( (enumLiteral_0= 'Email-Based' ) | (enumLiteral_1= 'MS-based' ) | (enumLiteral_2= 'Local' ) ) ;
     public final Enumerator ruleProtocol() throws RecognitionException {
         Enumerator current = null;
 
@@ -4308,23 +4446,23 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:1989:2: ( ( (enumLiteral_0= 'Email-Based' ) | (enumLiteral_1= 'MS-based' ) | (enumLiteral_2= 'Local' ) ) )
-            // InternalLightweight.g:1990:2: ( (enumLiteral_0= 'Email-Based' ) | (enumLiteral_1= 'MS-based' ) | (enumLiteral_2= 'Local' ) )
+            // InternalLightweight.g:2059:2: ( ( (enumLiteral_0= 'Email-Based' ) | (enumLiteral_1= 'MS-based' ) | (enumLiteral_2= 'Local' ) ) )
+            // InternalLightweight.g:2060:2: ( (enumLiteral_0= 'Email-Based' ) | (enumLiteral_1= 'MS-based' ) | (enumLiteral_2= 'Local' ) )
             {
-            // InternalLightweight.g:1990:2: ( (enumLiteral_0= 'Email-Based' ) | (enumLiteral_1= 'MS-based' ) | (enumLiteral_2= 'Local' ) )
+            // InternalLightweight.g:2060:2: ( (enumLiteral_0= 'Email-Based' ) | (enumLiteral_1= 'MS-based' ) | (enumLiteral_2= 'Local' ) )
             int alt20=3;
             switch ( input.LA(1) ) {
-            case 56:
+            case 57:
                 {
                 alt20=1;
                 }
                 break;
-            case 57:
+            case 58:
                 {
                 alt20=2;
                 }
                 break;
-            case 58:
+            case 59:
                 {
                 alt20=3;
                 }
@@ -4338,12 +4476,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             switch (alt20) {
                 case 1 :
-                    // InternalLightweight.g:1991:3: (enumLiteral_0= 'Email-Based' )
+                    // InternalLightweight.g:2061:3: (enumLiteral_0= 'Email-Based' )
                     {
-                    // InternalLightweight.g:1991:3: (enumLiteral_0= 'Email-Based' )
-                    // InternalLightweight.g:1992:4: enumLiteral_0= 'Email-Based'
+                    // InternalLightweight.g:2061:3: (enumLiteral_0= 'Email-Based' )
+                    // InternalLightweight.g:2062:4: enumLiteral_0= 'Email-Based'
                     {
-                    enumLiteral_0=(Token)match(input,56,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,57,FOLLOW_2); 
 
                     				current = grammarAccess.getProtocolAccess().getEBIAEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getProtocolAccess().getEBIAEnumLiteralDeclaration_0());
@@ -4355,12 +4493,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:1999:3: (enumLiteral_1= 'MS-based' )
+                    // InternalLightweight.g:2069:3: (enumLiteral_1= 'MS-based' )
                     {
-                    // InternalLightweight.g:1999:3: (enumLiteral_1= 'MS-based' )
-                    // InternalLightweight.g:2000:4: enumLiteral_1= 'MS-based'
+                    // InternalLightweight.g:2069:3: (enumLiteral_1= 'MS-based' )
+                    // InternalLightweight.g:2070:4: enumLiteral_1= 'MS-based'
                     {
-                    enumLiteral_1=(Token)match(input,57,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,58,FOLLOW_2); 
 
                     				current = grammarAccess.getProtocolAccess().getSMS_BASEDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getProtocolAccess().getSMS_BASEDEnumLiteralDeclaration_1());
@@ -4372,12 +4510,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLightweight.g:2007:3: (enumLiteral_2= 'Local' )
+                    // InternalLightweight.g:2077:3: (enumLiteral_2= 'Local' )
                     {
-                    // InternalLightweight.g:2007:3: (enumLiteral_2= 'Local' )
-                    // InternalLightweight.g:2008:4: enumLiteral_2= 'Local'
+                    // InternalLightweight.g:2077:3: (enumLiteral_2= 'Local' )
+                    // InternalLightweight.g:2078:4: enumLiteral_2= 'Local'
                     {
-                    enumLiteral_2=(Token)match(input,58,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,59,FOLLOW_2); 
 
                     				current = grammarAccess.getProtocolAccess().getLOCALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getProtocolAccess().getLOCALEnumLiteralDeclaration_2());
@@ -4411,7 +4549,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKVALUE"
-    // InternalLightweight.g:2018:1: ruleKVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) ) ;
+    // InternalLightweight.g:2088:1: ruleKVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) ) ;
     public final Enumerator ruleKVALUE() throws RecognitionException {
         Enumerator current = null;
 
@@ -4425,33 +4563,33 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:2024:2: ( ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) ) )
-            // InternalLightweight.g:2025:2: ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) )
+            // InternalLightweight.g:2094:2: ( ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) ) )
+            // InternalLightweight.g:2095:2: ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) )
             {
-            // InternalLightweight.g:2025:2: ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) )
+            // InternalLightweight.g:2095:2: ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) )
             int alt21=5;
             switch ( input.LA(1) ) {
-            case 59:
+            case 60:
                 {
                 alt21=1;
                 }
                 break;
-            case 60:
+            case 61:
                 {
                 alt21=2;
                 }
                 break;
-            case 61:
+            case 62:
                 {
                 alt21=3;
                 }
                 break;
-            case 62:
+            case 63:
                 {
                 alt21=4;
                 }
                 break;
-            case 63:
+            case 64:
                 {
                 alt21=5;
                 }
@@ -4465,12 +4603,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             switch (alt21) {
                 case 1 :
-                    // InternalLightweight.g:2026:3: (enumLiteral_0= 'High Entropy Text-Based Password' )
+                    // InternalLightweight.g:2096:3: (enumLiteral_0= 'High Entropy Text-Based Password' )
                     {
-                    // InternalLightweight.g:2026:3: (enumLiteral_0= 'High Entropy Text-Based Password' )
-                    // InternalLightweight.g:2027:4: enumLiteral_0= 'High Entropy Text-Based Password'
+                    // InternalLightweight.g:2096:3: (enumLiteral_0= 'High Entropy Text-Based Password' )
+                    // InternalLightweight.g:2097:4: enumLiteral_0= 'High Entropy Text-Based Password'
                     {
-                    enumLiteral_0=(Token)match(input,59,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,60,FOLLOW_2); 
 
                     				current = grammarAccess.getKVALUEAccess().getSTBPEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getKVALUEAccess().getSTBPEnumLiteralDeclaration_0());
@@ -4482,12 +4620,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:2034:3: (enumLiteral_1= 'Pass phrase' )
+                    // InternalLightweight.g:2104:3: (enumLiteral_1= 'Pass phrase' )
                     {
-                    // InternalLightweight.g:2034:3: (enumLiteral_1= 'Pass phrase' )
-                    // InternalLightweight.g:2035:4: enumLiteral_1= 'Pass phrase'
+                    // InternalLightweight.g:2104:3: (enumLiteral_1= 'Pass phrase' )
+                    // InternalLightweight.g:2105:4: enumLiteral_1= 'Pass phrase'
                     {
-                    enumLiteral_1=(Token)match(input,60,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,61,FOLLOW_2); 
 
                     				current = grammarAccess.getKVALUEAccess().getPASSPHRASEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getKVALUEAccess().getPASSPHRASEEnumLiteralDeclaration_1());
@@ -4499,12 +4637,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLightweight.g:2042:3: (enumLiteral_2= 'Knowledge-based Preferences' )
+                    // InternalLightweight.g:2112:3: (enumLiteral_2= 'Knowledge-based Preferences' )
                     {
-                    // InternalLightweight.g:2042:3: (enumLiteral_2= 'Knowledge-based Preferences' )
-                    // InternalLightweight.g:2043:4: enumLiteral_2= 'Knowledge-based Preferences'
+                    // InternalLightweight.g:2112:3: (enumLiteral_2= 'Knowledge-based Preferences' )
+                    // InternalLightweight.g:2113:4: enumLiteral_2= 'Knowledge-based Preferences'
                     {
-                    enumLiteral_2=(Token)match(input,61,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,62,FOLLOW_2); 
 
                     				current = grammarAccess.getKVALUEAccess().getPREFERENCESEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getKVALUEAccess().getPREFERENCESEnumLiteralDeclaration_2());
@@ -4516,12 +4654,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalLightweight.g:2050:3: (enumLiteral_3= 'Low Entropy Text-Based Password' )
+                    // InternalLightweight.g:2120:3: (enumLiteral_3= 'Low Entropy Text-Based Password' )
                     {
-                    // InternalLightweight.g:2050:3: (enumLiteral_3= 'Low Entropy Text-Based Password' )
-                    // InternalLightweight.g:2051:4: enumLiteral_3= 'Low Entropy Text-Based Password'
+                    // InternalLightweight.g:2120:3: (enumLiteral_3= 'Low Entropy Text-Based Password' )
+                    // InternalLightweight.g:2121:4: enumLiteral_3= 'Low Entropy Text-Based Password'
                     {
-                    enumLiteral_3=(Token)match(input,62,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,63,FOLLOW_2); 
 
                     				current = grammarAccess.getKVALUEAccess().getLTBPEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getKVALUEAccess().getLTBPEnumLiteralDeclaration_3());
@@ -4533,12 +4671,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalLightweight.g:2058:3: (enumLiteral_4= 'Pin Code' )
+                    // InternalLightweight.g:2128:3: (enumLiteral_4= 'Pin Code' )
                     {
-                    // InternalLightweight.g:2058:3: (enumLiteral_4= 'Pin Code' )
-                    // InternalLightweight.g:2059:4: enumLiteral_4= 'Pin Code'
+                    // InternalLightweight.g:2128:3: (enumLiteral_4= 'Pin Code' )
+                    // InternalLightweight.g:2129:4: enumLiteral_4= 'Pin Code'
                     {
-                    enumLiteral_4=(Token)match(input,63,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,64,FOLLOW_2); 
 
                     				current = grammarAccess.getKVALUEAccess().getPINEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getKVALUEAccess().getPINEnumLiteralDeclaration_4());
@@ -4572,7 +4710,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBVALUE"
-    // InternalLightweight.g:2069:1: ruleBVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) ) ;
+    // InternalLightweight.g:2139:1: ruleBVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) ) ;
     public final Enumerator ruleBVALUE() throws RecognitionException {
         Enumerator current = null;
 
@@ -4583,17 +4721,17 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:2075:2: ( ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) ) )
-            // InternalLightweight.g:2076:2: ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) )
+            // InternalLightweight.g:2145:2: ( ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) ) )
+            // InternalLightweight.g:2146:2: ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) )
             {
-            // InternalLightweight.g:2076:2: ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) )
+            // InternalLightweight.g:2146:2: ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) )
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==64) ) {
+            if ( (LA22_0==65) ) {
                 alt22=1;
             }
-            else if ( (LA22_0==65) ) {
+            else if ( (LA22_0==66) ) {
                 alt22=2;
             }
             else {
@@ -4604,12 +4742,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             }
             switch (alt22) {
                 case 1 :
-                    // InternalLightweight.g:2077:3: (enumLiteral_0= 'Fingerprint Recognition' )
+                    // InternalLightweight.g:2147:3: (enumLiteral_0= 'Fingerprint Recognition' )
                     {
-                    // InternalLightweight.g:2077:3: (enumLiteral_0= 'Fingerprint Recognition' )
-                    // InternalLightweight.g:2078:4: enumLiteral_0= 'Fingerprint Recognition'
+                    // InternalLightweight.g:2147:3: (enumLiteral_0= 'Fingerprint Recognition' )
+                    // InternalLightweight.g:2148:4: enumLiteral_0= 'Fingerprint Recognition'
                     {
-                    enumLiteral_0=(Token)match(input,64,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,65,FOLLOW_2); 
 
                     				current = grammarAccess.getBVALUEAccess().getFINGERPRINTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getBVALUEAccess().getFINGERPRINTEnumLiteralDeclaration_0());
@@ -4621,12 +4759,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:2085:3: (enumLiteral_1= 'Facial Recognition' )
+                    // InternalLightweight.g:2155:3: (enumLiteral_1= 'Facial Recognition' )
                     {
-                    // InternalLightweight.g:2085:3: (enumLiteral_1= 'Facial Recognition' )
-                    // InternalLightweight.g:2086:4: enumLiteral_1= 'Facial Recognition'
+                    // InternalLightweight.g:2155:3: (enumLiteral_1= 'Facial Recognition' )
+                    // InternalLightweight.g:2156:4: enumLiteral_1= 'Facial Recognition'
                     {
-                    enumLiteral_1=(Token)match(input,65,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,66,FOLLOW_2); 
 
                     				current = grammarAccess.getBVALUEAccess().getIRISEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getBVALUEAccess().getIRISEnumLiteralDeclaration_1());
@@ -4660,7 +4798,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePVALUE"
-    // InternalLightweight.g:2096:1: rulePVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) ) ;
+    // InternalLightweight.g:2166:1: rulePVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) ) ;
     public final Enumerator rulePVALUE() throws RecognitionException {
         Enumerator current = null;
 
@@ -4671,17 +4809,17 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:2102:2: ( ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) ) )
-            // InternalLightweight.g:2103:2: ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) )
+            // InternalLightweight.g:2172:2: ( ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) ) )
+            // InternalLightweight.g:2173:2: ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) )
             {
-            // InternalLightweight.g:2103:2: ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) )
+            // InternalLightweight.g:2173:2: ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) )
             int alt23=2;
             int LA23_0 = input.LA(1);
 
-            if ( (LA23_0==66) ) {
+            if ( (LA23_0==67) ) {
                 alt23=1;
             }
-            else if ( (LA23_0==67) ) {
+            else if ( (LA23_0==68) ) {
                 alt23=2;
             }
             else {
@@ -4692,12 +4830,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             }
             switch (alt23) {
                 case 1 :
-                    // InternalLightweight.g:2104:3: (enumLiteral_0= 'Hard Drive Token' )
+                    // InternalLightweight.g:2174:3: (enumLiteral_0= 'Hard Drive Token' )
                     {
-                    // InternalLightweight.g:2104:3: (enumLiteral_0= 'Hard Drive Token' )
-                    // InternalLightweight.g:2105:4: enumLiteral_0= 'Hard Drive Token'
+                    // InternalLightweight.g:2174:3: (enumLiteral_0= 'Hard Drive Token' )
+                    // InternalLightweight.g:2175:4: enumLiteral_0= 'Hard Drive Token'
                     {
-                    enumLiteral_0=(Token)match(input,66,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,67,FOLLOW_2); 
 
                     				current = grammarAccess.getPVALUEAccess().getTOKENEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getPVALUEAccess().getTOKENEnumLiteralDeclaration_0());
@@ -4709,12 +4847,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:2112:3: (enumLiteral_1= 'Physical device' )
+                    // InternalLightweight.g:2182:3: (enumLiteral_1= 'Physical device' )
                     {
-                    // InternalLightweight.g:2112:3: (enumLiteral_1= 'Physical device' )
-                    // InternalLightweight.g:2113:4: enumLiteral_1= 'Physical device'
+                    // InternalLightweight.g:2182:3: (enumLiteral_1= 'Physical device' )
+                    // InternalLightweight.g:2183:4: enumLiteral_1= 'Physical device'
                     {
-                    enumLiteral_1=(Token)match(input,67,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,68,FOLLOW_2); 
 
                     				current = grammarAccess.getPVALUEAccess().getDEVICEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getPVALUEAccess().getDEVICEEnumLiteralDeclaration_1());
@@ -4748,7 +4886,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValidationType"
-    // InternalLightweight.g:2123:1: ruleValidationType returns [Enumerator current=null] : ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) ) ;
+    // InternalLightweight.g:2193:1: ruleValidationType returns [Enumerator current=null] : ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) ) ;
     public final Enumerator ruleValidationType() throws RecognitionException {
         Enumerator current = null;
 
@@ -4759,17 +4897,17 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:2129:2: ( ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) ) )
-            // InternalLightweight.g:2130:2: ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) )
+            // InternalLightweight.g:2199:2: ( ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) ) )
+            // InternalLightweight.g:2200:2: ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) )
             {
-            // InternalLightweight.g:2130:2: ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) )
+            // InternalLightweight.g:2200:2: ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) )
             int alt24=2;
             int LA24_0 = input.LA(1);
 
-            if ( (LA24_0==68) ) {
+            if ( (LA24_0==69) ) {
                 alt24=1;
             }
-            else if ( (LA24_0==69) ) {
+            else if ( (LA24_0==70) ) {
                 alt24=2;
             }
             else {
@@ -4780,12 +4918,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             }
             switch (alt24) {
                 case 1 :
-                    // InternalLightweight.g:2131:3: (enumLiteral_0= 'local validation' )
+                    // InternalLightweight.g:2201:3: (enumLiteral_0= 'local validation' )
                     {
-                    // InternalLightweight.g:2131:3: (enumLiteral_0= 'local validation' )
-                    // InternalLightweight.g:2132:4: enumLiteral_0= 'local validation'
+                    // InternalLightweight.g:2201:3: (enumLiteral_0= 'local validation' )
+                    // InternalLightweight.g:2202:4: enumLiteral_0= 'local validation'
                     {
-                    enumLiteral_0=(Token)match(input,68,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,69,FOLLOW_2); 
 
                     				current = grammarAccess.getValidationTypeAccess().getLOCALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getValidationTypeAccess().getLOCALEnumLiteralDeclaration_0());
@@ -4797,12 +4935,12 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:2139:3: (enumLiteral_1= 'Remote validation' )
+                    // InternalLightweight.g:2209:3: (enumLiteral_1= 'Remote validation' )
                     {
-                    // InternalLightweight.g:2139:3: (enumLiteral_1= 'Remote validation' )
-                    // InternalLightweight.g:2140:4: enumLiteral_1= 'Remote validation'
+                    // InternalLightweight.g:2209:3: (enumLiteral_1= 'Remote validation' )
+                    // InternalLightweight.g:2210:4: enumLiteral_1= 'Remote validation'
                     {
-                    enumLiteral_1=(Token)match(input,69,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,70,FOLLOW_2); 
 
                     				current = grammarAccess.getValidationTypeAccess().getREMOTEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getValidationTypeAccess().getREMOTEEnumLiteralDeclaration_1());
@@ -4851,7 +4989,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000008200000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0001280800000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0002280800000000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000030L});
@@ -4860,30 +4998,31 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000002010010L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0006000000000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x000C000000000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000030L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000060L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000000L,0x000000000000000CL});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0xF800000000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000018L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0xF000000000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000003L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000001000000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0038000000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0070000000000000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x00C0000000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0180000000000000L});
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000008000100000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000020000000000L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000040000000000L});
     public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000100010100000L});
     public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000100000100000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0700000000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0E00000000000000L});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000400000000000L});
     public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000800010000000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0001000000100000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000800010000000L});
 
 }

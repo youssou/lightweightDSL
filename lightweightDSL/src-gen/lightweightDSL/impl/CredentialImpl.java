@@ -7,6 +7,7 @@ import lightweightDSL.Credential;
 import lightweightDSL.LightweightDSLPackage;
 
 import lightweightDSL.PROVIDER;
+import lightweightDSL.Risk;
 import lightweightDSL.VerifMethod;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link lightweightDSL.impl.CredentialImpl#getProvider <em>Provider</em>}</li>
  *   <li>{@link lightweightDSL.impl.CredentialImpl#getType <em>Type</em>}</li>
  *   <li>{@link lightweightDSL.impl.CredentialImpl#getVerifmethod <em>Verifmethod</em>}</li>
+ *   <li>{@link lightweightDSL.impl.CredentialImpl#getRisk <em>Risk</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,6 +105,16 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * @ordered
 	 */
 	protected VerifMethod verifmethod;
+
+	/**
+	 * The cached value of the '{@link #getRisk() <em>Risk</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRisk()
+	 * @generated
+	 * @ordered
+	 */
+	protected Risk risk;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,6 +256,46 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Risk getRisk() {
+		if (risk != null && risk.eIsProxy()) {
+			InternalEObject oldRisk = (InternalEObject) risk;
+			risk = (Risk) eResolveProxy(oldRisk);
+			if (risk != oldRisk) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LightweightDSLPackage.CREDENTIAL__RISK,
+							oldRisk, risk));
+			}
+		}
+		return risk;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Risk basicGetRisk() {
+		return risk;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRisk(Risk newRisk) {
+		Risk oldRisk = risk;
+		risk = newRisk;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.CREDENTIAL__RISK, oldRisk,
+					risk));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -269,6 +321,10 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 			return getType();
 		case LightweightDSLPackage.CREDENTIAL__VERIFMETHOD:
 			return getVerifmethod();
+		case LightweightDSLPackage.CREDENTIAL__RISK:
+			if (resolve)
+				return getRisk();
+			return basicGetRisk();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -292,6 +348,9 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 			return;
 		case LightweightDSLPackage.CREDENTIAL__VERIFMETHOD:
 			setVerifmethod((VerifMethod) newValue);
+			return;
+		case LightweightDSLPackage.CREDENTIAL__RISK:
+			setRisk((Risk) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -317,6 +376,9 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 		case LightweightDSLPackage.CREDENTIAL__VERIFMETHOD:
 			setVerifmethod((VerifMethod) null);
 			return;
+		case LightweightDSLPackage.CREDENTIAL__RISK:
+			setRisk((Risk) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -337,6 +399,8 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 			return type != TYPE_EDEFAULT;
 		case LightweightDSLPackage.CREDENTIAL__VERIFMETHOD:
 			return verifmethod != null;
+		case LightweightDSLPackage.CREDENTIAL__RISK:
+			return risk != null;
 		}
 		return super.eIsSet(featureID);
 	}

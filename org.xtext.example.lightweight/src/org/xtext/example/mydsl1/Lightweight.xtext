@@ -20,7 +20,7 @@ AuthMethod returns AuthMethod :
 	
 MFA returns MFA : 
 	
-	type = '2FA' ":"
+	type = 'MFA' ":"
 	'{'
 		'name' ":" name = EString ","		
 		'authenticators' ":"  authenticators+=[Authenticator] "&" authenticators+=[Authenticator]+ ","?
@@ -42,6 +42,8 @@ Authenticator returns Authenticator:
 ;
 
 Possession returns Possession : 
+	{Possession}
+	
 	type = 'Possession' ':'
 	"{"
 	'name' ":" name=EString ","
@@ -50,6 +52,7 @@ Possession returns Possession :
 ;
 
 Knowledge returns Knowledge :
+	{Knowledge}
 	type = 'Knowledge' ':' '{' 
 		'name' ":" name=EString ","
 		'value' ":" value=KVALUE ","
@@ -60,6 +63,7 @@ Knowledge returns Knowledge :
 	;
 
 Biometrics returns Biometrics : 
+	{Biometrics}
 	type = 'Biometrics' ':'
 	"{"
 	'name' ":" name=EString ","
@@ -77,14 +81,15 @@ EString returns ecore::EString:
 	STRING | ID;
 
 Registration returns Registration:
+	{Registration}
 	type = 'Registration' ":"
 	'{'
 		'name' ":" name=EString ","
-		'credentials' ":"'[' credentials+=Credential ( "," credentials+=Credential)* ']' 
+		'attributes' ":"'[' attributes+=Attribute ( "," attributes+=Attribute)* ']' 
 	'}';
 	
-Credential returns Credential:
-	{Credential}
+Attribute returns Attribute:
+	{Attribute}
 	'{'
 		'name' ":" 	name=EString ","
 		'provider' ":"provider=PROVIDER ","
@@ -105,7 +110,8 @@ Recovery returns Recovery:
 	type = 'Recovery' ":"
 	'{'
 		'name' ":" name = EString ","
-		('authenticator' ":" authenticator = [Authenticator] ",")?
+		('authenticator' ":" authenticator = [Authenticator] ",")
+		'authentication' ":"  authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*		
 		('protocol' ":" protocol=Protocol)?
 	'}';
 
@@ -124,7 +130,7 @@ Reset returns Reset:
 	type = 'Reset' ":" 
 	'{'
 		'name' ":" 	name=EString ","
-		('authenticator' ":" authenticator = [Authenticator] ",")?
+		'authenticator' ":" authenticator = [Authenticator] ","
 		'authentication' ":"  authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*	
 	'}';
 

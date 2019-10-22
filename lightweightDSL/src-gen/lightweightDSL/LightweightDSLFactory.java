@@ -67,13 +67,13 @@ public interface LightweightDSLFactory extends EFactory {
 	App createApp();
 
 	/**
-	 * Returns a new object of class '<em>Credential</em>'.
+	 * Returns a new object of class '<em>Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Credential</em>'.
+	 * @return a new object of class '<em>Attribute</em>'.
 	 * @generated
 	 */
-	Credential createCredential();
+	Attribute createAttribute();
 
 	/**
 	 * Returns a new object of class '<em>Verif Method</em>'.

@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link lightweightDSL.Registration#getCredentials <em>Credentials</em>}</li>
+ *   <li>{@link lightweightDSL.Registration#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @see lightweightDSL.LightweightDSLPackage#getRegistration()
@@ -22,19 +22,15 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Registration extends Phase {
 	/**
-	 * Returns the value of the '<em><b>Credentials</b></em>' containment reference list.
-	 * The list contents are of type {@link lightweightDSL.Credential}.
+	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
+	 * The list contents are of type {@link lightweightDSL.Attribute}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Credentials</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Credentials</em>' containment reference list.
-	 * @see lightweightDSL.LightweightDSLPackage#getRegistration_Credentials()
+	 * @return the value of the '<em>Attributes</em>' containment reference list.
+	 * @see lightweightDSL.LightweightDSLPackage#getRegistration_Attributes()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Credential> getCredentials();
+	EList<Attribute> getAttributes();
 
 } // Registration

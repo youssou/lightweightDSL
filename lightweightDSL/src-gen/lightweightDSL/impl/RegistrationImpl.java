@@ -4,7 +4,7 @@ package lightweightDSL.impl;
 
 import java.util.Collection;
 
-import lightweightDSL.Credential;
+import lightweightDSL.Attribute;
 import lightweightDSL.LightweightDSLPackage;
 import lightweightDSL.Registration;
 
@@ -26,21 +26,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link lightweightDSL.impl.RegistrationImpl#getCredentials <em>Credentials</em>}</li>
+ *   <li>{@link lightweightDSL.impl.RegistrationImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RegistrationImpl extends PhaseImpl implements Registration {
 	/**
-	 * The cached value of the '{@link #getCredentials() <em>Credentials</em>}' containment reference list.
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCredentials()
+	 * @see #getAttributes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Credential> credentials;
+	protected EList<Attribute> attributes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,12 +66,13 @@ public class RegistrationImpl extends PhaseImpl implements Registration {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Credential> getCredentials() {
-		if (credentials == null) {
-			credentials = new EObjectContainmentEList<Credential>(Credential.class, this,
-					LightweightDSLPackage.REGISTRATION__CREDENTIALS);
+	@Override
+	public EList<Attribute> getAttributes() {
+		if (attributes == null) {
+			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this,
+					LightweightDSLPackage.REGISTRATION__ATTRIBUTES);
 		}
-		return credentials;
+		return attributes;
 	}
 
 	/**
@@ -82,8 +83,8 @@ public class RegistrationImpl extends PhaseImpl implements Registration {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case LightweightDSLPackage.REGISTRATION__CREDENTIALS:
-			return ((InternalEList<?>) getCredentials()).basicRemove(otherEnd, msgs);
+		case LightweightDSLPackage.REGISTRATION__ATTRIBUTES:
+			return ((InternalEList<?>) getAttributes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -96,8 +97,8 @@ public class RegistrationImpl extends PhaseImpl implements Registration {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case LightweightDSLPackage.REGISTRATION__CREDENTIALS:
-			return getCredentials();
+		case LightweightDSLPackage.REGISTRATION__ATTRIBUTES:
+			return getAttributes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,9 +112,9 @@ public class RegistrationImpl extends PhaseImpl implements Registration {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case LightweightDSLPackage.REGISTRATION__CREDENTIALS:
-			getCredentials().clear();
-			getCredentials().addAll((Collection<? extends Credential>) newValue);
+		case LightweightDSLPackage.REGISTRATION__ATTRIBUTES:
+			getAttributes().clear();
+			getAttributes().addAll((Collection<? extends Attribute>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -127,8 +128,8 @@ public class RegistrationImpl extends PhaseImpl implements Registration {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case LightweightDSLPackage.REGISTRATION__CREDENTIALS:
-			getCredentials().clear();
+		case LightweightDSLPackage.REGISTRATION__ATTRIBUTES:
+			getAttributes().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -142,8 +143,8 @@ public class RegistrationImpl extends PhaseImpl implements Registration {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case LightweightDSLPackage.REGISTRATION__CREDENTIALS:
-			return credentials != null && !credentials.isEmpty();
+		case LightweightDSLPackage.REGISTRATION__ATTRIBUTES:
+			return attributes != null && !attributes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

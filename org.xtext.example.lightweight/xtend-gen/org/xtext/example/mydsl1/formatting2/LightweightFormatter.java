@@ -6,9 +6,9 @@ package org.xtext.example.mydsl1.formatting2;
 import com.google.inject.Inject;
 import java.util.Arrays;
 import lightweightDSL.App;
+import lightweightDSL.Attribute;
 import lightweightDSL.AuthMethod;
 import lightweightDSL.Authenticator;
-import lightweightDSL.Credential;
 import lightweightDSL.Phase;
 import lightweightDSL.Registration;
 import org.eclipse.emf.common.util.EList;
@@ -41,9 +41,9 @@ public class LightweightFormatter extends AbstractFormatter2 {
   }
   
   protected void _format(final Registration registration, @Extension final IFormattableDocument document) {
-    EList<Credential> _credentials = registration.getCredentials();
-    for (final Credential credential : _credentials) {
-      document.<Credential>format(credential);
+    EList<Attribute> _attributes = registration.getAttributes();
+    for (final Attribute attribute : _attributes) {
+      document.<Attribute>format(attribute);
     }
   }
   

@@ -70,10 +70,12 @@ public class MFAImpl extends AuthMethodImpl implements MFA {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected MFAImpl() {
 		super();
+		risk = LightweightDSLFactoryImpl.eINSTANCE.createRisk();
+
 	}
 
 	/**
@@ -91,6 +93,7 @@ public class MFAImpl extends AuthMethodImpl implements MFA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ValidationType getValidation() {
 		return validation;
 	}
@@ -100,6 +103,7 @@ public class MFAImpl extends AuthMethodImpl implements MFA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValidation(ValidationType newValidation) {
 		ValidationType oldValidation = validation;
 		validation = newValidation == null ? VALIDATION_EDEFAULT : newValidation;
@@ -113,6 +117,7 @@ public class MFAImpl extends AuthMethodImpl implements MFA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isCorrelation() {
 		return correlation;
 	}
@@ -122,6 +127,7 @@ public class MFAImpl extends AuthMethodImpl implements MFA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCorrelation(boolean newCorrelation) {
 		boolean oldCorrelation = correlation;
 		correlation = newCorrelation;

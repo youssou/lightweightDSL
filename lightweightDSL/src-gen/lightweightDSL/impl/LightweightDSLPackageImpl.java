@@ -3,11 +3,11 @@
 package lightweightDSL.impl;
 
 import lightweightDSL.App;
+import lightweightDSL.Attribute;
 import lightweightDSL.AuthMethod;
 import lightweightDSL.Authenticator;
 import lightweightDSL.Biometrics;
 import lightweightDSL.CredTYPE;
-import lightweightDSL.Credential;
 import lightweightDSL.Knowledge;
 import lightweightDSL.LightweightDSLFactory;
 import lightweightDSL.LightweightDSLPackage;
@@ -84,7 +84,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass credentialEClass = null;
+	private EClass attributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,6 +274,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAuthMethod() {
 		return authMethodEClass;
 	}
@@ -283,6 +284,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthMethod_Name() {
 		return (EAttribute) authMethodEClass.getEStructuralFeatures().get(0);
 	}
@@ -292,6 +294,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAuthMethod_Authenticators() {
 		return (EReference) authMethodEClass.getEStructuralFeatures().get(1);
 	}
@@ -301,6 +304,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthMethod_Type() {
 		return (EAttribute) authMethodEClass.getEStructuralFeatures().get(2);
 	}
@@ -310,6 +314,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAuthMethod_Risk() {
 		return (EReference) authMethodEClass.getEStructuralFeatures().get(3);
 	}
@@ -319,6 +324,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getAuthMethod__ComputeLevel() {
 		return authMethodEClass.getEOperations().get(0);
 	}
@@ -328,6 +334,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRegistration() {
 		return registrationEClass;
 	}
@@ -337,7 +344,8 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRegistration_Credentials() {
+	@Override
+	public EReference getRegistration_Attributes() {
 		return (EReference) registrationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -346,6 +354,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRecovery() {
 		return recoveryEClass;
 	}
@@ -355,6 +364,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRecovery_Protocol() {
 		return (EAttribute) recoveryEClass.getEStructuralFeatures().get(0);
 	}
@@ -364,6 +374,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRecovery_Authenticator() {
 		return (EReference) recoveryEClass.getEStructuralFeatures().get(1);
 	}
@@ -373,6 +384,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLogin() {
 		return loginEClass;
 	}
@@ -382,6 +394,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLogin_Session() {
 		return (EAttribute) loginEClass.getEStructuralFeatures().get(0);
 	}
@@ -391,6 +404,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getReset() {
 		return resetEClass;
 	}
@@ -400,6 +414,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getReset_Authenticator() {
 		return (EReference) resetEClass.getEStructuralFeatures().get(0);
 	}
@@ -409,6 +424,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getApp() {
 		return appEClass;
 	}
@@ -418,6 +434,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getApp_Phases() {
 		return (EReference) appEClass.getEStructuralFeatures().get(0);
 	}
@@ -427,6 +444,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getApp_Authenticators() {
 		return (EReference) appEClass.getEStructuralFeatures().get(1);
 	}
@@ -436,6 +454,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getApp_AuthMethods() {
 		return (EReference) appEClass.getEStructuralFeatures().get(2);
 	}
@@ -445,6 +464,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getApp_Risks() {
 		return (EReference) appEClass.getEStructuralFeatures().get(3);
 	}
@@ -454,6 +474,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getApp_Registration() {
 		return (EReference) appEClass.getEStructuralFeatures().get(4);
 	}
@@ -463,8 +484,9 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCredential() {
-		return credentialEClass;
+	@Override
+	public EClass getAttribute() {
+		return attributeEClass;
 	}
 
 	/**
@@ -472,8 +494,9 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCredential_Name() {
-		return (EAttribute) credentialEClass.getEStructuralFeatures().get(0);
+	@Override
+	public EAttribute getAttribute_Name() {
+		return (EAttribute) attributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -481,8 +504,9 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCredential_Provider() {
-		return (EAttribute) credentialEClass.getEStructuralFeatures().get(1);
+	@Override
+	public EAttribute getAttribute_Provider() {
+		return (EAttribute) attributeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -490,8 +514,9 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCredential_Type() {
-		return (EAttribute) credentialEClass.getEStructuralFeatures().get(2);
+	@Override
+	public EAttribute getAttribute_Type() {
+		return (EAttribute) attributeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -499,8 +524,9 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCredential_Verifmethod() {
-		return (EReference) credentialEClass.getEStructuralFeatures().get(3);
+	@Override
+	public EReference getAttribute_Verifmethod() {
+		return (EReference) attributeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -508,8 +534,9 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCredential_Risk() {
-		return (EReference) credentialEClass.getEStructuralFeatures().get(4);
+	@Override
+	public EReference getAttribute_Risk() {
+		return (EReference) attributeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -517,6 +544,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPhase() {
 		return phaseEClass;
 	}
@@ -526,6 +554,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPhase_Name() {
 		return (EAttribute) phaseEClass.getEStructuralFeatures().get(0);
 	}
@@ -535,6 +564,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPhase_AuthMethods() {
 		return (EReference) phaseEClass.getEStructuralFeatures().get(1);
 	}
@@ -544,6 +574,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPhase_Type() {
 		return (EAttribute) phaseEClass.getEStructuralFeatures().get(2);
 	}
@@ -553,6 +584,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPhase_Risk() {
 		return (EReference) phaseEClass.getEStructuralFeatures().get(3);
 	}
@@ -562,6 +594,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getPhase__ComputeLevel() {
 		return phaseEClass.getEOperations().get(0);
 	}
@@ -571,6 +604,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAuthenticator() {
 		return authenticatorEClass;
 	}
@@ -580,6 +614,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticator_Name() {
 		return (EAttribute) authenticatorEClass.getEStructuralFeatures().get(0);
 	}
@@ -589,6 +624,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthenticator_Type() {
 		return (EAttribute) authenticatorEClass.getEStructuralFeatures().get(1);
 	}
@@ -598,6 +634,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAuthenticator_Risk() {
 		return (EReference) authenticatorEClass.getEStructuralFeatures().get(2);
 	}
@@ -607,6 +644,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getAuthenticator__ComputeLevel() {
 		return authenticatorEClass.getEOperations().get(0);
 	}
@@ -616,6 +654,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getVerifMethod() {
 		return verifMethodEClass;
 	}
@@ -625,6 +664,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVerifMethod_Validity() {
 		return (EAttribute) verifMethodEClass.getEStructuralFeatures().get(0);
 	}
@@ -634,6 +674,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVerifMethod_Uniqueness() {
 		return (EAttribute) verifMethodEClass.getEStructuralFeatures().get(1);
 	}
@@ -643,6 +684,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVerifMethod_Bindings() {
 		return (EAttribute) verifMethodEClass.getEStructuralFeatures().get(2);
 	}
@@ -652,6 +694,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVerifMethod_Level() {
 		return (EAttribute) verifMethodEClass.getEStructuralFeatures().get(3);
 	}
@@ -661,6 +704,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMFA() {
 		return mfaEClass;
 	}
@@ -670,6 +714,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMFA_Validation() {
 		return (EAttribute) mfaEClass.getEStructuralFeatures().get(0);
 	}
@@ -679,6 +724,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMFA_Correlation() {
 		return (EAttribute) mfaEClass.getEStructuralFeatures().get(1);
 	}
@@ -688,6 +734,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSFA() {
 		return sfaEClass;
 	}
@@ -697,6 +744,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getKnowledge() {
 		return knowledgeEClass;
 	}
@@ -706,6 +754,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getKnowledge_Value() {
 		return (EAttribute) knowledgeEClass.getEStructuralFeatures().get(0);
 	}
@@ -715,6 +764,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getKnowledge_LimitedAttempts() {
 		return (EAttribute) knowledgeEClass.getEStructuralFeatures().get(1);
 	}
@@ -724,6 +774,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getKnowledge_Autofilled() {
 		return (EAttribute) knowledgeEClass.getEStructuralFeatures().get(2);
 	}
@@ -733,6 +784,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPossession() {
 		return possessionEClass;
 	}
@@ -742,6 +794,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPossession_Value() {
 		return (EAttribute) possessionEClass.getEStructuralFeatures().get(0);
 	}
@@ -751,6 +804,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBiometrics() {
 		return biometricsEClass;
 	}
@@ -760,6 +814,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBiometrics_Value() {
 		return (EAttribute) biometricsEClass.getEStructuralFeatures().get(0);
 	}
@@ -769,6 +824,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRisk() {
 		return riskEClass;
 	}
@@ -778,6 +834,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRisk_Instance() {
 		return (EAttribute) riskEClass.getEStructuralFeatures().get(0);
 	}
@@ -787,6 +844,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRisk_Value() {
 		return (EAttribute) riskEClass.getEStructuralFeatures().get(1);
 	}
@@ -796,6 +854,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRisk_Message() {
 		return (EAttribute) riskEClass.getEStructuralFeatures().get(2);
 	}
@@ -805,6 +864,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRisk_Information() {
 		return (EAttribute) riskEClass.getEStructuralFeatures().get(3);
 	}
@@ -814,6 +874,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getLEVEL() {
 		return levelEEnum;
 	}
@@ -823,6 +884,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getCredTYPE() {
 		return credTYPEEEnum;
 	}
@@ -832,6 +894,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getProtocol() {
 		return protocolEEnum;
 	}
@@ -841,6 +904,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getValidationType() {
 		return validationTypeEEnum;
 	}
@@ -850,6 +914,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getBVALUE() {
 		return bvalueEEnum;
 	}
@@ -859,6 +924,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getPROVIDER() {
 		return providerEEnum;
 	}
@@ -868,6 +934,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getKVALUE() {
 		return kvalueEEnum;
 	}
@@ -877,6 +944,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getPVALUE() {
 		return pvalueEEnum;
 	}
@@ -886,6 +954,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LightweightDSLFactory getLightweightDSLFactory() {
 		return (LightweightDSLFactory) getEFactoryInstance();
 	}
@@ -918,7 +987,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 		createEOperation(authMethodEClass, AUTH_METHOD___COMPUTE_LEVEL);
 
 		registrationEClass = createEClass(REGISTRATION);
-		createEReference(registrationEClass, REGISTRATION__CREDENTIALS);
+		createEReference(registrationEClass, REGISTRATION__ATTRIBUTES);
 
 		recoveryEClass = createEClass(RECOVERY);
 		createEAttribute(recoveryEClass, RECOVERY__PROTOCOL);
@@ -937,12 +1006,12 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 		createEReference(appEClass, APP__RISKS);
 		createEReference(appEClass, APP__REGISTRATION);
 
-		credentialEClass = createEClass(CREDENTIAL);
-		createEAttribute(credentialEClass, CREDENTIAL__NAME);
-		createEAttribute(credentialEClass, CREDENTIAL__PROVIDER);
-		createEAttribute(credentialEClass, CREDENTIAL__TYPE);
-		createEReference(credentialEClass, CREDENTIAL__VERIFMETHOD);
-		createEReference(credentialEClass, CREDENTIAL__RISK);
+		attributeEClass = createEClass(ATTRIBUTE);
+		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
+		createEAttribute(attributeEClass, ATTRIBUTE__PROVIDER);
+		createEAttribute(attributeEClass, ATTRIBUTE__TYPE);
+		createEReference(attributeEClass, ATTRIBUTE__VERIFMETHOD);
+		createEReference(attributeEClass, ATTRIBUTE__RISK);
 
 		phaseEClass = createEClass(PHASE);
 		createEAttribute(phaseEClass, PHASE__NAME);
@@ -1054,7 +1123,7 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 
 		initEClass(registrationEClass, Registration.class, "Registration", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRegistration_Credentials(), this.getCredential(), null, "credentials", null, 1, -1,
+		initEReference(getRegistration_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1,
 				Registration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1092,18 +1161,18 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(credentialEClass, Credential.class, "Credential", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCredential_Name(), ecorePackage.getEString(), "name", null, 0, 1, Credential.class,
+		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCredential_Provider(), this.getPROVIDER(), "provider", null, 0, 1, Credential.class,
+		initEAttribute(getAttribute_Provider(), this.getPROVIDER(), "provider", null, 0, 1, Attribute.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCredential_Type(), this.getCredTYPE(), "type", null, 0, 1, Credential.class, !IS_TRANSIENT,
+		initEAttribute(getAttribute_Type(), this.getCredTYPE(), "type", null, 0, 1, Attribute.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCredential_Verifmethod(), this.getVerifMethod(), null, "verifmethod", null, 0, 1,
-				Credential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEReference(getAttribute_Verifmethod(), this.getVerifMethod(), null, "verifmethod", null, 0, 1,
+				Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCredential_Risk(), this.getRisk(), null, "risk", null, 0, 1, Credential.class, !IS_TRANSIENT,
+		initEReference(getAttribute_Risk(), this.getRisk(), null, "risk", null, 0, 1, Attribute.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 

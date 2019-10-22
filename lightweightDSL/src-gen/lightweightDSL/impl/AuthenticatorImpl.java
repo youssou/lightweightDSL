@@ -3,19 +3,18 @@
 package lightweightDSL.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import lightweightDSL.Authenticator;
-import lightweightDSL.LEVEL;
-import lightweightDSL.LightweightDSLPackage;
 
-import lightweightDSL.Risk;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import lightweightDSL.Authenticator;
+import lightweightDSL.LEVEL;
+import lightweightDSL.LightweightDSLPackage;
+import lightweightDSL.Risk;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,6 +106,7 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -116,6 +116,7 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -129,6 +130,7 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -138,6 +140,7 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -151,6 +154,7 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Risk getRisk() {
 		if (risk != null && risk.eIsProxy()) {
 			InternalEObject oldRisk = (InternalEObject) risk;
@@ -178,6 +182,7 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRisk(Risk newRisk) {
 		Risk oldRisk = risk;
 		risk = newRisk;
@@ -191,6 +196,7 @@ public abstract class AuthenticatorImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LEVEL computeLevel() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

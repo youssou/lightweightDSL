@@ -2,40 +2,40 @@
  */
 package lightweightDSL.impl;
 
+import lightweightDSL.Attribute;
 import lightweightDSL.CredTYPE;
-import lightweightDSL.Credential;
 import lightweightDSL.LightweightDSLPackage;
-
 import lightweightDSL.PROVIDER;
 import lightweightDSL.Risk;
 import lightweightDSL.VerifMethod;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Credential</b></em>'.
+ * An implementation of the model object '<em><b>Attribute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link lightweightDSL.impl.CredentialImpl#getName <em>Name</em>}</li>
- *   <li>{@link lightweightDSL.impl.CredentialImpl#getProvider <em>Provider</em>}</li>
- *   <li>{@link lightweightDSL.impl.CredentialImpl#getType <em>Type</em>}</li>
- *   <li>{@link lightweightDSL.impl.CredentialImpl#getVerifmethod <em>Verifmethod</em>}</li>
- *   <li>{@link lightweightDSL.impl.CredentialImpl#getRisk <em>Risk</em>}</li>
+ *   <li>{@link lightweightDSL.impl.AttributeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link lightweightDSL.impl.AttributeImpl#getProvider <em>Provider</em>}</li>
+ *   <li>{@link lightweightDSL.impl.AttributeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link lightweightDSL.impl.AttributeImpl#getVerifmethod <em>Verifmethod</em>}</li>
+ *   <li>{@link lightweightDSL.impl.AttributeImpl#getRisk <em>Risk</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CredentialImpl extends MinimalEObjectImpl.Container implements Credential {
+public class AttributeImpl extends MinimalEObjectImpl.Container implements Attribute {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -121,7 +121,7 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CredentialImpl() {
+	protected AttributeImpl() {
 		super();
 	}
 
@@ -132,7 +132,7 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LightweightDSLPackage.Literals.CREDENTIAL;
+		return LightweightDSLPackage.Literals.ATTRIBUTE;
 	}
 
 	/**
@@ -140,6 +140,7 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -149,11 +150,12 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.CREDENTIAL__NAME, oldName,
+			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.ATTRIBUTE__NAME, oldName,
 					name));
 	}
 
@@ -162,6 +164,7 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PROVIDER getProvider() {
 		return provider;
 	}
@@ -171,11 +174,12 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProvider(PROVIDER newProvider) {
 		PROVIDER oldProvider = provider;
 		provider = newProvider == null ? PROVIDER_EDEFAULT : newProvider;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.CREDENTIAL__PROVIDER,
+			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.ATTRIBUTE__PROVIDER,
 					oldProvider, provider));
 	}
 
@@ -184,6 +188,7 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CredTYPE getType() {
 		return type;
 	}
@@ -193,11 +198,12 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(CredTYPE newType) {
 		CredTYPE oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.CREDENTIAL__TYPE, oldType,
+			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.ATTRIBUTE__TYPE, oldType,
 					type));
 	}
 
@@ -206,6 +212,7 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public VerifMethod getVerifmethod() {
 		return verifmethod;
 	}
@@ -220,7 +227,7 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 		verifmethod = newVerifmethod;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					LightweightDSLPackage.CREDENTIAL__VERIFMETHOD, oldVerifmethod, newVerifmethod);
+					LightweightDSLPackage.ATTRIBUTE__VERIFMETHOD, oldVerifmethod, newVerifmethod);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -234,20 +241,21 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVerifmethod(VerifMethod newVerifmethod) {
 		if (newVerifmethod != verifmethod) {
 			NotificationChain msgs = null;
 			if (verifmethod != null)
 				msgs = ((InternalEObject) verifmethod).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - LightweightDSLPackage.CREDENTIAL__VERIFMETHOD, null, msgs);
+						EOPPOSITE_FEATURE_BASE - LightweightDSLPackage.ATTRIBUTE__VERIFMETHOD, null, msgs);
 			if (newVerifmethod != null)
 				msgs = ((InternalEObject) newVerifmethod).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - LightweightDSLPackage.CREDENTIAL__VERIFMETHOD, null, msgs);
+						EOPPOSITE_FEATURE_BASE - LightweightDSLPackage.ATTRIBUTE__VERIFMETHOD, null, msgs);
 			msgs = basicSetVerifmethod(newVerifmethod, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.CREDENTIAL__VERIFMETHOD,
+			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.ATTRIBUTE__VERIFMETHOD,
 					newVerifmethod, newVerifmethod));
 	}
 
@@ -256,13 +264,14 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Risk getRisk() {
 		if (risk != null && risk.eIsProxy()) {
 			InternalEObject oldRisk = (InternalEObject) risk;
 			risk = (Risk) eResolveProxy(oldRisk);
 			if (risk != oldRisk) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LightweightDSLPackage.CREDENTIAL__RISK,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LightweightDSLPackage.ATTRIBUTE__RISK,
 							oldRisk, risk));
 			}
 		}
@@ -283,11 +292,12 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRisk(Risk newRisk) {
 		Risk oldRisk = risk;
 		risk = newRisk;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.CREDENTIAL__RISK, oldRisk,
+			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.ATTRIBUTE__RISK, oldRisk,
 					risk));
 	}
 
@@ -299,7 +309,7 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case LightweightDSLPackage.CREDENTIAL__VERIFMETHOD:
+		case LightweightDSLPackage.ATTRIBUTE__VERIFMETHOD:
 			return basicSetVerifmethod(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -313,15 +323,15 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case LightweightDSLPackage.CREDENTIAL__NAME:
+		case LightweightDSLPackage.ATTRIBUTE__NAME:
 			return getName();
-		case LightweightDSLPackage.CREDENTIAL__PROVIDER:
+		case LightweightDSLPackage.ATTRIBUTE__PROVIDER:
 			return getProvider();
-		case LightweightDSLPackage.CREDENTIAL__TYPE:
+		case LightweightDSLPackage.ATTRIBUTE__TYPE:
 			return getType();
-		case LightweightDSLPackage.CREDENTIAL__VERIFMETHOD:
+		case LightweightDSLPackage.ATTRIBUTE__VERIFMETHOD:
 			return getVerifmethod();
-		case LightweightDSLPackage.CREDENTIAL__RISK:
+		case LightweightDSLPackage.ATTRIBUTE__RISK:
 			if (resolve)
 				return getRisk();
 			return basicGetRisk();
@@ -337,19 +347,19 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case LightweightDSLPackage.CREDENTIAL__NAME:
+		case LightweightDSLPackage.ATTRIBUTE__NAME:
 			setName((String) newValue);
 			return;
-		case LightweightDSLPackage.CREDENTIAL__PROVIDER:
+		case LightweightDSLPackage.ATTRIBUTE__PROVIDER:
 			setProvider((PROVIDER) newValue);
 			return;
-		case LightweightDSLPackage.CREDENTIAL__TYPE:
+		case LightweightDSLPackage.ATTRIBUTE__TYPE:
 			setType((CredTYPE) newValue);
 			return;
-		case LightweightDSLPackage.CREDENTIAL__VERIFMETHOD:
+		case LightweightDSLPackage.ATTRIBUTE__VERIFMETHOD:
 			setVerifmethod((VerifMethod) newValue);
 			return;
-		case LightweightDSLPackage.CREDENTIAL__RISK:
+		case LightweightDSLPackage.ATTRIBUTE__RISK:
 			setRisk((Risk) newValue);
 			return;
 		}
@@ -364,19 +374,19 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case LightweightDSLPackage.CREDENTIAL__NAME:
+		case LightweightDSLPackage.ATTRIBUTE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case LightweightDSLPackage.CREDENTIAL__PROVIDER:
+		case LightweightDSLPackage.ATTRIBUTE__PROVIDER:
 			setProvider(PROVIDER_EDEFAULT);
 			return;
-		case LightweightDSLPackage.CREDENTIAL__TYPE:
+		case LightweightDSLPackage.ATTRIBUTE__TYPE:
 			setType(TYPE_EDEFAULT);
 			return;
-		case LightweightDSLPackage.CREDENTIAL__VERIFMETHOD:
+		case LightweightDSLPackage.ATTRIBUTE__VERIFMETHOD:
 			setVerifmethod((VerifMethod) null);
 			return;
-		case LightweightDSLPackage.CREDENTIAL__RISK:
+		case LightweightDSLPackage.ATTRIBUTE__RISK:
 			setRisk((Risk) null);
 			return;
 		}
@@ -391,15 +401,15 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case LightweightDSLPackage.CREDENTIAL__NAME:
+		case LightweightDSLPackage.ATTRIBUTE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case LightweightDSLPackage.CREDENTIAL__PROVIDER:
+		case LightweightDSLPackage.ATTRIBUTE__PROVIDER:
 			return provider != PROVIDER_EDEFAULT;
-		case LightweightDSLPackage.CREDENTIAL__TYPE:
+		case LightweightDSLPackage.ATTRIBUTE__TYPE:
 			return type != TYPE_EDEFAULT;
-		case LightweightDSLPackage.CREDENTIAL__VERIFMETHOD:
+		case LightweightDSLPackage.ATTRIBUTE__VERIFMETHOD:
 			return verifmethod != null;
-		case LightweightDSLPackage.CREDENTIAL__RISK:
+		case LightweightDSLPackage.ATTRIBUTE__RISK:
 			return risk != null;
 		}
 		return super.eIsSet(featureID);
@@ -426,4 +436,4 @@ public class CredentialImpl extends MinimalEObjectImpl.Container implements Cred
 		return result.toString();
 	}
 
-} //CredentialImpl
+} //AttributeImpl

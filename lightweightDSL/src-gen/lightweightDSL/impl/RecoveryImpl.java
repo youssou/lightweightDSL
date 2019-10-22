@@ -83,6 +83,7 @@ public class RecoveryImpl extends PhaseImpl implements Recovery {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Protocol getProtocol() {
 		return protocol;
 	}
@@ -92,6 +93,7 @@ public class RecoveryImpl extends PhaseImpl implements Recovery {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProtocol(Protocol newProtocol) {
 		Protocol oldProtocol = protocol;
 		protocol = newProtocol == null ? PROTOCOL_EDEFAULT : newProtocol;
@@ -105,6 +107,7 @@ public class RecoveryImpl extends PhaseImpl implements Recovery {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Authenticator getAuthenticator() {
 		if (authenticator != null && authenticator.eIsProxy()) {
 			InternalEObject oldAuthenticator = (InternalEObject) authenticator;
@@ -132,6 +135,7 @@ public class RecoveryImpl extends PhaseImpl implements Recovery {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAuthenticator(Authenticator newAuthenticator) {
 		Authenticator oldAuthenticator = authenticator;
 		authenticator = newAuthenticator;

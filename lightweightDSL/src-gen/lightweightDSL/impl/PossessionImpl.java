@@ -70,6 +70,7 @@ public class PossessionImpl extends AuthenticatorImpl implements Possession {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PVALUE getValue() {
 		return value;
 	}
@@ -79,6 +80,7 @@ public class PossessionImpl extends AuthenticatorImpl implements Possession {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(PVALUE newValue) {
 		PVALUE oldValue = value;
 		value = newValue == null ? VALUE_EDEFAULT : newValue;

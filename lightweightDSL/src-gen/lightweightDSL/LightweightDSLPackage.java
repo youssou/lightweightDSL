@@ -251,13 +251,13 @@ public interface LightweightDSLPackage extends EPackage {
 	int REGISTRATION__RISK = PHASE__RISK;
 
 	/**
-	 * The feature id for the '<em><b>Credentials</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION__CREDENTIALS = PHASE_FEATURE_COUNT + 0;
+	int REGISTRATION__ATTRIBUTES = PHASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Registration</em>' class.
@@ -615,14 +615,14 @@ public interface LightweightDSLPackage extends EPackage {
 	int APP_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link lightweightDSL.impl.CredentialImpl <em>Credential</em>}' class.
+	 * The meta object id for the '{@link lightweightDSL.impl.AttributeImpl <em>Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see lightweightDSL.impl.CredentialImpl
-	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getCredential()
+	 * @see lightweightDSL.impl.AttributeImpl
+	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getAttribute()
 	 * @generated
 	 */
-	int CREDENTIAL = 6;
+	int ATTRIBUTE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -631,7 +631,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDENTIAL__NAME = 0;
+	int ATTRIBUTE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Provider</b></em>' attribute.
@@ -640,7 +640,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDENTIAL__PROVIDER = 1;
+	int ATTRIBUTE__PROVIDER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -649,7 +649,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDENTIAL__TYPE = 2;
+	int ATTRIBUTE__TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Verifmethod</b></em>' containment reference.
@@ -658,7 +658,7 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDENTIAL__VERIFMETHOD = 3;
+	int ATTRIBUTE__VERIFMETHOD = 3;
 
 	/**
 	 * The feature id for the '<em><b>Risk</b></em>' reference.
@@ -667,25 +667,25 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDENTIAL__RISK = 4;
+	int ATTRIBUTE__RISK = 4;
 
 	/**
-	 * The number of structural features of the '<em>Credential</em>' class.
+	 * The number of structural features of the '<em>Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDENTIAL_FEATURE_COUNT = 5;
+	int ATTRIBUTE_FEATURE_COUNT = 5;
 
 	/**
-	 * The number of operations of the '<em>Credential</em>' class.
+	 * The number of operations of the '<em>Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDENTIAL_OPERATION_COUNT = 0;
+	int ATTRIBUTE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link lightweightDSL.impl.AuthenticatorImpl <em>Authenticator</em>}' class.
@@ -1435,15 +1435,15 @@ public interface LightweightDSLPackage extends EPackage {
 	EClass getRegistration();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link lightweightDSL.Registration#getCredentials <em>Credentials</em>}'.
+	 * Returns the meta object for the containment reference list '{@link lightweightDSL.Registration#getAttributes <em>Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Credentials</em>'.
-	 * @see lightweightDSL.Registration#getCredentials()
+	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
+	 * @see lightweightDSL.Registration#getAttributes()
 	 * @see #getRegistration()
 	 * @generated
 	 */
-	EReference getRegistration_Credentials();
+	EReference getRegistration_Attributes();
 
 	/**
 	 * Returns the meta object for class '{@link lightweightDSL.Recovery <em>Recovery</em>}'.
@@ -1585,69 +1585,69 @@ public interface LightweightDSLPackage extends EPackage {
 	EReference getApp_Registration();
 
 	/**
-	 * Returns the meta object for class '{@link lightweightDSL.Credential <em>Credential</em>}'.
+	 * Returns the meta object for class '{@link lightweightDSL.Attribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Credential</em>'.
-	 * @see lightweightDSL.Credential
+	 * @return the meta object for class '<em>Attribute</em>'.
+	 * @see lightweightDSL.Attribute
 	 * @generated
 	 */
-	EClass getCredential();
+	EClass getAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link lightweightDSL.Credential#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link lightweightDSL.Attribute#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see lightweightDSL.Credential#getName()
-	 * @see #getCredential()
+	 * @see lightweightDSL.Attribute#getName()
+	 * @see #getAttribute()
 	 * @generated
 	 */
-	EAttribute getCredential_Name();
+	EAttribute getAttribute_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link lightweightDSL.Credential#getProvider <em>Provider</em>}'.
+	 * Returns the meta object for the attribute '{@link lightweightDSL.Attribute#getProvider <em>Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Provider</em>'.
-	 * @see lightweightDSL.Credential#getProvider()
-	 * @see #getCredential()
+	 * @see lightweightDSL.Attribute#getProvider()
+	 * @see #getAttribute()
 	 * @generated
 	 */
-	EAttribute getCredential_Provider();
+	EAttribute getAttribute_Provider();
 
 	/**
-	 * Returns the meta object for the attribute '{@link lightweightDSL.Credential#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '{@link lightweightDSL.Attribute#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see lightweightDSL.Credential#getType()
-	 * @see #getCredential()
+	 * @see lightweightDSL.Attribute#getType()
+	 * @see #getAttribute()
 	 * @generated
 	 */
-	EAttribute getCredential_Type();
+	EAttribute getAttribute_Type();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link lightweightDSL.Credential#getVerifmethod <em>Verifmethod</em>}'.
+	 * Returns the meta object for the containment reference '{@link lightweightDSL.Attribute#getVerifmethod <em>Verifmethod</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Verifmethod</em>'.
-	 * @see lightweightDSL.Credential#getVerifmethod()
-	 * @see #getCredential()
+	 * @see lightweightDSL.Attribute#getVerifmethod()
+	 * @see #getAttribute()
 	 * @generated
 	 */
-	EReference getCredential_Verifmethod();
+	EReference getAttribute_Verifmethod();
 
 	/**
-	 * Returns the meta object for the reference '{@link lightweightDSL.Credential#getRisk <em>Risk</em>}'.
+	 * Returns the meta object for the reference '{@link lightweightDSL.Attribute#getRisk <em>Risk</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Risk</em>'.
-	 * @see lightweightDSL.Credential#getRisk()
-	 * @see #getCredential()
+	 * @see lightweightDSL.Attribute#getRisk()
+	 * @see #getAttribute()
 	 * @generated
 	 */
-	EReference getCredential_Risk();
+	EReference getAttribute_Risk();
 
 	/**
 	 * Returns the meta object for class '{@link lightweightDSL.Phase <em>Phase</em>}'.
@@ -2165,12 +2165,12 @@ public interface LightweightDSLPackage extends EPackage {
 		EClass REGISTRATION = eINSTANCE.getRegistration();
 
 		/**
-		 * The meta object literal for the '<em><b>Credentials</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REGISTRATION__CREDENTIALS = eINSTANCE.getRegistration_Credentials();
+		EReference REGISTRATION__ATTRIBUTES = eINSTANCE.getRegistration_Attributes();
 
 		/**
 		 * The meta object literal for the '{@link lightweightDSL.impl.RecoveryImpl <em>Recovery</em>}' class.
@@ -2285,14 +2285,14 @@ public interface LightweightDSLPackage extends EPackage {
 		EReference APP__REGISTRATION = eINSTANCE.getApp_Registration();
 
 		/**
-		 * The meta object literal for the '{@link lightweightDSL.impl.CredentialImpl <em>Credential</em>}' class.
+		 * The meta object literal for the '{@link lightweightDSL.impl.AttributeImpl <em>Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see lightweightDSL.impl.CredentialImpl
-		 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getCredential()
+		 * @see lightweightDSL.impl.AttributeImpl
+		 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getAttribute()
 		 * @generated
 		 */
-		EClass CREDENTIAL = eINSTANCE.getCredential();
+		EClass ATTRIBUTE = eINSTANCE.getAttribute();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2300,7 +2300,7 @@ public interface LightweightDSLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CREDENTIAL__NAME = eINSTANCE.getCredential_Name();
+		EAttribute ATTRIBUTE__NAME = eINSTANCE.getAttribute_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Provider</b></em>' attribute feature.
@@ -2308,7 +2308,7 @@ public interface LightweightDSLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CREDENTIAL__PROVIDER = eINSTANCE.getCredential_Provider();
+		EAttribute ATTRIBUTE__PROVIDER = eINSTANCE.getAttribute_Provider();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -2316,7 +2316,7 @@ public interface LightweightDSLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CREDENTIAL__TYPE = eINSTANCE.getCredential_Type();
+		EAttribute ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Verifmethod</b></em>' containment reference feature.
@@ -2324,7 +2324,7 @@ public interface LightweightDSLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CREDENTIAL__VERIFMETHOD = eINSTANCE.getCredential_Verifmethod();
+		EReference ATTRIBUTE__VERIFMETHOD = eINSTANCE.getAttribute_Verifmethod();
 
 		/**
 		 * The meta object literal for the '<em><b>Risk</b></em>' reference feature.
@@ -2332,7 +2332,7 @@ public interface LightweightDSLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CREDENTIAL__RISK = eINSTANCE.getCredential_Risk();
+		EReference ATTRIBUTE__RISK = eINSTANCE.getAttribute_Risk();
 
 		/**
 		 * The meta object literal for the '{@link lightweightDSL.impl.PhaseImpl <em>Phase</em>}' class.

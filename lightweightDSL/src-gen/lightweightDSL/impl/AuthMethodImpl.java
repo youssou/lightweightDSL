@@ -119,6 +119,7 @@ public abstract class AuthMethodImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -128,6 +129,7 @@ public abstract class AuthMethodImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -141,6 +143,7 @@ public abstract class AuthMethodImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Authenticator> getAuthenticators() {
 		if (authenticators == null) {
 			authenticators = new EObjectResolvingEList<Authenticator>(Authenticator.class, this,
@@ -154,6 +157,7 @@ public abstract class AuthMethodImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -163,6 +167,7 @@ public abstract class AuthMethodImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -176,6 +181,7 @@ public abstract class AuthMethodImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Risk getRisk() {
 		if (risk != null && risk.eIsProxy()) {
 			InternalEObject oldRisk = (InternalEObject) risk;
@@ -203,6 +209,7 @@ public abstract class AuthMethodImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRisk(Risk newRisk) {
 		Risk oldRisk = risk;
 		risk = newRisk;
@@ -216,6 +223,7 @@ public abstract class AuthMethodImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LEVEL computeLevel() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

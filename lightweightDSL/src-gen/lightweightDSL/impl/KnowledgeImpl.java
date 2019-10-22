@@ -112,6 +112,7 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public KVALUE getValue() {
 		return value;
 	}
@@ -121,6 +122,7 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(KVALUE newValue) {
 		KVALUE oldValue = value;
 		value = newValue == null ? VALUE_EDEFAULT : newValue;
@@ -134,6 +136,7 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isLimitedAttempts() {
 		return limitedAttempts;
 	}
@@ -143,6 +146,7 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLimitedAttempts(boolean newLimitedAttempts) {
 		boolean oldLimitedAttempts = limitedAttempts;
 		limitedAttempts = newLimitedAttempts;
@@ -156,6 +160,7 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isAutofilled() {
 		return autofilled;
 	}
@@ -165,6 +170,7 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAutofilled(boolean newAutofilled) {
 		boolean oldAutofilled = autofilled;
 		autofilled = newAutofilled;

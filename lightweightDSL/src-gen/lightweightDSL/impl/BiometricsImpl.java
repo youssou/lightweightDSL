@@ -70,6 +70,7 @@ public class BiometricsImpl extends AuthenticatorImpl implements Biometrics {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BVALUE getValue() {
 		return value;
 	}
@@ -79,6 +80,7 @@ public class BiometricsImpl extends AuthenticatorImpl implements Biometrics {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(BVALUE newValue) {
 		BVALUE oldValue = value;
 		value = newValue == null ? VALUE_EDEFAULT : newValue;

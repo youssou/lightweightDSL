@@ -1,6 +1,5 @@
 '&'=44
 ','=38
-'2FA'=62
 ':'=33
 'App'=32
 'Authentications'=39
@@ -19,6 +18,7 @@
 'Local'=20
 'Login'=69
 'Low Entropy Text-Based Password'=24
+'MFA'=62
 'MS-based'=19
 'Pass phrase'=22
 'Physical device'=29
@@ -34,19 +34,19 @@
 'Self provided'=14
 '['=36
 ']'=37
-'authentication'=60
+'attributes'=51
+'authentication'=58
 'authenticator'=47
 'authenticators'=43
 'autofillable'=50
 'bindings'=57
 'correlation'=45
-'credentials'=51
 'false'=12
 'limitedAttempts'=49
 'local validation'=30
 'name'=42
-'persistedSession'=59
-'protocol'=58
+'persistedSession'=61
+'protocol'=60
 'provider'=52
 'true'=11
 'type'=53
@@ -56,7 +56,7 @@
 'value'=48
 'verification'=54
 '{'=34
-'||'=61
+'||'=59
 '}'=41
 RULE_ANY_OTHER=10
 RULE_ID=5

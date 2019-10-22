@@ -11,8 +11,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="risk" eType="#//Risk"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Registration" eSuperTypes="#//Phase">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="credentials" lowerBound="1"
-        upperBound="-1" eType="#//Credential" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
+        upperBound="-1" eType="#//Attribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Recovery" eSuperTypes="#//Phase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="#//Protocol"/>
@@ -35,7 +35,7 @@
         eType="#//Risk"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="registration" eType="#//Registration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Credential">
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" eType="#//PROVIDER"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//CredTYPE"/>

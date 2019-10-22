@@ -119,6 +119,7 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Phase> getPhases() {
 		if (phases == null) {
 			phases = new EObjectContainmentEList<Phase>(Phase.class, this, LightweightDSLPackage.APP__PHASES);
@@ -131,6 +132,7 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Authenticator> getAuthenticators() {
 		if (authenticators == null) {
 			authenticators = new EObjectContainmentEList<Authenticator>(Authenticator.class, this,
@@ -144,6 +146,7 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AuthMethod> getAuthMethods() {
 		if (authMethods == null) {
 			authMethods = new EObjectContainmentEList<AuthMethod>(AuthMethod.class, this,
@@ -157,6 +160,7 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Risk> getRisks() {
 		if (risks == null) {
 			risks = new EObjectResolvingEList<Risk>(Risk.class, this, LightweightDSLPackage.APP__RISKS);
@@ -169,6 +173,7 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Registration getRegistration() {
 		if (registration != null && registration.eIsProxy()) {
 			InternalEObject oldRegistration = (InternalEObject) registration;
@@ -196,6 +201,7 @@ public class AppImpl extends MinimalEObjectImpl.Container implements App {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRegistration(Registration newRegistration) {
 		Registration oldRegistration = registration;
 		registration = newRegistration;

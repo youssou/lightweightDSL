@@ -31,8 +31,8 @@ class LightweightFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(Registration registration, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (credential : registration.credentials) {
-			credential.format
+		for (attribute : registration.attributes) {
+			attribute.format
 		}
 	}
 	

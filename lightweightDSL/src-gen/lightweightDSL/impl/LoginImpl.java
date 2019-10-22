@@ -69,6 +69,7 @@ public class LoginImpl extends PhaseImpl implements Login {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSession() {
 		return session;
 	}
@@ -78,6 +79,7 @@ public class LoginImpl extends PhaseImpl implements Login {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSession(boolean newSession) {
 		boolean oldSession = session;
 		session = newSession;

@@ -67,8 +67,8 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 			return createReset();
 		case LightweightDSLPackage.APP:
 			return createApp();
-		case LightweightDSLPackage.CREDENTIAL:
-			return createCredential();
+		case LightweightDSLPackage.ATTRIBUTE:
+			return createAttribute();
 		case LightweightDSLPackage.VERIF_METHOD:
 			return createVerifMethod();
 		case LightweightDSLPackage.MFA:
@@ -151,6 +151,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Registration createRegistration() {
 		RegistrationImpl registration = new RegistrationImpl();
 		return registration;
@@ -161,6 +162,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Recovery createRecovery() {
 		RecoveryImpl recovery = new RecoveryImpl();
 		return recovery;
@@ -171,6 +173,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Login createLogin() {
 		LoginImpl login = new LoginImpl();
 		return login;
@@ -181,6 +184,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Reset createReset() {
 		ResetImpl reset = new ResetImpl();
 		return reset;
@@ -191,6 +195,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public App createApp() {
 		AppImpl app = new AppImpl();
 		return app;
@@ -201,9 +206,10 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Credential createCredential() {
-		CredentialImpl credential = new CredentialImpl();
-		return credential;
+	@Override
+	public Attribute createAttribute() {
+		AttributeImpl attribute = new AttributeImpl();
+		return attribute;
 	}
 
 	/**
@@ -211,6 +217,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public VerifMethod createVerifMethod() {
 		VerifMethodImpl verifMethod = new VerifMethodImpl();
 		return verifMethod;
@@ -221,6 +228,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MFA createMFA() {
 		MFAImpl mfa = new MFAImpl();
 		return mfa;
@@ -231,6 +239,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SFA createSFA() {
 		SFAImpl sfa = new SFAImpl();
 		return sfa;
@@ -241,6 +250,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Knowledge createKnowledge() {
 		KnowledgeImpl knowledge = new KnowledgeImpl();
 		return knowledge;
@@ -251,6 +261,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Possession createPossession() {
 		PossessionImpl possession = new PossessionImpl();
 		return possession;
@@ -261,6 +272,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Biometrics createBiometrics() {
 		BiometricsImpl biometrics = new BiometricsImpl();
 		return biometrics;
@@ -271,6 +283,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Risk createRisk() {
 		RiskImpl risk = new RiskImpl();
 		return risk;
@@ -457,6 +470,7 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LightweightDSLPackage getLightweightDSLPackage() {
 		return (LightweightDSLPackage) getEPackage();
 	}

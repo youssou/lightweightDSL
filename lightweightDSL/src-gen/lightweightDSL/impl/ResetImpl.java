@@ -59,6 +59,7 @@ public class ResetImpl extends PhaseImpl implements Reset {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Authenticator getAuthenticator() {
 		if (authenticator != null && authenticator.eIsProxy()) {
 			InternalEObject oldAuthenticator = (InternalEObject) authenticator;
@@ -86,6 +87,7 @@ public class ResetImpl extends PhaseImpl implements Reset {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAuthenticator(Authenticator newAuthenticator) {
 		Authenticator oldAuthenticator = authenticator;
 		authenticator = newAuthenticator;

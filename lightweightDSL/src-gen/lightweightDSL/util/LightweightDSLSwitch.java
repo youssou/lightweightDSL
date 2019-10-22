@@ -116,9 +116,9 @@ public class LightweightDSLSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case LightweightDSLPackage.CREDENTIAL: {
-			Credential credential = (Credential) theEObject;
-			T result = caseCredential(credential);
+		case LightweightDSLPackage.ATTRIBUTE: {
+			Attribute attribute = (Attribute) theEObject;
+			T result = caseAttribute(attribute);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -292,17 +292,17 @@ public class LightweightDSLSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Credential</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Credential</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCredential(Credential object) {
+	public T caseAttribute(Attribute object) {
 		return null;
 	}
 

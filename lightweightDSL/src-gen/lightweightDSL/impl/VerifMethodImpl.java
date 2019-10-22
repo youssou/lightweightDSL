@@ -134,6 +134,7 @@ public class VerifMethodImpl extends MinimalEObjectImpl.Container implements Ver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isValidity() {
 		return validity;
 	}
@@ -143,6 +144,7 @@ public class VerifMethodImpl extends MinimalEObjectImpl.Container implements Ver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValidity(boolean newValidity) {
 		boolean oldValidity = validity;
 		validity = newValidity;
@@ -156,6 +158,7 @@ public class VerifMethodImpl extends MinimalEObjectImpl.Container implements Ver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isUniqueness() {
 		return uniqueness;
 	}
@@ -165,6 +168,7 @@ public class VerifMethodImpl extends MinimalEObjectImpl.Container implements Ver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUniqueness(boolean newUniqueness) {
 		boolean oldUniqueness = uniqueness;
 		uniqueness = newUniqueness;
@@ -178,6 +182,7 @@ public class VerifMethodImpl extends MinimalEObjectImpl.Container implements Ver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isBindings() {
 		return bindings;
 	}
@@ -187,6 +192,7 @@ public class VerifMethodImpl extends MinimalEObjectImpl.Container implements Ver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBindings(boolean newBindings) {
 		boolean oldBindings = bindings;
 		bindings = newBindings;
@@ -200,6 +206,7 @@ public class VerifMethodImpl extends MinimalEObjectImpl.Container implements Ver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LEVEL getLevel() {
 		return level;
 	}
@@ -209,6 +216,7 @@ public class VerifMethodImpl extends MinimalEObjectImpl.Container implements Ver
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLevel(LEVEL newLevel) {
 		LEVEL oldLevel = level;
 		level = newLevel == null ? LEVEL_EDEFAULT : newLevel;

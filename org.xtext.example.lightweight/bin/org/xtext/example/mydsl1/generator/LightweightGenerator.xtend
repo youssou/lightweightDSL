@@ -23,6 +23,10 @@ import javax.print.attribute.Attribute
 import lightweightDSL.Utils
 import lightweightDSL.Knowledge
 import lightweightDSL.KVALUE
+import lightweightDSL.Risk
+import lightweightDSL.impl.RiskImpl
+import lightweightDSL.LightweightDSLFactory
+import lightweightDSL.impl.KnowledgeImpl
 
 /**
  * Generates code from your model files on save.
@@ -30,7 +34,28 @@ import lightweightDSL.KVALUE
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class LightweightGenerator extends AbstractGenerator {
+	/*
+	 * Authentication Factor
+	 */
+	public static final String POSSESSION = "Possession";
+	public static final String BIOMETRICS = "Biometrics";
+	public static final String KNOWLEDGE = "Knowledge";
+	
+	/*
+	 * Method af authentication
+	 */
+	
+	public static final String SFA = "SFA";
+	public static final String MFA = "MFA";
 
+	/*
+	 * Procedures
+	 */
+	
+	public final static String REGISTRATION = "Registration";
+	public static final String LOGIN = "Login"; 
+	public static final String RESET = "Reset"; 
+	public static final String RECOVERY = "Recovery";
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
@@ -41,45 +66,44 @@ class LightweightGenerator extends AbstractGenerator {
 		
 	val app = resource.contents.head as App
 		
+		// Initiate authenticator
 		app.initAuthenticator 
+		
+		// Initiate authentication methods
 		app.initAuthentications
+		
+		// Assign methods security level
 		app.assignMethod
-		
-		
-		
 	}
 	
 	// function to initialize authenticators
 	def initAuthenticator(App app) {
 		for(auth : app.authenticators) {
+			auth.risk = LightweightDSLFactory.eINSTANCE.createRisk // Instantiate risk.
 			switch(auth.type) {
-				
-				case Utils.POSSESSION : {
-					
-					auth.risk.instance = Utils.POSSESSION
+				case POSSESSION : {
+					auth.risk.instance = POSSESSION
 					auth.risk.value = LEVEL.MEDIUM
-					auth.risk.message = "Use of possession based authentication"
+					auth.risk.message = "Use of possession based authenticator"
 					auth.risk.information = ""
 				}
 				
-				case Utils.BIOMETRICS : {
-					auth.risk.instance = Utils.BIOMETRICS
+				case BIOMETRICS : {
+					auth.risk.instance = BIOMETRICS
 					auth.risk.value = LEVEL.LOW
 					auth.risk.message = "Use of biometrics based authenticator"
 					auth.risk.information = ""
 				}
 				
-				case Utils.KNOWLEDGE : {
-					
+				case KNOWLEDGE : {
 					val knowledgeAuth = auth as Knowledge
-					auth.risk.instance = Utils.KNOWLEDGE
+					auth.risk.instance = KNOWLEDGE
 					
 					//Basic evaluation 
-					
 					if (knowledgeAuth.value == KVALUE.PREFERENCES) {
 						
 						auth.risk.value = LEVEL.HIGH
-						auth.risk.message = "Use of preference based authentication "+auth.name+"!" 
+						auth.risk.message = "Use of preference based authenticator "+auth.name+"!" 
 						auth.risk.information = ""	
 						
 					} else if(knowledgeAuth.value == KVALUE.PIN || knowledgeAuth.value == KVALUE.LTBP){
@@ -89,9 +113,8 @@ class LightweightGenerator extends AbstractGenerator {
 						auth.risk.information = ""	
 						
 					} else {
-						
-						auth.risk.value = LEVEL.LOW // assessed as posession based	
-						auth.risk.message = "Use of string text based authentication "+auth.name+"!" 
+						auth.risk.value = LEVEL.LOW 
+						auth.risk.message = "Use of strong text based authentication "+auth.name+"!" 
 						auth.risk.information = ""
 						
 					}
@@ -102,25 +125,25 @@ class LightweightGenerator extends AbstractGenerator {
 						if(knowledgeAuth.autofilled) {
 							if(auth.risk.value < LEVEL.MEDIUM) { // Low security level.
 								auth.risk.value = LEVEL.MEDIUM // 
-								auth.risk.message.concat("\n The risk is rised because of the use of autofilled form considered as possession-based authentication")
+								auth.risk.message.concat("\n The risk is raised because of the use of autofillable form considered as possession-based authentication")
 								auth.risk.information = ""	
 							} // Level is high because of preferences.
 						} else {
 							
 							if(auth.risk.value ==  LEVEL.MEDIUM) { // From medium to high
 								auth.risk.value = LEVEL.HIGH // 
-								auth.risk.message.concat("\n The risk is raised because of the unlimited attemps")
+								auth.risk.message.concat("\n The risk is raised because of the unlimited attempts")
 								auth.risk.information = ""	
 							}
+							
 							if (auth.risk.value ==  LEVEL.LOW) { // from low to medium
 								auth.risk.value = LEVEL.MEDIUM // 
-								auth.risk.message.concat("\n The risk is raised because of the unlimited attemps")
+								auth.risk.message.concat("\n The risk is raised from LOW to MEDIUM because of the unlimited attempts")
 								auth.risk.information = ""	
 							}
 						}
 					}
 				}
-				
 			}
 		}
 		
@@ -128,65 +151,79 @@ class LightweightGenerator extends AbstractGenerator {
 	
 	def initAuthentications(App app) {
 		for(method : app.authMethods) {
-			if(method.type == Utils.SFA) {
+		//	method.risk = LightweightDSLFactory.eINSTANCE.createRisk
+			if(method.type == SFA) {
 				method.risk = method.authenticators.get(0).risk;
 			} else {
 				// TODO correlation and type of validation.
+				method.risk = maximum(method.authenticators.get(0).risk,method.authenticators.get(1).risk)
 			}
 		}
 	}
 	
+	def maximum (Risk r1, Risk r2) { //  the max is the lowest. 
+		if(r1.value <= r2.value) // Low = 0, Medium = 1, High = 2 .
+			return r1
+		return r2	
+	}
+	
+	
 	def assignMethod(App app) {
-		println("Initializing methods")
+		println("Initializing methods for each phases")
 		for(phase : app.phases) {
+			phase.risk = LightweightDSLFactory.eINSTANCE.createRisk
 			switch(phase.type) {
-				case Utils.REGISTRATION : {
+				case REGISTRATION : {
 					val r = phase as Registration
-					phase.risk.instance = Utils.REGISTRATION
+					phase.risk.instance = REGISTRATION
 					
-					for(credential : r.credentials) {
-						
-						if(!credential.verifmethod.uniqueness && 
-							!credential.verifmethod.validity && 
-							!credential.verifmethod.bindings ) {
-							credential.risk.value = LEVEL.HIGH
-							credential.risk.message = credential.name+ " : No requirements are satisfied "
-							credential.risk.information = ""
+					for(attribute : r.attributes) {
+						attribute.risk = LightweightDSLFactory.eINSTANCE.createRisk
+						if(!attribute.verifmethod.uniqueness && 
+							!attribute.verifmethod.validity && 
+							!attribute.verifmethod.bindings ) {
+							attribute.risk.value = LEVEL.HIGH
+							attribute.risk.message = attribute.name+ " : No requirements are satisfied "
+							attribute.risk.information = ""
 						}
-						else if (!credential.verifmethod.uniqueness || 
-							!credential.verifmethod.validity || 
-							!credential.verifmethod.bindings) {
-							credential.risk.value = LEVEL.MEDIUM
-							credential.risk.message = credential.name+ ": One or two requirements are unsatisfied"
-							credential.risk.information = ""
+						else if (!attribute.verifmethod.uniqueness || 
+							!attribute.verifmethod.validity || 
+							!attribute.verifmethod.bindings) {
+							attribute.risk.value = LEVEL.MEDIUM
+							attribute.risk.message = attribute.name+ ": One or two requirements are unsatisfied"
+							attribute.risk.information = ""
 	
 						} 
 						else {
-							credential.risk.value = LEVEL.LOW
-							credential.risk.message = credential.name+" : All requirements are satisfied"
-							credential.risk.information = ""
+							attribute.risk.value = LEVEL.LOW
+							attribute.risk.message = attribute.name+" : All requirements are satisfied"
+							attribute.risk.information = ""
 	
 						}
 						// Additional risk for informational report
-						if(credential.provider == Provider.ID_P) {
-							if(credential.risk.value < LEVEL.MEDIUM) {
-							credential.risk.value = LEVEL.MEDIUM
-							credential.risk.message = credential.name+ " :Identity provider put the risk to MEDIUM"
-							credential.risk.information = ""
+						if(attribute.provider == Provider.ID_P) {
+							if(attribute.risk.value < LEVEL.MEDIUM) {
+							attribute.risk.value = LEVEL.MEDIUM
+							attribute.risk.message = attribute.name+ " :Identity provider put the risk to MEDIUM"
+							attribute.risk.information = ""
 							} else {
-								credential.risk.information = ""
+								attribute.risk.information = ""
 							}
 						}
 						
 					}
-					app.registration = phase as Registration // initializing the main registration
+					
+					app.registration = r as Registration // initializing the main registration
+					
+					//TODO show level per attributes.
+					for (attr : app.registration.attributes) {
+						println("Attribute "+attr.name+" has risk level " +attr.risk.value)
+					}
 				}
 				
 				case Utils.LOGIN : {
 					val login = phase as Login 
-					// If persistent session exist or autofill form.
 					
-						
 				}
 				
 				case Utils.RESET : {
@@ -201,4 +238,6 @@ class LightweightGenerator extends AbstractGenerator {
 			}
 		}
 	}
+	
+	
 }

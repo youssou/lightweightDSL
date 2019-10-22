@@ -123,6 +123,7 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -132,6 +133,7 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -144,6 +146,7 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AuthMethod> getAuthMethods() {
 		if (authMethods == null) {
 			authMethods = new EObjectResolvingEList<AuthMethod>(AuthMethod.class, this,
@@ -157,6 +160,7 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -166,6 +170,7 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -178,6 +183,7 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Risk getRisk() {
 		if (risk != null && risk.eIsProxy()) {
 			InternalEObject oldRisk = (InternalEObject) risk;
@@ -205,6 +211,7 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRisk(Risk newRisk) {
 		Risk oldRisk = risk;
 		risk = newRisk;
@@ -217,6 +224,7 @@ public abstract class PhaseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LEVEL computeLevel() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

@@ -5,12 +5,13 @@ package org.xtext.example.mydsl1.generator;
 
 import com.google.common.base.Objects;
 import lightweightDSL.App;
+import lightweightDSL.Attribute;
 import lightweightDSL.AuthMethod;
 import lightweightDSL.Authenticator;
-import lightweightDSL.Credential;
 import lightweightDSL.KVALUE;
 import lightweightDSL.Knowledge;
 import lightweightDSL.LEVEL;
+import lightweightDSL.LightweightDSLFactory;
 import lightweightDSL.Login;
 import lightweightDSL.PROVIDER;
 import lightweightDSL.Phase;
@@ -34,6 +35,33 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
  */
 @SuppressWarnings("all")
 public class LightweightGenerator extends AbstractGenerator {
+  /**
+   * Authentication Factor
+   */
+  public static final String POSSESSION = "Possession";
+  
+  public static final String BIOMETRICS = "Biometrics";
+  
+  public static final String KNOWLEDGE = "Knowledge";
+  
+  /**
+   * Method af authentication
+   */
+  public static final String SFA = "SFA";
+  
+  public static final String MFA = "MFA";
+  
+  /**
+   * Procedures
+   */
+  public static final String REGISTRATION = "Registration";
+  
+  public static final String LOGIN = "Login";
+  
+  public static final String RESET = "Reset";
+  
+  public static final String RECOVERY = "Recovery";
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     EObject _head = IterableExtensions.<EObject>head(resource.getContents());
@@ -46,102 +74,105 @@ public class LightweightGenerator extends AbstractGenerator {
   public void initAuthenticator(final App app) {
     EList<Authenticator> _authenticators = app.getAuthenticators();
     for (final Authenticator auth : _authenticators) {
-      String _type = auth.getType();
-      if (_type != null) {
-        switch (_type) {
-          case Utils.POSSESSION:
-            Risk _risk = auth.getRisk();
-            _risk.setInstance(Utils.POSSESSION);
-            Risk _risk_1 = auth.getRisk();
-            _risk_1.setValue(LEVEL.MEDIUM);
-            Risk _risk_2 = auth.getRisk();
-            _risk_2.setMessage("Use of possession based authentication");
-            Risk _risk_3 = auth.getRisk();
-            _risk_3.setInformation("");
-            break;
-          case Utils.BIOMETRICS:
-            Risk _risk_4 = auth.getRisk();
-            _risk_4.setInstance(Utils.BIOMETRICS);
-            Risk _risk_5 = auth.getRisk();
-            _risk_5.setValue(LEVEL.LOW);
-            Risk _risk_6 = auth.getRisk();
-            _risk_6.setMessage("Use of biometrics based authenticator");
-            Risk _risk_7 = auth.getRisk();
-            _risk_7.setInformation("");
-            break;
-          case Utils.KNOWLEDGE:
-            final Knowledge knowledgeAuth = ((Knowledge) auth);
-            Risk _risk_8 = auth.getRisk();
-            _risk_8.setInstance(Utils.KNOWLEDGE);
-            KVALUE _value = knowledgeAuth.getValue();
-            boolean _equals = Objects.equal(_value, KVALUE.PREFERENCES);
-            if (_equals) {
-              Risk _risk_9 = auth.getRisk();
-              _risk_9.setValue(LEVEL.HIGH);
-              Risk _risk_10 = auth.getRisk();
-              String _name = auth.getName();
-              String _plus = ("Use of preference based authentication " + _name);
-              String _plus_1 = (_plus + "!");
-              _risk_10.setMessage(_plus_1);
-              Risk _risk_11 = auth.getRisk();
-              _risk_11.setInformation("");
-            } else {
-              if ((Objects.equal(knowledgeAuth.getValue(), KVALUE.PIN) || Objects.equal(knowledgeAuth.getValue(), KVALUE.LTBP))) {
-                Risk _risk_12 = auth.getRisk();
-                _risk_12.setValue(LEVEL.MEDIUM);
-                Risk _risk_13 = auth.getRisk();
-                String _name_1 = auth.getName();
-                String _plus_2 = ("Use of low security text based " + _name_1);
-                String _plus_3 = (_plus_2 + "!");
-                _risk_13.setMessage(_plus_3);
-                Risk _risk_14 = auth.getRisk();
-                _risk_14.setInformation("");
+      {
+        auth.setRisk(LightweightDSLFactory.eINSTANCE.createRisk());
+        String _type = auth.getType();
+        if (_type != null) {
+          switch (_type) {
+            case LightweightGenerator.POSSESSION:
+              Risk _risk = auth.getRisk();
+              _risk.setInstance(LightweightGenerator.POSSESSION);
+              Risk _risk_1 = auth.getRisk();
+              _risk_1.setValue(LEVEL.MEDIUM);
+              Risk _risk_2 = auth.getRisk();
+              _risk_2.setMessage("Use of possession based authenticator");
+              Risk _risk_3 = auth.getRisk();
+              _risk_3.setInformation("");
+              break;
+            case LightweightGenerator.BIOMETRICS:
+              Risk _risk_4 = auth.getRisk();
+              _risk_4.setInstance(LightweightGenerator.BIOMETRICS);
+              Risk _risk_5 = auth.getRisk();
+              _risk_5.setValue(LEVEL.LOW);
+              Risk _risk_6 = auth.getRisk();
+              _risk_6.setMessage("Use of biometrics based authenticator");
+              Risk _risk_7 = auth.getRisk();
+              _risk_7.setInformation("");
+              break;
+            case LightweightGenerator.KNOWLEDGE:
+              final Knowledge knowledgeAuth = ((Knowledge) auth);
+              Risk _risk_8 = auth.getRisk();
+              _risk_8.setInstance(LightweightGenerator.KNOWLEDGE);
+              KVALUE _value = knowledgeAuth.getValue();
+              boolean _equals = Objects.equal(_value, KVALUE.PREFERENCES);
+              if (_equals) {
+                Risk _risk_9 = auth.getRisk();
+                _risk_9.setValue(LEVEL.HIGH);
+                Risk _risk_10 = auth.getRisk();
+                String _name = auth.getName();
+                String _plus = ("Use of preference based authenticator " + _name);
+                String _plus_1 = (_plus + "!");
+                _risk_10.setMessage(_plus_1);
+                Risk _risk_11 = auth.getRisk();
+                _risk_11.setInformation("");
               } else {
-                Risk _risk_15 = auth.getRisk();
-                _risk_15.setValue(LEVEL.LOW);
-                Risk _risk_16 = auth.getRisk();
-                String _name_2 = auth.getName();
-                String _plus_4 = ("Use of string text based authentication " + _name_2);
-                String _plus_5 = (_plus_4 + "!");
-                _risk_16.setMessage(_plus_5);
-                Risk _risk_17 = auth.getRisk();
-                _risk_17.setInformation("");
-              }
-            }
-            if (((!knowledgeAuth.isLimitedAttempts()) || knowledgeAuth.isAutofilled())) {
-              boolean _isAutofilled = knowledgeAuth.isAutofilled();
-              if (_isAutofilled) {
-                LEVEL _value_1 = auth.getRisk().getValue();
-                boolean _lessThan = (_value_1.compareTo(LEVEL.MEDIUM) < 0);
-                if (_lessThan) {
-                  Risk _risk_18 = auth.getRisk();
-                  _risk_18.setValue(LEVEL.MEDIUM);
-                  auth.getRisk().getMessage().concat("\n The risk is rised because of the use of autofilled form considered as possession-based authentication");
-                  Risk _risk_19 = auth.getRisk();
-                  _risk_19.setInformation("");
-                }
-              } else {
-                LEVEL _value_2 = auth.getRisk().getValue();
-                boolean _equals_1 = Objects.equal(_value_2, LEVEL.MEDIUM);
-                if (_equals_1) {
-                  Risk _risk_20 = auth.getRisk();
-                  _risk_20.setValue(LEVEL.HIGH);
-                  auth.getRisk().getMessage().concat("\n The risk is raised because of the unlimited attemps");
-                  Risk _risk_21 = auth.getRisk();
-                  _risk_21.setInformation("");
-                }
-                LEVEL _value_3 = auth.getRisk().getValue();
-                boolean _equals_2 = Objects.equal(_value_3, LEVEL.LOW);
-                if (_equals_2) {
-                  Risk _risk_22 = auth.getRisk();
-                  _risk_22.setValue(LEVEL.MEDIUM);
-                  auth.getRisk().getMessage().concat("\n The risk is raised because of the unlimited attemps");
-                  Risk _risk_23 = auth.getRisk();
-                  _risk_23.setInformation("");
+                if ((Objects.equal(knowledgeAuth.getValue(), KVALUE.PIN) || Objects.equal(knowledgeAuth.getValue(), KVALUE.LTBP))) {
+                  Risk _risk_12 = auth.getRisk();
+                  _risk_12.setValue(LEVEL.MEDIUM);
+                  Risk _risk_13 = auth.getRisk();
+                  String _name_1 = auth.getName();
+                  String _plus_2 = ("Use of low security text based " + _name_1);
+                  String _plus_3 = (_plus_2 + "!");
+                  _risk_13.setMessage(_plus_3);
+                  Risk _risk_14 = auth.getRisk();
+                  _risk_14.setInformation("");
+                } else {
+                  Risk _risk_15 = auth.getRisk();
+                  _risk_15.setValue(LEVEL.LOW);
+                  Risk _risk_16 = auth.getRisk();
+                  String _name_2 = auth.getName();
+                  String _plus_4 = ("Use of strong text based authentication " + _name_2);
+                  String _plus_5 = (_plus_4 + "!");
+                  _risk_16.setMessage(_plus_5);
+                  Risk _risk_17 = auth.getRisk();
+                  _risk_17.setInformation("");
                 }
               }
-            }
-            break;
+              if (((!knowledgeAuth.isLimitedAttempts()) || knowledgeAuth.isAutofilled())) {
+                boolean _isAutofilled = knowledgeAuth.isAutofilled();
+                if (_isAutofilled) {
+                  LEVEL _value_1 = auth.getRisk().getValue();
+                  boolean _lessThan = (_value_1.compareTo(LEVEL.MEDIUM) < 0);
+                  if (_lessThan) {
+                    Risk _risk_18 = auth.getRisk();
+                    _risk_18.setValue(LEVEL.MEDIUM);
+                    auth.getRisk().getMessage().concat("\n The risk is raised because of the use of autofillable form considered as possession-based authentication");
+                    Risk _risk_19 = auth.getRisk();
+                    _risk_19.setInformation("");
+                  }
+                } else {
+                  LEVEL _value_2 = auth.getRisk().getValue();
+                  boolean _equals_1 = Objects.equal(_value_2, LEVEL.MEDIUM);
+                  if (_equals_1) {
+                    Risk _risk_20 = auth.getRisk();
+                    _risk_20.setValue(LEVEL.HIGH);
+                    auth.getRisk().getMessage().concat("\n The risk is raised because of the unlimited attempts");
+                    Risk _risk_21 = auth.getRisk();
+                    _risk_21.setInformation("");
+                  }
+                  LEVEL _value_3 = auth.getRisk().getValue();
+                  boolean _equals_2 = Objects.equal(_value_3, LEVEL.LOW);
+                  if (_equals_2) {
+                    Risk _risk_22 = auth.getRisk();
+                    _risk_22.setValue(LEVEL.MEDIUM);
+                    auth.getRisk().getMessage().concat("\n The risk is raised from LOW to MEDIUM because of the unlimited attempts");
+                    Risk _risk_23 = auth.getRisk();
+                    _risk_23.setInformation("");
+                  }
+                }
+              }
+              break;
+          }
         }
       }
     }
@@ -151,92 +182,116 @@ public class LightweightGenerator extends AbstractGenerator {
     EList<AuthMethod> _authMethods = app.getAuthMethods();
     for (final AuthMethod method : _authMethods) {
       String _type = method.getType();
-      boolean _equals = Objects.equal(_type, Utils.SFA);
+      boolean _equals = Objects.equal(_type, LightweightGenerator.SFA);
       if (_equals) {
         method.setRisk(method.getAuthenticators().get(0).getRisk());
       } else {
+        method.setRisk(this.maximum(method.getAuthenticators().get(0).getRisk(), method.getAuthenticators().get(1).getRisk()));
       }
     }
   }
   
+  public Risk maximum(final Risk r1, final Risk r2) {
+    LEVEL _value = r1.getValue();
+    LEVEL _value_1 = r2.getValue();
+    boolean _lessEqualsThan = (_value.compareTo(_value_1) <= 0);
+    if (_lessEqualsThan) {
+      return r1;
+    }
+    return r2;
+  }
+  
   public void assignMethod(final App app) {
-    InputOutput.<String>println("Initializing methods");
+    InputOutput.<String>println("Initializing methods for each phases");
     EList<Phase> _phases = app.getPhases();
     for (final Phase phase : _phases) {
-      String _type = phase.getType();
-      if (_type != null) {
-        switch (_type) {
-          case Utils.REGISTRATION:
-            final Registration r = ((Registration) phase);
-            Risk _risk = phase.getRisk();
-            _risk.setInstance(Utils.REGISTRATION);
-            EList<Credential> _credentials = r.getCredentials();
-            for (final Credential credential : _credentials) {
-              {
-                if ((((!credential.getVerifmethod().isUniqueness()) && 
-                  (!credential.getVerifmethod().isValidity())) && 
-                  (!credential.getVerifmethod().isBindings()))) {
-                  Risk _risk_1 = credential.getRisk();
-                  _risk_1.setValue(LEVEL.HIGH);
-                  Risk _risk_2 = credential.getRisk();
-                  String _name = credential.getName();
-                  String _plus = (_name + " : No requirements are satisfied ");
-                  _risk_2.setMessage(_plus);
-                  Risk _risk_3 = credential.getRisk();
-                  _risk_3.setInformation("");
-                } else {
-                  if ((((!credential.getVerifmethod().isUniqueness()) || 
-                    (!credential.getVerifmethod().isValidity())) || 
-                    (!credential.getVerifmethod().isBindings()))) {
-                    Risk _risk_4 = credential.getRisk();
-                    _risk_4.setValue(LEVEL.MEDIUM);
-                    Risk _risk_5 = credential.getRisk();
-                    String _name_1 = credential.getName();
-                    String _plus_1 = (_name_1 + ": One or two requirements are unsatisfied");
-                    _risk_5.setMessage(_plus_1);
-                    Risk _risk_6 = credential.getRisk();
-                    _risk_6.setInformation("");
+      {
+        phase.setRisk(LightweightDSLFactory.eINSTANCE.createRisk());
+        String _type = phase.getType();
+        if (_type != null) {
+          switch (_type) {
+            case LightweightGenerator.REGISTRATION:
+              final Registration r = ((Registration) phase);
+              Risk _risk = phase.getRisk();
+              _risk.setInstance(LightweightGenerator.REGISTRATION);
+              EList<Attribute> _attributes = r.getAttributes();
+              for (final Attribute attribute : _attributes) {
+                {
+                  attribute.setRisk(LightweightDSLFactory.eINSTANCE.createRisk());
+                  if ((((!attribute.getVerifmethod().isUniqueness()) && 
+                    (!attribute.getVerifmethod().isValidity())) && 
+                    (!attribute.getVerifmethod().isBindings()))) {
+                    Risk _risk_1 = attribute.getRisk();
+                    _risk_1.setValue(LEVEL.HIGH);
+                    Risk _risk_2 = attribute.getRisk();
+                    String _name = attribute.getName();
+                    String _plus = (_name + " : No requirements are satisfied ");
+                    _risk_2.setMessage(_plus);
+                    Risk _risk_3 = attribute.getRisk();
+                    _risk_3.setInformation("");
                   } else {
-                    Risk _risk_7 = credential.getRisk();
-                    _risk_7.setValue(LEVEL.LOW);
-                    Risk _risk_8 = credential.getRisk();
-                    String _name_2 = credential.getName();
-                    String _plus_2 = (_name_2 + " : All requirements are satisfied");
-                    _risk_8.setMessage(_plus_2);
-                    Risk _risk_9 = credential.getRisk();
-                    _risk_9.setInformation("");
+                    if ((((!attribute.getVerifmethod().isUniqueness()) || 
+                      (!attribute.getVerifmethod().isValidity())) || 
+                      (!attribute.getVerifmethod().isBindings()))) {
+                      Risk _risk_4 = attribute.getRisk();
+                      _risk_4.setValue(LEVEL.MEDIUM);
+                      Risk _risk_5 = attribute.getRisk();
+                      String _name_1 = attribute.getName();
+                      String _plus_1 = (_name_1 + ": One or two requirements are unsatisfied");
+                      _risk_5.setMessage(_plus_1);
+                      Risk _risk_6 = attribute.getRisk();
+                      _risk_6.setInformation("");
+                    } else {
+                      Risk _risk_7 = attribute.getRisk();
+                      _risk_7.setValue(LEVEL.LOW);
+                      Risk _risk_8 = attribute.getRisk();
+                      String _name_2 = attribute.getName();
+                      String _plus_2 = (_name_2 + " : All requirements are satisfied");
+                      _risk_8.setMessage(_plus_2);
+                      Risk _risk_9 = attribute.getRisk();
+                      _risk_9.setInformation("");
+                    }
                   }
-                }
-                PROVIDER _provider = credential.getProvider();
-                boolean _equals = Objects.equal(_provider, Provider.ID_P);
-                if (_equals) {
-                  LEVEL _value = credential.getRisk().getValue();
-                  boolean _lessThan = (_value.compareTo(LEVEL.MEDIUM) < 0);
-                  if (_lessThan) {
-                    Risk _risk_10 = credential.getRisk();
-                    _risk_10.setValue(LEVEL.MEDIUM);
-                    Risk _risk_11 = credential.getRisk();
-                    String _name_3 = credential.getName();
-                    String _plus_3 = (_name_3 + " :Identity provider put the risk to MEDIUM");
-                    _risk_11.setMessage(_plus_3);
-                    Risk _risk_12 = credential.getRisk();
-                    _risk_12.setInformation("");
-                  } else {
-                    Risk _risk_13 = credential.getRisk();
-                    _risk_13.setInformation("");
+                  PROVIDER _provider = attribute.getProvider();
+                  boolean _equals = Objects.equal(_provider, Provider.ID_P);
+                  if (_equals) {
+                    LEVEL _value = attribute.getRisk().getValue();
+                    boolean _lessThan = (_value.compareTo(LEVEL.MEDIUM) < 0);
+                    if (_lessThan) {
+                      Risk _risk_10 = attribute.getRisk();
+                      _risk_10.setValue(LEVEL.MEDIUM);
+                      Risk _risk_11 = attribute.getRisk();
+                      String _name_3 = attribute.getName();
+                      String _plus_3 = (_name_3 + " :Identity provider put the risk to MEDIUM");
+                      _risk_11.setMessage(_plus_3);
+                      Risk _risk_12 = attribute.getRisk();
+                      _risk_12.setInformation("");
+                    } else {
+                      Risk _risk_13 = attribute.getRisk();
+                      _risk_13.setInformation("");
+                    }
                   }
                 }
               }
-            }
-            app.setRegistration(((Registration) phase));
-            break;
-          case Utils.LOGIN:
-            final Login login = ((Login) phase);
-            break;
-          case Utils.RESET:
-            break;
-          case Utils.RECOVERY:
-            break;
+              app.setRegistration(((Registration) r));
+              EList<Attribute> _attributes_1 = app.getRegistration().getAttributes();
+              for (final Attribute attr : _attributes_1) {
+                String _name = attr.getName();
+                String _plus = ("Attribute " + _name);
+                String _plus_1 = (_plus + " has risk level ");
+                LEVEL _value = attr.getRisk().getValue();
+                String _plus_2 = (_plus_1 + _value);
+                InputOutput.<String>println(_plus_2);
+              }
+              break;
+            case Utils.LOGIN:
+              final Login login = ((Login) phase);
+              break;
+            case Utils.RESET:
+              break;
+            case Utils.RECOVERY:
+              break;
+          }
         }
       }
     }

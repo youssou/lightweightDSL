@@ -27,6 +27,10 @@ import lightweightDSL.Risk
 import lightweightDSL.impl.RiskImpl
 import lightweightDSL.LightweightDSLFactory
 import lightweightDSL.impl.KnowledgeImpl
+import java.util.Comparator
+import lightweightDSL.AuthMethod
+import lightweightDSL.Reset
+import lightweightDSL.Recovery
 
 /**
  * Generates code from your model files on save.
@@ -56,6 +60,12 @@ class LightweightGenerator extends AbstractGenerator {
 	public static final String LOGIN = "Login"; 
 	public static final String RESET = "Reset"; 
 	public static final String RECOVERY = "Recovery";
+		
+	Registration mainRegistration
+	Login mainLogin
+	Reset mainReset
+	Recovery mainRecovery
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
@@ -65,6 +75,12 @@ class LightweightGenerator extends AbstractGenerator {
 
 		
 	val app = resource.contents.head as App
+		
+//		val mainLogin = LightweightDSLFactory.eINSTANCE.createLogin
+//		val mainReset =  LightweightDSLFactory.eINSTANCE.createReset
+//		val mainRecovery = LightweightDSLFactory.eINSTANCE.createRecovery
+//		val mainRegistration = LightweightDSLFactory.eINSTANCE.createRegistration 
+		
 		
 		// Initiate authenticator
 		app.initAuthenticator 
@@ -156,17 +172,11 @@ class LightweightGenerator extends AbstractGenerator {
 				method.risk = method.authenticators.get(0).risk;
 			} else {
 				// TODO correlation and type of validation.
-				method.risk = maximum(method.authenticators.get(0).risk,method.authenticators.get(1).risk)
+				method.risk.value = maximum(method.authenticators.get(0).risk.value,method.authenticators.get(1).risk.value)
 			}
 		}
 	}
-	
-	def maximum (Risk r1, Risk r2) { //  the max is the lowest. 
-		if(r1.value <= r2.value) // Low = 0, Medium = 1, High = 2 .
-			return r1
-		return r2	
-	}
-	
+
 	
 	def assignMethod(App app) {
 		println("Initializing methods for each phases")
@@ -175,7 +185,7 @@ class LightweightGenerator extends AbstractGenerator {
 			switch(phase.type) {
 				case REGISTRATION : {
 					val r = phase as Registration
-					phase.risk.instance = REGISTRATION
+					r.risk.instance = REGISTRATION
 					
 					for(attribute : r.attributes) {
 						attribute.risk = LightweightDSLFactory.eINSTANCE.createRisk
@@ -210,20 +220,44 @@ class LightweightGenerator extends AbstractGenerator {
 								attribute.risk.information = ""
 							}
 						}
-						
 					}
 					
-					app.registration = r as Registration // initializing the main registration
+					mainRegistration = r as Registration // assigning the main registration
 					
 					//TODO show level per attributes.
-					for (attr : app.registration.attributes) {
-						println("Attribute "+attr.name+" has risk level " +attr.risk.value)
+					for (attr : mainRegistration.attributes) {
+						println("Attribute ("+attr.name+") has risk level (" +attr.risk.value+")")
 					}
 				}
 				
 				case Utils.LOGIN : {
 					val login = phase as Login 
+					login.risk.instance = LOGIN
+					if(login.authMethods.size != 1) {
+						var comp = new MethodComparator()
+						login.authMethods.sortInplace(comp) // reverse short (see comparator)
+						for(m : login.authMethods) {
+							println("Sorted risk \n"+ m.risk.toString)
+						}
+						
+						login.risk.value = login.authMethods.last.risk.value 	
+						login.risk.message = "Multiple method but, the referenced authentication method is ("+ login.authMethods.last+")"
+						login.risk.information = ""
+						mainLogin = login as Login
+						} else {
+						println("main authentication method" + login.authMethods.get(0))
+						login.risk.message = "One referenced authentication method is ("+ login.authMethods.get(0)+")"
+						login.risk.value = login.authMethods.get(0).risk.value
+						login.risk.information = ""
+						mainLogin = login as Login
+					}
 					
+					// Is persisted session
+					if(login.session) {
+						mainLogin.risk.message.concat("\n ----- Persisted Session detected ------\n The risk level is at most Medium ")
+						mainLogin.risk.value = maximum(mainLogin.risk.value, LEVEL.MEDIUM)
+						mainLogin.risk.information.concat("")
+					}
 				}
 				
 				case Utils.RESET : {
@@ -239,5 +273,31 @@ class LightweightGenerator extends AbstractGenerator {
 		}
 	}
 	
+		
+	def maximum (LEVEL l1, LEVEL l2) { //  the max is the lowest. 
+		if(l1.value <= l2.value) // Low = 0, Medium = 1, High = 2 .
+			return l1
+		return l2	
+	}
 	
+	def maximum (Risk r1, Risk r2) { //  the max is the lowest. 
+		if(r1.value <= r2.value) // Low = 0, Medium = 1, High = 2 .
+			return r1
+		return r2	
+	}
+	
+	
+	/*
+	 * Authentication method comparator
+	 */
+	static class MethodComparator implements Comparator<AuthMethod> {  
+		
+	    override int compare (AuthMethod a1, AuthMethod a2)
+		    {
+		       return a1.risk.value.compareTo(a2.risk.value);
+		    }
+	}
+
+
 }
+

@@ -31,6 +31,8 @@ import java.util.Comparator
 import lightweightDSL.AuthMethod
 import lightweightDSL.Reset
 import lightweightDSL.Recovery
+import java.util.List
+import java.util.ArrayList
 
 /**
  * Generates code from your model files on save.
@@ -63,8 +65,8 @@ class LightweightGenerator extends AbstractGenerator {
 		
 	Registration mainRegistration
 	Login mainLogin
-	Reset mainReset
-	Recovery mainRecovery
+	List<Reset> resets = new ArrayList // List of existing reset
+	List<Recovery> recoveries = new ArrayList // List of existing recovery
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
@@ -225,28 +227,25 @@ class LightweightGenerator extends AbstractGenerator {
 					mainRegistration = r as Registration // assigning the main registration
 					
 					//TODO show level per attributes.
+					println("Registration Risk Assessment")
 					for (attr : mainRegistration.attributes) {
 						println("Attribute ("+attr.name+") has risk level (" +attr.risk.value+")")
 					}
 				}
 				
-				case Utils.LOGIN : {
+				case LOGIN : {
 					val login = phase as Login 
 					login.risk.instance = LOGIN
 					if(login.authMethods.size != 1) {
 						var comp = new MethodComparator()
 						login.authMethods.sortInplace(comp) // reverse short (see comparator)
-						for(m : login.authMethods) {
-							println("Sorted risk \n"+ m.risk.toString)
-						}
-						
 						login.risk.value = login.authMethods.last.risk.value 	
 						login.risk.message = "Multiple method but, the referenced authentication method is ("+ login.authMethods.last+")"
 						login.risk.information = ""
 						mainLogin = login as Login
 						} else {
 						println("main authentication method" + login.authMethods.get(0))
-						login.risk.message = "One referenced authentication method is ("+ login.authMethods.get(0)+")"
+						login.risk.message = "One referenced authentication method is ( \n "+ login.authMethods.get(0)+")"
 						login.risk.value = login.authMethods.get(0).risk.value
 						login.risk.information = ""
 						mainLogin = login as Login
@@ -258,28 +257,66 @@ class LightweightGenerator extends AbstractGenerator {
 						mainLogin.risk.value = maximum(mainLogin.risk.value, LEVEL.MEDIUM)
 						mainLogin.risk.information.concat("")
 					}
+					// Main login risk level.
+				println("Login Risk Assessment")
+				println ("Login risk level : \n name : " +mainLogin.name+ "
+							\n Evaluation : " +mainLogin.risk.toString)					
 				}
 				
-				case Utils.RESET : {
-					//TODO 
+				/**
+				 * This allow to verify : 
+				 * Weak path because the @Risk level of the @Authenticor to recover shall be 
+				 * lower than the authentication method
+				 */
+				case RESET : {
+					val reset = phase as Reset 
+					reset.risk.instance = RESET
+					// The case of reset with auth methods and persisted session
+					if(reset.authMethods.size == 0) {
+						reset.risk.information = "It is highly recommended to use a security challenge to before reseting credential and also before sensitive action such as payment"
+						if(mainLogin.session) {
+							reset.risk.value  = maximum(LEVEL.MEDIUM, mainLogin.risk.value)
+							reset.risk.message = "Because of the persistent session the risk level is at most MEDIUM (considered as Possession based"
+						} else {
+							reset.risk.value  = mainLogin.risk.value
+							reset.risk.message = "No Persistent Session : The risk level of the Reset (" +reset.name+ ") is given by the MainLogin (" +mainLogin.name+ ")"
+						}
+					}else {
+						var comp = new MethodComparator()
+						reset.authMethods.sortInplace(comp) // reverse short (see comparator)
+						reset.risk.message = "Multiple method but, the referenced authentication method is (\n"+ reset.authMethods.last.toString+")"
+						reset.risk.message.concat("\n, Reset Challenge with no persistent challenge : The risk level is at LEAST the ")
+						reset.risk.value = maximum (reset.authMethods.last.risk.value, mainLogin.risk.value) 	
+						reset.risk.message.concat("\n, Reset Challenge with no persistent challenge : The risk level is evaluated as two factor authentication between the Challenge ("
+							+reset.authMethods.last.toString+ ") and the mainLogin authentication ("+mainLogin.authMethods.last.toString+ (")")
+						)
+					}
+					
+					// Adding to the list of reset function
+					println("Reset Risk Assessment")
+					println ("Reset risk level : \n name : " +reset.name+ "
+							\n Evaluation : " +reset.risk.toString)
+					resets.add(reset)
 				}
-				
-				case Utils.RECOVERY : {
+				case RECOVERY : {
 					//TODO
 				}
-				
-				
 			}
 		}
 	}
 	
-		
+	/**
+	 * Max between level
+	 */
 	def maximum (LEVEL l1, LEVEL l2) { //  the max is the lowest. 
 		if(l1.value <= l2.value) // Low = 0, Medium = 1, High = 2 .
 			return l1
 		return l2	
 	}
 	
+	/**
+	 * Max between risk
+	 */
 	def maximum (Risk r1, Risk r2) { //  the max is the lowest. 
 		if(r1.value <= r2.value) // Low = 0, Medium = 1, High = 2 .
 			return r1

@@ -59,13 +59,14 @@ public class LightweightParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAttributeAccess().getGroup_14(), "rule__Attribute__Group_14__0");
 			builder.put(grammarAccess.getVerifMethodAccess().getGroup(), "rule__VerifMethod__Group__0");
 			builder.put(grammarAccess.getRecoveryAccess().getGroup(), "rule__Recovery__Group__0");
-			builder.put(grammarAccess.getRecoveryAccess().getGroup_8(), "rule__Recovery__Group_8__0");
 			builder.put(grammarAccess.getRecoveryAccess().getGroup_12(), "rule__Recovery__Group_12__0");
+			builder.put(grammarAccess.getRecoveryAccess().getGroup_12_3(), "rule__Recovery__Group_12_3__0");
 			builder.put(grammarAccess.getRecoveryAccess().getGroup_13(), "rule__Recovery__Group_13__0");
 			builder.put(grammarAccess.getLoginAccess().getGroup(), "rule__Login__Group__0");
 			builder.put(grammarAccess.getLoginAccess().getGroup_15(), "rule__Login__Group_15__0");
 			builder.put(grammarAccess.getResetAccess().getGroup(), "rule__Reset__Group__0");
-			builder.put(grammarAccess.getResetAccess().getGroup_15(), "rule__Reset__Group_15__0");
+			builder.put(grammarAccess.getResetAccess().getGroup_12(), "rule__Reset__Group_12__0");
+			builder.put(grammarAccess.getResetAccess().getGroup_12_3(), "rule__Reset__Group_12_3__0");
 			builder.put(grammarAccess.getAppAccess().getAuthenticatorsAssignment_6(), "rule__App__AuthenticatorsAssignment_6");
 			builder.put(grammarAccess.getAppAccess().getAuthenticatorsAssignment_7_1(), "rule__App__AuthenticatorsAssignment_7_1");
 			builder.put(grammarAccess.getAppAccess().getAuthMethodsAssignment_13(), "rule__App__AuthMethodsAssignment_13");
@@ -105,9 +106,9 @@ public class LightweightParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVerifMethodAccess().getBindingsAssignment_12(), "rule__VerifMethod__BindingsAssignment_12");
 			builder.put(grammarAccess.getRecoveryAccess().getTypeAssignment_1(), "rule__Recovery__TypeAssignment_1");
 			builder.put(grammarAccess.getRecoveryAccess().getNameAssignment_6(), "rule__Recovery__NameAssignment_6");
-			builder.put(grammarAccess.getRecoveryAccess().getAuthenticatorAssignment_8_2(), "rule__Recovery__AuthenticatorAssignment_8_2");
-			builder.put(grammarAccess.getRecoveryAccess().getAuthMethodsAssignment_11(), "rule__Recovery__AuthMethodsAssignment_11");
-			builder.put(grammarAccess.getRecoveryAccess().getAuthMethodsAssignment_12_1(), "rule__Recovery__AuthMethodsAssignment_12_1");
+			builder.put(grammarAccess.getRecoveryAccess().getAuthenticatorAssignment_10(), "rule__Recovery__AuthenticatorAssignment_10");
+			builder.put(grammarAccess.getRecoveryAccess().getAuthMethodsAssignment_12_2(), "rule__Recovery__AuthMethodsAssignment_12_2");
+			builder.put(grammarAccess.getRecoveryAccess().getAuthMethodsAssignment_12_3_1(), "rule__Recovery__AuthMethodsAssignment_12_3_1");
 			builder.put(grammarAccess.getRecoveryAccess().getProtocolAssignment_13_2(), "rule__Recovery__ProtocolAssignment_13_2");
 			builder.put(grammarAccess.getLoginAccess().getTypeAssignment_1(), "rule__Login__TypeAssignment_1");
 			builder.put(grammarAccess.getLoginAccess().getNameAssignment_6(), "rule__Login__NameAssignment_6");
@@ -117,8 +118,8 @@ public class LightweightParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getResetAccess().getTypeAssignment_1(), "rule__Reset__TypeAssignment_1");
 			builder.put(grammarAccess.getResetAccess().getNameAssignment_6(), "rule__Reset__NameAssignment_6");
 			builder.put(grammarAccess.getResetAccess().getAuthenticatorAssignment_10(), "rule__Reset__AuthenticatorAssignment_10");
-			builder.put(grammarAccess.getResetAccess().getAuthMethodsAssignment_14(), "rule__Reset__AuthMethodsAssignment_14");
-			builder.put(grammarAccess.getResetAccess().getAuthMethodsAssignment_15_1(), "rule__Reset__AuthMethodsAssignment_15_1");
+			builder.put(grammarAccess.getResetAccess().getAuthMethodsAssignment_12_2(), "rule__Reset__AuthMethodsAssignment_12_2");
+			builder.put(grammarAccess.getResetAccess().getAuthMethodsAssignment_12_3_1(), "rule__Reset__AuthMethodsAssignment_12_3_1");
 		}
 	}
 	

@@ -110,8 +110,8 @@ Recovery returns Recovery:
 	type = 'Recovery' ":"
 	'{'
 		'name' ":" name = EString ","
-		('authenticator' ":" authenticator = [Authenticator] ",")
-		'authentication' ":"  authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*		
+		'authenticator' ":" authenticator = [Authenticator] ","
+		('authentication' ":"  authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*)?		
 		('protocol' ":" protocol=Protocol)?
 	'}';
 
@@ -131,7 +131,7 @@ Reset returns Reset:
 	'{'
 		'name' ":" 	name=EString ","
 		'authenticator' ":" authenticator = [Authenticator] ","
-		'authentication' ":"  authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*	
+		('authentication' ":"  authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*)?
 	'}';
 
 

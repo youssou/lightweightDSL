@@ -235,14 +235,7 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Recovery returns Recovery
 	 *
 	 * Constraint:
-	 *     (
-	 *         type='Recovery' 
-	 *         name=EString 
-	 *         authenticator=[Authenticator|ID] 
-	 *         authMethods+=[AuthMethod|ID] 
-	 *         authMethods+=[AuthMethod|ID]* 
-	 *         protocol=Protocol?
-	 *     )
+	 *     (type='Recovery' name=EString authenticator=[Authenticator|ID] (authMethods+=[AuthMethod|ID] authMethods+=[AuthMethod|ID]*)? protocol=Protocol?)
 	 */
 	protected void sequence_Recovery(ISerializationContext context, Recovery semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -268,7 +261,7 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Reset returns Reset
 	 *
 	 * Constraint:
-	 *     (type='Reset' name=EString authenticator=[Authenticator|ID] authMethods+=[AuthMethod|ID] authMethods+=[AuthMethod|ID]*)
+	 *     (type='Reset' name=EString authenticator=[Authenticator|ID] (authMethods+=[AuthMethod|ID] authMethods+=[AuthMethod|ID]*)?)
 	 */
 	protected void sequence_Reset(ISerializationContext context, Reset semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

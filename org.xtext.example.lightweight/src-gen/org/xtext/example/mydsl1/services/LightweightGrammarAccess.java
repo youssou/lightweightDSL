@@ -1061,23 +1061,23 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cNameEStringParserRuleCall_6_0 = (RuleCall)cNameAssignment_6.eContents().get(0);
 		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cAuthenticatorKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cAuthenticatorAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final CrossReference cAuthenticatorAuthenticatorCrossReference_8_2_0 = (CrossReference)cAuthenticatorAssignment_8_2.eContents().get(0);
-		private final RuleCall cAuthenticatorAuthenticatorIDTerminalRuleCall_8_2_0_1 = (RuleCall)cAuthenticatorAuthenticatorCrossReference_8_2_0.eContents().get(1);
-		private final Keyword cCommaKeyword_8_3 = (Keyword)cGroup_8.eContents().get(3);
-		private final Keyword cAuthenticationKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cAuthMethodsAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final CrossReference cAuthMethodsAuthMethodCrossReference_11_0 = (CrossReference)cAuthMethodsAssignment_11.eContents().get(0);
-		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_11_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_11_0.eContents().get(1);
+		private final Keyword cAuthenticatorKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cAuthenticatorAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final CrossReference cAuthenticatorAuthenticatorCrossReference_10_0 = (CrossReference)cAuthenticatorAssignment_10.eContents().get(0);
+		private final RuleCall cAuthenticatorAuthenticatorIDTerminalRuleCall_10_0_1 = (RuleCall)cAuthenticatorAuthenticatorCrossReference_10_0.eContents().get(1);
+		private final Keyword cCommaKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cVerticalLineVerticalLineKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Assignment cAuthMethodsAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
-		private final CrossReference cAuthMethodsAuthMethodCrossReference_12_1_0 = (CrossReference)cAuthMethodsAssignment_12_1.eContents().get(0);
-		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_12_1_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_12_1_0.eContents().get(1);
+		private final Keyword cAuthenticationKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Keyword cColonKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
+		private final Assignment cAuthMethodsAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
+		private final CrossReference cAuthMethodsAuthMethodCrossReference_12_2_0 = (CrossReference)cAuthMethodsAssignment_12_2.eContents().get(0);
+		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_12_2_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_12_2_0.eContents().get(1);
+		private final Group cGroup_12_3 = (Group)cGroup_12.eContents().get(3);
+		private final Keyword cVerticalLineVerticalLineKeyword_12_3_0 = (Keyword)cGroup_12_3.eContents().get(0);
+		private final Assignment cAuthMethodsAssignment_12_3_1 = (Assignment)cGroup_12_3.eContents().get(1);
+		private final CrossReference cAuthMethodsAuthMethodCrossReference_12_3_1_0 = (CrossReference)cAuthMethodsAssignment_12_3_1.eContents().get(0);
+		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_12_3_1_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_12_3_1_0.eContents().get(1);
 		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
 		private final Keyword cProtocolKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
 		private final Keyword cColonKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
@@ -1088,13 +1088,14 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//Recovery:
 		//	{Recovery} type='Recovery' ":"
 		//	'{'
-		//	'name' ":" name=EString "," ('authenticator' ":" authenticator=[Authenticator] ",")
-		//	'authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])* ('protocol' ":" protocol=Protocol)?
+		//	'name' ":" name=EString ","
+		//	'authenticator' ":" authenticator=[Authenticator] "," ('authentication' ":" authMethods+=[AuthMethod] ("||"
+		//	authMethods+=[AuthMethod])*)? ('protocol' ":" protocol=Protocol)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Recovery} type='Recovery' ":" '{' 'name' ":" name=EString "," ('authenticator' ":" authenticator=[Authenticator] ",")
-		//'authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])* ('protocol' ":" protocol=Protocol)?
+		//{Recovery} type='Recovery' ":" '{' 'name' ":" name=EString "," 'authenticator' ":" authenticator=[Authenticator] ","
+		//('authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*)? ('protocol' ":" protocol=Protocol)?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -1128,56 +1129,56 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//","
 		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
 		
-		//('authenticator' ":" authenticator=[Authenticator] ",")
-		public Group getGroup_8() { return cGroup_8; }
-		
 		//'authenticator'
-		public Keyword getAuthenticatorKeyword_8_0() { return cAuthenticatorKeyword_8_0; }
+		public Keyword getAuthenticatorKeyword_8() { return cAuthenticatorKeyword_8; }
 		
 		//":"
-		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
 		
 		//authenticator=[Authenticator]
-		public Assignment getAuthenticatorAssignment_8_2() { return cAuthenticatorAssignment_8_2; }
+		public Assignment getAuthenticatorAssignment_10() { return cAuthenticatorAssignment_10; }
 		
 		//[Authenticator]
-		public CrossReference getAuthenticatorAuthenticatorCrossReference_8_2_0() { return cAuthenticatorAuthenticatorCrossReference_8_2_0; }
+		public CrossReference getAuthenticatorAuthenticatorCrossReference_10_0() { return cAuthenticatorAuthenticatorCrossReference_10_0; }
 		
 		//ID
-		public RuleCall getAuthenticatorAuthenticatorIDTerminalRuleCall_8_2_0_1() { return cAuthenticatorAuthenticatorIDTerminalRuleCall_8_2_0_1; }
+		public RuleCall getAuthenticatorAuthenticatorIDTerminalRuleCall_10_0_1() { return cAuthenticatorAuthenticatorIDTerminalRuleCall_10_0_1; }
 		
 		//","
-		public Keyword getCommaKeyword_8_3() { return cCommaKeyword_8_3; }
+		public Keyword getCommaKeyword_11() { return cCommaKeyword_11; }
 		
-		//'authentication'
-		public Keyword getAuthenticationKeyword_9() { return cAuthenticationKeyword_9; }
-		
-		//":"
-		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
-		
-		//authMethods+=[AuthMethod]
-		public Assignment getAuthMethodsAssignment_11() { return cAuthMethodsAssignment_11; }
-		
-		//[AuthMethod]
-		public CrossReference getAuthMethodsAuthMethodCrossReference_11_0() { return cAuthMethodsAuthMethodCrossReference_11_0; }
-		
-		//ID
-		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_11_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_11_0_1; }
-		
-		//("||" authMethods+=[AuthMethod])*
+		//('authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*)?
 		public Group getGroup_12() { return cGroup_12; }
 		
-		//"||"
-		public Keyword getVerticalLineVerticalLineKeyword_12_0() { return cVerticalLineVerticalLineKeyword_12_0; }
+		//'authentication'
+		public Keyword getAuthenticationKeyword_12_0() { return cAuthenticationKeyword_12_0; }
+		
+		//":"
+		public Keyword getColonKeyword_12_1() { return cColonKeyword_12_1; }
 		
 		//authMethods+=[AuthMethod]
-		public Assignment getAuthMethodsAssignment_12_1() { return cAuthMethodsAssignment_12_1; }
+		public Assignment getAuthMethodsAssignment_12_2() { return cAuthMethodsAssignment_12_2; }
 		
 		//[AuthMethod]
-		public CrossReference getAuthMethodsAuthMethodCrossReference_12_1_0() { return cAuthMethodsAuthMethodCrossReference_12_1_0; }
+		public CrossReference getAuthMethodsAuthMethodCrossReference_12_2_0() { return cAuthMethodsAuthMethodCrossReference_12_2_0; }
 		
 		//ID
-		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_12_1_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_12_1_0_1; }
+		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_12_2_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_12_2_0_1; }
+		
+		//("||" authMethods+=[AuthMethod])*
+		public Group getGroup_12_3() { return cGroup_12_3; }
+		
+		//"||"
+		public Keyword getVerticalLineVerticalLineKeyword_12_3_0() { return cVerticalLineVerticalLineKeyword_12_3_0; }
+		
+		//authMethods+=[AuthMethod]
+		public Assignment getAuthMethodsAssignment_12_3_1() { return cAuthMethodsAssignment_12_3_1; }
+		
+		//[AuthMethod]
+		public CrossReference getAuthMethodsAuthMethodCrossReference_12_3_1_0() { return cAuthMethodsAuthMethodCrossReference_12_3_1_0; }
+		
+		//ID
+		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_12_3_1_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_12_3_1_0_1; }
 		
 		//('protocol' ":" protocol=Protocol)?
 		public Group getGroup_13() { return cGroup_13; }
@@ -1337,29 +1338,30 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cAuthenticatorAuthenticatorCrossReference_10_0 = (CrossReference)cAuthenticatorAssignment_10.eContents().get(0);
 		private final RuleCall cAuthenticatorAuthenticatorIDTerminalRuleCall_10_0_1 = (RuleCall)cAuthenticatorAuthenticatorCrossReference_10_0.eContents().get(1);
 		private final Keyword cCommaKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Keyword cAuthenticationKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Keyword cColonKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Assignment cAuthMethodsAssignment_14 = (Assignment)cGroup.eContents().get(14);
-		private final CrossReference cAuthMethodsAuthMethodCrossReference_14_0 = (CrossReference)cAuthMethodsAssignment_14.eContents().get(0);
-		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_14_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_14_0.eContents().get(1);
-		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
-		private final Keyword cVerticalLineVerticalLineKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
-		private final Assignment cAuthMethodsAssignment_15_1 = (Assignment)cGroup_15.eContents().get(1);
-		private final CrossReference cAuthMethodsAuthMethodCrossReference_15_1_0 = (CrossReference)cAuthMethodsAssignment_15_1.eContents().get(0);
-		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_15_1_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_15_1_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
+		private final Keyword cAuthenticationKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Keyword cColonKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
+		private final Assignment cAuthMethodsAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
+		private final CrossReference cAuthMethodsAuthMethodCrossReference_12_2_0 = (CrossReference)cAuthMethodsAssignment_12_2.eContents().get(0);
+		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_12_2_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_12_2_0.eContents().get(1);
+		private final Group cGroup_12_3 = (Group)cGroup_12.eContents().get(3);
+		private final Keyword cVerticalLineVerticalLineKeyword_12_3_0 = (Keyword)cGroup_12_3.eContents().get(0);
+		private final Assignment cAuthMethodsAssignment_12_3_1 = (Assignment)cGroup_12_3.eContents().get(1);
+		private final CrossReference cAuthMethodsAuthMethodCrossReference_12_3_1_0 = (CrossReference)cAuthMethodsAssignment_12_3_1.eContents().get(0);
+		private final RuleCall cAuthMethodsAuthMethodIDTerminalRuleCall_12_3_1_0_1 = (RuleCall)cAuthMethodsAuthMethodCrossReference_12_3_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//Reset:
 		//	{Reset} type='Reset' ":"
 		//	'{'
 		//	'name' ":" name=EString ","
-		//	'authenticator' ":" authenticator=[Authenticator] ","
-		//	'authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*
+		//	'authenticator' ":" authenticator=[Authenticator] "," ('authentication' ":" authMethods+=[AuthMethod] ("||"
+		//	authMethods+=[AuthMethod])*)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Reset} type='Reset' ":" '{' 'name' ":" name=EString "," 'authenticator' ":" authenticator=[Authenticator] ","
-		//'authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])* '}'
+		//('authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Reset}
@@ -1410,38 +1412,41 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//","
 		public Keyword getCommaKeyword_11() { return cCommaKeyword_11; }
 		
+		//('authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*)?
+		public Group getGroup_12() { return cGroup_12; }
+		
 		//'authentication'
-		public Keyword getAuthenticationKeyword_12() { return cAuthenticationKeyword_12; }
+		public Keyword getAuthenticationKeyword_12_0() { return cAuthenticationKeyword_12_0; }
 		
 		//":"
-		public Keyword getColonKeyword_13() { return cColonKeyword_13; }
+		public Keyword getColonKeyword_12_1() { return cColonKeyword_12_1; }
 		
 		//authMethods+=[AuthMethod]
-		public Assignment getAuthMethodsAssignment_14() { return cAuthMethodsAssignment_14; }
+		public Assignment getAuthMethodsAssignment_12_2() { return cAuthMethodsAssignment_12_2; }
 		
 		//[AuthMethod]
-		public CrossReference getAuthMethodsAuthMethodCrossReference_14_0() { return cAuthMethodsAuthMethodCrossReference_14_0; }
+		public CrossReference getAuthMethodsAuthMethodCrossReference_12_2_0() { return cAuthMethodsAuthMethodCrossReference_12_2_0; }
 		
 		//ID
-		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_14_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_14_0_1; }
+		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_12_2_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_12_2_0_1; }
 		
 		//("||" authMethods+=[AuthMethod])*
-		public Group getGroup_15() { return cGroup_15; }
+		public Group getGroup_12_3() { return cGroup_12_3; }
 		
 		//"||"
-		public Keyword getVerticalLineVerticalLineKeyword_15_0() { return cVerticalLineVerticalLineKeyword_15_0; }
+		public Keyword getVerticalLineVerticalLineKeyword_12_3_0() { return cVerticalLineVerticalLineKeyword_12_3_0; }
 		
 		//authMethods+=[AuthMethod]
-		public Assignment getAuthMethodsAssignment_15_1() { return cAuthMethodsAssignment_15_1; }
+		public Assignment getAuthMethodsAssignment_12_3_1() { return cAuthMethodsAssignment_12_3_1; }
 		
 		//[AuthMethod]
-		public CrossReference getAuthMethodsAuthMethodCrossReference_15_1_0() { return cAuthMethodsAuthMethodCrossReference_15_1_0; }
+		public CrossReference getAuthMethodsAuthMethodCrossReference_12_3_1_0() { return cAuthMethodsAuthMethodCrossReference_12_3_1_0; }
 		
 		//ID
-		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_15_1_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_15_1_0_1; }
+		public RuleCall getAuthMethodsAuthMethodIDTerminalRuleCall_12_3_1_0_1() { return cAuthMethodsAuthMethodIDTerminalRuleCall_12_3_1_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
+		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
 	}
 	public class EBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.EBoolean");
@@ -2009,8 +2014,9 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	//Recovery:
 	//	{Recovery} type='Recovery' ":"
 	//	'{'
-	//	'name' ":" name=EString "," ('authenticator' ":" authenticator=[Authenticator] ",")
-	//	'authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])* ('protocol' ":" protocol=Protocol)?
+	//	'name' ":" name=EString ","
+	//	'authenticator' ":" authenticator=[Authenticator] "," ('authentication' ":" authMethods+=[AuthMethod] ("||"
+	//	authMethods+=[AuthMethod])*)? ('protocol' ":" protocol=Protocol)?
 	//	'}';
 	public RecoveryElements getRecoveryAccess() {
 		return pRecovery;
@@ -2039,8 +2045,8 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	//	{Reset} type='Reset' ":"
 	//	'{'
 	//	'name' ":" name=EString ","
-	//	'authenticator' ":" authenticator=[Authenticator] ","
-	//	'authentication' ":" authMethods+=[AuthMethod] ("||" authMethods+=[AuthMethod])*
+	//	'authenticator' ":" authenticator=[Authenticator] "," ('authentication' ":" authMethods+=[AuthMethod] ("||"
+	//	authMethods+=[AuthMethod])*)?
 	//	'}';
 	public ResetElements getResetAccess() {
 		return pReset;

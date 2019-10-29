@@ -4,7 +4,9 @@
 package org.xtext.example.mydsl1.generator;
 
 import com.google.common.base.Objects;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import lightweightDSL.App;
 import lightweightDSL.Attribute;
 import lightweightDSL.AuthMethod;
@@ -21,7 +23,6 @@ import lightweightDSL.Recovery;
 import lightweightDSL.Registration;
 import lightweightDSL.Reset;
 import lightweightDSL.Risk;
-import lightweightDSL.Utils;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -80,9 +81,9 @@ public class LightweightGenerator extends AbstractGenerator {
   
   private Login mainLogin;
   
-  private Reset mainReset;
+  private List<Reset> resets = new ArrayList<Reset>();
   
-  private Recovery mainRecovery;
+  private List<Recovery> recoveries = new ArrayList<Recovery>();
   
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
@@ -287,6 +288,7 @@ public class LightweightGenerator extends AbstractGenerator {
                 }
               }
               this.mainRegistration = ((Registration) r);
+              InputOutput.<String>println("Registration Risk Assessment");
               EList<Attribute> _attributes_1 = this.mainRegistration.getAttributes();
               for (final Attribute attr : _attributes_1) {
                 String _name = attr.getName();
@@ -298,7 +300,7 @@ public class LightweightGenerator extends AbstractGenerator {
                 InputOutput.<String>println(_plus_3);
               }
               break;
-            case Utils.LOGIN:
+            case LightweightGenerator.LOGIN:
               final Login login = ((Login) phase);
               Risk _risk_1 = login.getRisk();
               _risk_1.setInstance(LightweightGenerator.LOGIN);
@@ -307,31 +309,25 @@ public class LightweightGenerator extends AbstractGenerator {
               if (_notEquals) {
                 LightweightGenerator.MethodComparator comp = new LightweightGenerator.MethodComparator();
                 ListExtensions.<AuthMethod>sortInplace(login.getAuthMethods(), comp);
-                EList<AuthMethod> _authMethods = login.getAuthMethods();
-                for (final AuthMethod m : _authMethods) {
-                  String _string = m.getRisk().toString();
-                  String _plus_4 = ("Sorted risk \n" + _string);
-                  InputOutput.<String>println(_plus_4);
-                }
                 Risk _risk_2 = login.getRisk();
                 _risk_2.setValue(IterableExtensions.<AuthMethod>last(login.getAuthMethods()).getRisk().getValue());
                 Risk _risk_3 = login.getRisk();
                 AuthMethod _last = IterableExtensions.<AuthMethod>last(login.getAuthMethods());
-                String _plus_5 = ("Multiple method but, the referenced authentication method is (" + _last);
-                String _plus_6 = (_plus_5 + ")");
-                _risk_3.setMessage(_plus_6);
+                String _plus_4 = ("Multiple method but, the referenced authentication method is (" + _last);
+                String _plus_5 = (_plus_4 + ")");
+                _risk_3.setMessage(_plus_5);
                 Risk _risk_4 = login.getRisk();
                 _risk_4.setInformation("");
                 this.mainLogin = ((Login) login);
               } else {
                 AuthMethod _get = login.getAuthMethods().get(0);
-                String _plus_7 = ("main authentication method" + _get);
-                InputOutput.<String>println(_plus_7);
+                String _plus_6 = ("main authentication method" + _get);
+                InputOutput.<String>println(_plus_6);
                 Risk _risk_5 = login.getRisk();
                 AuthMethod _get_1 = login.getAuthMethods().get(0);
-                String _plus_8 = ("One referenced authentication method is (" + _get_1);
-                String _plus_9 = (_plus_8 + ")");
-                _risk_5.setMessage(_plus_9);
+                String _plus_7 = ("One referenced authentication method is ( \n " + _get_1);
+                String _plus_8 = (_plus_7 + ")");
+                _risk_5.setMessage(_plus_8);
                 Risk _risk_6 = login.getRisk();
                 _risk_6.setValue(login.getAuthMethods().get(0).getRisk().getValue());
                 Risk _risk_7 = login.getRisk();
@@ -345,10 +341,71 @@ public class LightweightGenerator extends AbstractGenerator {
                 _risk_8.setValue(this.maximum(this.mainLogin.getRisk().getValue(), LEVEL.MEDIUM));
                 this.mainLogin.getRisk().getInformation().concat("");
               }
+              InputOutput.<String>println("Login Risk Assessment");
+              String _name_1 = this.mainLogin.getName();
+              String _plus_9 = ("Login risk level : \n name : " + _name_1);
+              String _plus_10 = (_plus_9 + "\n\t\t\t\t\t\t\t\n Evaluation : ");
+              String _string = this.mainLogin.getRisk().toString();
+              String _plus_11 = (_plus_10 + _string);
+              InputOutput.<String>println(_plus_11);
               break;
-            case Utils.RESET:
+            case LightweightGenerator.RESET:
+              final Reset reset = ((Reset) phase);
+              Risk _risk_9 = reset.getRisk();
+              _risk_9.setInstance(LightweightGenerator.RESET);
+              int _size_1 = reset.getAuthMethods().size();
+              boolean _equals = (_size_1 == 0);
+              if (_equals) {
+                Risk _risk_10 = reset.getRisk();
+                _risk_10.setInformation("It is highly recommended to use a security challenge to before reseting credential and also before sensitive action such as payment");
+                boolean _isSession_1 = this.mainLogin.isSession();
+                if (_isSession_1) {
+                  Risk _risk_11 = reset.getRisk();
+                  _risk_11.setValue(this.maximum(LEVEL.MEDIUM, this.mainLogin.getRisk().getValue()));
+                  Risk _risk_12 = reset.getRisk();
+                  _risk_12.setMessage("Because of the persistent session the risk level is at most MEDIUM (considered as Possession based");
+                } else {
+                  Risk _risk_13 = reset.getRisk();
+                  _risk_13.setValue(this.mainLogin.getRisk().getValue());
+                  Risk _risk_14 = reset.getRisk();
+                  String _name_2 = reset.getName();
+                  String _plus_12 = ("No Persistent Session : The risk level of the Reset (" + _name_2);
+                  String _plus_13 = (_plus_12 + ") is given by the MainLogin (");
+                  String _name_3 = this.mainLogin.getName();
+                  String _plus_14 = (_plus_13 + _name_3);
+                  String _plus_15 = (_plus_14 + ")");
+                  _risk_14.setMessage(_plus_15);
+                }
+              } else {
+                LightweightGenerator.MethodComparator comp_1 = new LightweightGenerator.MethodComparator();
+                ListExtensions.<AuthMethod>sortInplace(reset.getAuthMethods(), comp_1);
+                Risk _risk_15 = reset.getRisk();
+                String _string_1 = IterableExtensions.<AuthMethod>last(reset.getAuthMethods()).toString();
+                String _plus_16 = ("Multiple method but, the referenced authentication method is (\n" + _string_1);
+                String _plus_17 = (_plus_16 + ")");
+                _risk_15.setMessage(_plus_17);
+                reset.getRisk().getMessage().concat("\n, Reset Challenge with no persistent challenge : The risk level is at LEAST the ");
+                Risk _risk_16 = reset.getRisk();
+                _risk_16.setValue(this.maximum(IterableExtensions.<AuthMethod>last(reset.getAuthMethods()).getRisk().getValue(), this.mainLogin.getRisk().getValue()));
+                String _message = reset.getRisk().getMessage();
+                String _string_2 = IterableExtensions.<AuthMethod>last(reset.getAuthMethods()).toString();
+                String _plus_18 = ("\n, Reset Challenge with no persistent challenge : The risk level is evaluated as two factor authentication between the Challenge (" + _string_2);
+                String _plus_19 = (_plus_18 + ") and the mainLogin authentication (");
+                String _string_3 = IterableExtensions.<AuthMethod>last(this.mainLogin.getAuthMethods()).toString();
+                String _plus_20 = (_plus_19 + _string_3);
+                String _plus_21 = (_plus_20 + ")");
+                _message.concat(_plus_21);
+              }
+              InputOutput.<String>println("Reset Risk Assessment");
+              String _name_4 = reset.getName();
+              String _plus_22 = ("Reset risk level : \n name : " + _name_4);
+              String _plus_23 = (_plus_22 + "\n\t\t\t\t\t\t\t\n Evaluation : ");
+              String _string_4 = reset.getRisk().toString();
+              String _plus_24 = (_plus_23 + _string_4);
+              InputOutput.<String>println(_plus_24);
+              this.resets.add(reset);
               break;
-            case Utils.RECOVERY:
+            case LightweightGenerator.RECOVERY:
               break;
           }
         }
@@ -356,6 +413,9 @@ public class LightweightGenerator extends AbstractGenerator {
     }
   }
   
+  /**
+   * Max between level
+   */
   public LEVEL maximum(final LEVEL l1, final LEVEL l2) {
     int _value = l1.getValue();
     int _value_1 = l2.getValue();
@@ -366,6 +426,9 @@ public class LightweightGenerator extends AbstractGenerator {
     return l2;
   }
   
+  /**
+   * Max between risk
+   */
   public Risk maximum(final Risk r1, final Risk r2) {
     LEVEL _value = r1.getValue();
     LEVEL _value_1 = r2.getValue();

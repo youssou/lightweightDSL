@@ -868,9 +868,9 @@ ruleKnowledge returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getKnowledgeAccess().getLimitedAttemptsEBooleanParserRuleCall_14_0());
+					newCompositeNode(grammarAccess.getKnowledgeAccess().getLimitedAttemptsBool2EnumRuleCall_14_0());
 				}
-				lv_limitedAttempts_14_0=ruleEBoolean
+				lv_limitedAttempts_14_0=ruleBool2
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getKnowledgeRule());
@@ -878,8 +878,8 @@ ruleKnowledge returns [EObject current=null]
 					set(
 						$current,
 						"limitedAttempts",
-						true,
-						"org.xtext.example.mydsl1.Lightweight.EBoolean");
+						lv_limitedAttempts_14_0,
+						"org.xtext.example.mydsl1.Lightweight.Bool2");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -899,9 +899,9 @@ ruleKnowledge returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getKnowledgeAccess().getAutofilledEBooleanParserRuleCall_18_0());
+					newCompositeNode(grammarAccess.getKnowledgeAccess().getAutofilledBool2EnumRuleCall_18_0());
 				}
-				lv_autofilled_18_0=ruleEBoolean
+				lv_autofilled_18_0=ruleBool2
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getKnowledgeRule());
@@ -909,8 +909,8 @@ ruleKnowledge returns [EObject current=null]
 					set(
 						$current,
 						"autofilled",
-						true,
-						"org.xtext.example.mydsl1.Lightweight.EBoolean");
+						lv_autofilled_18_0,
+						"org.xtext.example.mydsl1.Lightweight.Bool2");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -2147,6 +2147,33 @@ ruleProtocol returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getProtocolAccess().getLOCALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_2, grammarAccess.getProtocolAccess().getLOCALEnumLiteralDeclaration_2());
+			}
+		)
+	)
+;
+
+// Rule Bool2
+ruleBool2 returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='true'
+			{
+				$current = grammarAccess.getBool2Access().getTRUEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getBool2Access().getTRUEEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='false'
+			{
+				$current = grammarAccess.getBool2Access().getFALSEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getBool2Access().getFALSEEnumLiteralDeclaration_1());
 			}
 		)
 	)

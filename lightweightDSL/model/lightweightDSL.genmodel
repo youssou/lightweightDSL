@@ -47,6 +47,10 @@
       <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//PVALUE/DEVICE"/>
       <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//PVALUE/TOKEN"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lightweightDSL.ecore#//Bool2">
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//Bool2/TRUE"/>
+      <genEnumLiterals ecoreEnumLiteral="lightweightDSL.ecore#//Bool2/FALSE"/>
+    </genEnums>
     <genClasses ecoreClass="lightweightDSL.ecore#//AuthMethod">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lightweightDSL.ecore#//AuthMethod/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference lightweightDSL.ecore#//AuthMethod/authenticators"/>

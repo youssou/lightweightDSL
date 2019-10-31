@@ -97,8 +97,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="SFA" eSuperTypes="#//AuthMethod"/>
   <eClassifiers xsi:type="ecore:EClass" name="Knowledge" eSuperTypes="#//Authenticator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//KVALUE"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="limitedAttempts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autofilled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="limitedAttempts" eType="#//Bool2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autofilled" eType="#//Bool2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Possession" eSuperTypes="#//Authenticator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//PVALUE"/>
@@ -122,5 +122,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//LEVEL"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="information" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Bool2">
+    <eLiterals name="TRUE"/>
+    <eLiterals name="FALSE" value="1"/>
   </eClassifiers>
 </ecore:EPackage>

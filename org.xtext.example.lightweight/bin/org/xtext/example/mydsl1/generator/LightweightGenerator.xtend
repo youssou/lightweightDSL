@@ -33,6 +33,8 @@ import lightweightDSL.Reset
 import lightweightDSL.Recovery
 import java.util.List
 import java.util.ArrayList
+import lightweightDSL.Protocol
+import lightweightDSL.Bool2
 
 /**
  * Generates code from your model files on save.
@@ -68,14 +70,7 @@ class LightweightGenerator extends AbstractGenerator {
 	List<Reset> resets = new ArrayList // List of existing reset
 	List<Recovery> recoveries = new ArrayList // List of existing recovery
 	
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
-
-		
+	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {	
 	val app = resource.contents.head as App
 		
 //		val mainLogin = LightweightDSLFactory.eINSTANCE.createLogin
@@ -92,6 +87,61 @@ class LightweightGenerator extends AbstractGenerator {
 		
 		// Assign methods security level
 		app.assignMethod
+		
+		fsa.generateFile(
+		'eval.txt','''
+		********************************* Main Evalution***********************
+		********************************* Authenticators***********************
+		«FOR auth : app.authenticators »
+		"Authenticator name = " «auth.name» «"\n"»
+		"Authenticator security Level =  " «auth.risk.value» 
+		"Authenticator security message : "«auth.risk.message» 
+		"Authenticator security information : " «auth.risk.information»
+		"---"
+		«ENDFOR»
+		
+		********************************* Authentication Methods **************
+		«FOR auth : app.authMethods »
+		Authentication name =  «auth.name» 
+		Authentication security Level =   «auth.risk.value» 
+		Authentication security message : «auth.risk.message» 
+		Authentication security information :  «auth.risk.information»
+		"---"
+		«ENDFOR»
+				
+		**************** Registration *****************************************
+		«FOR attr : mainRegistration.attributes»
+		Attribute name =  «attr.name»
+		Attribute security level =  «attr.risk.value»
+		Attribute security message =  «attr.risk.message»
+		Attributes security information = «attr.risk.information»
+		---
+		«ENDFOR»
+		**************** The main Login ************************************************
+		Main Login name =  «mainLogin.name»
+		Referenced authentication =  «mainLogin.authMethods.last.name»
+		Main Login security level =  «mainLogin.risk.value»
+		Main Login security message =  «mainLogin.risk.message»
+		Main Login security information = «mainLogin.risk.information»
+					---
+		**************** RECOVERY *********************************************
+		«FOR recov : recoveries»
+		Recovery name =  «recov.name»
+		Recovery security level =  «recov.risk.value»
+		Recovery security message =  «recov.risk.message»
+		Recovery security information = «recov.risk.information»
+		---
+		«ENDFOR»
+		
+		**************** RESET ************************************************
+		«FOR reset : resets»
+			Reset name =  «reset.name»
+			Reset security level =  «reset.risk.value»
+			REset security message =  «reset.risk.message»
+			Reset security information = «reset.risk.information»
+			---
+		«ENDFOR»
+		''')
 	}
 	
 	// function to initialize authenticators
@@ -102,65 +152,71 @@ class LightweightGenerator extends AbstractGenerator {
 				case POSSESSION : {
 					auth.risk.instance = POSSESSION
 					auth.risk.value = LEVEL.MEDIUM
-					auth.risk.message = "Use of possession based authenticator"
-					auth.risk.information = ""
+					auth.risk.message = "Use of possession based authenticator "
+					auth.risk.information = " "
 				}
 				
 				case BIOMETRICS : {
 					auth.risk.instance = BIOMETRICS
 					auth.risk.value = LEVEL.LOW
-					auth.risk.message = "Use of biometrics based authenticator"
-					auth.risk.information = ""
+					auth.risk.message = "Use of biometrics based authenticator "
+					auth.risk.information = " "
 				}
 				
 				case KNOWLEDGE : {
 					val knowledgeAuth = auth as Knowledge
+					
 					auth.risk.instance = KNOWLEDGE
 					
 					//Basic evaluation 
 					if (knowledgeAuth.value == KVALUE.PREFERENCES) {
 						
 						auth.risk.value = LEVEL.HIGH
-						auth.risk.message = "Use of preference based authenticator "+auth.name+"!" 
+						auth.risk.message = "Use of preference based authenticator --> "+auth.name+"!" 
 						auth.risk.information = ""	
 						
 					} else if(knowledgeAuth.value == KVALUE.PIN || knowledgeAuth.value == KVALUE.LTBP){
 						
 						auth.risk.value = LEVEL.MEDIUM // 
-						auth.risk.message = "Use of low security text based "+auth.name+"!" 
+						auth.risk.message = "Use of low security text based --> "+auth.name+"!" 
 						auth.risk.information = ""	
 						
 					} else {
 						auth.risk.value = LEVEL.LOW 
-						auth.risk.message = "Use of strong text based authentication "+auth.name+"!" 
+						auth.risk.message = "Use of strong-text based authenticator --> " +auth.name+ "!" 
 						auth.risk.information = ""
 						
 					}
 					
 					//Refactoring with the autofilled form and the number of attempts.
 					
-					if (!knowledgeAuth.limitedAttempts || knowledgeAuth.autofilled) {
-						if(knowledgeAuth.autofilled) {
-							if(auth.risk.value < LEVEL.MEDIUM) { // Low security level.
-								auth.risk.value = LEVEL.MEDIUM // 
-								auth.risk.message.concat("\n The risk is raised because of the use of autofillable form considered as possession-based authentication")
-								auth.risk.information = ""	
-							} // Level is high because of preferences.
+					if (knowledgeAuth.limitedAttempts == Bool2.FALSE) {
+						
+						auth.risk.information.concat("\n BRUTE FORCE ALERT: Brute forcing is possible when the number of attempts is UNLIMITED")	
+						if(auth.risk.value == LEVEL.LOW) { // from low to medium.
+							auth.risk.value = LEVEL.MEDIUM // 
+							auth.risk.message.concat(" \n The risk is raised because of the use of UNLIMITED Number of try form considered as possession-based authentication")
+						 // Level is high because of preferences.
+						} else if(auth.risk.value ==  LEVEL.MEDIUM) { // From medium to high
+							auth.risk.value = LEVEL.HIGH // 
+							auth.risk.message.concat("\n The risk is raised because of the unlimited attempts")
 						} else {
-							
-							if(auth.risk.value ==  LEVEL.MEDIUM) { // From medium to high
-								auth.risk.value = LEVEL.HIGH // 
-								auth.risk.message.concat("\n The risk is raised because of the unlimited attempts")
-								auth.risk.information = ""	
-							}
-							
-							if (auth.risk.value ==  LEVEL.LOW) { // from low to medium
-								auth.risk.value = LEVEL.MEDIUM // 
-								auth.risk.message.concat("\n The risk is raised from LOW to MEDIUM because of the unlimited attempts")
-								auth.risk.information = ""	
-							}
+							// Nothing
 						}
 					}
+					// Refactoring with autofilled form
+					if(knowledgeAuth.autofilled == Bool2.TRUE) {
+						auth.risk.information.concat("\n AUTOFILLED FORMS ALERT : Automatically filled put the authentication as Possession Based")
+						if(auth.risk.value != LEVEL.HIGH) {
+							auth.risk.value = LEVEL.MEDIUM // 
+							auth.risk.message.concat("\n The risk is raised because of the use of AUTOFILLED forms considered as possession-based authentication")
+						} else { // The risk is the worst.
+						auth.risk.value = LEVEL.MEDIUM // 
+							auth.risk.message.concat("\n The risk is raised because of the use of AUTOFILLED form considered as possession-based authentication")
+							auth.risk.information.concat("Even AUTOFILLED form is used, the risk is kept to High because of the MECANISM that is HIGH risk level --->"+auth.name)	
+						}
+					}
+					
 				}
 			}
 		}
@@ -182,6 +238,8 @@ class LightweightGenerator extends AbstractGenerator {
 	
 	def assignMethod(App app) {
 		println("Initializing methods for each phases")
+		var comp = new MethodComparator()
+		
 		for(phase : app.phases) {
 			phase.risk = LightweightDSLFactory.eINSTANCE.createRisk
 			switch(phase.type) {
@@ -236,18 +294,18 @@ class LightweightGenerator extends AbstractGenerator {
 				case LOGIN : {
 					val login = phase as Login 
 					login.risk.instance = LOGIN
+					login.risk.information = "USER IMITATION : "
 					if(login.authMethods.size != 1) {
-						var comp = new MethodComparator()
-						login.authMethods.sortInplace(comp) // reverse short (see comparator)
+						login.authMethods.sortInplace(comp) 
 						login.risk.value = login.authMethods.last.risk.value 	
 						login.risk.message = "Multiple method but, the referenced authentication method is ("+ login.authMethods.last+")"
-						login.risk.information = ""
+						login.risk.information.concat("\n "+login.authMethods.last.risk.information)
 						mainLogin = login as Login
 						} else {
 						println("main authentication method" + login.authMethods.get(0))
 						login.risk.message = "One referenced authentication method is ( \n "+ login.authMethods.get(0)+")"
 						login.risk.value = login.authMethods.get(0).risk.value
-						login.risk.information = ""
+						login.risk.information.concat("\n "+login.authMethods.get(0).risk.information)
 						mainLogin = login as Login
 					}
 					
@@ -272,18 +330,18 @@ class LightweightGenerator extends AbstractGenerator {
 					val reset = phase as Reset 
 					reset.risk.instance = RESET
 					// The case of reset with auth methods and persisted session
-					if(reset.authMethods.size == 0) {
-						reset.risk.information = "It is highly recommended to use a security challenge to before reseting credential and also before sensitive action such as payment"
+					if(reset.authMethods == null) {
+						reset.risk.information = "USER SUBSTITUTION : It is highly recommended to use a security challenge to before reseting credential and also before sensitive action such as payment"
 						if(mainLogin.session) {
 							reset.risk.value  = maximum(LEVEL.MEDIUM, mainLogin.risk.value)
-							reset.risk.message = "Because of the persistent session the risk level is at most MEDIUM (considered as Possession based"
+							reset.risk.message = "Because of the persistent session the risk level is at most MEDIUM (considered as Possession based)"
 						} else {
 							reset.risk.value  = mainLogin.risk.value
 							reset.risk.message = "No Persistent Session : The risk level of the Reset (" +reset.name+ ") is given by the MainLogin (" +mainLogin.name+ ")"
 						}
 					}else {
-						var comp = new MethodComparator()
-						reset.authMethods.sortInplace(comp) // reverse short (see comparator)
+						reset.risk.information = "USER SUBSTITUTION : RESET with Security Challenge"
+						reset.authMethods.sortInplace(comp) 
 						reset.risk.message = "Multiple method but, the referenced authentication method is (\n"+ reset.authMethods.last.toString+")"
 						reset.risk.message.concat("\n, Reset Challenge with no persistent challenge : The risk level is at LEAST the ")
 						reset.risk.value = maximum (reset.authMethods.last.risk.value, mainLogin.risk.value) 	
@@ -299,7 +357,42 @@ class LightweightGenerator extends AbstractGenerator {
 					resets.add(reset)
 				}
 				case RECOVERY : {
-					//TODO
+					val recovery = phase as Recovery
+					recovery.risk.instance = RECOVERY
+					// testing local validation recovery
+					if(recovery.protocol == Protocol.LOCAL) {
+						// Recovery without authMethods
+						if(recovery.authMethods == null) {
+							recovery.risk.information = "Because of the absence of security challenge and the location validation, a malicious user can easily impersonate the legitimate using the recovery procedure ("+recovery.name+")"
+							recovery.risk.message = "USER IMITATION : LOCAL RECOVERY without SecurityCShallenge"
+							recovery.risk.value = LEVEL.HIGH
+						} else {
+							// Multiple authentication methods
+							recovery.authMethods.sortInplace(comp) 
+							recovery.risk.message = "USER IMITATION : LOCAL RECOVERY with Security Challenge"
+							recovery.risk.information = "The Risk Level to IMPERSONATE the legitimate USER is given by the security challenge -->"+recovery.authMethods.last.toString
+							recovery.risk.value = recovery.authMethods.last.risk.value
+						}					
+					} else {
+						// Recovery without authMethods
+						if(recovery.authMethods == null) {
+							recovery.risk.information = "EMAIL or SMS based recovery without security challenge is considered as Possession based authentication. \n A malicious user can impersonate the legitimate using the recovery procedure ("+recovery.name+"), it it has access to the EMAIL or the SMS"
+							recovery.risk.message = "USER IMITATION : EBIA or SMS without SecurityCShallenge"
+							recovery.risk.value = LEVEL.MEDIUM
+						} else {
+							// Multiple authentication methods
+							recovery.authMethods.sortInplace(comp) 
+							recovery.risk.message = "USER IMITATION : EBIA or SMS with Security Challenge"
+							recovery.risk.information = "The Risk Level to IMPERSONATE the legitimate USER is given by the security challenge -->"+recovery.authMethods.last.toString
+							recovery.risk.value = recovery.authMethods.last.risk.value
+						}	
+					}
+					println("Recovery Risk Assessment")
+					println ("Recovery risk level : \n name : " +recovery.name+ "
+							\n Evaluation : " +recovery.risk.toString)
+					// Add to the list of available recovery.
+					recoveries.add(recovery)
+					
 				}
 			}
 		}

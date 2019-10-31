@@ -56,8 +56,8 @@ Knowledge returns Knowledge :
 	type = 'Knowledge' ':' '{' 
 		'name' ":" name=EString ","
 		'value' ":" value=KVALUE ","
-		"limitedAttempts" ':' limitedAttempts?=EBoolean ","
-		'autofillable' ":" autofilled?=EBoolean
+		"limitedAttempts" ':' limitedAttempts = Bool2 ","
+		'autofillable' ":" autofilled = Bool2
 		'}'
 	
 	;
@@ -149,7 +149,10 @@ EBoolean returns ecore::EBoolean:
 
 enum Protocol returns Protocol:
 				EBIA = 'Email-Based' | SMS_BASED = "MS-based" | LOCAL = "Local";
-				
+
+enum Bool2 returns Bool2 : 
+	TRUE = 'true' | FALSE = 'false'
+;			
 
 enum KVALUE returns KVALUE : 
 					STBP = "High Entropy Text-Based Password" | 

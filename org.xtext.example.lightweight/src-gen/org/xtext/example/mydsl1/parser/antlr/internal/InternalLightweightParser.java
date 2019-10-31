@@ -1664,7 +1664,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKnowledge"
-    // InternalLightweight.g:761:1: ruleKnowledge returns [EObject current=null] : ( () ( (lv_type_1_0= 'Knowledge' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'value' otherlv_9= ':' ( (lv_value_10_0= ruleKVALUE ) ) otherlv_11= ',' otherlv_12= 'limitedAttempts' otherlv_13= ':' ( (lv_limitedAttempts_14_0= ruleEBoolean ) ) otherlv_15= ',' otherlv_16= 'autofillable' otherlv_17= ':' ( (lv_autofilled_18_0= ruleEBoolean ) ) otherlv_19= '}' ) ;
+    // InternalLightweight.g:761:1: ruleKnowledge returns [EObject current=null] : ( () ( (lv_type_1_0= 'Knowledge' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'value' otherlv_9= ':' ( (lv_value_10_0= ruleKVALUE ) ) otherlv_11= ',' otherlv_12= 'limitedAttempts' otherlv_13= ':' ( (lv_limitedAttempts_14_0= ruleBool2 ) ) otherlv_15= ',' otherlv_16= 'autofillable' otherlv_17= ':' ( (lv_autofilled_18_0= ruleBool2 ) ) otherlv_19= '}' ) ;
     public final EObject ruleKnowledge() throws RecognitionException {
         EObject current = null;
 
@@ -1687,20 +1687,20 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
         Enumerator lv_value_10_0 = null;
 
-        AntlrDatatypeRuleToken lv_limitedAttempts_14_0 = null;
+        Enumerator lv_limitedAttempts_14_0 = null;
 
-        AntlrDatatypeRuleToken lv_autofilled_18_0 = null;
+        Enumerator lv_autofilled_18_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLightweight.g:767:2: ( ( () ( (lv_type_1_0= 'Knowledge' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'value' otherlv_9= ':' ( (lv_value_10_0= ruleKVALUE ) ) otherlv_11= ',' otherlv_12= 'limitedAttempts' otherlv_13= ':' ( (lv_limitedAttempts_14_0= ruleEBoolean ) ) otherlv_15= ',' otherlv_16= 'autofillable' otherlv_17= ':' ( (lv_autofilled_18_0= ruleEBoolean ) ) otherlv_19= '}' ) )
-            // InternalLightweight.g:768:2: ( () ( (lv_type_1_0= 'Knowledge' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'value' otherlv_9= ':' ( (lv_value_10_0= ruleKVALUE ) ) otherlv_11= ',' otherlv_12= 'limitedAttempts' otherlv_13= ':' ( (lv_limitedAttempts_14_0= ruleEBoolean ) ) otherlv_15= ',' otherlv_16= 'autofillable' otherlv_17= ':' ( (lv_autofilled_18_0= ruleEBoolean ) ) otherlv_19= '}' )
+            // InternalLightweight.g:767:2: ( ( () ( (lv_type_1_0= 'Knowledge' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'value' otherlv_9= ':' ( (lv_value_10_0= ruleKVALUE ) ) otherlv_11= ',' otherlv_12= 'limitedAttempts' otherlv_13= ':' ( (lv_limitedAttempts_14_0= ruleBool2 ) ) otherlv_15= ',' otherlv_16= 'autofillable' otherlv_17= ':' ( (lv_autofilled_18_0= ruleBool2 ) ) otherlv_19= '}' ) )
+            // InternalLightweight.g:768:2: ( () ( (lv_type_1_0= 'Knowledge' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'value' otherlv_9= ':' ( (lv_value_10_0= ruleKVALUE ) ) otherlv_11= ',' otherlv_12= 'limitedAttempts' otherlv_13= ':' ( (lv_limitedAttempts_14_0= ruleBool2 ) ) otherlv_15= ',' otherlv_16= 'autofillable' otherlv_17= ':' ( (lv_autofilled_18_0= ruleBool2 ) ) otherlv_19= '}' )
             {
-            // InternalLightweight.g:768:2: ( () ( (lv_type_1_0= 'Knowledge' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'value' otherlv_9= ':' ( (lv_value_10_0= ruleKVALUE ) ) otherlv_11= ',' otherlv_12= 'limitedAttempts' otherlv_13= ':' ( (lv_limitedAttempts_14_0= ruleEBoolean ) ) otherlv_15= ',' otherlv_16= 'autofillable' otherlv_17= ':' ( (lv_autofilled_18_0= ruleEBoolean ) ) otherlv_19= '}' )
-            // InternalLightweight.g:769:3: () ( (lv_type_1_0= 'Knowledge' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'value' otherlv_9= ':' ( (lv_value_10_0= ruleKVALUE ) ) otherlv_11= ',' otherlv_12= 'limitedAttempts' otherlv_13= ':' ( (lv_limitedAttempts_14_0= ruleEBoolean ) ) otherlv_15= ',' otherlv_16= 'autofillable' otherlv_17= ':' ( (lv_autofilled_18_0= ruleEBoolean ) ) otherlv_19= '}'
+            // InternalLightweight.g:768:2: ( () ( (lv_type_1_0= 'Knowledge' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'value' otherlv_9= ':' ( (lv_value_10_0= ruleKVALUE ) ) otherlv_11= ',' otherlv_12= 'limitedAttempts' otherlv_13= ':' ( (lv_limitedAttempts_14_0= ruleBool2 ) ) otherlv_15= ',' otherlv_16= 'autofillable' otherlv_17= ':' ( (lv_autofilled_18_0= ruleBool2 ) ) otherlv_19= '}' )
+            // InternalLightweight.g:769:3: () ( (lv_type_1_0= 'Knowledge' ) ) otherlv_2= ':' otherlv_3= '{' otherlv_4= 'name' otherlv_5= ':' ( (lv_name_6_0= ruleEString ) ) otherlv_7= ',' otherlv_8= 'value' otherlv_9= ':' ( (lv_value_10_0= ruleKVALUE ) ) otherlv_11= ',' otherlv_12= 'limitedAttempts' otherlv_13= ':' ( (lv_limitedAttempts_14_0= ruleBool2 ) ) otherlv_15= ',' otherlv_16= 'autofillable' otherlv_17= ':' ( (lv_autofilled_18_0= ruleBool2 ) ) otherlv_19= '}'
             {
             // InternalLightweight.g:769:3: ()
             // InternalLightweight.g:770:4: 
@@ -1837,17 +1837,17 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_13, grammarAccess.getKnowledgeAccess().getColonKeyword_13());
             		
-            // InternalLightweight.g:868:3: ( (lv_limitedAttempts_14_0= ruleEBoolean ) )
-            // InternalLightweight.g:869:4: (lv_limitedAttempts_14_0= ruleEBoolean )
+            // InternalLightweight.g:868:3: ( (lv_limitedAttempts_14_0= ruleBool2 ) )
+            // InternalLightweight.g:869:4: (lv_limitedAttempts_14_0= ruleBool2 )
             {
-            // InternalLightweight.g:869:4: (lv_limitedAttempts_14_0= ruleEBoolean )
-            // InternalLightweight.g:870:5: lv_limitedAttempts_14_0= ruleEBoolean
+            // InternalLightweight.g:869:4: (lv_limitedAttempts_14_0= ruleBool2 )
+            // InternalLightweight.g:870:5: lv_limitedAttempts_14_0= ruleBool2
             {
 
-            					newCompositeNode(grammarAccess.getKnowledgeAccess().getLimitedAttemptsEBooleanParserRuleCall_14_0());
+            					newCompositeNode(grammarAccess.getKnowledgeAccess().getLimitedAttemptsBool2EnumRuleCall_14_0());
             				
             pushFollow(FOLLOW_9);
-            lv_limitedAttempts_14_0=ruleEBoolean();
+            lv_limitedAttempts_14_0=ruleBool2();
 
             state._fsp--;
 
@@ -1858,8 +1858,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"limitedAttempts",
-            						true,
-            						"org.xtext.example.mydsl1.Lightweight.EBoolean");
+            						lv_limitedAttempts_14_0,
+            						"org.xtext.example.mydsl1.Lightweight.Bool2");
             					afterParserOrEnumRuleCall();
             				
 
@@ -1880,17 +1880,17 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_17, grammarAccess.getKnowledgeAccess().getColonKeyword_17());
             		
-            // InternalLightweight.g:899:3: ( (lv_autofilled_18_0= ruleEBoolean ) )
-            // InternalLightweight.g:900:4: (lv_autofilled_18_0= ruleEBoolean )
+            // InternalLightweight.g:899:3: ( (lv_autofilled_18_0= ruleBool2 ) )
+            // InternalLightweight.g:900:4: (lv_autofilled_18_0= ruleBool2 )
             {
-            // InternalLightweight.g:900:4: (lv_autofilled_18_0= ruleEBoolean )
-            // InternalLightweight.g:901:5: lv_autofilled_18_0= ruleEBoolean
+            // InternalLightweight.g:900:4: (lv_autofilled_18_0= ruleBool2 )
+            // InternalLightweight.g:901:5: lv_autofilled_18_0= ruleBool2
             {
 
-            					newCompositeNode(grammarAccess.getKnowledgeAccess().getAutofilledEBooleanParserRuleCall_18_0());
+            					newCompositeNode(grammarAccess.getKnowledgeAccess().getAutofilledBool2EnumRuleCall_18_0());
             				
             pushFollow(FOLLOW_14);
-            lv_autofilled_18_0=ruleEBoolean();
+            lv_autofilled_18_0=ruleBool2();
 
             state._fsp--;
 
@@ -1901,8 +1901,8 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"autofilled",
-            						true,
-            						"org.xtext.example.mydsl1.Lightweight.EBoolean");
+            						lv_autofilled_18_0,
+            						"org.xtext.example.mydsl1.Lightweight.Bool2");
             					afterParserOrEnumRuleCall();
             				
 
@@ -4675,8 +4675,96 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleProtocol"
 
 
+    // $ANTLR start "ruleBool2"
+    // InternalLightweight.g:2156:1: ruleBool2 returns [Enumerator current=null] : ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) ) ;
+    public final Enumerator ruleBool2() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalLightweight.g:2162:2: ( ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) ) )
+            // InternalLightweight.g:2163:2: ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) )
+            {
+            // InternalLightweight.g:2163:2: ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) )
+            int alt22=2;
+            int LA22_0 = input.LA(1);
+
+            if ( (LA22_0==50) ) {
+                alt22=1;
+            }
+            else if ( (LA22_0==51) ) {
+                alt22=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 22, 0, input);
+
+                throw nvae;
+            }
+            switch (alt22) {
+                case 1 :
+                    // InternalLightweight.g:2164:3: (enumLiteral_0= 'true' )
+                    {
+                    // InternalLightweight.g:2164:3: (enumLiteral_0= 'true' )
+                    // InternalLightweight.g:2165:4: enumLiteral_0= 'true'
+                    {
+                    enumLiteral_0=(Token)match(input,50,FOLLOW_2); 
+
+                    				current = grammarAccess.getBool2Access().getTRUEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getBool2Access().getTRUEEnumLiteralDeclaration_0());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalLightweight.g:2172:3: (enumLiteral_1= 'false' )
+                    {
+                    // InternalLightweight.g:2172:3: (enumLiteral_1= 'false' )
+                    // InternalLightweight.g:2173:4: enumLiteral_1= 'false'
+                    {
+                    enumLiteral_1=(Token)match(input,51,FOLLOW_2); 
+
+                    				current = grammarAccess.getBool2Access().getFALSEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getBool2Access().getFALSEEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleBool2"
+
+
     // $ANTLR start "ruleKVALUE"
-    // InternalLightweight.g:2156:1: ruleKVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) ) ;
+    // InternalLightweight.g:2183:1: ruleKVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) ) ;
     public final Enumerator ruleKVALUE() throws RecognitionException {
         Enumerator current = null;
 
@@ -4690,50 +4778,50 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:2162:2: ( ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) ) )
-            // InternalLightweight.g:2163:2: ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) )
+            // InternalLightweight.g:2189:2: ( ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) ) )
+            // InternalLightweight.g:2190:2: ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) )
             {
-            // InternalLightweight.g:2163:2: ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) )
-            int alt22=5;
+            // InternalLightweight.g:2190:2: ( (enumLiteral_0= 'High Entropy Text-Based Password' ) | (enumLiteral_1= 'Pass phrase' ) | (enumLiteral_2= 'Knowledge-based Preferences' ) | (enumLiteral_3= 'Low Entropy Text-Based Password' ) | (enumLiteral_4= 'Pin Code' ) )
+            int alt23=5;
             switch ( input.LA(1) ) {
             case 60:
                 {
-                alt22=1;
+                alt23=1;
                 }
                 break;
             case 61:
                 {
-                alt22=2;
+                alt23=2;
                 }
                 break;
             case 62:
                 {
-                alt22=3;
+                alt23=3;
                 }
                 break;
             case 63:
                 {
-                alt22=4;
+                alt23=4;
                 }
                 break;
             case 64:
                 {
-                alt22=5;
+                alt23=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
-                    // InternalLightweight.g:2164:3: (enumLiteral_0= 'High Entropy Text-Based Password' )
+                    // InternalLightweight.g:2191:3: (enumLiteral_0= 'High Entropy Text-Based Password' )
                     {
-                    // InternalLightweight.g:2164:3: (enumLiteral_0= 'High Entropy Text-Based Password' )
-                    // InternalLightweight.g:2165:4: enumLiteral_0= 'High Entropy Text-Based Password'
+                    // InternalLightweight.g:2191:3: (enumLiteral_0= 'High Entropy Text-Based Password' )
+                    // InternalLightweight.g:2192:4: enumLiteral_0= 'High Entropy Text-Based Password'
                     {
                     enumLiteral_0=(Token)match(input,60,FOLLOW_2); 
 
@@ -4747,10 +4835,10 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:2172:3: (enumLiteral_1= 'Pass phrase' )
+                    // InternalLightweight.g:2199:3: (enumLiteral_1= 'Pass phrase' )
                     {
-                    // InternalLightweight.g:2172:3: (enumLiteral_1= 'Pass phrase' )
-                    // InternalLightweight.g:2173:4: enumLiteral_1= 'Pass phrase'
+                    // InternalLightweight.g:2199:3: (enumLiteral_1= 'Pass phrase' )
+                    // InternalLightweight.g:2200:4: enumLiteral_1= 'Pass phrase'
                     {
                     enumLiteral_1=(Token)match(input,61,FOLLOW_2); 
 
@@ -4764,10 +4852,10 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLightweight.g:2180:3: (enumLiteral_2= 'Knowledge-based Preferences' )
+                    // InternalLightweight.g:2207:3: (enumLiteral_2= 'Knowledge-based Preferences' )
                     {
-                    // InternalLightweight.g:2180:3: (enumLiteral_2= 'Knowledge-based Preferences' )
-                    // InternalLightweight.g:2181:4: enumLiteral_2= 'Knowledge-based Preferences'
+                    // InternalLightweight.g:2207:3: (enumLiteral_2= 'Knowledge-based Preferences' )
+                    // InternalLightweight.g:2208:4: enumLiteral_2= 'Knowledge-based Preferences'
                     {
                     enumLiteral_2=(Token)match(input,62,FOLLOW_2); 
 
@@ -4781,10 +4869,10 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalLightweight.g:2188:3: (enumLiteral_3= 'Low Entropy Text-Based Password' )
+                    // InternalLightweight.g:2215:3: (enumLiteral_3= 'Low Entropy Text-Based Password' )
                     {
-                    // InternalLightweight.g:2188:3: (enumLiteral_3= 'Low Entropy Text-Based Password' )
-                    // InternalLightweight.g:2189:4: enumLiteral_3= 'Low Entropy Text-Based Password'
+                    // InternalLightweight.g:2215:3: (enumLiteral_3= 'Low Entropy Text-Based Password' )
+                    // InternalLightweight.g:2216:4: enumLiteral_3= 'Low Entropy Text-Based Password'
                     {
                     enumLiteral_3=(Token)match(input,63,FOLLOW_2); 
 
@@ -4798,10 +4886,10 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalLightweight.g:2196:3: (enumLiteral_4= 'Pin Code' )
+                    // InternalLightweight.g:2223:3: (enumLiteral_4= 'Pin Code' )
                     {
-                    // InternalLightweight.g:2196:3: (enumLiteral_4= 'Pin Code' )
-                    // InternalLightweight.g:2197:4: enumLiteral_4= 'Pin Code'
+                    // InternalLightweight.g:2223:3: (enumLiteral_4= 'Pin Code' )
+                    // InternalLightweight.g:2224:4: enumLiteral_4= 'Pin Code'
                     {
                     enumLiteral_4=(Token)match(input,64,FOLLOW_2); 
 
@@ -4837,7 +4925,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBVALUE"
-    // InternalLightweight.g:2207:1: ruleBVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) ) ;
+    // InternalLightweight.g:2234:1: ruleBVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) ) ;
     public final Enumerator ruleBVALUE() throws RecognitionException {
         Enumerator current = null;
 
@@ -4848,31 +4936,31 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:2213:2: ( ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) ) )
-            // InternalLightweight.g:2214:2: ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) )
+            // InternalLightweight.g:2240:2: ( ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) ) )
+            // InternalLightweight.g:2241:2: ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) )
             {
-            // InternalLightweight.g:2214:2: ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) )
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // InternalLightweight.g:2241:2: ( (enumLiteral_0= 'Fingerprint Recognition' ) | (enumLiteral_1= 'Facial Recognition' ) )
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA23_0==65) ) {
-                alt23=1;
+            if ( (LA24_0==65) ) {
+                alt24=1;
             }
-            else if ( (LA23_0==66) ) {
-                alt23=2;
+            else if ( (LA24_0==66) ) {
+                alt24=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 23, 0, input);
+                    new NoViableAltException("", 24, 0, input);
 
                 throw nvae;
             }
-            switch (alt23) {
+            switch (alt24) {
                 case 1 :
-                    // InternalLightweight.g:2215:3: (enumLiteral_0= 'Fingerprint Recognition' )
+                    // InternalLightweight.g:2242:3: (enumLiteral_0= 'Fingerprint Recognition' )
                     {
-                    // InternalLightweight.g:2215:3: (enumLiteral_0= 'Fingerprint Recognition' )
-                    // InternalLightweight.g:2216:4: enumLiteral_0= 'Fingerprint Recognition'
+                    // InternalLightweight.g:2242:3: (enumLiteral_0= 'Fingerprint Recognition' )
+                    // InternalLightweight.g:2243:4: enumLiteral_0= 'Fingerprint Recognition'
                     {
                     enumLiteral_0=(Token)match(input,65,FOLLOW_2); 
 
@@ -4886,10 +4974,10 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:2223:3: (enumLiteral_1= 'Facial Recognition' )
+                    // InternalLightweight.g:2250:3: (enumLiteral_1= 'Facial Recognition' )
                     {
-                    // InternalLightweight.g:2223:3: (enumLiteral_1= 'Facial Recognition' )
-                    // InternalLightweight.g:2224:4: enumLiteral_1= 'Facial Recognition'
+                    // InternalLightweight.g:2250:3: (enumLiteral_1= 'Facial Recognition' )
+                    // InternalLightweight.g:2251:4: enumLiteral_1= 'Facial Recognition'
                     {
                     enumLiteral_1=(Token)match(input,66,FOLLOW_2); 
 
@@ -4925,7 +5013,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePVALUE"
-    // InternalLightweight.g:2234:1: rulePVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) ) ;
+    // InternalLightweight.g:2261:1: rulePVALUE returns [Enumerator current=null] : ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) ) ;
     public final Enumerator rulePVALUE() throws RecognitionException {
         Enumerator current = null;
 
@@ -4936,31 +5024,31 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:2240:2: ( ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) ) )
-            // InternalLightweight.g:2241:2: ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) )
+            // InternalLightweight.g:2267:2: ( ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) ) )
+            // InternalLightweight.g:2268:2: ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) )
             {
-            // InternalLightweight.g:2241:2: ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // InternalLightweight.g:2268:2: ( (enumLiteral_0= 'Hard Drive Token' ) | (enumLiteral_1= 'Physical device' ) )
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA24_0==67) ) {
-                alt24=1;
+            if ( (LA25_0==67) ) {
+                alt25=1;
             }
-            else if ( (LA24_0==68) ) {
-                alt24=2;
+            else if ( (LA25_0==68) ) {
+                alt25=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 25, 0, input);
 
                 throw nvae;
             }
-            switch (alt24) {
+            switch (alt25) {
                 case 1 :
-                    // InternalLightweight.g:2242:3: (enumLiteral_0= 'Hard Drive Token' )
+                    // InternalLightweight.g:2269:3: (enumLiteral_0= 'Hard Drive Token' )
                     {
-                    // InternalLightweight.g:2242:3: (enumLiteral_0= 'Hard Drive Token' )
-                    // InternalLightweight.g:2243:4: enumLiteral_0= 'Hard Drive Token'
+                    // InternalLightweight.g:2269:3: (enumLiteral_0= 'Hard Drive Token' )
+                    // InternalLightweight.g:2270:4: enumLiteral_0= 'Hard Drive Token'
                     {
                     enumLiteral_0=(Token)match(input,67,FOLLOW_2); 
 
@@ -4974,10 +5062,10 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:2250:3: (enumLiteral_1= 'Physical device' )
+                    // InternalLightweight.g:2277:3: (enumLiteral_1= 'Physical device' )
                     {
-                    // InternalLightweight.g:2250:3: (enumLiteral_1= 'Physical device' )
-                    // InternalLightweight.g:2251:4: enumLiteral_1= 'Physical device'
+                    // InternalLightweight.g:2277:3: (enumLiteral_1= 'Physical device' )
+                    // InternalLightweight.g:2278:4: enumLiteral_1= 'Physical device'
                     {
                     enumLiteral_1=(Token)match(input,68,FOLLOW_2); 
 
@@ -5013,7 +5101,7 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValidationType"
-    // InternalLightweight.g:2261:1: ruleValidationType returns [Enumerator current=null] : ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) ) ;
+    // InternalLightweight.g:2288:1: ruleValidationType returns [Enumerator current=null] : ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) ) ;
     public final Enumerator ruleValidationType() throws RecognitionException {
         Enumerator current = null;
 
@@ -5024,31 +5112,31 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLightweight.g:2267:2: ( ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) ) )
-            // InternalLightweight.g:2268:2: ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) )
+            // InternalLightweight.g:2294:2: ( ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) ) )
+            // InternalLightweight.g:2295:2: ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) )
             {
-            // InternalLightweight.g:2268:2: ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) )
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalLightweight.g:2295:2: ( (enumLiteral_0= 'local validation' ) | (enumLiteral_1= 'Remote validation' ) )
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA25_0==69) ) {
-                alt25=1;
+            if ( (LA26_0==69) ) {
+                alt26=1;
             }
-            else if ( (LA25_0==70) ) {
-                alt25=2;
+            else if ( (LA26_0==70) ) {
+                alt26=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
+                    new NoViableAltException("", 26, 0, input);
 
                 throw nvae;
             }
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
-                    // InternalLightweight.g:2269:3: (enumLiteral_0= 'local validation' )
+                    // InternalLightweight.g:2296:3: (enumLiteral_0= 'local validation' )
                     {
-                    // InternalLightweight.g:2269:3: (enumLiteral_0= 'local validation' )
-                    // InternalLightweight.g:2270:4: enumLiteral_0= 'local validation'
+                    // InternalLightweight.g:2296:3: (enumLiteral_0= 'local validation' )
+                    // InternalLightweight.g:2297:4: enumLiteral_0= 'local validation'
                     {
                     enumLiteral_0=(Token)match(input,69,FOLLOW_2); 
 
@@ -5062,10 +5150,10 @@ public class InternalLightweightParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLightweight.g:2277:3: (enumLiteral_1= 'Remote validation' )
+                    // InternalLightweight.g:2304:3: (enumLiteral_1= 'Remote validation' )
                     {
-                    // InternalLightweight.g:2277:3: (enumLiteral_1= 'Remote validation' )
-                    // InternalLightweight.g:2278:4: enumLiteral_1= 'Remote validation'
+                    // InternalLightweight.g:2304:3: (enumLiteral_1= 'Remote validation' )
+                    // InternalLightweight.g:2305:4: enumLiteral_1= 'Remote validation'
                     {
                     enumLiteral_1=(Token)match(input,70,FOLLOW_2); 
 

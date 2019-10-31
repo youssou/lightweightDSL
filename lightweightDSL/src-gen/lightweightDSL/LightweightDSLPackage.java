@@ -1361,6 +1361,16 @@ public interface LightweightDSLPackage extends EPackage {
 	int PVALUE = 23;
 
 	/**
+	 * The meta object id for the '{@link lightweightDSL.Bool2 <em>Bool2</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see lightweightDSL.Bool2
+	 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getBool2()
+	 * @generated
+	 */
+	int BOOL2 = 24;
+
+	/**
 	 * Returns the meta object for class '{@link lightweightDSL.AuthMethod <em>Auth Method</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1884,22 +1894,22 @@ public interface LightweightDSLPackage extends EPackage {
 	EAttribute getKnowledge_Value();
 
 	/**
-	 * Returns the meta object for the attribute '{@link lightweightDSL.Knowledge#isLimitedAttempts <em>Limited Attempts</em>}'.
+	 * Returns the meta object for the attribute '{@link lightweightDSL.Knowledge#getLimitedAttempts <em>Limited Attempts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Limited Attempts</em>'.
-	 * @see lightweightDSL.Knowledge#isLimitedAttempts()
+	 * @see lightweightDSL.Knowledge#getLimitedAttempts()
 	 * @see #getKnowledge()
 	 * @generated
 	 */
 	EAttribute getKnowledge_LimitedAttempts();
 
 	/**
-	 * Returns the meta object for the attribute '{@link lightweightDSL.Knowledge#isAutofilled <em>Autofilled</em>}'.
+	 * Returns the meta object for the attribute '{@link lightweightDSL.Knowledge#getAutofilled <em>Autofilled</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Autofilled</em>'.
-	 * @see lightweightDSL.Knowledge#isAutofilled()
+	 * @see lightweightDSL.Knowledge#getAutofilled()
 	 * @see #getKnowledge()
 	 * @generated
 	 */
@@ -2080,6 +2090,16 @@ public interface LightweightDSLPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getPVALUE();
+
+	/**
+	 * Returns the meta object for enum '{@link lightweightDSL.Bool2 <em>Bool2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Bool2</em>'.
+	 * @see lightweightDSL.Bool2
+	 * @generated
+	 */
+	EEnum getBool2();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2695,6 +2715,16 @@ public interface LightweightDSLPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum PVALUE = eINSTANCE.getPVALUE();
+
+		/**
+		 * The meta object literal for the '{@link lightweightDSL.Bool2 <em>Bool2</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see lightweightDSL.Bool2
+		 * @see lightweightDSL.impl.LightweightDSLPackageImpl#getBool2()
+		 * @generated
+		 */
+		EEnum BOOL2 = eINSTANCE.getBool2();
 
 	}
 

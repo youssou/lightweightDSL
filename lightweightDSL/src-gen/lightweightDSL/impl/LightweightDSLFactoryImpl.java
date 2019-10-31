@@ -112,6 +112,8 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 			return createKVALUEFromString(eDataType, initialValue);
 		case LightweightDSLPackage.PVALUE:
 			return createPVALUEFromString(eDataType, initialValue);
+		case LightweightDSLPackage.BOOL2:
+			return createBool2FromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -141,6 +143,8 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 			return convertKVALUEToString(eDataType, instanceValue);
 		case LightweightDSLPackage.PVALUE:
 			return convertPVALUEToString(eDataType, instanceValue);
+		case LightweightDSLPackage.BOOL2:
+			return convertBool2ToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -462,6 +466,28 @@ public class LightweightDSLFactoryImpl extends EFactoryImpl implements Lightweig
 	 * @generated
 	 */
 	public String convertPVALUEToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bool2 createBool2FromString(EDataType eDataType, String initialValue) {
+		Bool2 result = Bool2.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBool2ToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

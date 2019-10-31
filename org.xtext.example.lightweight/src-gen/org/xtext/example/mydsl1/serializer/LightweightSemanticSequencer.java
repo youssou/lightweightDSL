@@ -146,7 +146,7 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Knowledge returns Knowledge
 	 *
 	 * Constraint:
-	 *     (type='Knowledge' name=EString value=KVALUE limitedAttempts?=EBoolean autofilled?=EBoolean)
+	 *     (type='Knowledge' name=EString value=KVALUE limitedAttempts=Bool2 autofilled=Bool2)
 	 */
 	protected void sequence_Knowledge(ISerializationContext context, Knowledge semanticObject) {
 		if (errorAcceptor != null) {
@@ -165,8 +165,8 @@ public class LightweightSemanticSequencer extends AbstractDelegatingSemanticSequ
 		feeder.accept(grammarAccess.getKnowledgeAccess().getTypeKnowledgeKeyword_1_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getKnowledgeAccess().getNameEStringParserRuleCall_6_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getKnowledgeAccess().getValueKVALUEEnumRuleCall_10_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getKnowledgeAccess().getLimitedAttemptsEBooleanParserRuleCall_14_0(), semanticObject.isLimitedAttempts());
-		feeder.accept(grammarAccess.getKnowledgeAccess().getAutofilledEBooleanParserRuleCall_18_0(), semanticObject.isAutofilled());
+		feeder.accept(grammarAccess.getKnowledgeAccess().getLimitedAttemptsBool2EnumRuleCall_14_0(), semanticObject.getLimitedAttempts());
+		feeder.accept(grammarAccess.getKnowledgeAccess().getAutofilledBool2EnumRuleCall_18_0(), semanticObject.getAutofilled());
 		feeder.finish();
 	}
 	

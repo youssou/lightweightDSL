@@ -40,7 +40,6 @@ public class LightweightParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPROVIDERAccess().getAlternatives(), "rule__PROVIDER__Alternatives");
 			builder.put(grammarAccess.getCredTYPEAccess().getAlternatives(), "rule__CredTYPE__Alternatives");
 			builder.put(grammarAccess.getProtocolAccess().getAlternatives(), "rule__Protocol__Alternatives");
-			builder.put(grammarAccess.getBool2Access().getAlternatives(), "rule__Bool2__Alternatives");
 			builder.put(grammarAccess.getKVALUEAccess().getAlternatives(), "rule__KVALUE__Alternatives");
 			builder.put(grammarAccess.getBVALUEAccess().getAlternatives(), "rule__BVALUE__Alternatives");
 			builder.put(grammarAccess.getPVALUEAccess().getAlternatives(), "rule__PVALUE__Alternatives");

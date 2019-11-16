@@ -11,7 +11,6 @@ import lightweightDSL.App;
 import lightweightDSL.Attribute;
 import lightweightDSL.AuthMethod;
 import lightweightDSL.Authenticator;
-import lightweightDSL.Bool2;
 import lightweightDSL.KVALUE;
 import lightweightDSL.Knowledge;
 import lightweightDSL.LEVEL;
@@ -34,7 +33,6 @@ import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.ListExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -103,23 +101,21 @@ public class LightweightGenerator extends AbstractGenerator {
     {
       EList<Authenticator> _authenticators = app.getAuthenticators();
       for(final Authenticator auth : _authenticators) {
-        _builder.append("\"Authenticator name = \" ");
+        _builder.append("Authenticator name =  ");
         String _name = auth.getName();
         _builder.append(_name);
-        _builder.append(" ");
-        _builder.append("\n");
         _builder.newLineIfNotEmpty();
-        _builder.append("\"Authenticator security Level =  \" ");
+        _builder.append("Authenticator security Level =   ");
         LEVEL _value = auth.getRisk().getValue();
         _builder.append(_value);
         _builder.append(" ");
         _builder.newLineIfNotEmpty();
-        _builder.append("\"Authenticator security message : \"");
+        _builder.append("Authenticator security message : ");
         String _message = auth.getRisk().getMessage();
         _builder.append(_message);
         _builder.append(" ");
         _builder.newLineIfNotEmpty();
-        _builder.append("\"Authenticator security information : \" ");
+        _builder.append("Authenticator security information :  ");
         String _information = auth.getRisk().getInformation();
         _builder.append(_information);
         _builder.newLineIfNotEmpty();
@@ -328,45 +324,35 @@ public class LightweightGenerator extends AbstractGenerator {
                   _risk_17.setInformation("");
                 }
               }
-              Bool2 _limitedAttempts = knowledgeAuth.getLimitedAttempts();
-              boolean _equals_1 = Objects.equal(_limitedAttempts, Bool2.FALSE);
-              if (_equals_1) {
-                auth.getRisk().getInformation().concat("\n BRUTE FORCE ALERT: Brute forcing is possible when the number of attempts is UNLIMITED");
-                LEVEL _value_1 = auth.getRisk().getValue();
-                boolean _equals_2 = Objects.equal(_value_1, LEVEL.LOW);
-                if (_equals_2) {
+              if (((!knowledgeAuth.isLimitedAttempts()) || knowledgeAuth.isAutofilled())) {
+                boolean _isLimitedAttempts = knowledgeAuth.isLimitedAttempts();
+                boolean _not = (!_isLimitedAttempts);
+                if (_not) {
                   Risk _risk_18 = auth.getRisk();
-                  _risk_18.setValue(LEVEL.MEDIUM);
-                  auth.getRisk().getMessage().concat(" \n The risk is raised because of the use of UNLIMITED Number of try form considered as possession-based authentication");
-                } else {
-                  LEVEL _value_2 = auth.getRisk().getValue();
-                  boolean _equals_3 = Objects.equal(_value_2, LEVEL.MEDIUM);
-                  if (_equals_3) {
-                    Risk _risk_19 = auth.getRisk();
-                    _risk_19.setValue(LEVEL.HIGH);
-                    auth.getRisk().getMessage().concat("\n The risk is raised because of the unlimited attempts");
-                  } else {
-                  }
+                  _risk_18.setInformation(auth.getRisk().getInformation().concat("\n BRUTE FORCE ALERT: Brute forcing is possible when the number of attempts is UNLIMITED"));
                 }
-              }
-              Bool2 _autofilled = knowledgeAuth.getAutofilled();
-              boolean _equals_4 = Objects.equal(_autofilled, Bool2.TRUE);
-              if (_equals_4) {
-                auth.getRisk().getInformation().concat("\n AUTOFILLED FORMS ALERT : Automatically filled put the authentication as Possession Based");
-                LEVEL _value_3 = auth.getRisk().getValue();
-                boolean _notEquals = (!Objects.equal(_value_3, LEVEL.HIGH));
-                if (_notEquals) {
+                boolean _isAutofilled = knowledgeAuth.isAutofilled();
+                if (_isAutofilled) {
+                  Risk _risk_19 = auth.getRisk();
+                  _risk_19.setInformation(auth.getRisk().getInformation().concat("\n AUTOFILLED FORMS ALERT : Automatically filled put the authentication as Possession Based"));
+                }
+                LEVEL _value_1 = auth.getRisk().getValue();
+                boolean _equals_1 = Objects.equal(_value_1, LEVEL.LOW);
+                if (_equals_1) {
                   Risk _risk_20 = auth.getRisk();
                   _risk_20.setValue(LEVEL.MEDIUM);
-                  auth.getRisk().getMessage().concat("\n The risk is raised because of the use of AUTOFILLED forms considered as possession-based authentication");
-                } else {
                   Risk _risk_21 = auth.getRisk();
-                  _risk_21.setValue(LEVEL.MEDIUM);
-                  auth.getRisk().getMessage().concat("\n The risk is raised because of the use of AUTOFILLED form considered as possession-based authentication");
-                  String _information = auth.getRisk().getInformation();
-                  String _name_3 = auth.getName();
-                  String _plus_6 = ("Even AUTOFILLED form is used, the risk is kept to High because of the MECANISM that is HIGH risk level --->" + _name_3);
-                  _information.concat(_plus_6);
+                  _risk_21.setInformation(auth.getRisk().getInformation().concat(" \n The risk is raised from LOW to MEDIUM because of the use of UNLIMITED Number of try form considered as possession-based authentication"));
+                } else {
+                  LEVEL _value_2 = auth.getRisk().getValue();
+                  boolean _equals_2 = Objects.equal(_value_2, LEVEL.MEDIUM);
+                  if (_equals_2) {
+                    Risk _risk_22 = auth.getRisk();
+                    _risk_22.setValue(LEVEL.HIGH);
+                    Risk _risk_23 = auth.getRisk();
+                    _risk_23.setInformation(auth.getRisk().getInformation().concat("\n The risk is raised from MEDIUM to High because of the unlimited attempts"));
+                  } else {
+                  }
                 }
               }
               break;
@@ -485,42 +471,45 @@ public class LightweightGenerator extends AbstractGenerator {
               int _size = login.getAuthMethods().size();
               boolean _notEquals = (_size != 1);
               if (_notEquals) {
-                ListExtensions.<AuthMethod>sortInplace(login.getAuthMethods(), comp);
+                final List<AuthMethod> methods = IterableExtensions.<AuthMethod>sortWith(login.getAuthMethods(), comp);
                 Risk _risk_3 = login.getRisk();
-                _risk_3.setValue(IterableExtensions.<AuthMethod>last(login.getAuthMethods()).getRisk().getValue());
+                _risk_3.setValue(IterableExtensions.<AuthMethod>last(methods).getRisk().getValue());
                 Risk _risk_4 = login.getRisk();
                 AuthMethod _last = IterableExtensions.<AuthMethod>last(login.getAuthMethods());
                 String _plus_4 = ("Multiple method but, the referenced authentication method is (" + _last);
                 String _plus_5 = (_plus_4 + ")");
                 _risk_4.setMessage(_plus_5);
+                Risk _risk_5 = login.getRisk();
                 String _information = login.getRisk().getInformation();
-                String _information_1 = IterableExtensions.<AuthMethod>last(login.getAuthMethods()).getRisk().getInformation();
+                String _information_1 = IterableExtensions.<AuthMethod>last(methods).getRisk().getInformation();
                 String _plus_6 = ("\n " + _information_1);
-                _information.concat(_plus_6);
+                _risk_5.setInformation(_information.concat(_plus_6));
                 this.mainLogin = ((Login) login);
               } else {
                 AuthMethod _get = login.getAuthMethods().get(0);
                 String _plus_7 = ("main authentication method" + _get);
                 InputOutput.<String>println(_plus_7);
-                Risk _risk_5 = login.getRisk();
+                Risk _risk_6 = login.getRisk();
                 AuthMethod _get_1 = login.getAuthMethods().get(0);
                 String _plus_8 = ("One referenced authentication method is ( \n " + _get_1);
                 String _plus_9 = (_plus_8 + ")");
-                _risk_5.setMessage(_plus_9);
-                Risk _risk_6 = login.getRisk();
-                _risk_6.setValue(login.getAuthMethods().get(0).getRisk().getValue());
+                _risk_6.setMessage(_plus_9);
+                Risk _risk_7 = login.getRisk();
+                _risk_7.setValue(login.getAuthMethods().get(0).getRisk().getValue());
+                Risk _risk_8 = login.getRisk();
                 String _information_2 = login.getRisk().getInformation();
                 String _information_3 = login.getAuthMethods().get(0).getRisk().getInformation();
                 String _plus_10 = ("\n " + _information_3);
-                _information_2.concat(_plus_10);
+                _risk_8.setInformation(_information_2.concat(_plus_10));
                 this.mainLogin = ((Login) login);
               }
               boolean _isSession = login.isSession();
               if (_isSession) {
                 this.mainLogin.getRisk().getMessage().concat("\n ----- Persisted Session detected ------\n The risk level is at most Medium ");
-                Risk _risk_7 = this.mainLogin.getRisk();
-                _risk_7.setValue(this.maximum(this.mainLogin.getRisk().getValue(), LEVEL.MEDIUM));
-                this.mainLogin.getRisk().getInformation().concat("");
+                Risk _risk_9 = this.mainLogin.getRisk();
+                _risk_9.setValue(this.maximum(this.mainLogin.getRisk().getValue(), LEVEL.MEDIUM));
+                Risk _risk_10 = this.mainLogin.getRisk();
+                _risk_10.setInformation(this.mainLogin.getRisk().getInformation().concat(""));
               }
               InputOutput.<String>println("Login Risk Assessment");
               String _name_1 = this.mainLogin.getName();
@@ -532,45 +521,46 @@ public class LightweightGenerator extends AbstractGenerator {
               break;
             case LightweightGenerator.RESET:
               final Reset reset = ((Reset) phase);
-              Risk _risk_8 = reset.getRisk();
-              _risk_8.setInstance(LightweightGenerator.RESET);
+              Risk _risk_11 = reset.getRisk();
+              _risk_11.setInstance(LightweightGenerator.RESET);
               EList<AuthMethod> _authMethods = reset.getAuthMethods();
-              boolean _equals = Objects.equal(_authMethods, null);
-              if (_equals) {
-                Risk _risk_9 = reset.getRisk();
-                _risk_9.setInformation("USER SUBSTITUTION : It is highly recommended to use a security challenge to before reseting credential and also before sensitive action such as payment");
+              boolean _tripleEquals = (_authMethods == null);
+              if (_tripleEquals) {
+                Risk _risk_12 = reset.getRisk();
+                _risk_12.setInformation("USER SUBSTITUTION : It is highly recommended to use a security challenge to before reseting credential and also before sensitive action such as payment");
                 boolean _isSession_1 = this.mainLogin.isSession();
                 if (_isSession_1) {
-                  Risk _risk_10 = reset.getRisk();
-                  _risk_10.setValue(this.maximum(LEVEL.MEDIUM, this.mainLogin.getRisk().getValue()));
-                  Risk _risk_11 = reset.getRisk();
-                  _risk_11.setMessage("Because of the persistent session the risk level is at most MEDIUM (considered as Possession based)");
-                } else {
-                  Risk _risk_12 = reset.getRisk();
-                  _risk_12.setValue(this.mainLogin.getRisk().getValue());
                   Risk _risk_13 = reset.getRisk();
+                  _risk_13.setValue(this.maximum(LEVEL.MEDIUM, this.mainLogin.getRisk().getValue()));
+                  Risk _risk_14 = reset.getRisk();
+                  _risk_14.setMessage("Because of the persistent session the risk level is at most MEDIUM (considered as Possession based)");
+                } else {
+                  Risk _risk_15 = reset.getRisk();
+                  _risk_15.setValue(this.mainLogin.getRisk().getValue());
+                  Risk _risk_16 = reset.getRisk();
                   String _name_2 = reset.getName();
                   String _plus_14 = ("No Persistent Session : The risk level of the Reset (" + _name_2);
                   String _plus_15 = (_plus_14 + ") is given by the MainLogin (");
                   String _name_3 = this.mainLogin.getName();
                   String _plus_16 = (_plus_15 + _name_3);
                   String _plus_17 = (_plus_16 + ")");
-                  _risk_13.setMessage(_plus_17);
+                  _risk_16.setMessage(_plus_17);
                 }
               } else {
-                Risk _risk_14 = reset.getRisk();
-                _risk_14.setInformation("USER SUBSTITUTION : RESET with Security Challenge");
-                ListExtensions.<AuthMethod>sortInplace(reset.getAuthMethods(), comp);
-                Risk _risk_15 = reset.getRisk();
+                Risk _risk_17 = reset.getRisk();
+                _risk_17.setInformation("USER SUBSTITUTION : RESET with Security Challenge");
+                final List<AuthMethod> methods_1 = IterableExtensions.<AuthMethod>sortWith(reset.getAuthMethods(), comp);
+                Risk _risk_18 = reset.getRisk();
                 String _string_1 = IterableExtensions.<AuthMethod>last(reset.getAuthMethods()).toString();
                 String _plus_18 = ("Multiple method but, the referenced authentication method is (\n" + _string_1);
                 String _plus_19 = (_plus_18 + ")");
-                _risk_15.setMessage(_plus_19);
-                reset.getRisk().getMessage().concat("\n, Reset Challenge with no persistent challenge : The risk level is at LEAST the ");
-                Risk _risk_16 = reset.getRisk();
-                _risk_16.setValue(this.maximum(IterableExtensions.<AuthMethod>last(reset.getAuthMethods()).getRisk().getValue(), this.mainLogin.getRisk().getValue()));
+                _risk_18.setMessage(_plus_19);
+                Risk _risk_19 = reset.getRisk();
+                _risk_19.setMessage(reset.getRisk().getMessage().concat("\n, Reset Challenge with no persistent challenge : The risk level is at LEAST the "));
+                Risk _risk_20 = reset.getRisk();
+                _risk_20.setValue(this.maximum(IterableExtensions.<AuthMethod>last(methods_1).getRisk().getValue(), this.mainLogin.getRisk().getValue()));
                 String _message = reset.getRisk().getMessage();
-                String _string_2 = IterableExtensions.<AuthMethod>last(reset.getAuthMethods()).toString();
+                String _string_2 = IterableExtensions.<AuthMethod>last(methods_1).toString();
                 String _plus_20 = ("\n, Reset Challenge with no persistent challenge : The risk level is evaluated as two factor authentication between the Challenge (" + _string_2);
                 String _plus_21 = (_plus_20 + ") and the mainLogin authentication (");
                 String _string_3 = IterableExtensions.<AuthMethod>last(this.mainLogin.getAuthMethods()).toString();
@@ -589,57 +579,57 @@ public class LightweightGenerator extends AbstractGenerator {
               break;
             case LightweightGenerator.RECOVERY:
               final Recovery recovery = ((Recovery) phase);
-              Risk _risk_17 = recovery.getRisk();
-              _risk_17.setInstance(LightweightGenerator.RECOVERY);
+              Risk _risk_21 = recovery.getRisk();
+              _risk_21.setInstance(LightweightGenerator.RECOVERY);
               Protocol _protocol = recovery.getProtocol();
-              boolean _equals_1 = Objects.equal(_protocol, Protocol.LOCAL);
-              if (_equals_1) {
+              boolean _equals = Objects.equal(_protocol, Protocol.LOCAL);
+              if (_equals) {
                 EList<AuthMethod> _authMethods_1 = recovery.getAuthMethods();
-                boolean _equals_2 = Objects.equal(_authMethods_1, null);
-                if (_equals_2) {
-                  Risk _risk_18 = recovery.getRisk();
+                boolean _equals_1 = Objects.equal(_authMethods_1, null);
+                if (_equals_1) {
+                  Risk _risk_22 = recovery.getRisk();
                   String _name_5 = recovery.getName();
                   String _plus_27 = ("Because of the absence of security challenge and the location validation, a malicious user can easily impersonate the legitimate using the recovery procedure (" + _name_5);
                   String _plus_28 = (_plus_27 + ")");
-                  _risk_18.setInformation(_plus_28);
-                  Risk _risk_19 = recovery.getRisk();
-                  _risk_19.setMessage("USER IMITATION : LOCAL RECOVERY without SecurityCShallenge");
-                  Risk _risk_20 = recovery.getRisk();
-                  _risk_20.setValue(LEVEL.HIGH);
+                  _risk_22.setInformation(_plus_28);
+                  Risk _risk_23 = recovery.getRisk();
+                  _risk_23.setMessage("USER IMITATION : LOCAL RECOVERY without SecurityCShallenge");
+                  Risk _risk_24 = recovery.getRisk();
+                  _risk_24.setValue(LEVEL.HIGH);
                 } else {
-                  ListExtensions.<AuthMethod>sortInplace(recovery.getAuthMethods(), comp);
-                  Risk _risk_21 = recovery.getRisk();
-                  _risk_21.setMessage("USER IMITATION : LOCAL RECOVERY with Security Challenge");
-                  Risk _risk_22 = recovery.getRisk();
+                  final List<AuthMethod> methods_2 = IterableExtensions.<AuthMethod>sortWith(recovery.getAuthMethods(), comp);
+                  Risk _risk_25 = recovery.getRisk();
+                  _risk_25.setMessage("USER IMITATION : LOCAL RECOVERY with Security Challenge");
+                  Risk _risk_26 = recovery.getRisk();
                   String _string_5 = IterableExtensions.<AuthMethod>last(recovery.getAuthMethods()).toString();
                   String _plus_29 = ("The Risk Level to IMPERSONATE the legitimate USER is given by the security challenge -->" + _string_5);
-                  _risk_22.setInformation(_plus_29);
-                  Risk _risk_23 = recovery.getRisk();
-                  _risk_23.setValue(IterableExtensions.<AuthMethod>last(recovery.getAuthMethods()).getRisk().getValue());
+                  _risk_26.setInformation(_plus_29);
+                  Risk _risk_27 = recovery.getRisk();
+                  _risk_27.setValue(IterableExtensions.<AuthMethod>last(recovery.getAuthMethods()).getRisk().getValue());
                 }
               } else {
                 EList<AuthMethod> _authMethods_2 = recovery.getAuthMethods();
-                boolean _equals_3 = Objects.equal(_authMethods_2, null);
-                if (_equals_3) {
-                  Risk _risk_24 = recovery.getRisk();
+                boolean _equals_2 = Objects.equal(_authMethods_2, null);
+                if (_equals_2) {
+                  Risk _risk_28 = recovery.getRisk();
                   String _name_6 = recovery.getName();
                   String _plus_30 = ("EMAIL or SMS based recovery without security challenge is considered as Possession based authentication. \n A malicious user can impersonate the legitimate using the recovery procedure (" + _name_6);
                   String _plus_31 = (_plus_30 + "), it it has access to the EMAIL or the SMS");
-                  _risk_24.setInformation(_plus_31);
-                  Risk _risk_25 = recovery.getRisk();
-                  _risk_25.setMessage("USER IMITATION : EBIA or SMS without SecurityCShallenge");
-                  Risk _risk_26 = recovery.getRisk();
-                  _risk_26.setValue(LEVEL.MEDIUM);
+                  _risk_28.setInformation(_plus_31);
+                  Risk _risk_29 = recovery.getRisk();
+                  _risk_29.setMessage("USER IMITATION : EBIA or SMS without SecurityCShallenge");
+                  Risk _risk_30 = recovery.getRisk();
+                  _risk_30.setValue(LEVEL.MEDIUM);
                 } else {
-                  ListExtensions.<AuthMethod>sortInplace(recovery.getAuthMethods(), comp);
-                  Risk _risk_27 = recovery.getRisk();
-                  _risk_27.setMessage("USER IMITATION : EBIA or SMS with Security Challenge");
-                  Risk _risk_28 = recovery.getRisk();
+                  final List<AuthMethod> methods_3 = IterableExtensions.<AuthMethod>sortWith(recovery.getAuthMethods(), comp);
+                  Risk _risk_31 = recovery.getRisk();
+                  _risk_31.setMessage("USER IMITATION : EBIA or SMS with Security Challenge");
+                  Risk _risk_32 = recovery.getRisk();
                   String _string_6 = IterableExtensions.<AuthMethod>last(recovery.getAuthMethods()).toString();
                   String _plus_32 = ("The Risk Level to IMPERSONATE the legitimate USER is given by the security challenge -->" + _string_6);
-                  _risk_28.setInformation(_plus_32);
-                  Risk _risk_29 = recovery.getRisk();
-                  _risk_29.setValue(IterableExtensions.<AuthMethod>last(recovery.getAuthMethods()).getRisk().getValue());
+                  _risk_32.setInformation(_plus_32);
+                  Risk _risk_33 = recovery.getRisk();
+                  _risk_33.setValue(IterableExtensions.<AuthMethod>last(methods_3).getRisk().getValue());
                 }
               }
               InputOutput.<String>println("Recovery Risk Assessment");

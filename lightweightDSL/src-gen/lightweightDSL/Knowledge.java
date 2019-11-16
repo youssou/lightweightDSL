@@ -12,8 +12,8 @@ package lightweightDSL;
  * </p>
  * <ul>
  *   <li>{@link lightweightDSL.Knowledge#getValue <em>Value</em>}</li>
- *   <li>{@link lightweightDSL.Knowledge#getLimitedAttempts <em>Limited Attempts</em>}</li>
- *   <li>{@link lightweightDSL.Knowledge#getAutofilled <em>Autofilled</em>}</li>
+ *   <li>{@link lightweightDSL.Knowledge#isLimitedAttempts <em>Limited Attempts</em>}</li>
+ *   <li>{@link lightweightDSL.Knowledge#isAutofilled <em>Autofilled</em>}</li>
  * </ul>
  *
  * @see lightweightDSL.LightweightDSLPackage#getKnowledge()
@@ -52,52 +52,46 @@ public interface Knowledge extends Authenticator {
 
 	/**
 	 * Returns the value of the '<em><b>Limited Attempts</b></em>' attribute.
-	 * The literals are from the enumeration {@link lightweightDSL.Bool2}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Limited Attempts</em>' attribute.
-	 * @see lightweightDSL.Bool2
-	 * @see #setLimitedAttempts(Bool2)
+	 * @see #setLimitedAttempts(boolean)
 	 * @see lightweightDSL.LightweightDSLPackage#getKnowledge_LimitedAttempts()
 	 * @model
 	 * @generated
 	 */
-	Bool2 getLimitedAttempts();
+	boolean isLimitedAttempts();
 
 	/**
-	 * Sets the value of the '{@link lightweightDSL.Knowledge#getLimitedAttempts <em>Limited Attempts</em>}' attribute.
+	 * Sets the value of the '{@link lightweightDSL.Knowledge#isLimitedAttempts <em>Limited Attempts</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Limited Attempts</em>' attribute.
-	 * @see lightweightDSL.Bool2
-	 * @see #getLimitedAttempts()
+	 * @see #isLimitedAttempts()
 	 * @generated
 	 */
-	void setLimitedAttempts(Bool2 value);
+	void setLimitedAttempts(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Autofilled</b></em>' attribute.
-	 * The literals are from the enumeration {@link lightweightDSL.Bool2}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Autofilled</em>' attribute.
-	 * @see lightweightDSL.Bool2
-	 * @see #setAutofilled(Bool2)
+	 * @see #setAutofilled(boolean)
 	 * @see lightweightDSL.LightweightDSLPackage#getKnowledge_Autofilled()
 	 * @model
 	 * @generated
 	 */
-	Bool2 getAutofilled();
+	boolean isAutofilled();
 
 	/**
-	 * Sets the value of the '{@link lightweightDSL.Knowledge#getAutofilled <em>Autofilled</em>}' attribute.
+	 * Sets the value of the '{@link lightweightDSL.Knowledge#isAutofilled <em>Autofilled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Autofilled</em>' attribute.
-	 * @see lightweightDSL.Bool2
-	 * @see #getAutofilled()
+	 * @see #isAutofilled()
 	 * @generated
 	 */
-	void setAutofilled(Bool2 value);
+	void setAutofilled(boolean value);
 
 } // Knowledge

@@ -7,7 +7,6 @@ import lightweightDSL.Attribute;
 import lightweightDSL.AuthMethod;
 import lightweightDSL.Authenticator;
 import lightweightDSL.Biometrics;
-import lightweightDSL.Bool2;
 import lightweightDSL.CredTYPE;
 import lightweightDSL.Knowledge;
 import lightweightDSL.LightweightDSLFactory;
@@ -205,13 +204,6 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * @generated
 	 */
 	private EEnum pvalueEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum bool2EEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -963,16 +955,6 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 	 * @generated
 	 */
 	@Override
-	public EEnum getBool2() {
-		return bool2EEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public LightweightDSLFactory getLightweightDSLFactory() {
 		return (LightweightDSLFactory) getEFactoryInstance();
 	}
@@ -1082,7 +1064,6 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 		providerEEnum = createEEnum(PROVIDER);
 		kvalueEEnum = createEEnum(KVALUE);
 		pvalueEEnum = createEEnum(PVALUE);
-		bool2EEnum = createEEnum(BOOL2);
 	}
 
 	/**
@@ -1249,9 +1230,10 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getKnowledge_Value(), this.getKVALUE(), "value", null, 0, 1, Knowledge.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getKnowledge_LimitedAttempts(), this.getBool2(), "limitedAttempts", null, 0, 1, Knowledge.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getKnowledge_Autofilled(), this.getBool2(), "autofilled", null, 0, 1, Knowledge.class,
+		initEAttribute(getKnowledge_LimitedAttempts(), ecorePackage.getEBoolean(), "limitedAttempts", null, 0, 1,
+				Knowledge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getKnowledge_Autofilled(), ecorePackage.getEBoolean(), "autofilled", null, 0, 1, Knowledge.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(possessionEClass, Possession.class, "Possession", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1312,10 +1294,6 @@ public class LightweightDSLPackageImpl extends EPackageImpl implements Lightweig
 		initEEnum(pvalueEEnum, lightweightDSL.PVALUE.class, "PVALUE");
 		addEEnumLiteral(pvalueEEnum, lightweightDSL.PVALUE.DEVICE);
 		addEEnumLiteral(pvalueEEnum, lightweightDSL.PVALUE.TOKEN);
-
-		initEEnum(bool2EEnum, Bool2.class, "Bool2");
-		addEEnumLiteral(bool2EEnum, Bool2.TRUE);
-		addEEnumLiteral(bool2EEnum, Bool2.FALSE);
 
 		// Create resource
 		createResource(eNS_URI);

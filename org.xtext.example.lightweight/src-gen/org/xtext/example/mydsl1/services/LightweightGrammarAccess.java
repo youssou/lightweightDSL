@@ -246,13 +246,13 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//	'{'
 		//	'name' ":" name=EString ","
 		//	'authenticators' ":" authenticators+=[Authenticator] "&" authenticators+=[Authenticator]+ ","?
-		//	'correlation' ":" correlation?=EBoolean ","
+		//	'correlation' ":" correlation=EBoolean ","
 		//	'validation' ":" validation=ValidationType
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//type='MFA' ":" '{' 'name' ":" name=EString "," 'authenticators' ":" authenticators+=[Authenticator] "&"
-		//authenticators+=[Authenticator]+ ","? 'correlation' ":" correlation?=EBoolean "," 'validation' ":"
+		//authenticators+=[Authenticator]+ ","? 'correlation' ":" correlation=EBoolean "," 'validation' ":"
 		//validation=ValidationType '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -319,7 +319,7 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_14() { return cColonKeyword_14; }
 		
-		//correlation?=EBoolean
+		//correlation=EBoolean
 		public Assignment getCorrelationAssignment_15() { return cCorrelationAssignment_15; }
 		
 		//EBoolean
@@ -537,25 +537,25 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLimitedAttemptsKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		private final Keyword cColonKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		private final Assignment cLimitedAttemptsAssignment_14 = (Assignment)cGroup.eContents().get(14);
-		private final RuleCall cLimitedAttemptsBool2EnumRuleCall_14_0 = (RuleCall)cLimitedAttemptsAssignment_14.eContents().get(0);
+		private final RuleCall cLimitedAttemptsEBooleanParserRuleCall_14_0 = (RuleCall)cLimitedAttemptsAssignment_14.eContents().get(0);
 		private final Keyword cCommaKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Keyword cAutofillableKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		private final Keyword cColonKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		private final Assignment cAutofilledAssignment_18 = (Assignment)cGroup.eContents().get(18);
-		private final RuleCall cAutofilledBool2EnumRuleCall_18_0 = (RuleCall)cAutofilledAssignment_18.eContents().get(0);
+		private final RuleCall cAutofilledEBooleanParserRuleCall_18_0 = (RuleCall)cAutofilledAssignment_18.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
 		
 		//Knowledge:
 		//	{Knowledge} type='Knowledge' ':' '{'
 		//	'name' ":" name=EString ","
 		//	'value' ":" value=KVALUE ","
-		//	"limitedAttempts" ':' limitedAttempts=Bool2 ","
-		//	'autofillable' ":" autofilled=Bool2
+		//	"limitedAttempts" ':' limitedAttempts=EBoolean ","
+		//	'autofillable' ":" autofilled=EBoolean
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Knowledge} type='Knowledge' ':' '{' 'name' ":" name=EString "," 'value' ":" value=KVALUE "," "limitedAttempts" ':'
-		//limitedAttempts=Bool2 "," 'autofillable' ":" autofilled=Bool2 '}'
+		//limitedAttempts=EBoolean "," 'autofillable' ":" autofilled=EBoolean '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Knowledge}
@@ -609,11 +609,11 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_13() { return cColonKeyword_13; }
 		
-		//limitedAttempts=Bool2
+		//limitedAttempts=EBoolean
 		public Assignment getLimitedAttemptsAssignment_14() { return cLimitedAttemptsAssignment_14; }
 		
-		//Bool2
-		public RuleCall getLimitedAttemptsBool2EnumRuleCall_14_0() { return cLimitedAttemptsBool2EnumRuleCall_14_0; }
+		//EBoolean
+		public RuleCall getLimitedAttemptsEBooleanParserRuleCall_14_0() { return cLimitedAttemptsEBooleanParserRuleCall_14_0; }
 		
 		//","
 		public Keyword getCommaKeyword_15() { return cCommaKeyword_15; }
@@ -624,11 +624,11 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_17() { return cColonKeyword_17; }
 		
-		//autofilled=Bool2
+		//autofilled=EBoolean
 		public Assignment getAutofilledAssignment_18() { return cAutofilledAssignment_18; }
 		
-		//Bool2
-		public RuleCall getAutofilledBool2EnumRuleCall_18_0() { return cAutofilledBool2EnumRuleCall_18_0; }
+		//EBoolean
+		public RuleCall getAutofilledEBooleanParserRuleCall_18_0() { return cAutofilledEBooleanParserRuleCall_18_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_19() { return cRightCurlyBracketKeyword_19; }
@@ -1600,33 +1600,6 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		//"Local"
 		public Keyword getLOCALLocalKeyword_2_0() { return cLOCALLocalKeyword_2_0; }
 	}
-	public class Bool2Elements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.Bool2");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cTRUEEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cTRUETrueKeyword_0_0 = (Keyword)cTRUEEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cFALSEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cFALSEFalseKeyword_1_0 = (Keyword)cFALSEEnumLiteralDeclaration_1.eContents().get(0);
-		
-		//enum Bool2:
-		//	TRUE='true' | FALSE='false';
-		public EnumRule getRule() { return rule; }
-		
-		//TRUE='true' | FALSE='false'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//TRUE='true'
-		public EnumLiteralDeclaration getTRUEEnumLiteralDeclaration_0() { return cTRUEEnumLiteralDeclaration_0; }
-		
-		//'true'
-		public Keyword getTRUETrueKeyword_0_0() { return cTRUETrueKeyword_0_0; }
-		
-		//FALSE='false'
-		public EnumLiteralDeclaration getFALSEEnumLiteralDeclaration_1() { return cFALSEEnumLiteralDeclaration_1; }
-		
-		//'false'
-		public Keyword getFALSEFalseKeyword_1_0() { return cFALSEFalseKeyword_1_0; }
-	}
 	public class KVALUEElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.Lightweight.KVALUE");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1788,7 +1761,6 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	private final CredTYPEElements eCredTYPE;
 	private final EBooleanElements pEBoolean;
 	private final ProtocolElements eProtocol;
-	private final Bool2Elements eBool2;
 	private final KVALUEElements eKVALUE;
 	private final BVALUEElements eBVALUE;
 	private final PVALUEElements ePVALUE;
@@ -1824,7 +1796,6 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 		this.eCredTYPE = new CredTYPEElements();
 		this.pEBoolean = new EBooleanElements();
 		this.eProtocol = new ProtocolElements();
-		this.eBool2 = new Bool2Elements();
 		this.eKVALUE = new KVALUEElements();
 		this.eBVALUE = new BVALUEElements();
 		this.ePVALUE = new PVALUEElements();
@@ -1888,7 +1859,7 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	//	'{'
 	//	'name' ":" name=EString ","
 	//	'authenticators' ":" authenticators+=[Authenticator] "&" authenticators+=[Authenticator]+ ","?
-	//	'correlation' ":" correlation?=EBoolean ","
+	//	'correlation' ":" correlation=EBoolean ","
 	//	'validation' ":" validation=ValidationType
 	//	'}';
 	public MFAElements getMFAAccess() {
@@ -1941,8 +1912,8 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	//	{Knowledge} type='Knowledge' ':' '{'
 	//	'name' ":" name=EString ","
 	//	'value' ":" value=KVALUE ","
-	//	"limitedAttempts" ':' limitedAttempts=Bool2 ","
-	//	'autofillable' ":" autofilled=Bool2
+	//	"limitedAttempts" ':' limitedAttempts=EBoolean ","
+	//	'autofillable' ":" autofilled=EBoolean
 	//	'}';
 	public KnowledgeElements getKnowledgeAccess() {
 		return pKnowledge;
@@ -2123,16 +2094,6 @@ public class LightweightGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getProtocolRule() {
 		return getProtocolAccess().getRule();
-	}
-	
-	//enum Bool2:
-	//	TRUE='true' | FALSE='false';
-	public Bool2Elements getBool2Access() {
-		return eBool2;
-	}
-	
-	public EnumRule getBool2Rule() {
-		return getBool2Access().getRule();
 	}
 	
 	//enum KVALUE:

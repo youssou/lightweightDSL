@@ -522,22 +522,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Rule Bool2
-ruleBool2
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getBool2Access().getAlternatives()); }
-		(rule__Bool2__Alternatives)
-		{ after(grammarAccess.getBool2Access().getAlternatives()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Rule KVALUE
 ruleKVALUE
 	@init {
@@ -794,27 +778,6 @@ rule__Protocol__Alternatives
 		{ before(grammarAccess.getProtocolAccess().getLOCALEnumLiteralDeclaration_2()); }
 		('Local')
 		{ after(grammarAccess.getProtocolAccess().getLOCALEnumLiteralDeclaration_2()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Bool2__Alternatives
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getBool2Access().getTRUEEnumLiteralDeclaration_0()); }
-		('true')
-		{ after(grammarAccess.getBool2Access().getTRUEEnumLiteralDeclaration_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getBool2Access().getFALSEEnumLiteralDeclaration_1()); }
-		('false')
-		{ after(grammarAccess.getBool2Access().getFALSEEnumLiteralDeclaration_1()); }
 	)
 ;
 finally {
@@ -7192,9 +7155,9 @@ rule__Knowledge__LimitedAttemptsAssignment_14
 	}
 :
 	(
-		{ before(grammarAccess.getKnowledgeAccess().getLimitedAttemptsBool2EnumRuleCall_14_0()); }
-		ruleBool2
-		{ after(grammarAccess.getKnowledgeAccess().getLimitedAttemptsBool2EnumRuleCall_14_0()); }
+		{ before(grammarAccess.getKnowledgeAccess().getLimitedAttemptsEBooleanParserRuleCall_14_0()); }
+		ruleEBoolean
+		{ after(grammarAccess.getKnowledgeAccess().getLimitedAttemptsEBooleanParserRuleCall_14_0()); }
 	)
 ;
 finally {
@@ -7207,9 +7170,9 @@ rule__Knowledge__AutofilledAssignment_18
 	}
 :
 	(
-		{ before(grammarAccess.getKnowledgeAccess().getAutofilledBool2EnumRuleCall_18_0()); }
-		ruleBool2
-		{ after(grammarAccess.getKnowledgeAccess().getAutofilledBool2EnumRuleCall_18_0()); }
+		{ before(grammarAccess.getKnowledgeAccess().getAutofilledEBooleanParserRuleCall_18_0()); }
+		ruleEBoolean
+		{ after(grammarAccess.getKnowledgeAccess().getAutofilledEBooleanParserRuleCall_18_0()); }
 	)
 ;
 finally {

@@ -93,10 +93,10 @@ class LightweightGenerator extends AbstractGenerator {
 		********************************* Main Evalution***********************
 		********************************* Authenticators***********************
 		«FOR auth : app.authenticators »
-		"Authenticator name = " «auth.name» «"\n"»
-		"Authenticator security Level =  " «auth.risk.value» 
-		"Authenticator security message : "«auth.risk.message» 
-		"Authenticator security information : " «auth.risk.information»
+		Authenticator name =  «auth.name»
+		Authenticator security Level =   «auth.risk.value» 
+		Authenticator security message : «auth.risk.message» 
+		Authenticator security information :  «auth.risk.information»
 		"---"
 		«ENDFOR»
 		
@@ -190,30 +190,23 @@ class LightweightGenerator extends AbstractGenerator {
 					
 					//Refactoring with the autofilled form and the number of attempts.
 					
-					if (knowledgeAuth.limitedAttempts == Bool2.FALSE) {
+					if (!knowledgeAuth.limitedAttempts || knowledgeAuth.autofilled) {
+						if(!knowledgeAuth.limitedAttempts) {
+							auth.risk.information = auth.risk.information.concat("\n BRUTE FORCE ALERT: Brute forcing is possible when the number of attempts is UNLIMITED")	
+						}
+						if(knowledgeAuth.autofilled) {
+							auth.risk.information = auth.risk.information.concat("\n AUTOFILLED FORMS ALERT : Automatically filled put the authentication as Possession Based")
+						}
 						
-						auth.risk.information.concat("\n BRUTE FORCE ALERT: Brute forcing is possible when the number of attempts is UNLIMITED")	
 						if(auth.risk.value == LEVEL.LOW) { // from low to medium.
 							auth.risk.value = LEVEL.MEDIUM // 
-							auth.risk.message.concat(" \n The risk is raised because of the use of UNLIMITED Number of try form considered as possession-based authentication")
+							auth.risk.information = auth.risk.information.concat(" \n The risk is raised from LOW to MEDIUM because of the use of UNLIMITED Number of try form considered as possession-based authentication")
 						 // Level is high because of preferences.
 						} else if(auth.risk.value ==  LEVEL.MEDIUM) { // From medium to high
 							auth.risk.value = LEVEL.HIGH // 
-							auth.risk.message.concat("\n The risk is raised because of the unlimited attempts")
+							auth.risk.information = auth.risk.information.concat("\n The risk is raised from MEDIUM to High because of the unlimited attempts")
 						} else {
 							// Nothing
-						}
-					}
-					// Refactoring with autofilled form
-					if(knowledgeAuth.autofilled == Bool2.TRUE) {
-						auth.risk.information.concat("\n AUTOFILLED FORMS ALERT : Automatically filled put the authentication as Possession Based")
-						if(auth.risk.value != LEVEL.HIGH) {
-							auth.risk.value = LEVEL.MEDIUM // 
-							auth.risk.message.concat("\n The risk is raised because of the use of AUTOFILLED forms considered as possession-based authentication")
-						} else { // The risk is the worst.
-						auth.risk.value = LEVEL.MEDIUM // 
-							auth.risk.message.concat("\n The risk is raised because of the use of AUTOFILLED form considered as possession-based authentication")
-							auth.risk.information.concat("Even AUTOFILLED form is used, the risk is kept to High because of the MECANISM that is HIGH risk level --->"+auth.name)	
 						}
 					}
 					
@@ -296,16 +289,16 @@ class LightweightGenerator extends AbstractGenerator {
 					login.risk.instance = LOGIN
 					login.risk.information = "USER IMITATION : "
 					if(login.authMethods.size != 1) {
-						login.authMethods.sortInplace(comp) 
-						login.risk.value = login.authMethods.last.risk.value 	
+						val methods = login.authMethods.sortWith(comp)
+						login.risk.value = methods.last.risk.value 	
 						login.risk.message = "Multiple method but, the referenced authentication method is ("+ login.authMethods.last+")"
-						login.risk.information.concat("\n "+login.authMethods.last.risk.information)
+						login.risk.information = login.risk.information.concat("\n "+methods.last.risk.information)
 						mainLogin = login as Login
-						} else {
+					} else {
 						println("main authentication method" + login.authMethods.get(0))
 						login.risk.message = "One referenced authentication method is ( \n "+ login.authMethods.get(0)+")"
 						login.risk.value = login.authMethods.get(0).risk.value
-						login.risk.information.concat("\n "+login.authMethods.get(0).risk.information)
+						login.risk.information = login.risk.information.concat("\n "+login.authMethods.get(0).risk.information)
 						mainLogin = login as Login
 					}
 					
@@ -313,7 +306,7 @@ class LightweightGenerator extends AbstractGenerator {
 					if(login.session) {
 						mainLogin.risk.message.concat("\n ----- Persisted Session detected ------\n The risk level is at most Medium ")
 						mainLogin.risk.value = maximum(mainLogin.risk.value, LEVEL.MEDIUM)
-						mainLogin.risk.information.concat("")
+						mainLogin.risk.information = mainLogin.risk.information.concat("")
 					}
 					// Main login risk level.
 				println("Login Risk Assessment")
@@ -330,7 +323,7 @@ class LightweightGenerator extends AbstractGenerator {
 					val reset = phase as Reset 
 					reset.risk.instance = RESET
 					// The case of reset with auth methods and persisted session
-					if(reset.authMethods == null) {
+					if(reset.authMethods === null) {
 						reset.risk.information = "USER SUBSTITUTION : It is highly recommended to use a security challenge to before reseting credential and also before sensitive action such as payment"
 						if(mainLogin.session) {
 							reset.risk.value  = maximum(LEVEL.MEDIUM, mainLogin.risk.value)
@@ -341,12 +334,12 @@ class LightweightGenerator extends AbstractGenerator {
 						}
 					}else {
 						reset.risk.information = "USER SUBSTITUTION : RESET with Security Challenge"
-						reset.authMethods.sortInplace(comp) 
+						val methods = reset.authMethods.sortWith(comp) 
 						reset.risk.message = "Multiple method but, the referenced authentication method is (\n"+ reset.authMethods.last.toString+")"
-						reset.risk.message.concat("\n, Reset Challenge with no persistent challenge : The risk level is at LEAST the ")
-						reset.risk.value = maximum (reset.authMethods.last.risk.value, mainLogin.risk.value) 	
+						reset.risk.message = reset.risk.message.concat("\n, Reset Challenge with no persistent challenge : The risk level is at LEAST the ")
+						reset.risk.value = maximum (methods.last.risk.value, mainLogin.risk.value) 	
 						reset.risk.message.concat("\n, Reset Challenge with no persistent challenge : The risk level is evaluated as two factor authentication between the Challenge ("
-							+reset.authMethods.last.toString+ ") and the mainLogin authentication ("+mainLogin.authMethods.last.toString+ (")")
+							+methods.last.toString+ ") and the mainLogin authentication ("+mainLogin.authMethods.last.toString+ (")")
 						)
 					}
 					
@@ -368,7 +361,7 @@ class LightweightGenerator extends AbstractGenerator {
 							recovery.risk.value = LEVEL.HIGH
 						} else {
 							// Multiple authentication methods
-							recovery.authMethods.sortInplace(comp) 
+							val methods =  recovery.authMethods.sortWith(comp) 
 							recovery.risk.message = "USER IMITATION : LOCAL RECOVERY with Security Challenge"
 							recovery.risk.information = "The Risk Level to IMPERSONATE the legitimate USER is given by the security challenge -->"+recovery.authMethods.last.toString
 							recovery.risk.value = recovery.authMethods.last.risk.value
@@ -381,10 +374,10 @@ class LightweightGenerator extends AbstractGenerator {
 							recovery.risk.value = LEVEL.MEDIUM
 						} else {
 							// Multiple authentication methods
-							recovery.authMethods.sortInplace(comp) 
+							val methods = recovery.authMethods.sortWith(comp) 
 							recovery.risk.message = "USER IMITATION : EBIA or SMS with Security Challenge"
 							recovery.risk.information = "The Risk Level to IMPERSONATE the legitimate USER is given by the security challenge -->"+recovery.authMethods.last.toString
-							recovery.risk.value = recovery.authMethods.last.risk.value
+							recovery.risk.value = methods.last.risk.value
 						}	
 					}
 					println("Recovery Risk Assessment")
@@ -415,7 +408,6 @@ class LightweightGenerator extends AbstractGenerator {
 			return r1
 		return r2	
 	}
-	
 	
 	/*
 	 * Authentication method comparator

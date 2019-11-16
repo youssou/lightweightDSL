@@ -2,7 +2,6 @@
  */
 package lightweightDSL.impl;
 
-import lightweightDSL.Bool2;
 import lightweightDSL.KVALUE;
 import lightweightDSL.Knowledge;
 import lightweightDSL.LightweightDSLPackage;
@@ -22,8 +21,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link lightweightDSL.impl.KnowledgeImpl#getValue <em>Value</em>}</li>
- *   <li>{@link lightweightDSL.impl.KnowledgeImpl#getLimitedAttempts <em>Limited Attempts</em>}</li>
- *   <li>{@link lightweightDSL.impl.KnowledgeImpl#getAutofilled <em>Autofilled</em>}</li>
+ *   <li>{@link lightweightDSL.impl.KnowledgeImpl#isLimitedAttempts <em>Limited Attempts</em>}</li>
+ *   <li>{@link lightweightDSL.impl.KnowledgeImpl#isAutofilled <em>Autofilled</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,44 +49,44 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 	protected KVALUE value = VALUE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLimitedAttempts() <em>Limited Attempts</em>}' attribute.
+	 * The default value of the '{@link #isLimitedAttempts() <em>Limited Attempts</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLimitedAttempts()
+	 * @see #isLimitedAttempts()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Bool2 LIMITED_ATTEMPTS_EDEFAULT = Bool2.TRUE;
+	protected static final boolean LIMITED_ATTEMPTS_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getLimitedAttempts() <em>Limited Attempts</em>}' attribute.
+	 * The cached value of the '{@link #isLimitedAttempts() <em>Limited Attempts</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLimitedAttempts()
+	 * @see #isLimitedAttempts()
 	 * @generated
 	 * @ordered
 	 */
-	protected Bool2 limitedAttempts = LIMITED_ATTEMPTS_EDEFAULT;
+	protected boolean limitedAttempts = LIMITED_ATTEMPTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAutofilled() <em>Autofilled</em>}' attribute.
+	 * The default value of the '{@link #isAutofilled() <em>Autofilled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAutofilled()
+	 * @see #isAutofilled()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Bool2 AUTOFILLED_EDEFAULT = Bool2.TRUE;
+	protected static final boolean AUTOFILLED_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getAutofilled() <em>Autofilled</em>}' attribute.
+	 * The cached value of the '{@link #isAutofilled() <em>Autofilled</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAutofilled()
+	 * @see #isAutofilled()
 	 * @generated
 	 * @ordered
 	 */
-	protected Bool2 autofilled = AUTOFILLED_EDEFAULT;
+	protected boolean autofilled = AUTOFILLED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +137,7 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 	 * @generated
 	 */
 	@Override
-	public Bool2 getLimitedAttempts() {
+	public boolean isLimitedAttempts() {
 		return limitedAttempts;
 	}
 
@@ -148,9 +147,9 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 	 * @generated
 	 */
 	@Override
-	public void setLimitedAttempts(Bool2 newLimitedAttempts) {
-		Bool2 oldLimitedAttempts = limitedAttempts;
-		limitedAttempts = newLimitedAttempts == null ? LIMITED_ATTEMPTS_EDEFAULT : newLimitedAttempts;
+	public void setLimitedAttempts(boolean newLimitedAttempts) {
+		boolean oldLimitedAttempts = limitedAttempts;
+		limitedAttempts = newLimitedAttempts;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.KNOWLEDGE__LIMITED_ATTEMPTS,
 					oldLimitedAttempts, limitedAttempts));
@@ -162,7 +161,7 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 	 * @generated
 	 */
 	@Override
-	public Bool2 getAutofilled() {
+	public boolean isAutofilled() {
 		return autofilled;
 	}
 
@@ -172,9 +171,9 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 	 * @generated
 	 */
 	@Override
-	public void setAutofilled(Bool2 newAutofilled) {
-		Bool2 oldAutofilled = autofilled;
-		autofilled = newAutofilled == null ? AUTOFILLED_EDEFAULT : newAutofilled;
+	public void setAutofilled(boolean newAutofilled) {
+		boolean oldAutofilled = autofilled;
+		autofilled = newAutofilled;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LightweightDSLPackage.KNOWLEDGE__AUTOFILLED,
 					oldAutofilled, autofilled));
@@ -191,9 +190,9 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 		case LightweightDSLPackage.KNOWLEDGE__VALUE:
 			return getValue();
 		case LightweightDSLPackage.KNOWLEDGE__LIMITED_ATTEMPTS:
-			return getLimitedAttempts();
+			return isLimitedAttempts();
 		case LightweightDSLPackage.KNOWLEDGE__AUTOFILLED:
-			return getAutofilled();
+			return isAutofilled();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,10 +209,10 @@ public class KnowledgeImpl extends AuthenticatorImpl implements Knowledge {
 			setValue((KVALUE) newValue);
 			return;
 		case LightweightDSLPackage.KNOWLEDGE__LIMITED_ATTEMPTS:
-			setLimitedAttempts((Bool2) newValue);
+			setLimitedAttempts((Boolean) newValue);
 			return;
 		case LightweightDSLPackage.KNOWLEDGE__AUTOFILLED:
-			setAutofilled((Bool2) newValue);
+			setAutofilled((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

@@ -30,20 +30,9 @@ public class LightweightSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getEBooleanRule())
-			return getEBooleanToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * EBoolean returns ecore::EBoolean:
-	 * 	'true' | 'false';
-	 */
-	protected String getEBooleanToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "true";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -62,7 +51,7 @@ public class LightweightSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     authenticators+=[Authenticator|ID] (ambiguity) 'correlation' ':' correlation?=EBoolean
+	 *     authenticators+=[Authenticator|ID] (ambiguity) 'correlation' ':' correlation=EBoolean
 	 */
 	protected void emit_MFA_CommaKeyword_12_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
